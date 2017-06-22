@@ -1,0 +1,13 @@
+@font-face{
+    font-family: GillSans;
+    src: url(../fonts/GillSans.ttc);
+}
+@font-face{
+    font-family: Avenir Next;
+    src: url(../fonts/Avenir Next.ttc);
+}
+@font-face{
+    font-family: Raleway;
+    font-weight: 600;
+    src: url(../fonts/Raleway-SemiBold.ttf);
+}

@@ -1,0 +1,166 @@
+@import "lib.less";
+body{
+    height: 2456px;
+    background-size: 1024px;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+@height: 60px;
+header{
+    .header-container{
+        position: relative;
+        display: block;
+        height: @height;
+        width: 1024px;
+        margin: auto;
+        .header-logo{
+            width: 373px;
+            text-align: center;
+            line-height: @height;
+            height: 100%;
+            float: left;
+            img{
+                margin: 7px 0px 0px 16px;
+            }
+        }
+        .header-form{
+            float: left;
+            @form_x: 281px;
+            @form_y: 37px;
+            line-height: @height;
+            form{
+                width: @form_x;
+                height: @form_y;
+                position: relative;
+                margin: 12px 115px 0 0;
+                float: left;
+                
+                input{
+                    display: block;
+                    appearance: none;
+                    width: @form_x;
+                    height: @form_y;
+                    padding: 5px @form_y 5px 12px;
+                    position: absolute;
+                    left: 0;
+                    border: 1px solid #B9B9B9;
+                    border-radius: 5px;
+                    line-height: 14px;
+                    font-size: 14px;
+                    outline: none;
+                }
+                button{
+                    display: block;
+                    appearance: none;
+                    width: @form_y;
+                    height: @form_y;
+                    position: absolute;
+                    right: 0;
+                    background: @lightblue;
+                    border: none;
+                    border-bottom-right-radius: 5px;
+                    border-top-right-radius: 5px;
+                    background-image: url(../img/lupe.png);
+                    background-size: 16px 16px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+            
+            .phone{
+                position: relative;
+                display: block;
+                float: left;
+                font-family: 'Avenir Next';
+                font-weight: 600;
+                color: @lightblack;
+                img{
+                    margin-right: 10px;
+                }
+            }
+            
+        }
+        &:after{
+            display: block;
+            content: "";
+            clear: both;
+        }
+    }
+    navbar{
+        @navheight: 37px;
+        display: block;
+        line-height: @navheight;
+        font-family: 'Raleway';
+        font-weight: 400;
+        font-size: 12px;
+        text-align: center;
+        background: @lightblue;
+        color: white;
+        nav{
+            display: inline-block;
+            height: @navheight;
+            padding: 0px 19px;
+            letter-spacing: 0.092em;
+            cursor: pointer;
+            position: relative;
+            &.dropper{
+                &:after{
+                    background-image: url(../img/dropper_down.png);
+                    display: inline-block;
+                    position: absolute;
+                    right: 5;
+                    width: 11px;
+                    height: 11px;
+                    top: 3;
+                    bottom: 0;
+                    content: "";
+                    margin: auto;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+            }
+            .dropdown-container{
+                display: none;
+                position: absolute;
+                background: @blackblue;
+                left: 0;
+                .dropdown-element{
+                    text-align: left;
+                    width: 179px;
+                    padding: 0px 19px;
+                    &:hover{
+                        color: @lightblue;       
+                    }
+                }
+                .dropdown-category{
+                    width: 73px;
+                    margin: 18px;
+                    img{
+                        height: 43px;
+                        display: inline-block;
+                    }
+                    font-family: "Avenir Next";
+                    font-weight: 400;
+                    font-size: 9.6px;
+                    line-height: 14px;
+                    text-align: center;
+                    float: left;
+                }
+                &:after{
+                    content: "";
+                    clear: both;
+                    display: block;
+                }
+            }
+            &:hover{
+                background: @blackblue;
+                &:after{
+                   background-image: url(../img/dropper_up.png); 
+                }
+                .dropdown-container{
+                    display: block;
+                }
+            }
+        }
+    }
+}
