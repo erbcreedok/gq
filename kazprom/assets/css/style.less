@@ -1,17 +1,21 @@
 @import "lib.less";
 body{
     height: 2456px;
+    max-width: 1920px;
+    margin: 0 auto;
     background-size: 1024px;
     background-repeat: no-repeat;
     background-position: top;
 }
 @height: 60px;
 header{
+    position: relative;
+    z-index: 100;
     .header-container{
         position: relative;
         display: block;
         height: @height;
-        width: 1024px;
+        max-width: 1024px;
         margin: auto;
         .header-logo{
             width: 373px;
@@ -191,5 +195,41 @@ header{
 }
 slider{
     display: block;
-    height: 373px;
+    position: relative;
+    overflow: hidden;
+    @media (max-width: 1024px){
+        height: 373px;    
+    }
+    @media (min-width: 1025px) and (max-width: 1440px){
+        height: 444px;
+    }
+    @media (min-width: 1441px){
+        height: 444px;
+        .slider-image{
+            width: 100%;
+            img{
+                width: 100%;
+                height: auto !important;
+            }
+        }
+    }
+    .slider-container{
+        height: 100%;
+        position: relative;
+        .slider-image{
+            position: absolute;
+            height: 100%;
+            left: 50%;
+            img{
+                position: relative;
+                left: -50%;
+                height: 100%;
+            }
+        }
+        .slider-text{
+            position: absolute;
+            right: 50%;
+            width: 388px;
+        }
+    }
 }
