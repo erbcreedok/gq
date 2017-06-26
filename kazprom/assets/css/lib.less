@@ -21,12 +21,19 @@ h2{
     font-weight: 500;
     line-height: 33px;
     letter-spacing: -1px;
+    margin: 0;
 }
 p{
     font-weight: normal;
     font-size: 16px;
     line-height: 19px;
     color: @lightblack;
+}
+p.subtitle{
+    font-family: 'Avenir Next';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
 }
 
 .left{
@@ -60,3 +67,33 @@ a{
 .lightblue{
     color: @lightblue;
 }
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+text-left{
+    text-align: left;
+}
+section{
+    display: block;
+    position: relative;
+    padding: 30px 0px;
+    background: white;
+    &.gray{
+        background-color: #F7F7F7;
+    }
+    &.lightblue{
+        background-color: @lightblue;
+    }
+}
+
+.dottedBorder(@color: #8f8f8f, @dash: 5, @gap: 1, @size: 1) {
+    background-image: linear-gradient(to right, black (@dash/(@dash+@gap))*100%, rgba(255,255,255,0) 0%);
+    background-position: bottom;
+    background-size: @dash+@gap @size;
+    background-repeat: repeat-x;
+}
+
+

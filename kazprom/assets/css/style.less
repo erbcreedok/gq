@@ -193,10 +193,9 @@ header{
         }
     }
 }
-slider{
-    display: block;
-    position: relative;
+#slider{
     overflow: hidden;
+    padding: 0;
     @media (max-width: 1024px){
         height: 373px;    
     }
@@ -231,5 +230,57 @@ slider{
             right: 50%;
             width: 388px;
         }
+    }
+}
+#catalog{
+    p.subtitle{
+        width: 429px;
+    }
+    item{
+        display: inline-block;
+        width: 130px;
+        padding: 15px 10px 0px;
+        font-family: "Avenir Next";
+        vertical-align: top;
+        img{
+            height: 71.5px;
+        }
+        p{
+            display: inline-block;
+            line-height: 16px;
+            margin: 20 0 0;
+        }
+    }
+    .dottedBorder(#979797, 12, 8, 1);
+}
+#sponsors{
+    h2{
+        width: 632px;
+    }
+    items{
+        display: block;
+        width:  870px;
+        margin: auto;
+        item{
+            &:before{
+                content: " ";
+                display: inline-block;
+            }
+            line-height: 55px;
+            float: left;
+            display: block;
+            width: 33.33%;
+            padding: 30px 0px 0px;
+        }
+        &:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+    p{
+        font-size: 18px;
+        font-family: "Avenir Next";
+        margin: 30px 0px 0px;
     }
 }
