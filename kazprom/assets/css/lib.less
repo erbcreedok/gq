@@ -5,6 +5,7 @@
 @darkblue: #586D76;
 @blackblue: #1C252E;
 @lightblue: #019AD6;
+@gold: #EFE133;
 
 body{
     font-family: 'GillSans';
@@ -27,13 +28,18 @@ p{
     font-weight: normal;
     font-size: 16px;
     line-height: 19px;
-    color: @lightblack;
 }
 p.subtitle{
     font-family: 'Avenir Next';
     font-size: 14px;
     font-weight: 400;
     line-height: 19px;
+}
+p.light{
+    font-family: 'GillSans-light';
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: -0.83px;
 }
 
 .left{
@@ -67,6 +73,9 @@ a{
 .lightblue{
     color: @lightblue;
 }
+.gold{
+    color: @gold !important;
+}
 .text-center{
     text-align: center;
 }
@@ -77,23 +86,95 @@ text-left{
     text-align: left;
 }
 section{
+    opacity: 0.5;
     display: block;
     position: relative;
     padding: 30px 0px;
     background: white;
+    .section-header{
+        width: 638px;
+        height: 39px;
+        border-bottom: 1px solid white;
+        vertical-align: top;
+        padding: 0px 3px;
+    }
     &.gray{
         background-color: #F7F7F7;
+        .section-header{
+            border-color: #A5B1B6;
+        }
     }
     &.lightblue{
         background-color: @lightblue;
+        .section-header{
+            border-color: white;
+        }
+        h1, h2, p{
+            color: white;
+        }
+    }
+    &:after{
+        content: "";
+        display: block;
+        clear: both;
     }
 }
 
-.dottedBorder(@color: #8f8f8f, @dash: 5, @gap: 1, @size: 1) {
-    background-image: linear-gradient(to right, black (@dash/(@dash+@gap))*100%, rgba(255,255,255,0) 0%);
+.dottedBorder(@color: #979797, @dash: 12, @gap: 8, @size: 1) {
+    background-image: linear-gradient(to right, black 100%*(@dash/(@dash+@gap)), rgba(255,255,255,0) 0%);
     background-position: bottom;
-    background-size: @dash+@gap @size;
+    background-size: 1px*(@dash+@gap) 1px*@size;
     background-repeat: repeat-x;
 }
+button{
+    height: 32px;
+    font-size: 14px;
+    line-height: 17px;
+    border: none;
+    color: #5D5D5D;
+    background: #EFE133;
+    padding: 0 25px;
+    &.blue{
+        background: @lightblue;
+        color: white;
+    }
+}
+circle{
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border-radius: 5px;
+    margin-left: 5px;
+    border: 2px solid white;
+    &:hover{
+        background-color: white;
+    }
+    &.active{
+        border-color: @gold;
+        background-color: @gold;
+    }
+}
+.no-padding{
+    padding: 0px;
+}
 
-
+.form-input{
+    label{
+        display: block;
+        color: @lightblue;
+        font-family: 'GillSans';
+        font-weight: normal;
+        font-size: 14px;
+        letter-spacing: -0.58px;
+    }
+    input{
+        border: none;
+        font-family: 'GillSans-light';
+        letter-spacing: -0.58px;
+        border-bottom: 1px solid #ACACAC;
+        padding-left: 4px;
+        width: 100%;
+        outline: none;
+    }
+    margin-bottom: 13px;
+}

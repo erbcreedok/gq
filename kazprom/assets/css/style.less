@@ -251,7 +251,7 @@ header{
             margin: 20 0 0;
         }
     }
-    .dottedBorder(#979797, 12, 8, 1);
+    .dottedBorder();
 }
 #sponsors{
     h2{
@@ -281,6 +281,117 @@ header{
     p{
         font-size: 18px;
         font-family: "Avenir Next";
-        margin: 30px 0px 0px;
+        margin: 26px 0px 0px;
+    }
+}
+#hits{
+    .item-window{
+        position: relative;
+        margin: 20px auto 22px;
+        display: block;
+        width: 532px;
+        overflow: hidden;
+    }
+    items{
+        position: relative;
+        display: block;
+        white-space: nowrap;
+        font-size: 0;
+        item{
+            position: relative;
+            display: inline-block;
+            white-space: normal;
+            width: 100%;
+            background-position: 0% 50%;
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+            padding-left: 205px;
+            padding-top: 41px; 
+            .item-text{
+                width: 328px;
+                button{
+                    float: right;
+                }
+                p{
+                    font-size: 14px;
+                    width: 268px;
+                    line-height: 16px;
+                    margin-bottom: 5px;
+                }
+                h1{
+                    font-size: 30px;
+                    line-height: 28px;
+                    margin: 0px 0px 18px;
+                }
+                &:after{
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
+            }
+        }
+        &:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+    .nav-circles{
+        text-align: center;
+        cursor: default;
+        line-height: 12px;
+        margin-bottom: 8px;
+        circle{
+            cursor: pointer;
+        }
+    }
+}
+#video{
+    color: @darkblue;
+    .section-container{
+        width: 867px;
+        margin: auto;
+        &:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+    .video-text{
+        padding: 35px;
+        p{
+            margin-top: 38px;
+            width: 327px;
+        }
+    }
+    .dottedBorder();
+}
+#feedback{
+    padding-top: 19px;
+    h2{
+        margin-top: 0;
+        margin-bottom: 0px;
+    }
+    p{
+        margin-top: -4px;
+        width: 394px;
+    }
+    form{
+        width: 359px;
+        margin-top: 27px;
+        button{
+            margin-top: 31px;
+            margin-bottom: 3px;
+        }
+    }
+    .dottedBorder();
+}
+#clients{
+    .clients-list{
+        text-align: justify;
+        width: 591px;
+        img{
+            margin: 0px 50px;
+        }
     }
 }
