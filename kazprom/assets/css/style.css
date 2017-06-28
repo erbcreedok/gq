@@ -267,7 +267,7 @@ header .header-container .header-form form {
   width: 281px;
   height: 37px;
   position: relative;
-  margin: 12px 115px 0 0;
+  margin: 12px 110px 0 0;
   float: left;
 }
 header .header-container .header-form form input {
@@ -307,7 +307,6 @@ header .header-container .header-form .phone {
   display: block;
   float: left;
   font-family: 'AvenirNext';
-  font-weight: 600;
   color: #5E5E5E;
 }
 header .header-container .header-form .phone img {
@@ -1007,6 +1006,10 @@ footer:after {
   #hits .nav-circles {
     margin-bottom: 20px;
   }
+  #hits .slider-controller {
+    bottom: auto;
+    top: 160px;
+  }
   #video .section-container {
     max-width: 100%;
   }
@@ -1082,3 +1085,4 @@ footer:after {
     text-align: center;
   }
 }
+
