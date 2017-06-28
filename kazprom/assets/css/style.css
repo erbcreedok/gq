@@ -535,6 +535,7 @@ header navbar nav:hover .dropdown-container {
 }
 #catalog p.subtitle {
   width: 429px;
+  max-width: 100%;
 }
 #catalog item {
   display: inline-block;
@@ -1081,4 +1082,3 @@ footer:after {
     text-align: center;
   }
 }
-
