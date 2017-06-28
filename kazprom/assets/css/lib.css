@@ -353,6 +353,16 @@ header navbar nav {
   cursor: pointer;
   position: relative;
 }
+header navbar nav.active:after {
+    content: "";
+    display: block;
+    width: 100%;
+    position: absolute;
+    height: 4px;
+    background: white;
+    bottom: 0;
+    left: 0;right: 0;
+}
 header navbar nav > a {
   text-decoration: none !important;
   color: white !important;
@@ -499,6 +509,10 @@ footer:after {
 }
 
 .page-title{
-    padding: 30px 0 28px;
+    padding: 10px 0 18px;
 }
 
+section.darkblue{
+    background-color: #2A3946;
+    color: #EAEAEB;
+}

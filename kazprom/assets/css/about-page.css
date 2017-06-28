@@ -49,6 +49,8 @@ h3.super{
         margin-bottom: 60px;
     }
 }
+
+/*mobile sizes*/
 @media (max-width: 767px) {
     h3.super{
         margin-top: 40px;
@@ -65,5 +67,12 @@ h3.super{
     .left .item, .right .item{
         margin: 10px auto;
         width: 50%;
+    }
+    .item p{
+        width: 100px;
+        margin: 0 auto;
+        right: 0;
+        left: 0;
+        margin-top: 5px;
     }
 }

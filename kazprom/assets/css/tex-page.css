@@ -1,0 +1,34 @@
+@import 'lib.css';
+@import 'lib-tablet.css';
+@import 'lib-mobile.css';
+
+item{
+    display: block;
+    padding-left: 29px;
+    background-image: url(../img/file.png);
+    background-size: 15px 20px;
+    background-repeat: no-repeat;
+    background-position: 2 0;
+    margin: 0 0 20px;
+    vertical-align: text-bottom;
+}
+item a{
+    color: #019AD6;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.8px;
+    margin-right: 3px;
+}
+item span{
+    font-family: 'GillSans-light';
+    color: #464646;
+    font-size: 14px;
+    line-height: 16px;
+}
+@media (max-width: 767px){
+    item a{
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: -0.7px;
+    }
+}
