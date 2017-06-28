@@ -216,6 +216,9 @@ circle.active {
 .slider-controller .to-right {
   right: 32px;
 }
+.space-senss {
+  white-space: pre;
+}
 body {
   max-width: 1920px;
   margin: 0 auto;
@@ -231,18 +234,29 @@ header .header-container {
   position: relative;
   display: block;
   height: 60px;
+  width: 777px;
   max-width: 1024px;
   margin: auto;
 }
+header .header-container button.navbar-toggle {
+  position: absolute;
+  top: 10px;
+  left: 17;
+  cursor: pointer;
+}
+header .header-container button.navbar-toggle .icon-bar {
+  background: #019AD6;
+  width: 20px;
+}
 header .header-container .header-logo {
-  width: 373px;
-  text-align: center;
+  width: 232px;
   line-height: 60px;
   height: 100%;
   float: left;
 }
 header .header-container .header-logo img {
-  margin: 7px 0px 0px 16px;
+  height: 51px;
+  margin: 7px 0px 0px 0px;
 }
 header .header-container .header-form {
   float: left;
@@ -257,7 +271,6 @@ header .header-container .header-form form {
 }
 header .header-container .header-form form input {
   display: block;
-  appearance: none;
   width: 281px;
   height: 37px;
   padding: 5px 37px 5px 12px;
@@ -322,18 +335,21 @@ header navbar nav {
   cursor: pointer;
   position: relative;
 }
-header navbar nav.dropper:after {
+header navbar nav > a {
+  text-decoration: none !important;
+  color: white !important;
+}
+header navbar nav.dropper > a:after {
   background-image: url(../img/dropper_down.png);
   display: inline-block;
   position: absolute;
-  right: 5;
   width: 11px;
   height: 11px;
-  top: 3;
-  bottom: 0;
   content: "";
-  margin: auto;
+  top: 10;
+  margin: 0 5;
   background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
 }
 header navbar nav .dropdown-container {
@@ -395,7 +411,7 @@ header navbar nav .dropdown-container:after {
 header navbar nav:hover {
   background: #1C252E;
 }
-header navbar nav:hover:after {
+header navbar nav:hover > a:after {
   background-image: url(../img/dropper_up.png);
 }
 header navbar nav:hover .dropdown-container {
@@ -655,12 +671,17 @@ header navbar nav:hover .dropdown-container {
   display: block;
   clear: both;
 }
+#video .video-iframe {
+  float: left;
+  width: 540px;
+}
 #video .video-text {
-  padding: 35px;
+  float: left;
+  padding: 35px 0px 0px;
+  width: 327px;
 }
 #video .video-text p {
   margin-top: 38px;
-  width: 327px;
 }
 #feedback {
   padding-top: 19px;
@@ -708,9 +729,15 @@ footer {
 }
 footer .footer-container {
   width: 924px;
+  max-width: 100%;
   position: relative;
 }
-footer .footer-container p {
+footer .footer-container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+footer p {
   font-family: 'AvenirNext';
   font-size: 12px;
   letter-spacing: -1px;
@@ -718,33 +745,339 @@ footer .footer-container p {
   line-height: 13px;
   margin-top: 3px;
 }
-footer .footer-container p .line {
-  white-space: pre;
+footer p line {
   display: block;
 }
-footer .footer-container .footer-shortcuts {
+footer p line br {
+  display: none;
+}
+footer .footer-shortcuts {
   height: 82px;
   display: inline-block;
   line-height: 82px;
   vertical-align: middle;
   text-align: right;
 }
-footer .footer-container .footer-shortcuts img {
+footer .footer-shortcuts img {
   margin-left: 8px;
 }
-footer .footer-container .footer-copyright {
+footer .footer-copyright {
   position: absolute;
-  left: 0;
+  left: 15;
   bottom: 0;
-}
-footer .footer-container:after {
-  content: "";
-  display: block;
-  clear: both;
 }
 footer:after {
   content: "";
   display: block;
   clear: both;
+}
+@media (max-width: 924px) and (min-width: 768px) {
+  header .header-container {
+    width: 655px;
+  }
+  header .header-container .header-logo {
+    width: 175px;
+  }
+  header .header-container .header-form form {
+    margin-right: 50px;
+  }
+  #slider .slide-container .slide-text {
+    margin-right: -60px;
+  }
+  #catalog items {
+    width: 403px;
+  }
+  #sponsors items {
+    width: 647px;
+  }
+  #video .section-container {
+    width: 695px;
+  }
+  #video .section-container .video-iframe {
+    width: 439px;
+  }
+  #video .section-container .video-iframe iframe {
+    width: 408px;
+    height: 231px;
+  }
+  #video .section-container .video-text {
+    padding: 16px 0px 0px;
+    width: 256px;
+  }
+}
+@media (max-width: 767px) {
+  section .section-header {
+    height: 45px;
+  }
+  section .section-header h2 {
+    padding-left: 37px;
+    line-height: 45px;
+  }
+  header .header-container {
+    max-width: 100%;
+    height: 65px;
+  }
+  header .header-container .header-logo {
+    position: absolute;
+    width: 108px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -webkit-transform-origin: left;
+    -moz-transform-origin: left;
+    -ms-transform-origin: left;
+    -o-transform-origin: left;
+    transform-origin: left;
+    -webkit-transition: 200ms;
+    -moz-transition: 200ms;
+    -ms-transition: 200ms;
+    -o-transition: 200ms;
+    transition: 200ms;
+  }
+  header .header-container .header-logo img {
+    margin-top: 8px;
+    height: 50px;
+  }
+  header .header-container .header-form {
+    float: right;
+    position: absolute;
+    right: 12;
+  }
+  header .header-container .header-form .phone .visible-xs-block {
+    display: inline-block !important;
+  }
+  header .header-container .header-form .phone img {
+    cursor: pointer;
+  }
+  header .header-container .header-form .phone:after {
+    content: " ";
+    display: inline-block;
+  }
+  header .header-container .header-form .phone span {
+    display: none;
+  }
+  header .header-container .header-form form {
+    margin: 12px 10 0;
+    -webkit-transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    -o-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+    -webkit-transform-origin: right;
+    -moz-transform-origin: right;
+    -ms-transform-origin: right;
+    -o-transform-origin: right;
+    transform-origin: right;
+    -webkit-transition: 250ms;
+    -moz-transition: 250ms;
+    -ms-transition: 250ms;
+    -o-transition: 250ms;
+    transition: 250ms;
+  }
+  header .header-container.searching .header-logo {
+    -webkit-transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    -o-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+  }
+  header .header-container.searching .header-form form {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  header navbar {
+    padding: 0 !important;
+  }
+  header navbar nav {
+    display: block;
+    padding: 0;
+    height: auto;
+    border-bottom: 1px solid white;
+  }
+  header navbar nav .dropdown-container {
+    display: none;
+    width: 100%;
+    z-index: 2;
+    position: relative;
+    background-color: #1C252E;
+  }
+  header navbar nav .dropdown-container .dropdown-xs-compressor {
+    width: 320px;
+    white-space: normal;
+    margin: auto;
+  }
+  header navbar nav .dropdown-container .dropdown-category {
+    padding: 10 0px;
+    width: 33.33%;
+    float: left;
+  }
+  header navbar nav .dropdown-container .dropdown-element {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    border-top: 1px solid white;
+  }
+  header navbar nav .dropdown-container:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  header navbar nav:hover {
+    background: #019AD6;
+  }
+  header navbar nav:hover .dropdown-container {
+    display: block;
+  }
+  #slider {
+    height: 447px;
+  }
+  #slider .slides-wrapper .slide-container .slide-image {
+    left: auto;
+    right: 0;
+    background-size: cover;
+  }
+  #slider .slides-wrapper .slide-container .slide-image img {
+    left: auto;
+    right: -50;
+  }
+  #slider .slides-wrapper .slide-container .slide-text {
+    background: rgba(255, 255, 255, 0.7);
+    text-align: right!important;
+    left: auto;
+    right: 0;
+    padding-right: 10px;
+    width: 100%;
+    min-height: 200px;
+  }
+  #slider .slider-controller .to-left,
+  #slider .slider-controller .to-right {
+    bottom: 32px;
+  }
+  #catalog items {
+    width: 320px;
+  }
+  #sponsors h2 {
+    max-width: 100%;
+  }
+  #sponsors items {
+    width: 320px;
+  }
+  #sponsors items item {
+    width: 100%;
+  }
+  #sponsors items item p {
+    margin-top: 8px;
+  }
+  #hits {
+    padding-top: 20px;
+    max-width: 100%;
+  }
+  #hits .item-window {
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+  #hits items item {
+    padding-top: 170px;
+    padding-left: 0;
+    background-size: auto 131px;
+    background-position: center 19px;
+  }
+  #hits items item .item-text {
+    width: 263px;
+    margin: 0 auto;
+  }
+  #hits items item .item-text h1 {
+    font-size: 24px;
+  }
+  #hits items item .item-text button {
+    float: none;
+    margin: 30 auto;
+    display: block;
+  }
+  #hits .nav-circles {
+    margin-bottom: 20px;
+  }
+  #video .section-container {
+    max-width: 100%;
+  }
+  #video .section-container .video-iframe {
+    width: 100%;
+    float: none;
+  }
+  #video .section-container .video-iframe iframe {
+    width: 100%;
+  }
+  #video .section-container .video-text {
+    width: 263px;
+    min-width: 80%;
+    padding-top: 20px;
+    float: none;
+    margin: auto;
+  }
+  #video .section-container .video-text h2 {
+    font-size: 18px;
+    letter-spacing: 0px;
+    line-height: 25px;
+  }
+  #video .section-container .video-text p {
+    margin-top: 10px;
+    letter-spacing: 0px;
+    line-height: 16px;
+    font-size: 14px;
+  }
+  #feedback h2 {
+    margin: 0 auto 10px;
+  }
+  #feedback form {
+    width: 252px;
+  }
+  #feedback p {
+    width: 320px;
+  }
+  #clients .clients-list {
+    width: 250px;
+  }
+  #clients .clients-list .client-logo {
+    width: 50%;
+  }
+  footer {
+    padding: 15px 0px;
+  }
+  footer .footer-logo {
+    margin-bottom: 14px;
+    text-align: center;
+    float: none;
+  }
+  footer .footer-map {
+    padding: 0;
+    float: none;
+  }
+  footer .footer-map iframe {
+    height: 144px;
+  }
+  footer .footer-information {
+    width: 250px;
+    float: none;
+    margin: 20 auto;
+    padding: 0;
+  }
+  footer .footer-shortcuts {
+    line-height: 35px;
+    float: none;
+    text-align: center;
+  }
+  footer .footer-copyright {
+    width: 100%;
+    left: 0;
+    text-align: center;
+  }
 }
 
