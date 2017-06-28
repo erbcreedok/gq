@@ -15,7 +15,22 @@
     -o-transition: @value;
     transition: @value;
 }
-
+.transform(@value1,@value2:X,...){
+    @arg: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
+    -webkit-transform: @arg;
+    -moz-transform: @arg;
+    -ms-transform: @arg;
+    -o-transform: @arg;
+    transform: @arg;
+}
+.transform_origin(@value1,@value2:X,...){
+    @arg: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
+    -webkit-transform-origin: @arg;
+    -moz-transform-origin: @arg;
+    -ms-transform-origin: @arg;
+    -o-transform-origin: @arg;
+    transform-origin: @arg;
+}
 body{
     font-family: 'GillSans';
 }
@@ -223,4 +238,8 @@ circle{
     .to-right{
         right: 32px;
     }
+}
+
+.space-senss{
+    white-space: pre;
 }
