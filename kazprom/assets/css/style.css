@@ -824,21 +824,6 @@ footer:after {
     right: 0;
     left: 0;
     margin: auto;
-    -webkit-transform: rotateY(0deg);
-    -moz-transform: rotateY(0deg);
-    -ms-transform: rotateY(0deg);
-    -o-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-    -webkit-transform-origin: left;
-    -moz-transform-origin: left;
-    -ms-transform-origin: left;
-    -o-transform-origin: left;
-    transform-origin: left;
-    -webkit-transition: 200ms;
-    -moz-transition: 200ms;
-    -ms-transition: 200ms;
-    -o-transition: 200ms;
-    transition: 200ms;
   }
   header .header-container .header-logo img {
     margin-top: 8px;
@@ -863,29 +848,25 @@ footer:after {
     display: none;
   }
   header .header-container .header-form form {
-    margin: 12px 10 0;
-    -webkit-transform: rotateY(90deg);
-    -moz-transform: rotateY(90deg);
-    -ms-transform: rotateY(90deg);
-    -o-transform: rotateY(90deg);
-    transform: rotateY(90deg);
-    -webkit-transform-origin: right;
-    -moz-transform-origin: right;
-    -ms-transform-origin: right;
-    -o-transform-origin: right;
-    transform-origin: right;
+    margin: 65px auto 0;
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg);
+    -o-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    -webkit-transform-origin: top;
+    -moz-transform-origin: top;
+    -ms-transform-origin: top;
+    -o-transform-origin: top;
+    transform-origin: top;
     -webkit-transition: 250ms;
     -moz-transition: 250ms;
     -ms-transition: 250ms;
     -o-transition: 250ms;
     transition: 250ms;
-  }
-  header .header-container.searching .header-logo {
-    -webkit-transform: rotateY(90deg);
-    -moz-transform: rotateY(90deg);
-    -ms-transform: rotateY(90deg);
-    -o-transform: rotateY(90deg);
-    transform: rotateY(90deg);
+    position: absolute;
+    left: -230;
+    right: 0;
   }
   header .header-container.searching .header-form form {
     -webkit-transform: rotateY(0deg);
@@ -893,6 +874,7 @@ footer:after {
     -ms-transform: rotateY(0deg);
     -o-transform: rotateY(0deg);
     transform: rotateY(0deg);
+    height: auto;
   }
   header navbar {
     padding: 0 !important;
@@ -1085,4 +1067,3 @@ footer:after {
     text-align: center;
   }
 }
-

@@ -602,9 +602,6 @@ footer{
                 right: 0;
                 left: 0;
                 margin: auto;
-                .transform(rotateY(0deg));
-                .transform_origin(left);
-                .transition(200ms);
                 img{
                     margin-top: 8px;
                     height: 50px;
@@ -630,18 +627,19 @@ footer{
                     }
                 }
                 form{
-                    margin: 12px 10 0;
-                    .transform(rotateY(90deg));
-                    .transform_origin(right);
+                    margin: 65px auto 0;
+                    .transform(rotateX(90deg));
+                    .transform_origin(top);
                     .transition(250ms);
+                    position: absolute;
+                    left: -230;
+                    right: 0;
                 }
             }
             &.searching{
-                .header-logo{
-                    .transform(rotateY(90deg));
-                }
                 .header-form form{
                     .transform(rotateY(0deg));
+                    height: auto;
                 }
             }
         }
