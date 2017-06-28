@@ -1,10 +1,18 @@
 @font-face{
-    font-family: GillSans;
+    font-family: 'GillSans';
     src: url(../fonts/GillSans.ttc);
 }
 @font-face{
-    font-family: Avenir Next;
-    src: url(../fonts/Avenir Next.ttc);
+    font-family: 'GillSans-light';
+    src: url(../fonts/GillSans-Light.ttf);
+}
+@font-face{
+    font-family: 'AvenirNext';
+    src: url(../fonts/AvenirNext-Regular.ttf);
+}
+@font-face{
+    font-family: 'AvenirNext-Medium';
+    src: url(../fonts/AvenirNext-Medium.ttf);
 }
 @font-face{
     font-family: Raleway;

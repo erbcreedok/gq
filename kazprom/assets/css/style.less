@@ -52,6 +52,9 @@ header{
                     line-height: 14px;
                     font-size: 14px;
                     outline: none;
+                    &::placeholder{
+                        color: #C7C7C7;
+                    }
                 }
                 button{
                     display: block;
@@ -75,7 +78,7 @@ header{
                 position: relative;
                 display: block;
                 float: left;
-                font-family: 'Avenir Next';
+                font-family: 'AvenirNext';
                 font-weight: 600;
                 color: @lightblack;
                 img{
@@ -145,7 +148,7 @@ header{
                     box-sizing: content-box;
                     padding: 15px 18px;
                     vertical-align: top;
-                    font-family: "Avenir Next";
+                    font-family: "AvenirNext";
                     font-weight: 400;
                     font-size: 9.6px;
                     line-height: 9.6px;
@@ -212,10 +215,14 @@ header{
             }
         }
     }
-    .slider-container{
+    .slide-container{
         height: 100%;
         position: relative;
-        .slider-image{
+        display: inline-block;
+        white-space: normal;
+        overflow: hidden;
+        width: 100%;
+        .slide-image{
             position: absolute;
             height: 100%;
             left: 50%;
@@ -224,11 +231,67 @@ header{
                 left: -50%;
                 height: 100%;
             }
+            &:after{
+                z-index: 0;
+                position: absolute;
+                width: 100%;
+                left: -50%;
+                height: 150px;
+                display: block;
+                content: "";
+                background-image: linear-gradient(rgba(38, 58, 72, 0), rgba(38, 58, 72, 0.7));
+                pointer-events: none;
+                bottom: 0;
+            }
         }
-        .slider-text{
+        .slide-text{
             position: absolute;
             right: 50%;
             width: 388px;
+        }
+        h2{
+            color: #4A4A4A;
+        }
+        p{
+            color: #5E5E5E;
+        }
+        button{
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 135px;
+            margin: auto;
+            bottom: 86px;
+        }
+    }
+    .slides-wrapper{
+        white-space: nowrap;
+        position: relative;
+        left: -100%;
+        font-size: 0;
+        .transition(250ms);
+    }
+    .slider-controller{
+        position: relative;
+        bottom: 0;
+        .to-left, .to-right{
+            bottom: 86;
+            z-index: 10;
+        }
+    }
+    .slider-circles{
+        z-index: 10;
+        text-align: center;
+        position: relative;
+        bottom: 58;
+        circle.active{
+            border-color: @lightblue;
+            background: @lightblue;
+        }
+    }
+    &:hover{
+        .to-left, .to-right{
+            opacity: 0.75;
         }
     }
 }
@@ -240,7 +303,7 @@ header{
         display: inline-block;
         width: 130px;
         padding: 15px 10px 0px;
-        font-family: "Avenir Next";
+        font-family: "AvenirNext";
         vertical-align: top;
         img{
             height: 71.5px;
@@ -280,8 +343,9 @@ header{
     }
     p{
         font-size: 18px;
-        font-family: "Avenir Next";
+        font-family: "AvenirNext-Medium";
         margin: 26px 0px 0px;
+        color: @lightblack;
     }
 }
 #hits{
@@ -297,6 +361,8 @@ header{
         display: block;
         white-space: nowrap;
         font-size: 0;
+        left: 0;
+        .transition(250ms);
         item{
             position: relative;
             display: inline-block;
@@ -307,6 +373,7 @@ header{
             background-repeat: no-repeat;
             padding-left: 205px;
             padding-top: 41px; 
+            overflow: hidden;
             .item-text{
                 width: 328px;
                 button{
@@ -344,6 +411,14 @@ header{
         circle{
             cursor: pointer;
         }
+    }
+    .slider-controller{
+        top: 0;
+        bottom: 0;
+        height: 0;
+        margin: auto;
+        width: 100%;
+        position: absolute;
     }
 }
 #video{
@@ -388,10 +463,64 @@ header{
 }
 #clients{
     .clients-list{
-        text-align: justify;
-        width: 591px;
-        img{
-            margin: 0px 50px;
+        width: 649px;
+        font-size: 0px;
+        .client-logo{
+            display: inline-block;
+            width: 20%;
+            height: 50px;
+            text-align: center;
+            margin: 20px 0px 0px;
         }
+    }
+    padding-bottom: 17px; 
+}
+footer{
+    background: @blackblue;
+    color: white;
+    position: relative;
+    vertical-align: bottom;
+    padding: 20px 0px 10px;
+    .footer-container{
+        width: 924px;
+        position: relative;
+        p{
+            font-family: 'AvenirNext';
+            font-size: 12px;
+            letter-spacing: -1px;
+            font-weight: 400;
+            line-height: 13px;
+            margin-top: 3px;
+            .line{
+                white-space: pre;
+                display: block;
+            }
+        }
+        .footer-shortcuts{
+            height: 82px;
+            display: inline-block;
+            line-height: 82px;
+            vertical-align: middle;
+            text-align: right;
+            img{
+                margin-left: 8px;
+            }
+            
+        }
+        .footer-copyright{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        &:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+    &:after{
+        content: "";
+        display: block;
+        clear: both;
     }
 }

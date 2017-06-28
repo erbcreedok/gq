@@ -3,12 +3,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet/less" href="assets/css/style.less">
-        <script src="assets/js/less.min.js"></script>
+        <link rel="stylesheet" href="assets/css/style.css">
+<!--        <link rel="stylesheet/less" href="assets/css/style.less">-->
+<!--        <script src="assets/js/less.min.js"></script>-->
         <script src="assets/js/jquery-1.10.2.min.js"></script>
         <script src="assets/js/bootstrap.js"></script>
     </head>
-    <body style="background-image: url(assets/img/desktop.jpg);">
+    <body>
         
         <header>
             <div class="header-container">
@@ -75,20 +76,74 @@
         </header>
         
         <section id="slider">
-            <div class="slider-container">
-                <div class="slider-image">
-                    <img src="assets/img/bg.jpg">
+            <div class="slides-wrapper" style="left: 0%">
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="assets/img/bg.jpg">
+                    </div>
+                    <div class="slide-text">
+                        <h1>
+                            Защитите себя от вредных газов современными средствами защиты
+                        </h1>
+                        <p>
+                            АО “КазПромСиз” является официальным дистрибютором в Казахстане
+                        </p>
+                    </div>
                 </div>
-                <div class="slider-text">
-                    <h1>
-                        Защитите себя от вредных газов современными средствами защиты
-                    </h1>
-                    <p>
-                        АО “КазПромСиз” является официальным дистрибютором в Казахстане
-                    </p>
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="assets/img/bg.jpg">
+                    </div>
+                    <div class="slide-text">
+                        <h1>
+                            Защитите себя от вредных газов современными средствами защиты
+                        </h1>
+                        <p>
+                            АО “КазПромСиз” является официальным дистрибютором в Казахстане
+                        </p>
+                    </div>
+                    <button class="blue middle">
+                        Подробнее
+                    </button>
+                </div>
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="assets/img/bg.jpg">
+                    </div>
+                    <div class="slide-text">
+                        <h1>
+                            Защитите себя от вредных газов современными средствами защиты
+                        </h1>
+                        <p>
+                            АО “КазПромСиз” является официальным дистрибютором в Казахстане
+                        </p>
+                    </div>
+                </div>
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="assets/img/bg.jpg">
+                    </div>
+                    <div class="slide-text">
+                        <h1>
+                            Защитите себя от вредных газов современными средствами защиты
+                        </h1>
+                        <p>
+                            АО “КазПромСиз” является официальным дистрибютором в Казахстане
+                        </p>
+                    </div>
                 </div>
             </div>
-        
+            <div class="slider-controller">
+                <div class="to-left"><img src="assets/img/left.png"></div>
+                <div class="to-right"><img src="assets/img/right.png"></div>
+            </div>
+            <div class="slider-circles">
+                <circle class="active"></circle>
+                <circle></circle>
+                <circle></circle>
+                <circle></circle>
+                <circle></circle>
+            </div>
         </section>
         <section id="catalog" class="gray text-center">
             <h2 class="lightblue">
@@ -133,15 +188,15 @@
             <items>
                 <item>
                     <img src="assets/img/sp1.png" height="32px">
-                    <p>АО "Сорбент"</p>
+                    <p>АО “Сорбент”</p>
                 </item>
                 <item>
                     <img src="assets/img/sp2.png" height="55px">
-                    <p>ООО "Спецпромзащита"</p>
+                    <p>ООО “Спецпромзащита”</p>
                 </item>
                 <item>
                     <img src="assets/img/sp3.png" height="40px">
-                    <p>АО "Тамбовмаш"</p>
+                    <p>АО “Тамбовмаш”</p>
                 </item>
             </items>
         </section>
@@ -150,7 +205,7 @@
                 <h2 class="gold">Хиты продаж</h2>
             </div>
             <div class="item-window middle">
-                <items>
+                <items style="left: 0%">
                     <item style="background-image: url(assets/img/item1.png)">
                         <div class="item-text">
                             <h1 class="item-title">
@@ -215,6 +270,11 @@
                 <circle></circle>
                 <circle></circle>
             </div>
+            <div class="slider-controller">
+                <div class="to-left"><img src="assets/img/left.png"></div>
+                <div class="to-right"><img src="assets/img/right.png"></div>
+            </div>
+            
         </section>
         <section id="video">
             <div class="section-container">
@@ -251,19 +311,45 @@
         <section id="clients" class="gray">
             <div class="section-header middle">
                 <h2 class="">Наши клиенты</h2>
-                <div class="clients-list">
-                    <img src="assets/img/cl1.png" >
-                    <img src="assets/img/cl2.png" >
-                    <img src="assets/img/cl3.png" >
-                    <img src="assets/img/cl4.png" >
-                    <img src="assets/img/cl5.png" >
-                    <img src="assets/img/cl6.png" >
-                    <img src="assets/img/cl7.png" >
-                    <img src="assets/img/cl8.png" >
-                    <img src="assets/img/cl9.png" >
-                    <img src="assets/img/cl10.png">
-                </div>
+            </div>
+            <div class="clients-list middle row">
+                <div class="client-logo"><img src="assets/img/cl1.png" ></div>
+                <div class="client-logo"><img src="assets/img/cl2.png" ></div>
+                <div class="client-logo"><img src="assets/img/cl3.png" ></div>
+                <div class="client-logo"><img src="assets/img/cl4.png" ></div>
+                <div class="client-logo"><img src="assets/img/cl5.png" ></div>
+                <div class="client-logo"><img src="assets/img/cl6.png" ></div>
+                <div class="client-logo"><img src="assets/img/cl7.png" ></div>
+                <div class="client-logo"><img src="assets/img/cl8.png" ></div>
+                <div class="client-logo"><img src="assets/img/cl9.png" ></div>
+                <div class="client-logo"><img src="assets/img/cl10.png"></div>
             </div>
         </section>
+        <footer>
+            <div class="footer-container middle">
+                <div class="col-md-4 footer-logo">
+                    <img src="assets/img/logo.png" height="50px">
+                </div>
+                <div class="col-md-3 footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.034462972473!2d76.94284976551782!3d43.22973708772753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836f1ef0fe3d57%3A0xe470e364ed718086!2z0J3Rg9GA0LvRiyDQotCw0YMgLSAxLCDQv9GA0L7RgdC_0LXQutGCIEHQu9GMLdCk0LDRgNCw0LHQuCwg0JDQu9C80LDRgtGL!5e0!3m2!1sru!2skz!4v1498608740594" width="100%" height="82px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-3 footer-information">
+                    <p>
+                        <span class="line">ОАО “КазПромСиз”</span>
+                        <span class="line">г. Алматы, Аль-Фараби 42б</span>
+                        <span class="line">офис  “Нурлы Тау”, 9 этаж</span>
+                        <span class="line"> </span>
+                        <span class="line">Контакты : +7 702 502 62 85</span>
+                        <span class="line">	              +7 777-122-71-33</span>
+                    </p>
+                </div>
+                <div class="col-md-2 footer-shortcuts">
+                    <a href="#"><img src="assets/img/link_fcb.png" width="15px"></a>
+                    <a href="#"><img src="assets/img/link_vk.png" width="35px"></a>
+                    <a href="#"><img src="assets/img/link_ins.png" width="25px"></a>
+                </div>
+                <p class="footer-copyright">© 2017 ОАО “КазПромСиз”</p>
+            </div>
+        </footer>
     </body>
 </html>
