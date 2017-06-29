@@ -137,6 +137,9 @@
     float: none;
     text-align: center;
   }
+  footer p line br {
+    display: none;
+  }
   footer .footer-copyright {
     width: 100%;
     left: 0;

@@ -247,7 +247,7 @@ circle.active {
 .slider-controller .to-right {
   right: 32px;
 }
-.space-senss {
+.space-sens {
   white-space: pre;
 }
 header {
@@ -478,9 +478,7 @@ footer p {
 footer p line {
   display: block;
 }
-footer p line br {
-  display: none;
-}
+
 footer .footer-shortcuts {
   height: 82px;
   display: inline-block;
