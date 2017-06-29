@@ -7,6 +7,10 @@
     src: url(../fonts/GillSans-Light.ttf);
 }
 @font-face{
+    font-family: 'GillSans-semibold';
+    src: url(../fonts/GillSans-SemiBold.ttf);
+}
+@font-face{
     font-family: 'AvenirNext';
     src: url(../fonts/AvenirNext-Regular.ttf);
 }

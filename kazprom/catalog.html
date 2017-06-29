@@ -1,0 +1,245 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/catalog-page.css">
+        <script src="assets/js/jquery-1.10.2.min.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="header-logo">
+                    <a href="index.html"><img src="assets/img/logo.png"></a>
+                </div>
+                <div class="header-form">
+                    <form class="">
+                        <input type="search" placeholder="Введите название товара">
+                        <button type="submit"></button>
+                    </form>
+                    <div class="phone">
+                        <img src="assets/img/lupe_blue.png"  onmouseup="toggleClass('.header-container','searching')" class="visible-xs-block" height="18px">
+                        <img src="assets/img/phone-call.png" height="18px"><span class="underline-dashed">+7 777-122-71-33</span>
+                    </div>
+                </div>
+            </div>
+            <navbar class="navbar-collapse collapse">
+                <nav class="active dropper">
+                    <a href="catalog.html">КАТАЛОГ</a>
+                    <div class="dropdown-container" id="dropdown-catalog">
+                        <div class="dropdown-xs-compressor">
+                            <a href="catalog.html#protivogaz" class="dropdown-category">
+                                <img src="assets/img/icon1.png">
+                                <img src="assets/img/icon1h.png">
+                                <span>Противогазы</span>
+                            </a>
+                            <a href="catalog.html#respirator" class="dropdown-category">
+                                <img src="assets/img/icon2.png">
+                                <img src="assets/img/icon2h.png">
+                                <span>Респираторы</span>
+                            </a>
+                            <a href="catalog.html#samospasateli" class="dropdown-category">
+                                <img src="assets/img/icon3.png">
+                                <img src="assets/img/icon3h.png">
+                                <span>Самоспасатели</span>
+                            </a>
+                            <a href="catalog.html#kollektivnye" class="dropdown-category">
+                                <img src="assets/img/icon4.png">
+                                <img src="assets/img/icon4h.png">
+                                <span>Коллективные средства защиты</span>
+                            </a>
+                            <a href="catalog.html#aktivnyeugly" class="dropdown-category">
+                                <img src="assets/img/icon5.png">
+                                <img src="assets/img/icon5h.png">
+                                <span>Активные угли</span>
+                            </a>
+                            <a href="catalog.html#Kostyumi" class="dropdown-category">
+                                <img src="assets/img/icon6.png">
+                                <img src="assets/img/icon6h.png">
+                                <span>Костюмы</span>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+                <nav><a href="about.html">О НАС</a></nav>
+                <nav class="dropper" data-toggle="collapse" data-target="#dropdown-buyers">
+                    <a>ПОКУПАТЕЛЯМ</a>
+                    <div class="dropdown-container" id=dropdown-buyers>
+                        <a href="work.html" class="dropdown-element">КАК МЫ РАБОТАЕМ?</a>
+                        <a href="contrafact.html" class="dropdown-element">КОНТРАФАКТ</a>
+                    </div>
+                </nav>
+                <nav><a href="texzadanie.html">ТЕХНИЧЕСКОЕ ЗАДАНИЕ</a></nav>
+                <nav><a href="contacts.html">КОНТАКТЫ</a></nav>
+            </navbar>
+        </header>
+        
+        <section class="catalog-nav-section gray">
+            <div class="catalog-nav-container">
+                <p class="catalog-nav-hierarchy">
+                    <a href="#">Каталог</a>
+                    <a href="#">Противогазы</a>
+                    <a href="#">Промышленные</a>
+                    <a href="#">Комплектующие</a>
+                    <span>Фильтры</span>
+                </p>
+            </div>
+        </section>
+        
+        <section class="gray no-padding">
+            <div class="catalog-container clearfix">
+                <div class="catalog-sidebar">
+                    <div class="category viewed">
+                        <p class="category-title">Противогазы</p>
+                        <div class="category">
+                            <p class="category-title">Гражданские</p>
+                        </div>
+                        <div class="category viewed">
+                            <p class="category-title">Промышленные</p>
+                            <div class="category">
+                                <p class="category-title">Фильтрующие</p>
+                            </div>
+                            <div class="category">
+                                <p class="category-title">Изолирующее</p>
+                            </div>
+                            <div class="category viewed">
+                                <p class="category-title">Комплектующие</p>
+                                <div class="category">
+                                    <p class="type">Лицевые части</p>
+                                </div>
+                                <div class="category viewed">
+                                    <p class="type">Фильтры</p>
+                                </div>
+                                <div class="category">
+                                    <p class="type">Сумки</p>
+                                </div>
+                                <div class="category">
+                                    <p class="type">Прочее</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <p class="category-title">Респираторы</p>
+                    </div>
+                    <div class="category">
+                        <p class="category-title">Самоспачатели</p>
+                    </div>
+                    <div class="category">
+                        <p class="category-title">Коллективные средства защиты</p>
+                    </div>
+                    <div class="category">
+                        <p class="category-title">Активные угли</p>
+                    </div>
+                    <div class="category">
+                        <p class="category-title">Респираторы</p>
+                    </div>
+                </div>    
+                
+                <div class="catalog-list-items">
+                    <div class="catalog-items-hat">
+                        <p>Здесь представлены все виды комплектующих в разделе “Фильтры”</p>
+                    </div>
+                    <div class="catalog-list-item new-item">
+                        <div class="catalog-item-image" style="background-image: url(assets/img/ctl1.png)"></div>
+                        <div class="catalog-item-text">
+                            <p class="catalog-item-title">
+                                Лицевая часть МП-39
+                            </p>
+                            <p class="catalog-item-description">
+                                Панорамное стекло-корпус, силиконовый уплотнитель с двойным обтюратором, клапанная коробка с клапанами вдоха/ выдоха, переговорное устройство, подмасочник с клапанами вдоха, силиконовое оголовье.
+                            </p>
+                        </div>
+                        <span class="catalog-item-date">14.05.2017</span>
+                        <button class="catalog-item-button blue">Узнать больше</button>
+                    </div>
+                    <div class="catalog-list-item ">
+                        <div class="catalog-item-image" style="background-image: url(assets/img/ctl2.png)"></div>
+                        <div class="catalog-item-text">
+                            <p class="catalog-item-title">
+                                Противогаз ЛМП-39
+                            </p>
+                            <p class="catalog-item-description">
+                                Панорамное стекло-корпус, силиконовый уплотнитель с двойным обтюратором, клапанная коробка с клапанами вдоха/ выдоха, переговорное устройство, подмасочник с клапанами вдоха, силиконовое оголовье.
+                            </p>
+                        </div>
+                        <span class="catalog-item-date">12.05.2017</span>
+                        <button class="catalog-item-button blue">Узнать больше</button>
+                    </div>
+                    <div class="catalog-list-item ">
+                        <div class="catalog-item-image" style="background-image: url(assets/img/ctl1.png)"></div>
+                        <div class="catalog-item-text">
+                            <p class="catalog-item-title">
+                                Лицевая часть МП-39
+                            </p>
+                            <p class="catalog-item-description">
+                                Панорамное стекло-корпус, силиконовый уплотнитель с двойным обтюратором, клапанная коробка с клапанами вдоха/ выдоха, переговорное устройство, подмасочник с клапанами вдоха, силиконовое оголовье.
+                            </p>
+                        </div>
+                        <span class="catalog-item-date">11.05.2017</span>
+                        <button class="catalog-item-button blue">Узнать больше</button>
+                    </div>
+
+                </div>
+            </div>
+            
+        </section>
+        
+        
+        <section class="gray"></section>
+        
+        
+        
+        <footer>
+            <div class="footer-container middle">
+                <div class="col-md-4 col-sm-3 col-xs-12 footer-logo">
+                    <img src="assets/img/logo.png" height="50px">
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.034462972473!2d76.94284976551782!3d43.22973708772753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836f1ef0fe3d57%3A0xe470e364ed718086!2z0J3Rg9GA0LvRiyDQotCw0YMgLSAxLCDQv9GA0L7RgdC_0LXQutGCIEHQu9GMLdCk0LDRgNCw0LHQuCwg0JDQu9C80LDRgtGL!5e0!3m2!1sru!2skz!4v1498608740594" width="100%" height="82px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 footer-information">
+                    <p>
+                        <line id="footer-company">
+                            <span class="space-sens">ОАО “КазПромСиз”</span>
+                        </line>
+                        <line class="footer-address">
+                            <span class="space-sens">г. Алматы, Аль-Фараби 42б</span><br>
+                            <span class="space-sens">офис “Нурлы Тау”, 9 этаж</span>
+                        </line>
+                        <br>
+                        <line class="footer-phone">
+                            <span class="space-sens">Контакты : +7 702 502 62 85</span><br>
+                            <span class="space-sens">	              +7 777-122-71-33</span>
+                        </line>
+                    </p>
+                </div>
+                <div class="col-md-2 col-sm-3 col-xs-12 footer-shortcuts">
+                    <a href="#"><img src="assets/img/link_fcb.png" width="15px"></a>
+                    <a href="#"><img src="assets/img/link_vk.png" width="35px"></a>
+                    <a href="#"><img src="assets/img/link_ins.png" width="25px"></a>
+                </div>
+                <p class="footer-copyright">© 2017 ОАО “КазПромСиз”</p>
+            </div>
+        </footer>
+        <script>
+            function toggleClass(elem, className){
+                $(elem).toggleClass(className);
+            };
+            function toggleMyParentsClass(elem, className){
+                console.log($(elem).parent());
+                $(elem).parent().toggleClass(className);
+            }
+            $(document).on('click', ".category-title, .type", function(){
+                toggleMyParentsClass(this, "viewed");
+            });
+        </script>
+    </body>
+</html>
