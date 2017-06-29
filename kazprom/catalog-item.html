@@ -145,58 +145,78 @@
                 </div>    
                 
                 <div class="catalog-window">
-                    <div class="catalog-items-hat">
-                        <p>Здесь представлены все виды комплектующих в разделе “Фильтры”</p>
+                    <div class="item-titles">
+                        <a href="catalog.html" class="lightblue"> <i class="glyphicon glyphicon-chevron-left"></i> Назад к списку </a>
+                        <h5 class="item-title">Лицевая часть МП-39</h5>
                     </div>
-                    <div class="catalog-list-item new-item">
-                        <div class="catalog-item-image" style="background-image: url(assets/img/ctl1.png)"></div>
-                        <div class="catalog-item-text">
-                            <p class="catalog-item-title">
-                                Лицевая часть МП-39
-                            </p>
-                            <p class="catalog-item-description">
-                                Панорамное стекло-корпус, силиконовый уплотнитель с двойным обтюратором, клапанная коробка с клапанами вдоха/ выдоха, переговорное устройство, подмасочник с клапанами вдоха, силиконовое оголовье.
-                            </p>
+                    <div class="catalog-item">
+                        <div class="catalog-item-image" style="background-image: url(assets/img/ctl1.png)">
+                            <img src="assets/img/full.png" onmouseup="toggleClass('popup','viewed')" height="16px">
                         </div>
+                        <div class="item-text">
+                            <h5>Состав</h5><br>
+                            <p class="classic small">
+                                Панорамное стекло-корпус, силиконовый уплотнитель с двойным обтюратором, клапанная коробка с клапанами вдоха/ выдоха, переговорное устройство, подмасочник с клапанами вдоха, силиконовое оголовье.
+                            </p><br>
+                        </div>
+                        <h5>Назначение</h5>
+                        <p class="classic small">
+                            Обеспечивает подачу очищенного воздуха к органам дыхания и одновременную защиту лица и глаз от воздействия вредных веществ.
+                        </p><br>
+                        <h5>Соответствие требованиям стандартов</h5>
+                        <p class="classic small">
+                            ТР ТС 019/2011, ГОСТ 12.4.293-2015 (категория 2), Директивы 89/686/EEC, EN 136 (class 2)
+                        </p><br>
+                        <h5>Гарантийный срок хранения</h5>
+                        <p class="classic small">
+                            10 лет
+                        </p>
                         <span class="catalog-item-date">14.05.2017</span>
-                        <a href="catalog-item.html"><button class="catalog-item-button blue">Узнать больше</button></a>
-                    </div>
-                    <div class="catalog-list-item ">
-                        <div class="catalog-item-image" style="background-image: url(assets/img/ctl2.png)"></div>
-                        <div class="catalog-item-text">
-                            <p class="catalog-item-title">
-                                Противогаз ЛМП-39
-                            </p>
-                            <p class="catalog-item-description">
-                                Панорамное стекло-корпус, силиконовый уплотнитель с двойным обтюратором, клапанная коробка с клапанами вдоха/ выдоха, переговорное устройство, подмасочник с клапанами вдоха, силиконовое оголовье.
-                            </p>
-                        </div>
-                        <span class="catalog-item-date">12.05.2017</span>
-                        <a href="catalog-item.html"><button class="catalog-item-button blue">Узнать больше</button></a>
-                    </div>
-                    <div class="catalog-list-item ">
-                        <div class="catalog-item-image" style="background-image: url(assets/img/ctl1.png)"></div>
-                        <div class="catalog-item-text">
-                            <p class="catalog-item-title">
-                                Лицевая часть МП-39
-                            </p>
-                            <p class="catalog-item-description">
-                                Панорамное стекло-корпус, силиконовый уплотнитель с двойным обтюратором, клапанная коробка с клапанами вдоха/ выдоха, переговорное устройство, подмасочник с клапанами вдоха, силиконовое оголовье.
-                            </p>
-                        </div>
-                        <span class="catalog-item-date">11.05.2017</span>
-                        <a href="catalog-item.html"><button class="catalog-item-button blue">Узнать больше</button></a>
                     </div>
 
                 </div>
+
+                <div class="catalog-window"> 
+                    <div class="padding">
+                        <p class="lightblue">ПОХОЖИЕ ОБЪЯВЛЕНИЯ</p>
+                    </div>
+                    <div class="item-slider">
+                        <div class="slide-container">
+                            <div class="item-image" style="background-image: url(assets/img/ctl1.png)"></div>
+                            <p>Лицевая часть<br>МП-39</p>
+                        </div>
+                        <div class="slide-container">
+                            <div class="item-image" style="background-image: url(assets/img/ctl2.png)"></div>
+                            <p>Панорамная<br>маска МАГ-4</p>
+                        </div>
+                        <div class="slide-container">
+                            <div class="item-image" style="background-image: url(assets/img/ctl3.png)"></div>
+                            <p>Противогаз<br>фильтрующий UNIX</p>
+                        </div>
+                        <div class="slide-container">
+                            <div class="item-image" style="background-image: url(assets/img/ctl1.png)"></div>
+                            <p>Лицевая часть<br>МП-39</p>
+                        </div>
+                    </div>
+                    <div class="slider-controller">
+                        <div class="to-left"><img src="assets/img/left_black.png"></div>
+                        <div class="to-right"><img src="assets/img/right_black.png"></div>
+                    </div>
+                </div>
             </div>
-            
         </section>
-        
         
         <section class="gray"></section>
         
-        
+        <popup>
+            <bg class="closer"></bg>
+            <main>
+                <img src="assets/img/ctl1.png"  class="image">
+                <img src="assets/img/left.png" class="toleft">
+                <img src="assets/img/right.png" class="toright">
+                <img src="assets/img/cancel-music.png" class="closer">
+            </main>
+        </popup>
         
         <footer>
             <div class="footer-container middle">
@@ -240,6 +260,9 @@
             }
             $(document).on('click', ".category-title, .type", function(){
                 toggleMyParentsClass(this, "viewed");
+            });
+            $(document).on('click', 'popup .closer', function(){
+               $('popup').removeClass("viewed"); 
             });
         </script>
     </body>

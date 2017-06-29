@@ -52,6 +52,11 @@ p.classic{
 p.classic.bold{
     font-family: 'GillSans';
 }
+p.classic.small{
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: normal;
+}
 .left {
   display: block;
   float: left;
@@ -515,4 +520,75 @@ footer:after {
 section.darkblue{
     background-color: #2A3946;
     color: #EAEAEB;
+}
+
+h5{
+    font-family: "GillSans-semibold";
+    font-weight: 16px;
+    line-height: 19px;
+    letter-spacing: normal;
+    margin: 0;
+}
+.padding{
+    padding: 5px 12px;
+}
+
+popup{
+    display: none;
+    position: fixed;
+    left: 0;right: 0;
+    bottom: 0; top: 0;
+}
+popup.viewed{
+    display: block;
+}
+popup bg{
+    position: absolute;
+    left: 0;right: 0;
+    bottom: 0; top: 0;
+    cursor: pointer;
+    background: black;
+    opacity: .4;
+}
+popup main{
+    position: absolute;
+    width: 375px;
+    height: 375px;
+    max-width: 90%;
+    background: white;
+    top: 0;left: 0;right: 0;bottom: 0;
+    margin: auto;
+}
+popup main img.toleft{
+    position: absolute;
+    height: 32px;
+    width: 18px;
+    top: 0;
+    margin: auto;
+    bottom: 0;
+    left: -26;
+}
+popup main img.toright{
+    position: absolute;
+    height: 32px;
+    width: 18px;
+    top: 0;
+    margin: auto;
+    bottom: 0;
+    right: -26;
+}
+popup img.closer{
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: -33px;
+    right: -32px;
+}
+popup main{
+    padding: 20px;
+    text-align: center;
+}
+popup img{
+    height: 90%;
+    margin: auto;
 }
