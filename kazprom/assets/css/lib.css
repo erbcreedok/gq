@@ -590,3 +590,6 @@ popup img{
     height: 90%;
     margin: auto;
 }
+.no-underline{
+    text-decoration: none!important;
+}
