@@ -395,6 +395,14 @@
                     $(elem).css('left',active*-100+'%');
                     $($($(elem).attr('circles')).children().removeClass('active')[active]).addClass('active');
                 });
+                var sliderTimeout;
+//                sliderTimeout = setTimeout(nextSlide(),4000);
+                sliderTimeout = setTimeout(function(){nextSlide()},7000);
+                function nextSlide(){
+                    $("#slider .slider-controller .to-right").click();
+                    clearTimeout(sliderTimeout);
+                    sliderTimeout = setTimeout(function(){nextSlide()},7000);
+                }
             })();
         </script>
     </body>
