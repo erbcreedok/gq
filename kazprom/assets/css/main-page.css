@@ -92,7 +92,7 @@
 }
 #slider .slider-controller {
   position: relative;
-  bottom: 0;
+  bottom: 20;
 }
 #slider .slider-controller .to-left,
 #slider .slider-controller .to-right {
@@ -238,9 +238,10 @@
 #hits .slider-controller {
   top: 0;
   bottom: 0;
+    left: 0;
+    right: 0;
   height: 0;
   margin: auto;
-  width: 100%;
   position: absolute;
 }
 #video {

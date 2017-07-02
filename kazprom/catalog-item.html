@@ -185,26 +185,60 @@
                         <p class="lightblue">ПОХОЖИЕ ОБЪЯВЛЕНИЯ</p>
                     </div>
                     <div class="item-slider">
-                        <div class="slide-container">
-                            <div class="item-image" style="background-image: url(assets/img/ctl1.png)"></div>
-                            <p>Лицевая часть<br>МП-39</p>
-                        </div>
-                        <div class="slide-container">
-                            <div class="item-image" style="background-image: url(assets/img/ctl2.png)"></div>
-                            <p>Панорамная<br>маска МАГ-4</p>
-                        </div>
-                        <div class="slide-container">
-                            <div class="item-image" style="background-image: url(assets/img/ctl3.png)"></div>
-                            <p>Противогаз<br>фильтрующий UNIX</p>
-                        </div>
-                        <div class="slide-container">
-                            <div class="item-image" style="background-image: url(assets/img/ctl1.png)"></div>
-                            <p>Лицевая часть<br>МП-39</p>
+                        <div class="item-slide-wrapper" active-slide="0">
+                            <div class="slide-container">
+                                <div class="item-image" style="background-image: url(assets/img/ctl1.png)"></div>
+                                <p>Лицевая часть<br>МП-39</p>
+</div>
+                            <div class="slide-container">
+                                <div class="item-image" style="background-image: url(assets/img/ctl2.png)"></div>
+                                <p>Панорамная<br>маска МАГ-4</p>
+</div>
+                            <div class="slide-container">
+                                <div class="item-image" style="background-image: url(assets/img/ctl3.png)"></div>
+                                <p>Противогаз<br>фильтрующий UNIX</p>
+</div>
+                            <div class="slide-container">
+                                <div class="item-image" style="background-image: url(assets/img/ctl1.png)"></div>
+                                <p>Лицевая часть<br>МП-39</p>
+</div>
+                            <div class="slide-container">
+                                <div class="item-image" style="background-image: url(assets/img/ctl1.png)"></div>
+                                <p>Лицевая часть<br>МП-39</p>
+</div>
+                            <div class="slide-container">
+                                <div class="item-image" style="background-image: url(assets/img/ctl2.png)"></div>
+                                <p>Панорамная<br>маска МАГ-4</p>
+</div>
+                            <div class="slide-container">
+                                <div class="item-image" style="background-image: url(assets/img/ctl3.png)"></div>
+                                <p>Противогаз<br>фильтрующий UNIX</p>
+</div>
+                            <div class="slide-container">
+                                <div class="item-image" style="background-image: url(assets/img/ctl1.png)"></div>
+                                <p>Лицевая часть<br>МП-39</p>
+</div>
+                            <div class="slide-container">
+                                <div class="item-image" style="background-image: url(assets/img/ctl1.png)"></div>
+                                <p>Лицевая часть<br>МП-39</p>
+</div>
+                            <div class="slide-container">
+                                <div class="item-image" style="background-image: url(assets/img/ctl2.png)"></div>
+                                <p>Панорамная<br>маска МАГ-4</p>
+</div>
+                            <div class="slide-container">
+                                <div class="item-image" style="background-image: url(assets/img/ctl3.png)"></div>
+                                <p>Противогаз<br>фильтрующий UNIX</p>
+</div>
+                            <div class="slide-container">
+                                <div class="item-image" style="background-image: url(assets/img/ctl1.png)"></div>
+                                <p>Лицевая часть<br>МП-39</p>
+</div>
                         </div>
                     </div>
                     <div class="slider-controller">
-                        <div class="to-left"><img src="assets/img/left_black.png"></div>
-                        <div class="to-right"><img src="assets/img/right_black.png"></div>
+                        <div target=".item-slide-wrapper" moveto="prev" class="slide-move to-left"><img src="assets/img/left_black.png"></div>
+                        <div target=".item-slide-wrapper" moveto="next" class="slide-move to-right"><img src="assets/img/right_black.png"></div>
                     </div>
                 </div>
             </div>
@@ -268,6 +302,20 @@
             $(document).on('click', 'popup .closer', function(){
                $('popup').removeClass("viewed"); 
             });
+            (function(){
+                $(document).on("click",".slide-move",function(){
+                    var elem = $(this).attr("target");
+                    var elemCount = Math.ceil(parseInt($(elem).children().first().css('width'))/parseInt($(elem).css('width'))*$(elem).children().length);
+                    var active = parseInt($(elem).attr('active-slide'));
+                    var move = $(this).attr("moveto");
+                    if(move==="next")active++;
+                    else if(move==="prev")active--;
+                    else active=parseInt(move);
+                    active=(elemCount+active)%elemCount;
+                    $(elem).attr('active-slide',active);
+                    $(elem).css('left',active*-1*parseInt($(elem).css("width")));
+                });
+            })();
         </script>
     </body>
 </html>

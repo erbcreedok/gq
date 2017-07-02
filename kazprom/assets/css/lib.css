@@ -183,6 +183,7 @@ circle {
   height: 11px;
   border-radius: 5px;
   margin-left: 5px;
+    cursor: pointer;
   border: 2px solid white;
 }
 circle:hover {

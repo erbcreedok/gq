@@ -87,7 +87,7 @@
         </header>
         
         <section id="slider">
-            <div class="slides-wrapper" style="left: 0%">
+            <div id="main-slider" circles="#main-slider-circles" class="slides-wrapper" active-slide="0" style="left: 0%">
                 <div class="slide-container">
                     <div class="slide-image">
                         <img src="assets/img/bg.jpg">
@@ -106,7 +106,7 @@
                 </div>
                 <div class="slide-container">
                     <div class="slide-image">
-                        <img src="assets/img/bg.jpg">
+                        <img src="assets/img/bg1.jpg">
                     </div>
                     <div class="slide-text">
                         <h1>
@@ -120,17 +120,48 @@
                         Подробнее
                     </button>
                 </div>
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="assets/img/bg2.jpg">
+                    </div>
+                    <div class="slide-text">
+                        <h1>
+                            Защитите себя от вредных газов современными средствами защиты
+                        </h1>
+                        <p>
+                            АО “КазПромСиз” является официальным дистрибютором в Казахстане
+                        </p>
+                    </div>
+                    <button class="blue middle">
+                        Подробнее
+                    </button>
+                </div>
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="assets/img/bg3.jpg">
+                    </div>
+                    <div class="slide-text">
+                        <h1>
+                            Защитите себя от вредных газов современными средствами защиты
+                        </h1>
+                        <p>
+                            АО “КазПромСиз” является официальным дистрибютором в Казахстане
+                        </p>
+                    </div>
+                    <button class="blue middle">
+                        Подробнее
+                    </button>
+                </div>
+            </div>
+            <div id="main-slider-circles" class="slider-circles">
+                <circle target="#main-slider" moveto="0" class="slide-move active"></circle>
+                <circle target="#main-slider" moveto="1" class="slide-move "></circle>
+                <circle target="#main-slider" moveto="2" class="slide-move "></circle>
+                <circle target="#main-slider" moveto="3" class="slide-move "></circle>
             </div>
             <div class="slider-controller">
-                <div class="to-left"><img src="assets/img/left.png"></div>
-                <div class="to-right"><img src="assets/img/right.png"></div>
-            </div>
-            <div class="slider-circles">
-                <circle class="active"></circle>
-                <circle></circle>
-                <circle></circle>
-                <circle></circle>
-                <circle></circle>
+                <div target="#main-slider" moveto="prev" class="slide-move to-left"><img src="assets/img/left.png"></div>
+                <div target="#main-slider" moveto="next" class="slide-move to-right"><img src="assets/img/right.png"></div>
             </div>
         </section>
         <section id="catalog" class="gray text-center">
@@ -193,7 +224,7 @@
                 <h2 class="gold">Хиты продаж</h2>
             </div>
             <div class="item-window middle">
-                <items style="left: 0%">
+                <items style="left: 0%" id="hits-slider" active-slide="0" circles="#hits .nav-circles">
                     <item style="background-image: url(assets/img/item1.png)">
                         <div class="item-text">
                             <h1 class="item-title">
@@ -252,15 +283,15 @@
                 </items>
             </div>
             <div class="nav-circles middle">
-                <circle class="active"></circle>
-                <circle></circle>
-                <circle></circle>
-                <circle></circle>
-                <circle></circle>
+                <circle target="#hits-slider" moveto="0" class="slide-move active"></circle>
+                <circle target="#hits-slider" moveto="1" class="slide-move"></circle>
+                <circle target="#hits-slider" moveto="2" class="slide-move"></circle>
+                <circle target="#hits-slider" moveto="3" class="slide-move"></circle>
+                <circle target="#hits-slider" moveto="4" class="slide-move"></circle>
             </div>
             <div class="slider-controller">
-                <div class="to-left"><img src="assets/img/left.png"></div>
-                <div class="to-right"><img src="assets/img/right.png"></div>
+                <div target="#hits-slider" moveto="prev" class="slide-move to-left"><img src="assets/img/left.png"></div>
+                <div target="#hits-slider" moveto="next" class="slide-move to-right"><img src="assets/img/right.png"></div>
             </div>
             
         </section>
@@ -349,6 +380,22 @@
             function toggleClass($elem, $class){
                 $($elem).toggleClass($class);
             };
+            
+            (function(){
+                $(document).on("click",".slide-move",function(){
+                    var elem = $(this).attr("target");
+                    var elemCount = $(elem).children().length;
+                    var active = parseInt($(elem).attr('active-slide'));
+                    var move = $(this).attr("moveto");
+                    if(move==="next")active++;
+                    else if(move==="prev")active--;
+                    else active=parseInt(move);
+                    active=(elemCount+active)%elemCount;
+                    $(elem).attr('active-slide',active);
+                    $(elem).css('left',active*-100+'%');
+                    $($($(elem).attr('circles')).children().removeClass('active')[active]).addClass('active');
+                });
+            })();
         </script>
     </body>
 </html>
