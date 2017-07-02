@@ -382,7 +382,9 @@
             };
             
             (function(){
+                var sliderTimeout;
                 $(document).on("click",".slide-move",function(){
+                    clearTimeout(sliderTimeout);
                     var elem = $(this).attr("target");
                     var elemCount = $(elem).children().length;
                     var active = parseInt($(elem).attr('active-slide'));
@@ -394,14 +396,11 @@
                     $(elem).attr('active-slide',active);
                     $(elem).css('left',active*-100+'%');
                     $($($(elem).attr('circles')).children().removeClass('active')[active]).addClass('active');
+                    sliderTimeout = setTimeout(function(){nextSlide()},7000);
                 });
-                var sliderTimeout;
-//                sliderTimeout = setTimeout(nextSlide(),4000);
                 sliderTimeout = setTimeout(function(){nextSlide()},7000);
                 function nextSlide(){
                     $("#slider .slider-controller .to-right").click();
-                    clearTimeout(sliderTimeout);
-                    sliderTimeout = setTimeout(function(){nextSlide()},7000);
                 }
             })();
         </script>
