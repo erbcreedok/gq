@@ -20,10 +20,10 @@
   #slider {
     height: 444px;
   }
-  #slider .slider-image {
+  #slider .slide-image {
     width: 100%;
   }
-  #slider .slider-image img {
+  #slider .slide-container .slide-image img {
     width: 100%;
     height: auto !important;
   }
