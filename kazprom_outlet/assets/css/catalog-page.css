@@ -12,7 +12,7 @@
     margin: auto;
 }
 .catalog-nav-hierarchy{
-    font-family: 'GillSans';
+    font-family: 'PTSans';
     letter-spacing: -0.8px;
     line-height: 21px;
     font-size: 18px;
@@ -47,23 +47,24 @@
     width: 200px;
     float: left;
     border-collapse: collapse;
-    font-family: "GillSans-light";
+    font-family: "PTSans";
     font-size: 16px;
     letter-spacing: -0.67px;
-    line-height: 18px;
+/*    line-height: 18px;*/
 }
 
 .catalog-sidebar .category{
-    line-height: 40px;
+/*    line-height: 40px;*/
     position: relative;
 }
-.catalog-sidebar .category p{
+.catalog-sidebar .category p, .catalog-sidebar .category a.category-title{
     border-bottom: 1px solid white;
     padding: 11px 23px 11px 31px;
     margin: 0;
+    display: block;
     cursor: pointer;
 }
-.catalog-sidebar .category p.category-title:after{
+.catalog-sidebar .category p.category-title.dropdownable:after, .catalog-sidebar .category a.category-title.dropdownable:after{
     background-image: url(../img/dropper_down.png);
     display: block;
     position: absolute;
@@ -80,26 +81,24 @@
 .catalog-sidebar>.category .category{
     display: none;
 }
-.catalog-sidebar>.category>p{
+.catalog-sidebar>.category>p, .catalog-sidebar>.category>a.category-title{
     background-color: #1C252E;
     color: white;
 }
-.catalog-sidebar>.category>.category>p{
-    background-color: #33475B;
-    color: white;
+.catalog-sidebar>.category>.category>p, .catalog-sidebar>.category>.category>a.category-title{
+    background-color: #C3D7DB;
+    color: #334;
 }
-.catalog-sidebar>.category>.category>.category p{
+.catalog-sidebar>.category>.category>.category p, .catalog-sidebar>.category>.category>.category a.category-title{
     background-color: white;
     color: #414141;
     border-color: #BDBDBD;
 }
-.catalog-sidebar>.category>.category>.category.viewed>p{
-    background-color: #DBDBDB;
-}
+
 .catalog-sidebar .category.viewed>p{
-    color: #019AD6 !important;
+/*    color: #019AD6 !important;*/
 }
-.catalog-sidebar .category.viewed>p.category-title:after{
+.catalog-sidebar .category.viewed>p.category-title.dropdownable:after, .catalog-sidebar .category.viewed>a.category-title.dropdownable:after{
     background-image: url(../img/up.png);
 }
 .catalog-sidebar .category.viewed>.category{
@@ -121,6 +120,10 @@
     left: 0;
     top: 120;
 }
+.catalog-sidebar .category>p.selected, .catalog-sidebar .category>a.category-title.selected{
+    background: #009ad6 !important;
+    color: white !important;
+}
 
 
 .catalog-window{
@@ -137,7 +140,7 @@
     border-bottom: 1px solid #E5E5E5;
 }
 .catalog-items-hat p{
-    font-family: 'GillSans-light';
+    font-family: 'PTSans';
     font-size: 16px;
     letter-spacing: normal;
     line-height: 18px;
@@ -146,6 +149,7 @@
 .catalog-list-item{
     padding: 21px 14px 21px 165px;
     position: relative;
+    min-height: 168px;
 }
 .catalog-list-item:not(:last-child){
     border-bottom: 1px solid #E5E5E5;
@@ -159,11 +163,12 @@
     width: 124px;
     height: 124px;
     border: 1px solid #E0E0E0;
-    background-color: #F5F5F5;
+/*    background-color: #F5F5F5;*/
+    background-color: white;
     position: absolute;
     left: 20;
     background-position: center;
-    background-size: auto 90%;
+    background-size: contain;
     background-repeat: no-repeat;
 }
 .catalog-item-image img{
@@ -186,14 +191,14 @@
     left: -12;
 }
 .catalog-item-title{
-    font-family: 'GillSans-semibold';
+    font-family: 'PTSans';
     font-size: 16px;
     color: #019AD6;
     line-height: 19px;
     letter-spacing: normal;
 }
 .catalog-item-description{
-    font-family: "GillSans-light";
+    font-family: "PTSans";
     font-size: 16px;
     line-height: 18px;
     color: #565656;
@@ -202,7 +207,7 @@
     position: absolute;
     top: 21;
     right: 14;
-    font-family: "GillSans-light";
+    font-family: "PTSans";
     font-size: 14px;
     color: #565656;
 }
@@ -256,7 +261,7 @@
     margin-left: -5px;
     font-size: 12px;
     color: #5a5a5a;
-    font-family: "GillSans-semibold";
+    font-family: "PTSans-Caption";
     line-height: 14px;
     letter-spacing: normal;
     text-align: center;
@@ -280,6 +285,10 @@
 }
 .catalog-window .slider-controller .to-left{
     left: 10;
+}
+
+#ballsWaveG{
+    margin-top: 20px;
 }
 
 /* Tablet sizes */
@@ -397,3 +406,4 @@
         width: 237px;
     }
 }
+

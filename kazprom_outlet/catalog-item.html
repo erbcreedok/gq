@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="assets/css/catalog-page.css">
         <script src="assets/js/jquery-1.10.2.min.js"></script>
         <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/catalog_categories.js"></script>
     </head>
     <body>
         <header>
@@ -90,9 +91,8 @@
                 <p class="catalog-nav-hierarchy">
                     <a href="#">Каталог</a>
                     <a href="#">Противогазы</a>
-                    <a href="#">Промышленные</a>
-                    <a href="#">Комплектующие</a>
-                    <span>Фильтры</span>
+                    <a href="#">Фильтрующие</a>
+                    <span>Гражданские</span>
                 </p>
             </div>
         </section>
@@ -101,52 +101,196 @@
             <div class="catalog-container clearfix">
                 <div class="catalog-sidebar">
                     <div class="catalog-sidebar-toggle" onmouseup="toggleClass('.catalog-sidebar','rolled')"></div>
-                    <div class="category viewed">
-                        <p class="category-title">Противогазы</p>
+                    <div class="category">
+                        <p class="category-title dropdownable">
+                            <a href="catalog.html#protivogazy">Противогазы</a>
+                        </p>
                         <div class="category">
-                            <p class="category-title">Гражданские</p>
+                            <p class="category-title dropdownable">
+                                <a href="catalog.html#protivogazy/filtruyushie">
+                                    Фильтрующие
+                                </a>
+                            </p>
+                            <div class="category">
+                                <a class="category-title" href="catalog.html#protivogazy/filtruyushie/grazhdanskie">
+                                    Гражданскиe
+                                </a>
+                            </div>
+                            <div class="category">
+                                <a href="catalog.html#protivogazy/filtruyushie/promyshlennye" class="category-title">
+                                    Промышленные
+                                </a>
+                            </div>
                         </div>
-                        <div class="category viewed">
-                            <p class="category-title">Промышленные</p>
-                            <div class="category">
-                                <p class="category-title">Фильтрующие</p>
-                            </div>
-                            <div class="category">
-                                <p class="category-title">Изолирующее</p>
-                            </div>
-                            <div class="category viewed">
-                                <p class="category-title">Комплектующие</p>
-                                <div class="category">
-                                    <p class="type">Лицевые части</p>
-                                </div>
-                                <div class="category viewed">
-                                    <p class="type">Фильтры</p>
-                                </div>
-                                <div class="category">
-                                    <p class="type">Сумки</p>
-                                </div>
-                                <div class="category">
-                                    <p class="type">Прочее</p>
-                                </div>
-                            </div>
+                        <div class="category">
+                            <a href="catalog.html#protivogazy/izoliruyushie" class="category-title">
+                                Изолирующие
+                            </a>
                         </div>
                     </div>
                     <div class="category">
-                        <p class="category-title">Респираторы</p>
+                        <p class="category-title dropdownable">
+                            <a href="catalog.html#litsevye_chasti">Лицевые части</a>
+                        </p>
+                        <div class="category">
+                            <a href="catalog.html#litsevye_chasti/panoramnye_maski" class="category-title">Панорамные маски</a>
+                        </div>
+                        <div class="category">
+                            <a href="catalog.html#litsevye_chasti/polumaski" class="category-title">Полумаски</a>
+                        </div>
                     </div>
                     <div class="category">
-                        <p class="category-title">Самоспачатели</p>
+                        <p class="category-title dropdownable">
+                            <a href="catalog.html#filtry_i_komplektuyushie">Фильтры и комплектующие</a>
+                        </p>
+                        <div class="category">
+                            <p class="category-title dropdownable">
+                                <a href="catalog.html#filtry_i_komplektuyushie/filtry">Фильтры</a>
+                            </p>
+                            <div class="category">
+                                <a href="catalog.html#filtry_i_komplektuyushie/filtry/kombinirovannye" class="category-title">Комбинированные</a>
+                            </div>
+                            <div class="category">
+                                <a href="catalog.html#filtry_i_komplektuyushie/filtry/protivoaerozolnye" class="category-title">Противоаэрозольные</a>
+                            </div>
+                            <div class="category">
+                                <a href="catalog.html#filtry_i_komplektuyushie/filtry/protivogazovye" class="category-title">Противогазовые</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <a href="catalog.html#filtry_i_komplektuyushie/sumki" class="category-title">Сумки</a>
+                        </div>
+                        <div class="category">
+                            <a href="catalog.html#filtry_i_komplektuyushie/prochie_komplektuyushie" class="category-title">Прочие комплектующие</a>
+                        </div>
                     </div>
                     <div class="category">
-                        <p class="category-title">Коллективные средства защиты</p>
+                        <p class="category-title dropdownable">
+                            <a href="catalog.html#polumaski_filtruyushie">Полумаски фильтрующие</a>
+                        </p>
+                        <div class="category">
+                            <a href="catalog.html#polumaski_filtruyushie/promyshlennye" class="category-title">Промышленные</a>
+                        </div>
+                        <div class="category">
+                            <a href="catalog.html#polumaski_filtruyushie/grazhdanskie" class="category-title">Гражданские</a>
+                        </div>
+                        <div class="category">
+                            <a href="catalog.html#polumaski_filtruyushie/voennye" class="category-title">Военные</a>
+                        </div>
                     </div>
                     <div class="category">
-                        <p class="category-title">Активные угли</p>
+                        <a href="catalog.html#samospasateli" class="category-title">Самоспасатели</a>
                     </div>
                     <div class="category">
-                        <p class="category-title">Респираторы</p>
+                        <p class="category-title dropdownable">
+                            <a href="catalog.html#drager">Dräger</a>
+                        </p>
+                        <div class="category">
+                            <a href="catalog.html#drager/gazoizmeritelnye_pribory" class="category-title">Газоизмерительные приборы</a>
+                        </div>
+                        <div class="category">
+                            <a href="catalog.html#drager/pribory_dlya_obnaruzheniya_alkogolya_i_narkotikov" class="category-title">Приборы для обнаружения алкоголя и наркотиков</a>
+                        </div>
+                        <div class="category">
+                            <p class="category-title dropdownable">
+                                <a href="catalog.html#drager/sredstva_individualnoy_zashity">Средства индивидуальной защиты</a>
+                            </p>
+                            <div class="category">
+                                <a href="catalog.html#drager/sredstva_individualnoy_zashity/dyhatelnye_apparaty" class="category-title">Дыхательные аппараты</a>
+                            </div>
+                            <div class="category">
+                                <a href="catalog.html#drager/sredstva_individualnoy_zashity/zashita_tela" class="category-title">Защита тела</a>
+                            </div>
+                            <div class="category">
+                                <a href="catalog.html#drager/sredstva_individualnoy_zashity/samospasateli_drager" class="category-title">Самоспасатели Drager</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <a href="catalog.html#drager/teplovizionnye_kamery" class="category-title">Тепловизионные камеры</a>
+                        </div>
                     </div>
-                </div>    
+                    <div class="category">
+                        <p class="category-title dropdownable">
+                            <a href="catalog.html#drugie_siz">Другие СИЗ</a>
+                        </p>
+                        <div class="category">
+                            <p class="category-title dropdownable">
+                                <a href="catalog.html#drugie_siz/siz_glaz">СИЗ глаз</a>
+                            </p>
+                            <div class="category">
+                                <a href="catalog.html#drugie_siz/siz_glaz/ochki_zashitnye_otkrytye" class="category-title">Очки защитные открытые</a>
+                            </div>
+                            <div class="category">
+                                <a href="catalog.html#drugie_siz/siz_glaz/ochki_zashitnye_zakrytye" class="category-title">Очки защитные закрытые</a>
+                            </div>
+                            <div class="category">
+                                <a href="catalog.html#drugie_siz/siz_glaz/ochki_zashitnye_kozyrkovye" class="category-title">Очки защитные козырьковые</a>
+                            </div>
+                            <div class="category">
+                                <a href="catalog.html#drugie_siz/siz_glaz/zashitnye_ochki_ekran" class="category-title">Защитные очки-экран</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <p class="category-title dropdownable">
+                                <a href="catalog.html#drugie_siz/siz_golovy">СИЗ головы</a>
+                            </p>
+                            <div class="category">
+                                <a href="catalog.html#drugie_siz/siz_golovy/kaski_zashitnye" class="category-title">Каски защитные</a>
+                            </div>
+                            <div class="category">
+                                <a href="catalog.html#drugie_siz/siz_golovy/kaski_zashitnye_shahterskie" class="category-title">Каски защитные шахтерские</a>
+                            </div>
+                            <div class="category">
+                                <a href="catalog.html#drugie_siz/siz_golovy/kaski_zashitnye_lyuministsentnye" class="category-title">Каски защитные люминесцентные</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <p class="category-title dropdownable">
+                                <a href="catalog.html#drugie_siz/siz_litsa">СИЗ лица</a>
+                            </p>
+                            <div class="category">
+                                <a href="catalog.html#drugie_siz/siz_litsa/shitki_zashitnye_litsevye" class="category-title">Щитки защитные лицевые</a>
+                            </div>
+                            <div class="category">
+                                <a href="catalog.html#drugie_siz/siz_litsa/zashitnye_litsevye_shitki_svarshika" class="category-title">Защитные лицевые щитки сварщика</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <a href="catalog.html#drugie_siz/siz_organov_sluha" class="category-title">СИЗ органов слуха</a>
+                        </div>
+                        <div class="category">
+                            <p class="category-title dropdownable">
+                                <a href="catalog.html#drugie_siz/siz_ot_padeniya_s_vysoty">СИЗ от падения с высоты</a>
+                            </p>
+                            <div class="category">
+                                <a href="catalog.html#drugie_siz/siz_ot_padeniya_s_vysoty/strahovochnye_i_uderzhivayushie_sistemy" class="category-title">Страховочные и удерживающие системы</a>
+                            </div>
+                            <div class="category">
+                                <a href="catalog.html#drugie_siz/siz_ot_padeniya_s_vysoty/uderzhivayushie_stropy" class="category-title">Удерживающие стропы</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <a href="catalog.html#drugie_siz/siz_ruk" class="category-title">СИЗ рук</a>
+                        </div>
+                        <div class="category">
+                            <p class="category-title dropdownable">
+                                <a href="catalog.html#drugie_siz/siz_tela">СИЗ тела</a>
+                            </p>
+                            <div class="category">
+                                <a href="catalog.html#drugie_siz/siz_tela/zashitnye_kostyumy_himicheskie" class="category-title">Защитные костюмы химические</a>
+                            </div>
+                            <div class="category">
+                                <a href="catalog.html#drugie_siz/siz_tela/zashitnaya_odezhda_filtruyushya" class="category-title">Защитная одежда фильтрующая</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <a href="catalog.html#drugie_siz/sizod_s_prinuditelnoy_podachey_vozduha" class="category-title">СИЗОД с принудительной подачей воздуха</a>
+                        </div>
+                        <div class="category">
+                            <a href="catalog.html#drugie_siz/sredstva_meditsinskoy_zashity" class="category-title">Средства медицинской защиты</a>
+                        </div>
+                    </div>
+                </div>
                 
                 <div class="catalog-window">
                     <div class="item-titles">
@@ -288,6 +432,7 @@
                 <p class="footer-copyright">© 2017 ОАО “КазПромСиз”</p>
             </div>
         </footer>
+        <a class="dg-widget-link" href="http://2gis.kz/astana/firm/70000001023171890/center/71.41544580459596,51.149565226127855/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Астаны</a><div class="dg-widget-link"><a href="http://2gis.kz/astana/center/71.415383,51.149573/zoom/16/routeTab/rsType/bus/to/71.415383,51.149573╎Prime Service?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до Prime Service</a></div><script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script><script charset="utf-8">new DGWidgetLoader({"width":640,"height":600,"borderColor":"#a3a3a3","pos":{"lat":51.149565226127855,"lon":71.41544580459596,"zoom":16},"opt":{"city":"astana"},"org":[{"id":"70000001023171890"}]});</script><noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
         <script>
             function toggleClass(elem, className){
                 $(elem).toggleClass(className);

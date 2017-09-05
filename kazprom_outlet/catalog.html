@@ -6,7 +6,10 @@
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/catalog-page.css">
         <script src="assets/js/jquery-1.10.2.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
         <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/catalog_categories.js"></script>
+        <script src="assets/js/dataload.script.js"></script>
     </head>
     <body>
         <header>
@@ -90,9 +93,8 @@
                 <p class="catalog-nav-hierarchy">
                     <a href="#">Каталог</a>
                     <a href="#">Противогазы</a>
-                    <a href="#">Промышленные</a>
-                    <a href="#">Комплектующие</a>
-                    <span>Фильтры</span>
+                    <a href="#">Фильтрующие</a>
+                    <span>Гражданские</span>
                 </p>
             </div>
         </section>
@@ -101,97 +103,255 @@
             <div class="catalog-container clearfix">
                 <div class="catalog-sidebar">
                     <div class="catalog-sidebar-toggle" onmouseup="toggleClass('.catalog-sidebar','rolled')"></div>
-                    <div class="category viewed">
-                        <p class="category-title">Противогазы</p>
+                    <div class="category">
+                        <p class="category-title dropdownable">
+                            <a href="catalog.html#protivogazy">Противогазы</a>
+                        </p>
                         <div class="category">
-                            <p class="category-title">Гражданские</p>
+                            <p class="category-title dropdownable">
+                                <a href="#protivogazy/filtruyushie">
+                                    Фильтрующие
+                                </a>
+                            </p>
+                            <div class="category">
+                                <a class="category-title" href="#protivogazy/filtruyushie/grazhdanskie">
+                                    Гражданскиe
+                                </a>
+                            </div>
+                            <div class="category">
+                                <a href="#protivogazy/filtruyushie/promyshlennye" class="category-title">
+                                    Промышленные
+                                </a>
+                            </div>
                         </div>
-                        <div class="category viewed">
-                            <p class="category-title">Промышленные</p>
-                            <div class="category">
-                                <p class="category-title">Фильтрующие</p>
-                            </div>
-                            <div class="category">
-                                <p class="category-title">Изолирующее</p>
-                            </div>
-                            <div class="category viewed">
-                                <p class="category-title">Комплектующие</p>
-                                <div class="category">
-                                    <p class="type">Лицевые части</p>
-                                </div>
-                                <div class="category viewed">
-                                    <p class="type">Фильтры</p>
-                                </div>
-                                <div class="category">
-                                    <p class="type">Сумки</p>
-                                </div>
-                                <div class="category">
-                                    <p class="type">Прочее</p>
-                                </div>
-                            </div>
+                        <div class="category">
+                            <a href="#protivogazy/izoliruyushie" class="category-title">
+                                Изолирующие
+                            </a>
                         </div>
                     </div>
                     <div class="category">
-                        <p class="category-title">Респираторы</p>
+                        <p class="category-title dropdownable">
+                            <a href="#litsevye_chasti">Лицевые части</a>
+                        </p>
+                        <div class="category">
+                            <a href="#litsevye_chasti/panoramnye_maski" class="category-title">Панорамные маски</a>
+                        </div>
+                        <div class="category">
+                            <a href="#litsevye_chasti/polumaski" class="category-title">Полумаски</a>
+                        </div>
                     </div>
                     <div class="category">
-                        <p class="category-title">Самоспачатели</p>
+                        <p class="category-title dropdownable">
+                            <a href="#filtry_i_komplektuyushie">Фильтры и комплектующие</a>
+                        </p>
+                        <div class="category">
+                            <p class="category-title dropdownable">
+                                <a href="#filtry_i_komplektuyushie/filtry">Фильтры</a>
+                            </p>
+                            <div class="category">
+                                <a href="#filtry_i_komplektuyushie/filtry/kombinirovannye" class="category-title">Комбинированные</a>
+                            </div>
+                            <div class="category">
+                                <a href="#filtry_i_komplektuyushie/filtry/protivoaerozolnye" class="category-title">Противоаэрозольные</a>
+                            </div>
+                            <div class="category">
+                                <a href="#filtry_i_komplektuyushie/filtry/protivogazovye" class="category-title">Противогазовые</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <a href="#filtry_i_komplektuyushie/sumki" class="category-title">Сумки</a>
+                        </div>
+                        <div class="category">
+                            <a href="#filtry_i_komplektuyushie/prochie_komplektuyushie" class="category-title">Прочие комплектующие</a>
+                        </div>
                     </div>
                     <div class="category">
-                        <p class="category-title">Коллективные средства защиты</p>
+                        <p class="category-title dropdownable">
+                            <a href="#polumaski_filtruyushie">Полумаски фильтрующие</a>
+                        </p>
+                        <div class="category">
+                            <a href="#polumaski_filtruyushie/promyshlennye" class="category-title">Промышленные</a>
+                        </div>
+                        <div class="category">
+                            <a href="#polumaski_filtruyushie/grazhdanskie" class="category-title">Гражданские</a>
+                        </div>
+                        <div class="category">
+                            <a href="#polumaski_filtruyushie/voennye" class="category-title">Военные</a>
+                        </div>
                     </div>
                     <div class="category">
-                        <p class="category-title">Активные угли</p>
+                        <a href="#samospasateli" class="category-title">Самоспасатели</a>
                     </div>
                     <div class="category">
-                        <p class="category-title">Респираторы</p>
+                        <p class="category-title dropdownable">
+                            <a href="#drager">Dräger</a>
+                        </p>
+                        <div class="category">
+                            <a href="#drager/gazoizmeritelnye_pribory" class="category-title">Газоизмерительные приборы</a>
+                        </div>
+                        <div class="category">
+                            <a href="#drager/pribory_dlya_obnaruzheniya_alkogolya_i_narkotikov" class="category-title">Приборы для обнаружения алкоголя и наркотиков</a>
+                        </div>
+                        <div class="category">
+                            <p class="category-title dropdownable">
+                                <a href="#drager/sredstva_individualnoy_zashity">Средства индивидуальной защиты</a>
+                            </p>
+                            <div class="category">
+                                <a href="#drager/sredstva_individualnoy_zashity/dyhatelnye_apparaty" class="category-title">Дыхательные аппараты</a>
+                            </div>
+                            <div class="category">
+                                <a href="#drager/sredstva_individualnoy_zashity/zashita_tela" class="category-title">Защита тела</a>
+                            </div>
+                            <div class="category">
+                                <a href="#drager/sredstva_individualnoy_zashity/samospasateli_drager" class="category-title">Самоспасатели Drager</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <a href="#drager/teplovizionnye_kamery" class="category-title">Тепловизионные камеры</a>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <p class="category-title dropdownable">
+                            <a href="#drugie_siz">Другие СИЗ</a>
+                        </p>
+                        <div class="category">
+                            <p class="category-title dropdownable">
+                                <a href="#drugie_siz/siz_glaz">СИЗ глаз</a>
+                            </p>
+                            <div class="category">
+                                <a href="#drugie_siz/siz_glaz/ochki_zashitnye_otkrytye" class="category-title">Очки защитные открытые</a>
+                            </div>
+                            <div class="category">
+                                <a href="#drugie_siz/siz_glaz/ochki_zashitnye_zakrytye" class="category-title">Очки защитные закрытые</a>
+                            </div>
+                            <div class="category">
+                                <a href="#drugie_siz/siz_glaz/ochki_zashitnye_kozyrkovye" class="category-title">Очки защитные козырьковые</a>
+                            </div>
+                            <div class="category">
+                                <a href="#drugie_siz/siz_glaz/zashitnye_ochki_ekran" class="category-title">Защитные очки-экран</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <p class="category-title dropdownable">
+                                <a href="#drugie_siz/siz_golovy">СИЗ головы</a>
+                            </p>
+                            <div class="category">
+                                <a href="#drugie_siz/siz_golovy/kaski_zashitnye" class="category-title">Каски защитные</a>
+                            </div>
+                            <div class="category">
+                                <a href="#drugie_siz/siz_golovy/kaski_zashitnye_shahterskie" class="category-title">Каски защитные шахтерские</a>
+                            </div>
+                            <div class="category">
+                                <a href="#drugie_siz/siz_golovy/kaski_zashitnye_lyuministsentnye" class="category-title">Каски защитные люминесцентные</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <p class="category-title dropdownable">
+                                <a href="#drugie_siz/siz_litsa">СИЗ лица</a>
+                            </p>
+                            <div class="category">
+                                <a href="#drugie_siz/siz_litsa/shitki_zashitnye_litsevye" class="category-title">Щитки защитные лицевые</a>
+                            </div>
+                            <div class="category">
+                                <a href="#drugie_siz/siz_litsa/zashitnye_litsevye_shitki_svarshika" class="category-title">Защитные лицевые щитки сварщика</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <a href="#drugie_siz/siz_organov_sluha" class="category-title">СИЗ органов слуха</a>
+                        </div>
+                        <div class="category">
+                            <p class="category-title dropdownable">
+                                <a href="#drugie_siz/siz_ot_padeniya_s_vysoty">СИЗ от падения с высоты</a>
+                            </p>
+                            <div class="category">
+                                <a href="#drugie_siz/siz_ot_padeniya_s_vysoty/strahovochnye_i_uderzhivayushie_sistemy" class="category-title">Страховочные и удерживающие системы</a>
+                            </div>
+                            <div class="category">
+                                <a href="#drugie_siz/siz_ot_padeniya_s_vysoty/uderzhivayushie_stropy" class="category-title">Удерживающие стропы</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <a href="#drugie_siz/siz_ruk" class="category-title">СИЗ рук</a>
+                        </div>
+                        <div class="category">
+                            <p class="category-title dropdownable">
+                                <a href="#drugie_siz/siz_tela">СИЗ тела</a>
+                            </p>
+                            <div class="category">
+                                <a href="#drugie_siz/siz_tela/zashitnye_kostyumy_himicheskie" class="category-title">Защитные костюмы химические</a>
+                            </div>
+                            <div class="category">
+                                <a href="#drugie_siz/siz_tela/zashitnaya_odezhda_filtruyushya" class="category-title">Защитная одежда фильтрующая</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <a href="#drugie_siz/sizod_s_prinuditelnoy_podachey_vozduha" class="category-title">СИЗОД с принудительной подачей воздуха</a>
+                        </div>
+                        <div class="category">
+                            <a href="#drugie_siz/sredstva_meditsinskoy_zashity" class="category-title">Средства медицинской защиты</a>
+                        </div>
                     </div>
                 </div>    
                 
                 <div class="catalog-window">
                     <div class="catalog-items-hat">
-                        <p>Здесь представлены все виды комплектующих в разделе “Фильтры”</p>
+                        <p>Здесь представлены все виды комплектующих в разделе "<span class="title-here">Фильтры</span>"</p>
                     </div>
-                    <div class="catalog-list-item new-item">
-                        <div class="catalog-item-image" style="background-image: url(assets/img/ctl1.png)"></div>
-                        <div class="catalog-item-text">
-                            <p class="catalog-item-title">
-                                Лицевая часть МП-39
-                            </p>
-                            <p class="catalog-item-description">
-                                Панорамное стекло-корпус, силиконовый уплотнитель с двойным обтюратором, клапанная коробка с клапанами вдоха/ выдоха, переговорное устройство, подмасочник с клапанами вдоха, силиконовое оголовье.
-                            </p>
+                    <div class="catalog-list">
+                        
+                        <div id="ballsWaveG">
+                            <div id="ballsWaveG_1" class="ballsWaveG"></div>
+                            <div id="ballsWaveG_2" class="ballsWaveG"></div>
+                            <div id="ballsWaveG_3" class="ballsWaveG"></div>
+                            <div id="ballsWaveG_4" class="ballsWaveG"></div>
+                            <div id="ballsWaveG_5" class="ballsWaveG"></div>
+                            <div id="ballsWaveG_6" class="ballsWaveG"></div>
+                            <div id="ballsWaveG_7" class="ballsWaveG"></div>
+                            <div id="ballsWaveG_8" class="ballsWaveG"></div>
                         </div>
-                        <span class="catalog-item-date">14.05.2017</span>
-                        <a href="catalog-item.html"><button class="catalog-item-button blue">Узнать больше</button></a>
-                    </div>
-                    <div class="catalog-list-item ">
-                        <div class="catalog-item-image" style="background-image: url(assets/img/ctl2.png)"></div>
-                        <div class="catalog-item-text">
-                            <p class="catalog-item-title">
-                                Противогаз ЛМП-39
-                            </p>
-                            <p class="catalog-item-description">
-                                Панорамное стекло-корпус, силиконовый уплотнитель с двойным обтюратором, клапанная коробка с клапанами вдоха/ выдоха, переговорное устройство, подмасочник с клапанами вдоха, силиконовое оголовье.
-                            </p>
+<!--
+                        <div class="catalog-list-item new-item">
+                            <div class="catalog-item-image" style="background-image: url(assets/img/ctl1.png)"></div>
+                            <div class="catalog-item-text">
+                                <p class="catalog-item-title">
+                                    Лицевая часть МП-39
+                                </p>
+                                <p class="catalog-item-description">
+                                    Панорамное стекло-корпус, силиконовый уплотнитель с двойным обтюратором, клапанная коробка с клапанами вдоха/ выдоха, переговорное устройство, подмасочник с клапанами вдоха, силиконовое оголовье.
+                                </p>
+                            </div>
+                            <span class="catalog-item-date">14.05.2017</span>
+                            <a href="catalog-item.html"><button class="catalog-item-button blue">Узнать больше</button></a>
                         </div>
-                        <span class="catalog-item-date">12.05.2017</span>
-                        <a href="catalog-item.html"><button class="catalog-item-button blue">Узнать больше</button></a>
-                    </div>
-                    <div class="catalog-list-item ">
-                        <div class="catalog-item-image" style="background-image: url(assets/img/ctl1.png)"></div>
-                        <div class="catalog-item-text">
-                            <p class="catalog-item-title">
-                                Лицевая часть МП-39
-                            </p>
-                            <p class="catalog-item-description">
-                                Панорамное стекло-корпус, силиконовый уплотнитель с двойным обтюратором, клапанная коробка с клапанами вдоха/ выдоха, переговорное устройство, подмасочник с клапанами вдоха, силиконовое оголовье.
-                            </p>
+                        <div class="catalog-list-item ">
+                            <div class="catalog-item-image" style="background-image: url(assets/img/ctl2.png)"></div>
+                            <div class="catalog-item-text">
+                                <p class="catalog-item-title">
+                                    Противогаз ЛМП-39
+                                </p>
+                                <p class="catalog-item-description">
+                                    Панорамное стекло-корпус, силиконовый уплотнитель с двойным обтюратором, клапанная коробка с клапанами вдоха/ выдоха, переговорное устройство, подмасочник с клапанами вдоха, силиконовое оголовье.
+                                </p>
+                            </div>
+                            <span class="catalog-item-date">12.05.2017</span>
+                            <a href="catalog-item.html"><button class="catalog-item-button blue">Узнать больше</button></a>
                         </div>
-                        <span class="catalog-item-date">11.05.2017</span>
-                        <a href="catalog-item.html"><button class="catalog-item-button blue">Узнать больше</button></a>
+                        <div class="catalog-list-item ">
+                            <div class="catalog-item-image" style="background-image: url(assets/img/ctl1.png)"></div>
+                            <div class="catalog-item-text">
+                                <p class="catalog-item-title">
+                                    Лицевая часть МП-39
+                                </p>
+                                <p class="catalog-item-description">
+                                    Панорамное стекло-корпус, силиконовый уплотнитель с двойным обтюратором, клапанная коробка с клапанами вдоха/ выдоха, переговорное устройство, подмасочник с клапанами вдоха, силиконовое оголовье.
+                                </p>
+                            </div>
+                            <span class="catalog-item-date">11.05.2017</span>
+                            <a href="catalog-item.html"><button class="catalog-item-button blue">Узнать больше</button></a>
+                        </div>
+-->
                     </div>
-
                 </div>
             </div>
             
