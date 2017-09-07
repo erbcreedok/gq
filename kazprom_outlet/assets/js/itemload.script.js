@@ -23,7 +23,7 @@ function loadData() {
             for (var i = 1; i < data.description.length; i++) {
                 rawData += '<h5>' + data.description[i].title + '</h5><p class="classic small">' + data.description[i].value + '</p><br>';
             }
-            rawData += '<span class="catalog-item-date">14.05.2017</span></div>';
+            rawData += '<span class="catalog-item-date"></span></div>';
             $("#catalog-item").html(rawData);
             $("#catalog-also-viewed").css("display","block");
         } else {
