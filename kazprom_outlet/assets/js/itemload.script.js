@@ -19,7 +19,7 @@ function loadData() {
         if (data) {
             $(".title-here").html(data.title);
             var rawData = '';
-            rawData += '<div class="item-titles"><a href="catalog.html" class="lightblue"> <i class="glyphicon glyphicon-chevron-left"></i> Назад к списку </a><h5 class="item-title">' + data.title + '</h5></div><div class="catalog-item"><div class="catalog-item-image item-only" style="background-image: url(' + data.images[0] + ')"><img src="assets/img/full.png" onmouseup="toggleClass(\'popup\',\'viewed\')" height="34px"></div><div class="item-text"><h5>' + data.description[0].title + '</h5><br><p class="classic small">' + data.description[0].value + '</p><br></div>';
+            rawData += '<div class="item-titles"><a href="catalog.html' + selectedUrl + '" class="lightblue"> <i class="glyphicon glyphicon-chevron-left"></i> Назад к списку </a><h5 class="item-title">' + data.title + '</h5></div><div class="catalog-item"><div class="catalog-item-image item-only" style="background-image: url(' + data.images[0] + ')"><img src="assets/img/full.png" onmouseup="toggleClass(\'popup\',\'viewed\')" height="34px"></div><div class="item-text"><h5>' + data.description[0].title + '</h5><br><p class="classic small">' + data.description[0].value + '</p><br></div>';
             for (var i = 1; i < data.description.length; i++) {
                 rawData += '<h5>' + data.description[i].title + '</h5><p class="classic small">' + data.description[i].value + '</p><br>';
             }
