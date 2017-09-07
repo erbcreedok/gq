@@ -13,7 +13,7 @@ function loadData() {
     item = {};
     $('#catalog-item').html('<div class="item-titles"><a href="catalog.html" class="lightblue"> <i class="glyphicon glyphicon-chevron-left"></i> Назад к списку </a></div><div id="ballsWaveG"><div id="ballsWaveG_1" class="ballsWaveG"></div><div id="ballsWaveG_2" class="ballsWaveG"></div><div id="ballsWaveG_3" class="ballsWaveG"></div><div id="ballsWaveG_4" class="ballsWaveG"></div><div id="ballsWaveG_5" class="ballsWaveG"></div><div id="ballsWaveG_6" class="ballsWaveG"></div><div id="ballsWaveG_7" class="ballsWaveG"></div><div id="ballsWaveG_8" class="ballsWaveG"></div></div>');
     $("#catalog-also-viewed").css("display","none");
-    $(".title-here").html(selectedId);
+    $(".title-here").html("Загружаем...");
     base.ref('items/' + selectedId).once('value').then(function(snapshot){
         data = snapshot.val();
         $(".title-here").html(data.title);
