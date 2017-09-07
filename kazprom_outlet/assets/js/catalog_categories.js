@@ -89,7 +89,7 @@ function onPageUrlChanged(){
     if(!selectedId) {
         $('p.catalog-nav-hierarchy').append('<span>' + translittedTitles[categoryHierarchy[categoryHierarchy.length-1]] + '</span>');
     } else {
-        $('p.catalog-nav-hierarchy').append('<span>' + selectedId + '</span>');
+        $('p.catalog-nav-hierarchy').append('<span class="title-here">' + selectedId + '</span>');
     }
     $('.title-here').html(translittedTitles[categoryHierarchy[categoryHierarchy.length-1]]);
     loadData();   

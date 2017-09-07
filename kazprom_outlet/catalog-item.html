@@ -6,8 +6,11 @@
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/catalog-page.css">
         <script src="assets/js/jquery-1.10.2.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
         <script src="assets/js/bootstrap.js"></script>
         <script src="assets/js/catalog_categories.js"></script>
+        <script src="assets/js/itemload.script.js"></script>
+        <title class="title-here"></title>
     </head>
     <body>
         <header>
@@ -292,14 +295,14 @@
                     </div>
                 </div>
                 
-                <div class="catalog-window">
+                <div class="catalog-window" id="catalog-item">
                     <div class="item-titles">
                         <a href="catalog.html" class="lightblue"> <i class="glyphicon glyphicon-chevron-left"></i> Назад к списку </a>
                         <h5 class="item-title">Лицевая часть МП-39</h5>
                     </div>
                     <div class="catalog-item">
-                        <div class="catalog-item-image" style="background-image: url(assets/img/ctl1.png)">
-                            <img src="assets/img/full.png" onmouseup="toggleClass('popup','viewed')" height="16px">
+                        <div class="catalog-item-image item-only" style="background-image: url(assets/img/ctl1.png)">
+                            <img src="assets/img/full.png" onmouseup="toggleClass('popup','viewed')" height="34px">
                         </div>
                         <div class="item-text">
                             <h5>Состав</h5><br>
@@ -324,7 +327,7 @@
 
                 </div>
 
-                <div class="catalog-window"> 
+                <div class="catalog-window" id="catalog-also-viewed"> 
                     <div class="padding">
                         <p class="lightblue">ПОХОЖИЕ ОБЪЯВЛЕНИЯ</p>
                     </div>
@@ -432,7 +435,6 @@
                 <p class="footer-copyright">© 2017 ОАО “КазПромСиз”</p>
             </div>
         </footer>
-        <a class="dg-widget-link" href="http://2gis.kz/astana/firm/70000001023171890/center/71.41544580459596,51.149565226127855/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Астаны</a><div class="dg-widget-link"><a href="http://2gis.kz/astana/center/71.415383,51.149573/zoom/16/routeTab/rsType/bus/to/71.415383,51.149573╎Prime Service?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до Prime Service</a></div><script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script><script charset="utf-8">new DGWidgetLoader({"width":640,"height":600,"borderColor":"#a3a3a3","pos":{"lat":51.149565226127855,"lon":71.41544580459596,"zoom":16},"opt":{"city":"astana"},"org":[{"id":"70000001023171890"}]});</script><noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
         <script>
             function toggleClass(elem, className){
                 $(elem).toggleClass(className);
