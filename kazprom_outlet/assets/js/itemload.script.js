@@ -8,7 +8,9 @@ var config = {
   };
 firebase.initializeApp(config);
 var base = firebase.database();
-
+var activeImage = 0;
+var images = [];
+var displayValues = ['none', 'block'];
 function loadData() {
     item = {};
     $('#catalog-item').html('<div class="item-titles"><a href="catalog.html' + selectedUrl + '" class="lightblue"> <i class="glyphicon glyphicon-chevron-left"></i> Назад к списку </a></div><div id="ballsWaveG"><div id="ballsWaveG_1" class="ballsWaveG"></div><div id="ballsWaveG_2" class="ballsWaveG"></div><div id="ballsWaveG_3" class="ballsWaveG"></div><div id="ballsWaveG_4" class="ballsWaveG"></div><div id="ballsWaveG_5" class="ballsWaveG"></div><div id="ballsWaveG_6" class="ballsWaveG"></div><div id="ballsWaveG_7" class="ballsWaveG"></div><div id="ballsWaveG_8" class="ballsWaveG"></div></div>');
@@ -16,6 +18,7 @@ function loadData() {
     $(".title-here").html("Загружаем...");
     base.ref('items/' + selectedId).once('value').then(function(snapshot){
         data = snapshot.val();
+        images = data.images;
         if (data) {
             $(".title-here").html(data.title);
             var rawData = '';
@@ -26,6 +29,9 @@ function loadData() {
             rawData += '<span class="catalog-item-date"></span></div>';
             $("#catalog-item").html(rawData);
             $("#catalog-also-viewed").css("display","block");
+            rawData = '<div class="circle"></div>'.repeat(images.length);
+            $("popup .circles").html(rawData);
+            onPopupImageChanged();
         } else {
             $(".title-here").html("Товар не найден");
             var rawData = '';
@@ -33,4 +39,21 @@ function loadData() {
             $("#catalog-item").html(rawData);
         }
     });
+}
+
+function onPopupImageClicked(value) {
+    activeImage = activeImage + value;
+    if (activeImage < 0) {
+        activeImage = images.length - 1;
+    }
+    activeImage %= images.length;
+    onPopupImageChanged();
+}
+
+function onPopupImageChanged() {
+    $("#image-here").attr("src", images[activeImage]);
+    $("popup .circles .circle").removeClass("active");
+    $("popup .circles .circle:eq(" + activeImage + ")").addClass("active");
+    $("popup .toleft").css('display', displayValues[0 + (activeImage !== 0)]);
+    $("popup .toright").css('display', displayValues[0 + (activeImage !== images.length - 1 )]);
 }

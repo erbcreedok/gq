@@ -296,35 +296,7 @@
                 </div>
                 
                 <div class="catalog-window" id="catalog-item">
-                    <div class="item-titles">
-                        <a href="catalog.html" class="lightblue"> <i class="glyphicon glyphicon-chevron-left"></i> Назад к списку </a>
-                        <h5 class="item-title">Лицевая часть МП-39</h5>
-                    </div>
-                    <div class="catalog-item">
-                        <div class="catalog-item-image item-only" style="background-image: url(assets/img/ctl1.png)">
-                            <img src="assets/img/full.png" onmouseup="toggleClass('popup','viewed')" height="34px">
-                        </div>
-                        <div class="item-text">
-                            <h5>Состав</h5><br>
-                            <p class="classic small">
-                                Панорамное стекло-корпус, силиконовый уплотнитель с двойным обтюратором, клапанная коробка с клапанами вдоха/ выдоха, переговорное устройство, подмасочник с клапанами вдоха, силиконовое оголовье.
-                            </p><br>
-                        </div>
-                        <h5>Назначение</h5>
-                        <p class="classic small">
-                            Обеспечивает подачу очищенного воздуха к органам дыхания и одновременную защиту лица и глаз от воздействия вредных веществ.
-                        </p><br>
-                        <h5>Соответствие требованиям стандартов</h5>
-                        <p class="classic small">
-                            ТР ТС 019/2011, ГОСТ 12.4.293-2015 (категория 2), Директивы 89/686/EEC, EN 136 (class 2)
-                        </p><br>
-                        <h5>Гарантийный срок хранения</h5>
-                        <p class="classic small">
-                            10 лет
-                        </p>
-                        <span class="catalog-item-date">14.05.2017</span>
-                    </div>
-
+                    <div class="item-titles"><a href="catalog.html' + selectedUrl + '" class="lightblue"> <i class="glyphicon glyphicon-chevron-left"></i> Назад к списку </a></div><div id="ballsWaveG"><div id="ballsWaveG_1" class="ballsWaveG"></div><div id="ballsWaveG_2" class="ballsWaveG"></div><div id="ballsWaveG_3" class="ballsWaveG"></div><div id="ballsWaveG_4" class="ballsWaveG"></div><div id="ballsWaveG_5" class="ballsWaveG"></div><div id="ballsWaveG_6" class="ballsWaveG"></div><div id="ballsWaveG_7" class="ballsWaveG"></div><div id="ballsWaveG_8" class="ballsWaveG"></div></div>
                 </div>
 
                 <div class="catalog-window" id="catalog-also-viewed"> 
@@ -396,10 +368,16 @@
         <popup>
             <bg class="closer"></bg>
             <main>
-                <img src="assets/img/ctl1.png"  class="image">
-                <img src="assets/img/left.png" class="toleft">
-                <img src="assets/img/right.png" class="toright">
+                <img id="image-here" src="assets/img/ctl1.png"  class="image">
+                <img src="assets/img/left.png" class="toleft" onclick="onPopupImageClicked(-1)">
+                <img src="assets/img/right.png" class="toright" onclick="onPopupImageClicked(1)">
                 <img src="assets/img/cancel-music.png" class="closer">
+                <div class="circles">
+                    <div class="circle active"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
             </main>
         </popup>
         

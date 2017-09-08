@@ -79,7 +79,7 @@ function onPageUrlChanged(){
     $(selectedElem).parentsUntil('.category').addClass('selected');
     $(selectedElem).parentsUntil('.catalog-sidebar').addClass('viewed');
     
-    $('p.catalog-nav-hierarchy').html('<a href="#">Каталог</a>');
+    $('p.catalog-nav-hierarchy').html('<a href="catalog.html#">Каталог</a>');
     hrefs = 'catalog.html#';
     for (var i = 0; i < categoryHierarchy.length-1; i++) {
         hrefs += categoryHierarchy[i];

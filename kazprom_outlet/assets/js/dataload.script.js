@@ -18,7 +18,7 @@ function loadData() {
         $(".catalog-list").html('');
         for (var item in catalogItems) {
             item = catalogItems[item];
-            $(".catalog-list").append('<div class="catalog-list-item"><div class="catalog-item-image" style="background-image: url(' + item.image + ')"></div><div class="catalog-item-text"><p class="catalog-item-title">' + item.title + '</p><p class="catalog-item-description">' + item.description + '</p></div><span class="catalog-item-date">' + item.timestamp + '</span><a href="catalog-item.html' + selectedUrl + '/id' + item.id + '"><button class="catalog-item-button blue">Узнать больше</button></a></div>');
+            $(".catalog-list").append('<div class="catalog-list-item"><div class="catalog-item-image" style="background-image: url(' + item.image + ')"></div><div class="catalog-item-text"><a href="catalog-item.html' + selectedUrl + '/id' + item.id + '"><p class="catalog-item-title">' + item.title + '</p></a><p class="catalog-item-description">' + item.description + '</p></div><span class="catalog-item-date">' + item.timestamp + '</span><a href="catalog-item.html' + selectedUrl + '/id' + item.id + '"><button class="catalog-item-button blue">Узнать больше</button></a></div>');
         }
     });
 }
