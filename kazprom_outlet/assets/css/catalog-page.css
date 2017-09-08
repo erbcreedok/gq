@@ -400,9 +400,9 @@
     .catalog-item-image{
         width: 100px;
         height: 100px;
-        left: auto;
-        right: 26;
-        top: 45;
+        left: 0;
+        right: 0;
+        margin: auto;
     }
     .catalog-item-date{
         right: 26;
@@ -418,7 +418,7 @@
     }
     
     .item-text{
-        padding: 0px 140px 0px 0px;
+        padding: 280px 0px 0px 0px;
     }
     .item-slider{
         width: 237px;
