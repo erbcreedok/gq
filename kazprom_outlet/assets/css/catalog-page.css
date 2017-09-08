@@ -413,4 +413,12 @@
         width: 237px;
     }
 }
+.catalog-window table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.catalog-window table td{
+    padding: 5px 15px;
+    border: 1px solid #ccc;
+}
 
