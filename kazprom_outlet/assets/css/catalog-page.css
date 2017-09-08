@@ -319,6 +319,10 @@
         width: 356px;
     }
 }
+#image-here{
+    max-height: 100%;
+    max-width: 100%;
+}
 
 /* Mobile sizes */
 @media (max-width: 767px){
