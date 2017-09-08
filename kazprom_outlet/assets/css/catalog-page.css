@@ -298,6 +298,17 @@
     margin-top: 20px;
 }
 
+
+#image-here{
+    max-height: 100%;
+    max-width: 100%;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
 /* Tablet sizes */
 @media (max-width: 992px) and (min-width: 768px) {
     .catalog-nav-container{
@@ -318,10 +329,6 @@
     .item-slider{
         width: 356px;
     }
-}
-#image-here{
-    max-height: 100%;
-    max-width: 100%;
 }
 
 /* Mobile sizes */
