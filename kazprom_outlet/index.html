@@ -37,7 +37,7 @@
             </div>
             <navbar class="navbar-collapse collapse">
                 <nav class="dropper">
-                    <a href="catalog.html">КАТАЛОГ</a>
+                    <a href="#">КАТАЛОГ</a>
                     <div class="dropdown-container" id="dropdown-catalog">
                         <div class="dropdown-xs-compressor">
                             <a href="catalog.html#protivogazy" class="dropdown-category">
@@ -79,7 +79,7 @@
                     </div>
                 </nav>
                 <nav><a href="about.html">О НАС</a></nav>
-                <nav class="dropper" data-toggle="collapse" data-target="#dropdown-buyers">
+                <nav class="dropper" data-target="#dropdown-buyers">
                     <a>ПОКУПАТЕЛЯМ</a>
                     <div class="dropdown-container" id=dropdown-buyers>
                         <a href="work.html" class="dropdown-element">КАК МЫ РАБОТАЕМ?</a>
@@ -89,6 +89,20 @@
                 <nav><a href="texzadanie.html">ТЕХНИЧЕСКОЕ ЗАДАНИЕ</a></nav>
                 <nav><a href="contacts.html">КОНТАКТЫ</a></nav>
             </navbar>
+            <script>
+                (function() {
+                    $(document).on('click','nav',function(){
+                        if ($(this).hasClass("pressed")) {
+                            console.log("pressed");
+                            $("nav").removeClass("pressed");
+                        } else {
+                            console.log("not pressed");
+                            $("nav").removeClass("pressed");
+                            $(this).addClass("pressed");    
+                        }
+                    });
+                })()
+            </script>
         </header>
         
         <section id="slider">
@@ -383,6 +397,7 @@
         </footer>
         <script>
             function toggleClass($elem, $class){
+                console.log($elem, $class);
                 $($elem).toggleClass($class);
             };
             
