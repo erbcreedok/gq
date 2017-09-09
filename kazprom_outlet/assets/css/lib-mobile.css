@@ -77,6 +77,9 @@
     height: auto;
     border-bottom: 1px solid white;
   }
+    header navbar nav.active:after{
+        height: 0px;
+    }
   header navbar nav .dropdown-container {
     display: none;
     width: 100%;
