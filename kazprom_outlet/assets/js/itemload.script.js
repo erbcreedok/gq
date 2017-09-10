@@ -1,10 +1,10 @@
 var config = {
-    apiKey: "AIzaSyDbJxxFkSwYdaL1xFLpYBHWAeMoHWte1Ug",
-    authDomain: "protivogaz-50cea.firebaseapp.com",
-    databaseURL: "https://protivogaz-50cea.firebaseio.com",
-    projectId: "protivogaz-50cea",
-    storageBucket: "protivogaz-50cea.appspot.com",
-    messagingSenderId: "951990760643"
+    apiKey: "AIzaSyATr7_mNah0VdQ3VFhQQ01UfIrft2PAONg",
+    authDomain: "kazpromsiz-6abc6.firebaseapp.com",
+    databaseURL: "https://kazpromsiz-6abc6.firebaseio.com",
+    projectId: "kazpromsiz-6abc6",
+    storageBucket: "kazpromsiz-6abc6.appspot.com",
+    messagingSenderId: "260998673766"
   };
 firebase.initializeApp(config);
 var base = firebase.database();
