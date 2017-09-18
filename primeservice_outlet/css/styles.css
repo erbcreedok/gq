@@ -24,7 +24,7 @@ Base
 *    user zoom. */
 
 @font-face{
-    font-family: Intro;
+    font-family: 'Intro';
     src: url(../assets/intro.ttf);
 }
 
@@ -51,7 +51,7 @@ Typography
 /* * Addresses font sizes and margins set differently in IE 6/7.
 * Addresses font sizes within `section` and `article` in Firefox 4+, Safari 5, * and Chrome. */
 h1, h2, h3, h4, h5, h6 {
-    font-family: Intro;
+    font-family: 'Intro';
 }
 h1 { font-size: 2em; margin: 0.67em 0; color: #353535; }
 h2 { font-size: 1.5em; margin: 0.83em 0; }
