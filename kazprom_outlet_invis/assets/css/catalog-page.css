@@ -308,7 +308,7 @@
 
 .catalog-item-images {
     position: absolute;
-    left: 30px;
+    left: 10px;
     padding: 0px 20px;
     margin-top: 260px;
     width: 280px;
@@ -474,6 +474,7 @@
         left: 20px;
     }
     .catalog-item-images {
+        left: 30px;
         right: 30px;
         margin: 260px auto 0px;
     }
