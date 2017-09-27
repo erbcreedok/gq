@@ -1,0 +1,31 @@
+#hero-bg-animation svg{
+    position: absolute;
+    bottom: -60px;
+}
+#hero-bg-animation svg image {
+    opacity: 0;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+#hero-bg-animation svg image#whiteroom {
+    animation-name: fadeIn;
+    animation-delay: 500ms;
+}
+#hero-bg-animation svg image#window-battery {
+    animation-name: fadeIn;
+    animation-delay: 1500ms;
+}
+#hero-bg-animation svg image#chair-lamp {
+    animation-name: fadeIn;
+    animation-delay: 1800ms;
+}
+#hero-bg-animation svg image#table-panel {
+    animation-name: fadeIn;
+    animation-delay: 2100ms;
+}
+#hero-bg-animation svg image#sofa {
+    animation-name: fadeIn;
+    animation-delay: 2500ms;
+}

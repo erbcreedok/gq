@@ -1,0 +1,42 @@
+@font-face{
+    font-family: 'GillSans';
+    src: url(../fonts/GillSans.ttf);
+}
+@font-face{
+    font-family: 'GillSans-light';
+    src: url(../fonts/GillSans-Light.ttf);
+}
+@font-face{
+    font-family: 'GillSans-semibold';
+    src: url(../fonts/GillSans-SemiBold.ttf);
+}
+@font-face{
+    font-family: 'AvenirNext';
+    src: url(../fonts/AvenirNext-Regular.ttf);
+}
+@font-face{
+    font-family: 'AvenirNext-Medium';
+    src: url(../fonts/AvenirNext-Medium.ttf);
+}
+@font-face{
+    font-family: Raleway;
+    font-weight: 600;
+    src: url(../fonts/Raleway-SemiBold.ttf);
+}
+@font-face{
+    font-family: 'PTSans';
+    font-weight: 600;
+    src: url(../fonts/PTSans-Regular.ttf);
+}
+@font-face{
+    font-family: 'PTSans-Caption';
+    src: url(../fonts/PTSans-Caption.ttf);
+}
+@font-face{
+    font-family: 'PTSans-Bold';
+    src: url(../fonts/PTSans-Bold.ttf);
+}
+@font-face{
+    font-family: 'PTSans-Narrow';
+    src: url(../fonts/PTSans-Narrow.ttf);
+}

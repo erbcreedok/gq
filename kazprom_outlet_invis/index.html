@@ -1,0 +1,428 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/main-page.css">
+        <script src="assets/js/jquery-1.10.2.min.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+    </head>
+    <body>
+        
+        <header>
+            <div class="header-container">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="header-logo">
+                    <a href="index.html"><img src="assets/img/logo.png"></a>
+                </div>
+                <div class="header-form">
+                    <form class="">
+                        <input type="search" placeholder="Введите название товара">
+                        <button type="submit"></button>
+                    </form>
+                    <div class="phone">
+                        <img src="assets/img/lupe_blue.png"  onmouseup="toggleClass('.header-container','searching')" class="visible-xs-block" height="18px">
+                        <a href="tel:+77771227133" class="no-underline">
+                            <img src="assets/img/phone-call.png" height="18px">
+                            <span class="underline-dashed">+7 777-122-71-33</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <navbar class="navbar-collapse collapse">
+                <nav class="dropper">
+                    <a href="#">КАТАЛОГ</a>
+                    <div class="dropdown-container" id="dropdown-catalog">
+                        <div class="dropdown-xs-compressor">
+                            <a href="catalog.html#protivogazy" class="dropdown-category">
+                                <img src="assets/img/icon1.png">
+                                <img src="assets/img/icon1h.png">
+                                <span>Противогазы</span>
+                            </a>
+                            <a href="catalog.html#litsevye_chasti" class="dropdown-category">
+                                <img src="assets/img/icon2.png">
+                                <img src="assets/img/icon2h.png">
+                                <span>Лицевые части</span>
+                            </a>
+                            <a href="catalog.html#filtry_i_komplektuyushie" class="dropdown-category">
+                                <img src="assets/img/icon7.png">
+                                <img src="assets/img/icon7h.png">
+                                <span>Фильтры и комплектующие</span>
+                            </a>
+                            <a href="catalog.html#polumaski_filtruyushie" class="dropdown-category">
+                                <img src="assets/img/icon8.png">
+                                <img src="assets/img/icon8h.png">
+                                <span>Полумаски фильтрующие</span>
+                            </a>
+                            <a href="catalog.html#samospasateli" class="dropdown-category">
+                                <img src="assets/img/icon3.png">
+                                <img src="assets/img/icon3h.png">
+                                <span>Самоспасатели</span>
+                            </a>
+                            <a href="catalog.html#drager" class="dropdown-category">
+                                <img src="assets/img/icon9.png">
+                                <img src="assets/img/icon9h.png">
+                                <span>Dräger</span>
+                            </a>
+                            <a href="catalog.html#drugie_siz" class="dropdown-category">
+                                <img src="assets/img/icon6.png">
+                                <img src="assets/img/icon6h.png">
+                                <span>Другие СИЗ</span>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+                <nav><a href="about.html">О НАС</a></nav>
+                <nav class="dropper" data-target="#dropdown-buyers">
+                    <a>ПОКУПАТЕЛЯМ</a>
+                    <div class="dropdown-container" id=dropdown-buyers>
+                        <a href="work.html" class="dropdown-element">КАК МЫ РАБОТАЕМ?</a>
+                        <a href="contrafact.html" class="dropdown-element">КОНТРАФАКТ</a>
+                    </div>
+                </nav>
+                <nav><a href="texzadanie.html">ТЕХНИЧЕСКОЕ ЗАДАНИЕ</a></nav>
+                <nav><a href="contacts.html">КОНТАКТЫ</a></nav>
+            </navbar>
+            <script>
+                (function() {
+                    $(document).on('click','nav',function(){
+                        if ($(this).hasClass("pressed")) {
+                            console.log("pressed");
+                            $("nav").removeClass("pressed");
+                        } else {
+                            console.log("not pressed");
+                            $("nav").removeClass("pressed");
+                            $(this).addClass("pressed");    
+                        }
+                    });
+                })()
+            </script>
+        </header>
+        
+        <section id="slider">
+            <div id="main-slider" circles="#main-slider-circles" class="slides-wrapper" active-slide="0" style="left: 0%">
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="assets/img/bg.jpg">
+                    </div>
+                    <div class="slide-text">
+                        <h1>
+                            Защитите себя от вредных газов современными средствами защиты
+                        </h1>
+                        <p>
+                            АО “КазПромСиз” является официальным дистрибютором в Казахстане
+                        </p>
+                    </div>
+                    <button class="blue middle">
+                        Подробнее
+                    </button>
+                </div>
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="assets/img/bg1.jpg">
+                    </div>
+                    <div class="slide-text">
+                        <h1>
+                            Защитите себя от вредных газов современными средствами защиты
+                        </h1>
+                        <p>
+                            АО “КазПромСиз” является официальным дистрибютором в Казахстане
+                        </p>
+                    </div>
+                    <button class="blue middle">
+                        Подробнее
+                    </button>
+                </div>
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="assets/img/bg2.jpg">
+                    </div>
+                    <div class="slide-text">
+                        <h1>
+                            Защитите себя от вредных газов современными средствами защиты
+                        </h1>
+                        <p>
+                            АО “КазПромСиз” является официальным дистрибютором в Казахстане
+                        </p>
+                    </div>
+                    <button class="blue middle">
+                        Подробнее
+                    </button>
+                </div>
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="assets/img/bg3.jpg">
+                    </div>
+                    <div class="slide-text">
+                        <h1>
+                            Защитите себя от вредных газов современными средствами защиты
+                        </h1>
+                        <p>
+                            АО “КазПромСиз” является официальным дистрибютором в Казахстане
+                        </p>
+                    </div>
+                    <button class="blue middle">
+                        Подробнее
+                    </button>
+                </div>
+            </div>
+            <div id="main-slider-circles" class="slider-circles">
+                <circle target="#main-slider" moveto="0" class="slide-move active"></circle>
+                <circle target="#main-slider" moveto="1" class="slide-move "></circle>
+                <circle target="#main-slider" moveto="2" class="slide-move "></circle>
+                <circle target="#main-slider" moveto="3" class="slide-move "></circle>
+            </div>
+            <div class="slider-controller">
+                <div target="#main-slider" moveto="prev" class="slide-move to-left"><img src="assets/img/left.png"></div>
+                <div target="#main-slider" moveto="next" class="slide-move to-right"><img src="assets/img/right.png"></div>
+            </div>
+        </section>
+        <section id="catalog" class="gray text-center">
+            <h2 class="lightblue">
+                Каталог
+            </h2>
+            <p class="subtitle middle">
+                Здесь представлены все высокотехнологичные системы для индивидуальной защиты
+            </p>
+            <items class="middle text-center">
+                <item>
+                    <img src="assets/img/i1.png">
+                    <p>Противогазы</p>
+                </item>
+                <item>
+                    <img src="assets/img/i2.png">
+                    <p>Респираторы</p>
+                </item>
+                <item>
+                    <img src="assets/img/i3.png">
+                    <p>Самоспасатели</p>
+                </item>
+                <item>
+                    <img src="assets/img/i4.png">
+                    <p>Коллективные средства защиты</p>
+                </item>
+                <item>
+                    <img src="assets/img/i5.png">
+                    <p>Активные угли</p>
+                </item>
+                <item>
+                    <img src="assets/img/i6.png">
+                    <p>Костюмы</p>
+                </item>
+                
+                
+            </items>
+        </section>
+        <section id="sponsors" class="text-center">
+            <h2 class="darkblue middle">
+                АО “КазПромСиз” является <span class="lightblue">официальным дистрибютором в Казахстане</span> производителей средств защиты:
+            </h2>
+            <items>
+                <item>
+                    <img src="assets/img/sp1.png" height="32px">
+                    <p>АО “Сорбент”</p>
+                </item>
+                <item>
+                    <img src="assets/img/sp2.png" height="55px">
+                    <p>ООО “Спецпромзащита”</p>
+                </item>
+                <item>
+                    <img src="assets/img/sp3.png" height="40px">
+                    <p>АО “Тамбовмаш”</p>
+                </item>
+            </items>
+        </section>
+        <section id="hits" class="lightblue">
+            <div class="section-header middle">
+                <h2 class="gold">Хиты продаж</h2>
+            </div>
+            <div class="item-window middle">
+                <items style="left: 0%" id="hits-slider" active-slide="0" circles="#hits .nav-circles">
+                    <item style="background-image: url(assets/img/item1.png)">
+                        <div class="item-text">
+                            <h1 class="item-title">
+                                Панорамная маска DM-02
+                            </h1>
+                            <p class="item-description">
+                                Предназначен для защиты органов дыхания, лица и глаз человека от паро- и газообразных вредных веществ и аэрозолей (пыль, дым, туман).
+                            </p>
+                            <button type="button">Узнать больше</button>
+                        </div>
+                    </item>
+                    <item style="background-image: url(assets/img/item1.png)">
+                        <div class="item-text">
+                            <h1 class="item-title">
+                                Панорамная маска DM-02
+                            </h1>
+                            <p class="item-description">
+                                Предназначен для защиты органов дыхания, лица и глаз человека от паро- и газообразных вредных веществ и аэрозолей (пыль, дым, туман).
+                            </p>
+                            <button type="button">Узнать больше</button>
+                        </div>
+                    </item>
+                    <item style="background-image: url(assets/img/item1.png)">
+                        <div class="item-text">
+                            <h1 class="item-title">
+                                Панорамная маска DM-02
+                            </h1>
+                            <p class="item-description">
+                                Предназначен для защиты органов дыхания, лица и глаз человека от паро- и газообразных вредных веществ и аэрозолей (пыль, дым, туман).
+                            </p>
+                            <button type="button">Узнать больше</button>
+                        </div>
+                    </item>
+                    <item style="background-image: url(assets/img/item1.png)">
+                        <div class="item-text">
+                            <h1 class="item-title">
+                                Панорамная маска DM-02
+                            </h1>
+                            <p class="item-description">
+                                Предназначен для защиты органов дыхания, лица и глаз человека от паро- и газообразных вредных веществ и аэрозолей (пыль, дым, туман).
+                            </p>
+                            <button type="button">Узнать больше</button>
+                        </div>
+                    </item>
+                    <item style="background-image: url(assets/img/item1.png)">
+                        <div class="item-text">
+                            <h1 class="item-title">
+                                Панорамная маска DM-02
+                            </h1>
+                            <p class="item-description">
+                                Предназначен для защиты органов дыхания, лица и глаз человека от паро- и газообразных вредных веществ и аэрозолей (пыль, дым, туман).
+                            </p>
+                            <button type="button">Узнать больше</button>
+                        </div>
+                    </item>
+                </items>
+            </div>
+            <div class="nav-circles middle">
+                <circle target="#hits-slider" moveto="0" class="slide-move active"></circle>
+                <circle target="#hits-slider" moveto="1" class="slide-move"></circle>
+                <circle target="#hits-slider" moveto="2" class="slide-move"></circle>
+                <circle target="#hits-slider" moveto="3" class="slide-move"></circle>
+                <circle target="#hits-slider" moveto="4" class="slide-move"></circle>
+            </div>
+            <div class="slider-controller">
+                <div target="#hits-slider" moveto="prev" class="slide-move to-left"><img src="assets/img/left.png"></div>
+                <div target="#hits-slider" moveto="next" class="slide-move to-right"><img src="assets/img/right.png"></div>
+            </div>
+            
+        </section>
+        <section id="video">
+            <div class="section-container">
+                <div class="video-iframe no-padding">
+                    <iframe width="482" height="274" src="https://www.youtube.com/embed/BjuMmggtMb0" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-text">
+                    <h2>ЗАЩИТА. ПРОСТОТА. НАДЕЖНОСТЬ.</h2>
+                    <p class="light">Подробный обзор продукции и правила использования на примере противогаза Unics.</p>
+                </div>
+            </div>
+        </section>
+        <section id="feedback">
+            <h2 class="middle text-center">Остались вопросы?</h2>
+            <p class="middle text-center light"><span class="lightblue">Оставьте заявку</span> и наши менеджера перезвонят Вам в ближайшее время</p>
+            <form class="middle">
+                <div class="form-input">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" name="name" placeholder="Имя">
+                </div>
+                <div class="form-input">
+                    <label for="email">Ваш адрес почты</label>
+                    <input type="email" name="email" placeholder="пример@gmail.com">
+                </div>
+                <div class="form-input">
+                    <label for="phone">Ваш номер телефона</label>
+                    <input type="tel" name="phone" placeholder="+7 777 777 77 77">
+                </div>
+                <div class="form-submit">
+                    <button class="blue middle" type="submit">Оставить заявку</button>
+                </div>
+            </form>
+        </section>
+        <section id="clients" class="gray">
+            <div class="section-header middle">
+                <h2 class="">Наши клиенты</h2>
+            </div>
+            <div class="clients-list middle row">
+                <div class="client-logo"><img src="assets/img/cl1.png" ></div>
+                <div class="client-logo"><img src="assets/img/cl2.png" ></div>
+                <div class="client-logo"><img src="assets/img/cl3.png" ></div>
+                <div class="client-logo"><img src="assets/img/cl4.png" ></div>
+                <div class="client-logo"><img src="assets/img/cl5.png" ></div>
+                <div class="client-logo"><img src="assets/img/cl6.png" ></div>
+                <div class="client-logo"><img src="assets/img/cl7.png" ></div>
+                <div class="client-logo"><img src="assets/img/cl8.png" ></div>
+                <div class="client-logo"><img src="assets/img/cl9.png" ></div>
+                <div class="client-logo"><img src="assets/img/cl10.png"></div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-container middle">
+                <div class="col-md-4 col-sm-3 col-xs-12 footer-logo">
+                    <img src="assets/img/logo.png" height="50px">
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.034462972473!2d76.94284976551782!3d43.22973708772753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836f1ef0fe3d57%3A0xe470e364ed718086!2z0J3Rg9GA0LvRiyDQotCw0YMgLSAxLCDQv9GA0L7RgdC_0LXQutGCIEHQu9GMLdCk0LDRgNCw0LHQuCwg0JDQu9C80LDRgtGL!5e0!3m2!1sru!2skz!4v1498608740594" width="100%" height="82px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 footer-information">
+                    <p>
+                        <line id="footer-company">
+                            <span class="space-sens">ОАО “КазПромСиз”</span>
+                        </line>
+                        <line class="footer-address">
+                            <span class="space-sens">г. Алматы, Аль-Фараби 42б</span><br>
+                            <span class="space-sens">офис “Нурлы Тау”, 9 этаж</span>
+                        </line>
+                        <br>
+                        <line class="footer-phone">
+                            <span class="space-sens">Контакты : +7 702 502 62 85</span><br>
+                            <span class="space-sens">	              +7 777-122-71-33</span>
+                        </line>
+                    </p>
+                </div>
+                <div class="col-md-2 col-sm-3 col-xs-12 footer-shortcuts">
+                    <a href="#"><img src="assets/img/link_fcb.png" width="15px"></a>
+                    <a href="#"><img src="assets/img/link_vk.png" width="35px"></a>
+                    <a href="#"><img src="assets/img/link_ins.png" width="25px"></a>
+                </div>
+                <p class="footer-copyright">© 2017 ОАО “КазПромСиз”</p>
+            </div>
+        </footer>
+        <script>
+            function toggleClass($elem, $class){
+                console.log($elem, $class);
+                $($elem).toggleClass($class);
+            };
+            
+            (function(){
+                var sliderTimeout;
+                $(document).on("click",".slide-move",function(){
+                    clearTimeout(sliderTimeout);
+                    var elem = $(this).attr("target");
+                    var elemCount = $(elem).children().length;
+                    var active = parseInt($(elem).attr('active-slide'));
+                    var move = $(this).attr("moveto");
+                    if(move==="next")active++;
+                    else if(move==="prev")active--;
+                    else active=parseInt(move);
+                    active=(elemCount+active)%elemCount;
+                    $(elem).attr('active-slide',active);
+                    $(elem).css('left',active*-100+'%');
+                    $($($(elem).attr('circles')).children().removeClass('active')[active]).addClass('active');
+                    sliderTimeout = setTimeout(function(){nextSlide()},7000);
+                });
+                sliderTimeout = setTimeout(function(){nextSlide()},7000);
+                function nextSlide(){
+                    $("#slider .slider-controller .to-right").click();
+                }
+            })();
+        </script>
+    </body>
+</html>

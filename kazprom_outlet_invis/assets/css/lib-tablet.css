@@ -1,0 +1,18 @@
+@media (max-width: 924px) and (min-width: 768px) {
+  header .header-container {
+    width: 655px;
+  }
+  header .header-container .header-logo {
+    width: 175px;
+  }
+  header .header-container .header-form form {
+    margin-right: 50px;
+  }
+    
+    .wrapper{
+        width: 648px;
+    }
+    .wrapper.big{
+        width: 648px;
+    }
+}
