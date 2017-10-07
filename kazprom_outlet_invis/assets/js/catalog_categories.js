@@ -48,6 +48,11 @@ var translittedTitles = {
     zashitnaya_odezhda_filtruyushya: "Защитная одежда фильтрующая",
     sizod_s_prinuditelnoy_podachey_vozduha: "СИЗОД с принудительной подачей воздуха",
     sredstva_meditsinskoy_zashity: "Средства медицинской защиты",
+    aktivnye_ugli: "Активные угли",
+    kostyumy: "Костюмы",
+    na_drevesnoi_osnove: "На древесной основе",
+    na_kamennougolnoi_osnove: "На каменноугольной основе",
+    na_kokosovoi_osnove: "На кокосовой основе",
 }
 
 $(document).ready(function() {

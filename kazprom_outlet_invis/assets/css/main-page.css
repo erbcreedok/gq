@@ -172,7 +172,7 @@
   position: relative;
   margin: 20px auto 22px;
   display: block;
-  width: 532px;
+  width: 565px;
   overflow: hidden;
 }
 #hits items {
@@ -195,7 +195,7 @@
   background-position: 0% 50%;
   background-size: 225px auto;
   background-repeat: no-repeat;
-  padding-left: 205px;
+  padding-left: 225px;
   padding-top: 41px;
   overflow: hidden;
 }
@@ -305,7 +305,7 @@
 #clients .clients-list .client-logo {
   display: inline-block;
   width: 20%;
-  height: 50px;
+  height: 75px;
   text-align: center;
   margin: 20px 0px 0px;
 }
