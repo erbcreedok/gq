@@ -1,0 +1,62 @@
+body 
+    background white
+    font-family 'Lato'
+
+.upper
+    text-transform uppercase;
+    letter-spacing 0.05rem
+
+h1
+    font-size: 31px;
+    font-weight bold;
+.nav
+    font-size: 12px;
+    a
+        color white
+        position: relative;
+        text-shadow: 0px 2px 5px rgba(0,0,0,0.62)
+        &:hover
+            color white - #050510;
+        &:before
+            height 3px
+            max-width 0%
+            background-color #FFB44F
+            content ""
+            position absolute
+            top 0px
+            left 20px
+            right 20px
+            margin auto
+            trans_time = 200ms;
+            -webkit-transition: trans_time
+            -moz-transition: trans_time
+            -ms-transition: trans_time
+            -o-transition: trans_time
+            transition: trans_time
+        &.active:before, &:hover:before
+            max-width 100%
+
+#navbar-brand img
+    margin-top 15px
+
+p
+    line-height 1;
+p.big
+    font-size 21px;
+.btn
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border none;
+    font-size 13px
+    padding: 14px 64px;
+    cursor: pointer;
+
+.btn-primary
+    background-color #b88d5a;
+    &:hover {
+        background-color #b88d5a - #222;
+    }
+
+
+
