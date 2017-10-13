@@ -157,7 +157,7 @@
 #workers .arrows {
   position: absolute;
   top: 0;
-  bottom: 0;
+  bottom: 60px;
   right: 50px;
   left: 50px;
   height: 40px;
