@@ -79,3 +79,110 @@
 #history {
   margin-top: -100px;
 }
+#icons {
+  padding: 60px 0px;
+}
+#icons img {
+  vertical-align: bottom;
+}
+#icons .icon-container {
+  display: inline-block;
+  height: 30px;
+  vertical-align: bottom;
+}
+#catalog {
+  background-image: url("../images/texture.jpg");
+  color: #fff;
+  padding: 60px 0px;
+  -webkit-box-shadow: inset 0 -60px 30px -30px #fff;
+  -moz-box-shadow: inset 0 -60px 30px -30px #fff;
+  box-shadow: inset 0 -60px 30px -30px #fff;
+  text-shadow: 0px 1px 5px rgba(0,0,0,0.5);
+}
+#catalog .door-container {
+  cursor: pointer;
+  padding: 0px 5px;
+  height: 350px;
+  width: 12.5%;
+}
+#catalog .door-container .door-image {
+  height: 274px;
+  width: 115px;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.2);
+  -webkit-transition: 170ms;
+  -moz-transition: 170ms;
+  -ms-transition: 170ms;
+  -o-transition: 170ms;
+  transition: 170ms;
+}
+#catalog .door-container .door-image img {
+  vertical-align: bottom;
+  width: 100%;
+}
+#catalog .door-container:hover .door-image {
+  height: 285px;
+  width: 120px;
+  margin-top: -11px;
+  margin-bottom: 0px;
+  -webkit-box-shadow: 0px 2px 15px 8px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 2px 15px 8px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 15px 8px rgba(0,0,0,0.2);
+}
+#catalog:after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 60px;
+}
+#dop-tovary {
+  margin-top: -60px;
+}
+#dop-tovary .image-container {
+  width: 110px;
+  height: 72px;
+  -webkit-box-shadow: inset 0 0 9px 1px rgba(0,0,0,0.07);
+  -moz-box-shadow: inset 0 0 9px 1px rgba(0,0,0,0.07);
+  box-shadow: inset 0 0 9px 1px rgba(0,0,0,0.07);
+}
+#workers {
+  margin-top: 130px;
+}
+#workers .container {
+  position: relative;
+}
+#workers .arrows {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 50px;
+  left: 50px;
+  height: 40px;
+  margin: auto;
+  font-size: 40px;
+}
+#workers .arrows i {
+  cursor: pointer;
+  opacity: 0.5;
+}
+#workers .arrows i:hover {
+  opacity: 0.8;
+}
+.circles {
+  color: #e1e1e1;
+  margin: 40px 0px;
+}
+.circles i {
+  margin: 0px 5px;
+  font-size: 10px;
+  cursor: pointer;
+}
+.circles i:hover {
+  color: #bfbfbf;
+}
+.circles i.active {
+  color: #b88d5a;
+}
