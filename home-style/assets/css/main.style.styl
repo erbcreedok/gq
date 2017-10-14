@@ -280,3 +280,71 @@ footer
         margin: -1px 0px 0px -3px;
     }
 
+
+
+
+@keyframes fadeout {
+    0%{opacity: 1}
+    100%{opacity: 0}
+}
+@keyframes fadein {
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
+@keyframes fadeout-left {
+    0%{
+        opacity: 1;
+        margin-left: 0px;
+    }
+    100%{
+        opacity: 0;
+        margin-left: -50px;
+    }
+}
+@keyframes fadein-left {
+    0%{
+        opacity: 0;
+        margin-left: 50px;
+    }
+    100%{
+        opacity: 1;
+        margin-left: 0px;
+    }
+}
+@keyframes fadeout-right {
+    0%{
+        opacity: 1;
+        margin-left: 0px;
+    }
+    100%{
+        opacity: 0;
+        margin-left: 50px;
+    }
+}
+@keyframes fadein-right {
+    0%{
+        opacity: 0;
+        margin-left: -50px;
+    }
+    100%{
+        opacity: 1;
+        margin-left: 0px;
+    }
+}
+
+.door-slider-out-left {
+    animation fadeout-left 150ms ease-out;
+    animation-fill-mode: both;
+}
+.door-slider-in-left {
+    animation fadein-left 150ms ease-in;
+    animation-fill-mode: both;
+}
+.door-slider-out-right {
+    animation fadeout-right 150ms ease-out;
+    animation-fill-mode: both;
+}
+.door-slider-in-right {
+    animation fadein-right 150ms ease-in;
+    animation-fill-mode: both;
+}
