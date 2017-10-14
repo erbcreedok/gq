@@ -186,3 +186,85 @@
 .circles i.active {
   color: #b88d5a;
 }
+#information {
+  background-image: url("../images/bgblur.jpg");
+  background-size: cover;
+  background-position: center;
+  -webkit-box-shadow: inset 0 -60px 30px -30px #fff, inset 0 60px 30px -30px #fff;
+  -moz-box-shadow: inset 0 -60px 30px -30px #fff, inset 0 60px 30px -30px #fff;
+  box-shadow: inset 0 -60px 30px -30px #fff, inset 0 60px 30px -30px #fff;
+}
+#information .map-container {
+  margin-bottom: -5px;
+}
+#information .contacts {
+  overflow: auto;
+  background-color: #676666;
+}
+#information .contacts p.bordered {
+  border: 2px solid #505050;
+}
+#information .contacts p.bordered a {
+  color: #fff;
+}
+#information .contacts p.bordered a:hover {
+  color: #ddd;
+  text-decoration: none;
+}
+#news .item {
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.11);
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.11);
+  box-shadow: 0 0 5px rgba(0,0,0,0.11);
+  -webkit-transition: all 150ms;
+  -moz-transition: all 150ms;
+  -ms-transition: all 150ms;
+  -o-transition: all 150ms;
+  transition: all 150ms;
+  padding: 7px 7px 41px 7px;
+  position: relative;
+  cursor: default;
+}
+#news .item:hover {
+  margin-top: -5px;
+  -webkit-box-shadow: 0 5px 9px rgba(0,0,0,0.09);
+  -moz-box-shadow: 0 5px 9px rgba(0,0,0,0.09);
+  box-shadow: 0 5px 9px rgba(0,0,0,0.09);
+}
+#news .item .image-container {
+  position: relative;
+}
+#news .item .arrow {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  height: 12px;
+}
+#news .item .arrow img {
+  height: 12px;
+  opacity: 0.4;
+}
+#news .item .arrow:hover img {
+  opacity: 0.6;
+}
+#news .item .calendar {
+  position: absolute;
+  background-color: #fff;
+  top: 10px;
+  right: 10px;
+  width: 44px;
+  height: 54px;
+  padding: 5px;
+}
+#news .item .calendar span {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+}
+#news .item .calendar span.month {
+  color: #000;
+  font-size: 12px;
+}
+#news .item .calendar span.day {
+  color: #b88d5a;
+  font-size: 19px;
+}

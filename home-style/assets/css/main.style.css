@@ -79,6 +79,9 @@ p.big {
 p.small {
   font-size: 11px;
 }
+p.smaller {
+  font-size: 10px;
+}
 .btn {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
@@ -98,6 +101,13 @@ p.small {
   line-height: 22px;
   width: 110px;
   height: 22px;
+}
+.btn.long {
+  font-size: 11px;
+  padding: 0px;
+  width: 300px;
+  height: 33px;
+  line-height: 33px;
 }
 .btn-primary {
   background-color: #b88d5a;
@@ -188,6 +198,9 @@ p.small {
 .grey {
   color: #898989;
 }
+.white {
+  color: #fff;
+}
 .flex-110 {
   -ms-flex: 0 0 110px;
   flex: 0 0 110px;
@@ -196,6 +209,54 @@ p.small {
 .w-320 {
   width: 320px;
 }
+.h-310 {
+  height: 310px;
+}
+.w-250 {
+  width: 250px;
+}
 .w-185 {
   width: 185px;
+}
+.h-148 {
+  height: 148px;
+}
+.horizontal-line {
+  display: block;
+}
+.input-group {
+  display: block;
+  border: none;
+  border-bottom: 1px solid #ebebeb;
+  padding: 10px;
+  outline: none;
+  -webkit-transition: all 150ms;
+  -moz-transition: all 150ms;
+  -ms-transition: all 150ms;
+  -o-transition: all 150ms;
+  transition: all 150ms;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.input-group:focus {
+  border-color: #b88d5a;
+}
+.input-group.untouched {
+  color: #aaa;
+}
+select.input-group {
+  background-image: url("../images/down.png");
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+select.input-group:focus {
+  background-image: url("../images/up.png");
+}
+.bg-shadow {
+  background-color: rgba(0,0,0,0.4);
 }
