@@ -33,6 +33,9 @@ h4 {
 h5 {
   font-size: 17px;
 }
+h5.smaller {
+  font-size: 14px;
+}
 h6 {
   font-size: 10.5px;
 }
@@ -259,4 +262,35 @@ select.input-group:focus {
 }
 .bg-shadow {
   background-color: rgba(0,0,0,0.4);
+}
+footer {
+  background-color: #000;
+}
+footer a {
+  color: #fff;
+}
+footer a:hover {
+  color: #ddd;
+}
+footer form {
+  margin: 15px 0px;
+}
+footer input {
+  width: 242px;
+  height: 28px;
+  background-color: #1b1b1b;
+  margin: 0;
+  padding: 0px 5px;
+  color: #fff;
+  outline: none;
+}
+footer input:placeholder {
+  color: #fefefe;
+}
+footer button.btn.btn-primary {
+  width: 80px;
+  height: 28px;
+  padding: 0;
+  line-height: 28px;
+  margin: -1px 0px 0px -3px;
 }
