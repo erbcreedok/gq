@@ -281,7 +281,7 @@ footer form {
   margin: 15px 0px;
 }
 footer input {
-  width: 242px;
+  width: 200px;
   height: 28px;
   background-color: #1b1b1b;
   margin: 0;
@@ -315,6 +315,11 @@ footer button.btn.btn-primary {
   animation: fadein-right 150ms ease-in;
   animation-fill-mode: both;
 }
+@media (min-width: 768px) {
+  footer input {
+    width: 189px;
+  }
+}
 @media (min-width: 992px) {
   nav {
     background-color: transparent;
@@ -341,6 +346,9 @@ footer button.btn.btn-primary {
     -ms-transition: 200ms;
     -o-transition: 200ms;
     transition: 200ms;
+  }
+  footer input {
+    width: 250px;
   }
 }
 @-moz-keyframes fadeout {
