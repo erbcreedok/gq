@@ -33,30 +33,32 @@ h5.smaller
 h6
     font-size 10.5px;
 
-.nav
+header
+    top 0;
+
+nav
     font-size: 12px;
-    a
+    background-color black;
+    .navbar-toggler {
+        border: none;
+        background: #b88d5a;
+        border-radius: 0px;
+        padding: 0.5rem 0.75rem;
+        color: #fff;
+        cursor: pointer;
+        &:hover {
+            background: #b88d5a - #222;
+        }
+    }
+    a.nav-link
         color white
         position: relative;
         text-shadow: 0px 2px 5px rgba(0,0,0,0.62)
         &:hover
             color white - #050510;
-        &:before
-            height 3px
-            max-width 0%
-            background-color #FFB44F
-            content ""
-            position absolute
-            top 0px
-            left 20px
-            right 20px
-            margin auto
-            trans_time = 200ms;
-            -webkit-transition: trans_time
-            -moz-transition: trans_time
-            -ms-transition: trans_time
-            -o-transition: trans_time
-            transition: trans_time
+        &.active {
+            color: #FFB44F;
+        }
         &.active:before, &:hover:before
             max-width 100%
 
@@ -71,6 +73,11 @@ p.small
     font-size 11px;
 p.smaller
     font-size 10px;
+
+.container {
+    overflow: hidden;
+    position: relative;
+}
 
 .btn
     -webkit-border-radius: 0px;
@@ -139,7 +146,6 @@ p.smaller
         display inline-block
 
 .box
-    width 846px
     background-color white
     box-shadow 0px 3px 15px 0px rgba(0,0,0,.17)
     padding 10px
@@ -331,6 +337,16 @@ footer
         margin-left: 0px;
     }
 }
+@keyframes background-left {
+    0% {
+        background-position-x: 50%;
+    }
+    100% {
+        background-position-x: 85%;
+    }
+
+}
+
 
 .door-slider-out-left {
     animation fadeout-left 150ms ease-out;
@@ -347,4 +363,50 @@ footer
 .door-slider-in-right {
     animation fadein-right 150ms ease-in;
     animation-fill-mode: both;
+}
+
+
+@media (min-width: 576px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    nav {
+        background-color transparent;
+        padding 0px !important;
+        .navbar-nav {
+            margin-top -5px;
+        }
+        a.nav-link.active {
+            color: white
+        }
+        a.nav-link:before {
+            height 3px
+            max-width 0%
+            background-color #FFB44F
+            content ""
+            position absolute
+            top 0px
+            left 20px
+            right 20px
+            margin auto
+            trans_time = 200ms;
+            -webkit-transition: trans_time
+            -moz-transition: trans_time
+            -ms-transition: trans_time
+            -o-transition: trans_time
+            transition: trans_time
+        }
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
 }

@@ -39,35 +39,37 @@ h5.smaller {
 h6 {
   font-size: 10.5px;
 }
-.nav {
-  font-size: 12px;
+header {
+  top: 0;
 }
-.nav a {
+nav {
+  font-size: 12px;
+  background-color: #000;
+}
+nav .navbar-toggler {
+  border: none;
+  background: #b88d5a;
+  border-radius: 0px;
+  padding: 0.5rem 0.75rem;
+  color: #fff;
+  cursor: pointer;
+}
+nav .navbar-toggler:hover {
+  background: #966b38;
+}
+nav a.nav-link {
   color: #fff;
   position: relative;
   text-shadow: 0px 2px 5px rgba(0,0,0,0.62);
 }
-.nav a:hover {
+nav a.nav-link:hover {
   color: #fafaef;
 }
-.nav a:before {
-  height: 3px;
-  max-width: 0%;
-  background-color: #ffb44f;
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: 20px;
-  right: 20px;
-  margin: auto;
-  -webkit-transition: 200ms;
-  -moz-transition: 200ms;
-  -ms-transition: 200ms;
-  -o-transition: 200ms;
-  transition: 200ms;
+nav a.nav-link.active {
+  color: #ffb44f;
 }
-.nav a.active:before,
-.nav a:hover:before {
+nav a.nav-link.active:before,
+nav a.nav-link:hover:before {
   max-width: 100%;
 }
 #navbar-brand img {
@@ -84,6 +86,10 @@ p.small {
 }
 p.smaller {
   font-size: 10px;
+}
+.container {
+  overflow: hidden;
+  position: relative;
 }
 .btn {
   -webkit-border-radius: 0px;
@@ -161,7 +167,6 @@ p.smaller {
   display: inline-block;
 }
 .box {
-  width: 846px;
   background-color: #fff;
   box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.17);
   padding: 10px;
@@ -309,6 +314,34 @@ footer button.btn.btn-primary {
 .door-slider-in-right {
   animation: fadein-right 150ms ease-in;
   animation-fill-mode: both;
+}
+@media (min-width: 992px) {
+  nav {
+    background-color: transparent;
+    padding: 0px !important;
+  }
+  nav .navbar-nav {
+    margin-top: -5px;
+  }
+  nav a.nav-link.active {
+    color: #fff;
+  }
+  nav a.nav-link:before {
+    height: 3px;
+    max-width: 0%;
+    background-color: #ffb44f;
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    right: 20px;
+    margin: auto;
+    -webkit-transition: 200ms;
+    -moz-transition: 200ms;
+    -ms-transition: 200ms;
+    -o-transition: 200ms;
+    transition: 200ms;
+  }
 }
 @-moz-keyframes fadeout {
   0% {
@@ -532,5 +565,37 @@ footer button.btn.btn-primary {
   100% {
     opacity: 1;
     margin-left: 0px;
+  }
+}
+@-moz-keyframes background-left {
+  0% {
+    background-position-x: 50%;
+  }
+  100% {
+    background-position-x: 85%;
+  }
+}
+@-webkit-keyframes background-left {
+  0% {
+    background-position-x: 50%;
+  }
+  100% {
+    background-position-x: 85%;
+  }
+}
+@-o-keyframes background-left {
+  0% {
+    background-position-x: 50%;
+  }
+  100% {
+    background-position-x: 85%;
+  }
+}
+@keyframes background-left {
+  0% {
+    background-position-x: 50%;
+  }
+  100% {
+    background-position-x: 85%;
   }
 }

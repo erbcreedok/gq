@@ -28,7 +28,7 @@
     </head>
     <body>
         <div class="container-fluid" id="top-header">
-            <div class="col-12">
+            <div class="col-12 d-none d-md-block">
                 <div class="row">
                     <div class="col-6">
                         <div class="row float-left">
@@ -82,42 +82,69 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12 d-md-none">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row float-left">
+                            <p>
+                                <a href="#search">
+                                    <i class="fa fa-search"></i>
+                                </a>
+                            </p>
+                            <div class="vertical-line"></div>
+                            <p>
+                                <a href="#signin">
+                                    <i class="fa fa-sign-in"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row float-right text-right">
+                            <p>
+                                <a href="tel: +77076060070"><i class="fa fa-phone" style="vertical-align: middle;"></i> <span>+7 (707) 606-00-70</span></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <section id="main">
-            <header class="container clearfix">
-                <div class="float-left" id="navbar-brand">
-                    <a href="#">
-                        <img src="assets/images/logo.png" height="30px">
-                    </a>
-                </div>
+            <header>
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container">
+                        <a class="navbar-brand float-left" href="#">
+                            <img src="assets/images/logo.png" class="d-none d-lg-block" height="30px">
+                            <img src="assets/images/logo-white.png" class="d-block d-lg-none" height="30px">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fa fa-bars"></i>
+                        </button>
 
-                <div class="navbar-collapse float-right" id="navbarSupportedContent">
-                    <ul class="nav float-right justify-content-end">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active">Главная страница</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">О компании</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Каталог</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Наши работы</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Где купить</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Отзывы</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!--<button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
-                    <!--<span class="navbar-toggler-icon"> hello </span>-->
-                <!--</button>-->
-
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link active">Главная страница</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">О компании</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Каталог</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Наши работы</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Где купить</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Отзывы</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
             </header>
 
             <div class="container">
@@ -128,7 +155,7 @@
                     <br>
                     <button class="btn btn-primary big">ПОДРОБНЕЕ</button>
                 </div>
-                <div id="door-container">
+                <div id="door-container" class="d-none d-lg-block">
                     <img src="assets/images/door_shadow.png" class="door-slider" id="door-shadow">
                     <img src="assets/images/door.jpg" class=" door-slider doorActiveHere" id="door-image">
                     <div id="door-information">
@@ -149,30 +176,30 @@
         </section>
 
         <section id="history">
-            <div class="box mx-auto">
-                <div class="row">
-                    <div class="col-md-7 clearfix">
-                        <div style="height: 270px; width: 120px; margin-right: 10px; background-image: url(assets/images/door1.jpg)" class="float-left image-container">
+            <div class="container">
+                <div class="col-md-10 px-4 mx-auto">
+                    <div class="row box px-0">
+                        <div class="col-md-7 clearfix">
+                            <div style="background-image: url(assets/images/door1.jpg)" class="image-history image-history-1 float-left image-container"></div>
+                            <div style="background-image: url(assets/images/door2.jpg)" class="image-history image-history-2 float-left image-container"></div>
                         </div>
-                        <div style="height: 270px; width: 300px; background-image: url(assets/images/door2.jpg)" class="float-left image-container">
+                        <div class="col-md-5 my-auto">
+                            <h2>Наша история</h2>
+                            <p class="cursive grey indent">Как мы начинали</p>
+                            <div class="gap"></div>
+                            <p class="gray mb-5" style="">Разрешите приветствовать Вас от имени компании «HomeStyle Distribution» с пожеланиями благополучия и процветания!Мы предлагаем Вам продукцию производства одного из самых известных российских</p>
                         </div>
+                        <img class="box-arrow" src="assets/images/right-arrow.png" >
                     </div>
-                    <div class="col-md-5 my-auto">
-                        <h2>Наша история</h2>
-                        <p class="cursive grey indent">Как мы начинали</p>
-                        <div class="gap"></div>
-                        <p class="gray" style="width: 260px">Разрешите приветствовать Вас от имени компании «HomeStyle Distribution» с пожеланиями благополучия и процветания!Мы предлагаем Вам продукцию производства одного из самых известных российских</p>
-                    </div>
-                    <img class="box-arrow" src="assets/images/right-arrow.png" >
                 </div>
+                <p class="col-md-8 col-10 mx-auto my-4 text-center grey">Почему имено мы спросите вы? Наша компания успешно обслtуживала такие компаниие выфв выаы выаыывы знаю что написть пусть это сделает Рахима  Ведь она таaкая клева и шикарная</p>
             </div>
-            <p class="col-6 mx-auto my-4 text-center grey">Почему имено мы спросите вы? Наша компания успешно обслtуживала такие компаниие выфв выаы выаыывы знаю что написть пусть это сделает Рахима  Ведь она таaкая клева и шикарная</p>
         </section>
 
         <section id="icons">
             <div class="col-md-6 mx-auto text-center">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-6 mb-5 mb-md-1">
                         <div class="icon-container">
                             <img src="assets/images/truck.png" height="23px">
                         </div>
@@ -180,7 +207,7 @@
                         <h4>Сервис</h4>
                         <p class="gray">Бесплатная доставка и установка</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-6 mb-5 mb-md-1">
                         <div class="icon-container">
                             <img src="assets/images/like.png" height="29px">
                         </div>
@@ -188,7 +215,7 @@
                         <h4>Качество</h4>
                         <p class="gray">Бесплатная доставка и установка</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-6 mb-5 mb-md-1">
                         <div class="icon-container">
                             <img src="assets/images/money.png" height="29px">
                         </div>
@@ -196,7 +223,7 @@
                         <h4>Кредит</h4>
                         <p class="gray">Бесплатная доставка и установка</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-6 mb-5 mb-md-1">
                         <div class="icon-container">
                             <img src="assets/images/speech-bubble.png" height="28px">
                         </div>
@@ -215,9 +242,9 @@
                 <p class="text-center col-md-8 mx-auto">Почему имено мы спросите вы? Наша компания успешно обслtуживала такие компаниие выфв выаы выаыывы
                     знаю что написть пусть это сделает Рахима  Ведь она таaкая клева и шикарная</p>
                 <div></div><br>
-                <div class="row">
+                <div class="row justify-content-around">
                     <div class="door-container text-center">
-                        <div class="door-image mx-auto">
+                        <div class="door-image">
                             <img src="assets/images/doorU.jpg">
                         </div>
                         <div class="gap"></div><div class="gap"></div><div class="gap"></div>
@@ -227,7 +254,7 @@
                         <br><br>
                     </div>
                     <div class="door-container text-center">
-                        <div class="door-image mx-auto">
+                        <div class="door-image">
                             <img src="assets/images/doorL.png">
                         </div>
                         <div class="gap"></div><div class="gap"></div><div class="gap"></div>
@@ -237,7 +264,7 @@
                         <br><br>
                     </div>
                     <div class="door-container text-center">
-                        <div class="door-image mx-auto">
+                        <div class="door-image ">
                             <img src="assets/images/doorX.jpg">
                         </div>
                         <div class="gap"></div><div class="gap"></div><div class="gap"></div>
@@ -247,7 +274,7 @@
                         <br><br>
                     </div>
                     <div class="door-container text-center">
-                        <div class="door-image mx-auto">
+                        <div class="door-image ">
                             <img src="assets/images/doorE.jpg">
                         </div>
                         <div class="gap"></div><div class="gap"></div><div class="gap"></div>
@@ -257,7 +284,7 @@
                         <br><br>
                     </div>
                     <div class="door-container text-center">
-                        <div class="door-image mx-auto">
+                        <div class="door-image ">
                             <img src="assets/images/doorZ.jpg">
                         </div>
                         <div class="gap"></div><div class="gap"></div><div class="gap"></div>
@@ -267,7 +294,7 @@
                         <br><br>
                     </div>
                     <div class="door-container text-center">
-                        <div class="door-image mx-auto">
+                        <div class="door-image ">
                             <img src="assets/images/doorD.jpg">
                         </div>
                         <div class="gap"></div><div class="gap"></div><div class="gap"></div>
@@ -277,7 +304,7 @@
                         <br><br>
                     </div>
                     <div class="door-container text-center">
-                        <div class="door-image mx-auto">
+                        <div class="door-image ">
                             <img src="assets/images/doorVG.jpg">
                         </div>
                         <div class="gap"></div><div class="gap"></div><div class="gap"></div>
@@ -287,7 +314,7 @@
                         <br><br>
                     </div>
                     <div class="door-container text-center">
-                        <div class="door-image mx-auto">
+                        <div class="door-image ">
                             <img src="assets/images/doorXcl.jpg">
                         </div>
                         <div class="gap"></div><div class="gap"></div><div class="gap"></div>
@@ -301,67 +328,71 @@
         </section>
 
         <section id="dop-tovary">
-            <div class="box mx-auto">
-                <div class="col-12">
-                    <div class="row text-center">
-                        <div class="col-md-8 mx-auto">
-                            <br>
-                            <p class="cursive grey mb-1">Что еще можно у купить</p>
-                            <h2 class="mt-0 mb-2">Дополнительные товары</h2>
-                            <p class="gray">Разрешите приветствовать Вас от имени компании «HomeStyle Distribution» с пожеланиями благополучия и процветания!Мы предлагаем Вам проa</p>
+            <div class="container">
+                <div class="col-md-10 px-4 pb-5 mx-auto">
+                    <div class="row box px-0">
+                        <div class="col-12">
+                            <div class="row text-center">
+                                <div class="col-md-8 mx-auto">
+                                    <br>
+                                    <p class="cursive grey mb-1">Что еще можно у купить</p>
+                                    <h2 class="mt-0 mb-2">Дополнительные товары</h2>
+                                    <p class="gray">Разрешите приветствовать Вас от имени компании «HomeStyle Distribution» с пожеланиями благополучия и процветания!Мы предлагаем Вам проa</p>
+                                </div>
+                            </div>
+                            <div class="gap"></div><div class="gap"></div><div class="gap"></div>
+                            <div class="row">
+                                <div class="col-md-8 row mx-auto justify-content-around">
+                                    <button class="btn btn-primary small">Дверные ручки</button>
+                                    <button class="btn btn-secondary small">Замки</button>
+                                    <button class="btn btn-secondary small">Петли</button>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center my-4">
+                                <div class="float-left border-dark py-2 item">
+                                    <div class="image-container float-left" style="background-image: url(assets/images/door-handle-1.jpg)"></div>
+                                    <div class="float-left item-info">
+                                        <h6>ДВЕРНАЯ РУЧКА FORME MONZA</h6>
+                                        <p class="small gray">Так же можно получить как дополнение к самой двери на выбор или заказать отдельно</p>
+                                    </div>
+                                </div>
+                                <div class="float-left border-dark py-2 item">
+                                    <div class="image-container float-left" style="background-image: url(assets/images/door-handle-2.jpg)"></div>
+                                    <div class="float-left item-info">
+                                        <h6>ДВЕРНАЯ РУЧКА DND HOLLY</h6>
+                                        <p class="small gray">Так же можно получить как дополнение к самой двери на выбор или заказать отдельно</p>
+                                    </div>
+                                </div>
+                                <div class="float-left border-dark py-2 item">
+                                    <div class="image-container float-left" style="background-image: url(assets/images/door-handle-3.jpg)"></div>
+                                    <div class="float-left item-info">
+                                        <h6>ДВЕРНАЯ РУЧКА DND JOY</h6>
+                                        <p class="small gray">Так же можно получить как дополнение к самой двери на выбор или заказать отдельно</p>
+                                    </div>
+                                </div>
+                                <div class="float-left border-dark py-2 item">
+                                    <div class="image-container float-left" style="background-image: url(assets/images/door-handle-4.jpg)"></div>
+                                    <div class="float-left item-info">
+                                        <h6>ДВЕРНАЯ РУЧКА FORME MONZA</h6>
+                                        <p class="small gray">Так же можно получить как дополнение к самой двери на выбор или заказать отдельно</p>
+                                    </div>
+                                </div>
+                                <div class="float-left border-dark py-2 item">
+                                    <div class="image-container float-left" style="background-image: url(assets/images/door-handle-5.jpg)"></div>
+                                    <div class="float-left item-info">
+                                        <h6>ДВЕРНАЯ РУЧКА FORME MONZA</h6>
+                                        <p class="small gray">Так же можно получить как дополнение к самой двери на выбор или заказать отдельно</p>
+                                    </div>
+                                </div>
+                                <div class="float-left border-dark py-2 item">
+                                    <div class="image-container float-left" style="background-image: url(assets/images/door-handle-6.jpg)"></div>
+                                    <div class="float-left item-info">
+                                        <h6>ДВЕРНАЯ РУЧКА FORME MILLY</h6>
+                                        <p class="small gray">Так же можно получить как дополнение к самой двери на выбор или заказать отдельно</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="gap"></div><div class="gap"></div><div class="gap"></div>
-                    <div class="row">
-                        <div class="col-md-8 row mx-auto justify-content-around">
-                            <button class="btn btn-primary small">Дверные ручки</button>
-                            <button class="btn btn-secondary small">Замки</button>
-                            <button class="btn btn-secondary small">Петли</button>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center my-4">
-                            <div class="float-left w-320 mx-3 border-dark py-2">
-                                <div class="image-container float-left" style="background-image: url(assets/images/door-handle-1.jpg)"></div>
-                                <div class="my-2 ml-3 float-left w-185">
-                                    <h6>ДВЕРНАЯ РУЧКА FORME MONZA</h6>
-                                    <p class="small gray">Так же можно получить как дополнение к самой двери на выбор или заказать отдельно</p>
-                                </div>
-                            </div>
-                            <div class="float-left w-320 mx-3 border-dark py-2">
-                                <div class="image-container float-left" style="background-image: url(assets/images/door-handle-2.jpg)"></div>
-                                <div class="my-2 ml-3 float-left w-185">
-                                    <h6>ДВЕРНАЯ РУЧКА DND HOLLY</h6>
-                                    <p class="small gray">Так же можно получить как дополнение к самой двери на выбор или заказать отдельно</p>
-                                </div>
-                            </div>
-                            <div class="float-left w-320 mx-3 border-dark py-2">
-                                <div class="image-container float-left" style="background-image: url(assets/images/door-handle-3.jpg)"></div>
-                                <div class="my-2 ml-3 float-left w-185">
-                                    <h6>ДВЕРНАЯ РУЧКА DND JOY</h6>
-                                    <p class="small gray">Так же можно получить как дополнение к самой двери на выбор или заказать отдельно</p>
-                                </div>
-                            </div>
-                            <div class="float-left w-320 mx-3 border-dark py-2">
-                                <div class="image-container float-left" style="background-image: url(assets/images/door-handle-4.jpg)"></div>
-                                <div class="my-2 ml-3 float-left w-185">
-                                    <h6>ДВЕРНАЯ РУЧКА FORME MONZA</h6>
-                                    <p class="small gray">Так же можно получить как дополнение к самой двери на выбор или заказать отдельно</p>
-                                </div>
-                            </div>
-                            <div class="float-left w-320 mx-3 border-dark py-2">
-                                <div class="image-container float-left" style="background-image: url(assets/images/door-handle-5.jpg)"></div>
-                                <div class="my-2 ml-3 float-left w-185">
-                                    <h6>ДВЕРНАЯ РУЧКА FORME MONZA</h6>
-                                    <p class="small gray">Так же можно получить как дополнение к самой двери на выбор или заказать отдельно</p>
-                                </div>
-                            </div>
-                            <div class="float-left w-320 mx-3 border-dark py-2">
-                                <div class="image-container float-left" style="background-image: url(assets/images/door-handle-6.jpg)"></div>
-                                <div class="my-2 ml-3 float-left w-185">
-                                    <h6>ДВЕРНАЯ РУЧКА FORME MILLY</h6>
-                                    <p class="small gray">Так же можно получить как дополнение к самой двери на выбор или заказать отдельно</p>
-                                </div>
-                            </div>
                     </div>
                 </div>
             </div>
@@ -370,17 +401,16 @@
         <section id="workers">
             <div class="container">
                 <div class="col-md-10 mx-auto">
-                    <div class="row px-4">
-                        <div class="col-md-4 my-auto float-left">
+                    <div class="row px-2">
+                        <div class="col-md-8 float-right order-1 order-md-2">
+                            <div class="image-container float-right" style="width: 478px; background-image: url(assets/images/director.jpg);"></div>
+                        </div>
+
+                        <div class="col-md-4 my-auto float-left order-2 order-md-1">
                             <h2>Наш директор</h2>
-                            <div class="gap"></div><div class="gap"></div>
                             <p class="cursive gray">Принцип нашей работы</p>
                             <p class="gray">Так же можно получить как дополнение к самой двери на выбор или заказать отдельно к же можно получить как дополнение к самой двери на выбор или заказать отдельно олнение к самой двери на выбор или заказать отдельно</p>
                             <img src="assets/images/handwrite.png" style="margin: -10px 0px 0px 10px" width="125px">
-                        </div>
-
-                        <div class="col-md-8 float-right">
-                            <div class="image-container float-right" style="width: 478px; height: 282px; background-image: url(assets/images/director.jpg)"></div>
                         </div>
                     </div>
                     <div class="row mx-auto circles justify-content-center">
@@ -400,38 +430,40 @@
         <br>
         <section id="information" class="py-5 my-1">
             <div class="container my-5">
-                <div class="col-md-10 mx-auto">
+                <div class="col-md-10 px-0 px-sm-2 mx-auto">
                     <div class="row px-4">
                         <div class="col-md-5 white">
-                            <div class="map-container">
-                                <!--<iframe frameborder="no" style="border: 1px solid #a3a3a3; box-sizing: border-box; margin: 0;" width="100%" height="300" src="http://widgets.2gis.com/widget?type=firmsonmap&amp;options=%7B%22pos%22%3A%7B%22lat%22%3A43.236167694554204%2C%22lon%22%3A76.84642553329469%2C%22zoom%22%3A16%7D%2C%22opt%22%3A%7B%22city%22%3A%22almaty%22%7D%2C%22org%22%3A%229429940000785575%22%7D"></iframe>-->
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.677469400906!2d76.84312341537633!3d43.23722147913783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388369c12e62874d%3A0x74a5c96297264d8a!2z0KLQtdGF0L3QvtC00L7QvCDQkNGA0LzQsNC00LA!5e0!3m2!1sru!2s!4v1507977237004" width="100%" height="190" frameborder="0" style="border:0" allowfullscreen></iframe>
-                            </div>
-                            <div class="contacts text-center pt-3 pb-2 px-3">
-                                <h4>Контакты</h4>
-                                <p class="cursive mb-4">Мы всегда на связи</p>
-                                <p class="smaller">Улица Кабдолова 1/8 ТК "ARMADA" 1 блок, 106 бутик</p>
-                                <p class="smaller">Проспект Рыскулова 103 ТЦ "Строй Сити" бутик 80 "Г"</p>
-                                <p class="smaller">Улица Розыбакиева 72 ТЦ "Саламат-3" 41 бутик</p>
-                                <p class="smaller">Улица Казыбаева 44/1</p>
-                            </div>
-                            <div class="contacts text-center contacts-phone">
-                                <p class="smaller py-2 m-0 bordered border-bottom-0">
-                                    <a href="tel: +77016060070">+7 (701) 606 00 70</a>
-                                </p>
-                                <p class="smaller py-2 m-0 bordered">
-                                    <a href="tel: +77076060070">+7 (707) 606 00 70</a>
-                                </p>
+                            <div class="row">
+                                <div class="map-container px-0 col-12">
+                                    <!--<iframe frameborder="no" style="border: 1px solid #a3a3a3; box-sizing: border-box; margin: 0;" width="100%" height="300" src="http://widgets.2gis.com/widget?type=firmsonmap&amp;options=%7B%22pos%22%3A%7B%22lat%22%3A43.236167694554204%2C%22lon%22%3A76.84642553329469%2C%22zoom%22%3A16%7D%2C%22opt%22%3A%7B%22city%22%3A%22almaty%22%7D%2C%22org%22%3A%229429940000785575%22%7D"></iframe>-->
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.677469400906!2d76.84312341537633!3d43.23722147913783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388369c12e62874d%3A0x74a5c96297264d8a!2z0KLQtdGF0L3QvtC00L7QvCDQkNGA0LzQsNC00LA!5e0!3m2!1sru!2s!4v1507977237004" width="100%" height="190" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                </div>
+                                <div class="contacts text-center pt-3 pb-2 px-0 col-12">
+                                    <h4>Контакты</h4>
+                                    <p class="cursive mb-4">Мы всегда на связи</p>
+                                    <p class="smaller">Улица Кабдолова 1/8 ТК "ARMADA" 1 блок, 106 бутик</p>
+                                    <p class="smaller">Проспект Рыскулова 103 ТЦ "Строй Сити" бутик 80 "Г"</p>
+                                    <p class="smaller">Улица Розыбакиева 72 ТЦ "Саламат-3" 41 бутик</p>
+                                    <p class="smaller">Улица Казыбаева 44/1</p>
+                                </div>
+                                <div class="contacts text-center contacts-phone px-0 col-12">
+                                    <p class="smaller py-2 m-0 bordered border-bottom-0">
+                                        <a href="tel: +77016060070">+7 (701) 606 00 70</a>
+                                    </p>
+                                    <p class="smaller py-2 m-0 bordered">
+                                        <a href="tel: +77076060070">+7 (707) 606 00 70</a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-7 row bg-white">
+                        <div class="col-md-7 bg-white">
                             <div class="mt-5">
                                 <div class="col-10 mx-auto text-center">
                                     <p class="cursive mb-1 grey">Что еще можно у нас купить</p>
                                     <h2 class="mb-3">Магазины в Алматы</h2>
                                     <p class="gray">Разрешите приветствовать Вас от имени компании «HomeStyle Distribution» с пожеланиями благополучия и процветания!Мы предлагаем Вам проa</p>
                                 </div>
-                                <form class="col-12">
+                                <form class="col-12 mb-4">
                                     <input placeholder="Введите имя" class="input-group">
                                     <br>
                                     <select class="input-group untouched">
@@ -443,7 +475,7 @@
                                     <br>
                                     <textarea placeholder="Введите ваше сообщение" class="input-group"></textarea>
                                     <br>
-                                    <button class="btn btn-primary mx-auto my-2 d-block long">Отправить</button>
+                                    <button class="btn btn-primary mx-auto my-2 d-block long mw-100">Отправить</button>
                                 </form>
                             </div>
                         </div>
@@ -463,7 +495,7 @@
                         </div>
                     </div>
                     <div class="row px-4 justify-content-around">
-                        <div class="float-left h-310 w-250 item">
+                        <div class="float-left item mb-3">
                             <div class="image-container h-100 w-100" style="background-image: url(assets/images/news1.jpg)">
                                 <div class="white row mx-0 h-100 w-100 bg-shadow">
                                     <div class="calendar">
@@ -480,7 +512,7 @@
                                 <img src="assets/images/right-arrow.png">
                             </a>
                         </div>
-                        <div class="float-left h-310 w-250 item">
+                        <div class="float-left item mb-3">
                             <div class="image-container w-100 h-148" style="background-image: url(assets/images/news2.jpg);"></div>
                             <h4 class="mt-3 mb-1">Ярмарка дверей</h4>
                             <p class="smaller grey my-2">12 -19 мая в 12:00 на главной</p>
@@ -489,7 +521,7 @@
                                 <img src="assets/images/right-arrow.png">
                             </a>
                         </div>
-                        <div class="float-left h-310 w-250 item">
+                        <div class="float-left item mb-3">
                             <div class="image-container w-100 h-148" style="background-image: url(assets/images/news3.jpg);"></div>
                             <h4 class="mt-3 mb-1">Междунароная выставка</h4>
                             <p class="smaller grey my-2">12 -19 мая в 12:00 на главной</p>
@@ -523,7 +555,7 @@
                 <div class="row my-5">
                     <div class="col-md-8">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-3 col-6 mb-4 mb-md-0">
                                 <p>
                                     <a href="#">Главная страница</a>
                                 </p>
@@ -543,7 +575,7 @@
                                     <a href="#">Отзывы</a>
                                 </p>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3 col-6 mb-4 mb-md-0">
                                 <p>
                                     <a href="#">Главная страница</a>
                                 </p>
@@ -563,7 +595,7 @@
                                     <a href="#">Отзывы</a>
                                 </p>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3 col-6 mb-4 mb-md-0">
                                 <p>
                                     <a href="#">Главная страница</a>
                                 </p>
@@ -595,7 +627,7 @@
                     </div>
                 </div>
                 <div class="row justify-content-between">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <p>
                             <a href="http://instagram.com" class="mx-1">
                                 <i class="fa fa-instagram"></i>
@@ -611,7 +643,7 @@
                             </a>
                         </p>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <p class="smaller grey">
                             2017. Сделано сотрудниками компнаии <span class="white">ProfilDoors</span>. Все права защищенны
                         </p>
@@ -624,6 +656,7 @@
         <script src="assets/js/jquery-3.2.1.slim.min.js"></script>
         <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/index.animation.js"></script>
         <script src="assets/js/main.animation.js"></script>
     </body>
 </html>
