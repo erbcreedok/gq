@@ -26,7 +26,7 @@
 	// Burger Menu
 	var burgerMenu = function() {
 
-		$('body').on('click', '.js-fh5co-nav-toggle', function(event){
+		$('body').on('click', '.js-ind-nav-toggle', function(event){
 
 			event.preventDefault();
 
@@ -75,7 +75,7 @@
 		    if ( navbar.is(':visible')) {
 		    	navbar.removeClass('in');
 		    	navbar.attr('aria-expanded', 'false');
-		    	$('.js-fh5co-nav-toggle').removeClass('active');
+		    	$('.js-ind-nav-toggle').removeClass('active');
 		    }
 
 		    event.preventDefault();
@@ -129,16 +129,16 @@
 
 		$(window).scroll(function(event){
 
-		   	var header = $('#fh5co-header'),
+		   	var header = $('#ind-header'),
 				scrlTop = $(this).scrollTop();
 
 			if ( scrlTop > 500 && scrlTop <= 2000 ) {
-				header.addClass('navbar-fixed-top fh5co-animated slideInDown');
+				header.addClass('navbar-fixed-top ind-animated slideInDown');
 			} else if ( scrlTop <= 500) {
 				if ( header.hasClass('navbar-fixed-top') ) {
-					header.addClass('navbar-fixed-top fh5co-animated slideOutUp');
+					header.addClass('navbar-fixed-top ind-animated slideOutUp');
 					setTimeout(function(){
-						header.removeClass('navbar-fixed-top fh5co-animated slideInDown slideOutUp');
+						header.removeClass('navbar-fixed-top ind-animated slideInDown slideOutUp');
 					}, 100 );
 				}
 			} 
@@ -152,15 +152,15 @@
 	// Home
 
 	var homeAnimate = function() {
-		if ( $('#fh5co-home').length > 0 ) {	
+		if ( $('#ind-home').length > 0 ) {	
 
-			$('#fh5co-home').waypoint( function( direction ) {
+			$('#ind-home').waypoint( function( direction ) {
 										
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 
 
 					setTimeout(function() {
-						$('#fh5co-home .to-animate').each(function( k ) {
+						$('#ind-home .to-animate').each(function( k ) {
 							var el = $(this);
 							
 							setTimeout ( function () {
@@ -181,15 +181,15 @@
 
 
 	var introAnimate = function() {
-		if ( $('#fh5co-intro').length > 0 ) {	
+		if ( $('#ind-intro').length > 0 ) {	
 
-			$('#fh5co-intro').waypoint( function( direction ) {
+			$('#ind-intro').waypoint( function( direction ) {
 										
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 
 
 					setTimeout(function() {
-						$('#fh5co-intro .to-animate').each(function( k ) {
+						$('#ind-intro .to-animate').each(function( k ) {
 							var el = $(this);
 							
 							setTimeout ( function () {
@@ -209,15 +209,15 @@
 	};
 
 	var workAnimate = function() {
-		if ( $('#fh5co-work').length > 0 ) {	
+		if ( $('#ind-work').length > 0 ) {	
 
-			$('#fh5co-work').waypoint( function( direction ) {
+			$('#ind-work').waypoint( function( direction ) {
 										
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 
 
 					setTimeout(function() {
-						$('#fh5co-work .to-animate').each(function( k ) {
+						$('#ind-work .to-animate').each(function( k ) {
 							var el = $(this);
 							
 							setTimeout ( function () {
@@ -238,7 +238,7 @@
 
 
 	var testimonialAnimate = function() {
-		var testimonial = $('#fh5co-testimonials');
+		var testimonial = $('#ind-testimonials');
 		if ( testimonial.length > 0 ) {	
 
 			testimonial.waypoint( function( direction ) {
@@ -280,7 +280,7 @@
 	};
 
 	var servicesAnimate = function() {
-		var services = $('#fh5co-services');
+		var services = $('#ind-services');
 		if ( services.length > 0 ) {	
 
 			services.waypoint( function( direction ) {
@@ -323,7 +323,7 @@
 	};
 
 	var aboutAnimate = function() {
-		var about = $('#fh5co-about');
+		var about = $('#ind-about');
 		if ( about.length > 0 ) {	
 
 			about.waypoint( function( direction ) {
@@ -353,7 +353,7 @@
 	};
 
 	var countersAnimate = function() {
-		var counters = $('#fh5co-counters');
+		var counters = $('#ind-counters');
 		if ( counters.length > 0 ) {	
 
 			counters.waypoint( function( direction ) {
@@ -407,7 +407,7 @@
 
 
 	var contactAnimate = function() {
-		var contact = $('#fh5co-contact');
+		var contact = $('#ind-contact');
 		if ( contact.length > 0 ) {	
 
 			contact.waypoint( function( direction ) {
