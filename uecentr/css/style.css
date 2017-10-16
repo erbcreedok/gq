@@ -231,7 +231,12 @@ h6 {
     top: 0;
     margin-top: 40px;
 }
-
+#ind-header.navbar-fixed-top .navbar-brand img.hidden-sm {
+    display: none !important;
+}
+#ind-header.navbar-fixed-top .navbar-brand img.hidden-lg {
+    display: block  !important;
+}
 @media screen and (max-width: 768px) {
     #ind-header {
         margin-top: 0;
@@ -486,12 +491,27 @@ h6 {
     margin: 0 0 10px 0;
 }
 
+#ind-home .text-inner h1 {
+    font-size: 92px;
+    text-shadow: 10px 20px 20px rgba(140, 100, 50, .2);
+}
+
 #ind-home .text-inner h2 {
     font-size: 28px;
     line-height: 38px;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.8);
     margin: 0;
+}
+#ind-home .text-inner .text-container {
+    position: absolute;
+    margin-top: 15rem;
+}
+#ind-home .image-container{
+    float: right;
+}
+#ind-home .image-container img{
+    margin-top: -15px;
 }
 
 .slant {
@@ -531,9 +551,24 @@ h6 {
         padding-top: 7rem;
         text-align: center;
     }
-    #ind-home .col-sm-7 img {
+    #ind-home .image-container {
+        float: none;
+    }
+    #ind-home .text-inner h1 {
+        font-size: 62px;
+    }
+    #ind-home .image-container img{
+        margin-top: 5px;
         margin-left: 10%;
         max-width: 400px;
+    }
+}
+@media screen and (max-width: 992px) {
+    #ind-home .text-inner .text-container {
+        margin-top: 0rem;
+        margin-bottom: 5rem;
+        right: 0;left: 0;
+        margin: auto;
     }
 }
 
@@ -657,6 +692,7 @@ h6 {
     width: 100%;
     display: block;
     float: left;
+    margin: auto;
 }
 
 .watch-video span {
@@ -788,6 +824,7 @@ h6 {
 
 #ind-services .ind-service {
     padding-right: 30px;
+    margin-bottom: 80px;
 }
 
 #ind-services h3 {
