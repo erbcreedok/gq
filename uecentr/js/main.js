@@ -59,6 +59,13 @@
 	};
 
 
+    $(document).on('click','a[data-nav-section]', function(event) {
+        var section =  $(this).attr('data-nav-section');
+        $('html, body').animate({
+            scrollTop: $('[data-section="' + section + '"]').offset().top
+        }, 500);
+    });
+    
 	// Page Nav
 	var clickMenu = function() {
 
