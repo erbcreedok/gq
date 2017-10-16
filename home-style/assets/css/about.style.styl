@@ -1,0 +1,74 @@
+p
+  line-height 2.2rem;
+
+#main
+  background-image url(../images/texture.jpg);
+  overflow hidden;
+  .container
+    overflow: visible;
+
+  .bg-elements
+    img
+      width 300px
+      margin-bottom -100px;
+
+
+
+@media (min-width: 576px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  #main .bg-elements{
+    height 320px;
+    margin-bottom: -80px;
+    img {
+      &.d-left {
+        position: absolute;
+        left: -100px;
+      }
+      &.d-right {
+        position: absolute;
+        right -100px;
+      }
+      &.h-middle {
+        position: absolute;
+        left: 0px;
+        right: -60px;
+        margin auto;
+        width: 240px;
+      }
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  #main .bg-elements{
+    height 320px;
+    img {
+      &.d-left {
+        position: absolute;
+        left: -100px;
+        width 360px;
+      }
+      &.d-right {
+        position: absolute;
+        right -100px;
+        width 360px;
+      }
+      &.h-middle {
+        position: absolute;
+        left: 0px;
+        right: -60px;
+        margin auto;
+      }
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}

@@ -1,0 +1,56 @@
+p {
+  line-height: 2.2rem;
+}
+#main {
+  background-image: url("../images/texture.jpg");
+  overflow: hidden;
+}
+#main .container {
+  overflow: visible;
+}
+#main .bg-elements img {
+  width: 300px;
+  margin-bottom: -100px;
+}
+@media (min-width: 768px) {
+  #main .bg-elements {
+    height: 320px;
+    margin-bottom: -80px;
+  }
+  #main .bg-elements img.d-left {
+    position: absolute;
+    left: -100px;
+  }
+  #main .bg-elements img.d-right {
+    position: absolute;
+    right: -100px;
+  }
+  #main .bg-elements img.h-middle {
+    position: absolute;
+    left: 0px;
+    right: -60px;
+    margin: auto;
+    width: 240px;
+  }
+}
+@media (min-width: 992px) {
+  #main .bg-elements {
+    height: 320px;
+  }
+  #main .bg-elements img.d-left {
+    position: absolute;
+    left: -100px;
+    width: 360px;
+  }
+  #main .bg-elements img.d-right {
+    position: absolute;
+    right: -100px;
+    width: 360px;
+  }
+  #main .bg-elements img.h-middle {
+    position: absolute;
+    left: 0px;
+    right: -60px;
+    margin: auto;
+  }
+}

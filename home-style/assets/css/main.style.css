@@ -18,6 +18,9 @@ h5,
 h6 {
   font-weight: bold;
 }
+h1.big {
+  font-size: 51px;
+}
 h1 {
   font-size: 31px;
 }
@@ -88,6 +91,9 @@ p {
 }
 p.big {
   font-size: 21px;
+}
+p.bigger {
+  font-size: 30px;
 }
 p.small {
   font-size: 11px;
