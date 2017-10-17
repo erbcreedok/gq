@@ -27,6 +27,9 @@ h1 {
 h2 {
   font-size: 26px;
 }
+h2.smaller {
+  font-size: 24px;
+}
 h3 {
   font-size: 21px;
 }
@@ -235,6 +238,9 @@ header {
 .white {
   color: #fff;
 }
+.brown {
+  color: #997142;
+}
 .flex-110 {
   -ms-flex: 0 0 110px;
   flex: 0 0 110px;
@@ -282,14 +288,29 @@ header {
 .input-group.untouched {
   color: #aaa;
 }
+.input-group.input-group-alt {
+  border: none;
+  background-color: #f4f3f3;
+}
 select.input-group {
   background-image: url("../images/down.png");
   background-size: 10px;
   background-repeat: no-repeat;
   background-position: right 10px center;
+  position: relative;
 }
 select.input-group:focus {
   background-image: url("../images/up.png");
+}
+select.input-group.input-group-alt {
+  background-image: url("../images/down-orange.jpg");
+  background-size: auto 100%;
+  background-position: right 0 center;
+}
+select.input-group.input-group-alt:focus {
+  background-image: url("../images/up-orange.jpg");
+  background-size: auto 100%;
+  background-position: right 0 center;
 }
 .bg-shadow {
   background-color: rgba(0,0,0,0.4);

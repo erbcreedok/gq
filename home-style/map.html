@@ -16,7 +16,7 @@
 
     <!-- own styling tags-->
     <link rel="stylesheet" href="assets/css/main.style.css">
-    <link rel="stylesheet" href="assets/css/about.style.css">
+    <link rel="stylesheet" href="assets/css/map.style.css">
 
     <!-- Fonts-->
     <link href="assets/css/lato.fonts.css" rel="stylesheet">
@@ -109,6 +109,7 @@
     </div>
 </div>
 <section id="main" class="mb-5">
+    <div class="bg-shadow"></div>
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container">
@@ -126,7 +127,7 @@
                             <a href="index.html" class="nav-link">Главная страница</a>
                         </li>
                         <li class="nav-item">
-                            <a href="about.html" class="nav-link active">О компании</a>
+                            <a href="about.html" class="nav-link">О компании</a>
                         </li>
                         <li class="nav-item">
                             <a href="catalog.html" class="nav-link">Каталог</a>
@@ -135,7 +136,7 @@
                             <a href="portfolio.html" class="nav-link">Наши работы</a>
                         </li>
                         <li class="nav-item">
-                            <a href="map.html" class="nav-link">Где купить</a>
+                            <a href="map.html" class="nav-link active">Где купить</a>
                         </li>
                         <li class="nav-item">
                             <a href="reviews.html" class="nav-link">Отзывы</a>
@@ -145,66 +146,107 @@
             </div>
         </nav>
     </header>
-
-    <div class="container white text-center mt-5 pt-5">
-        <div class="row mt-5">
-            <div class="col-12" id="main-text">
-                <h1 class="upper big ">PROFIL DOORS</h1>
-                <p class="bigger line-height">Какой то текст здесь напишет Рахима<br>Это текст здесь </p>
+    <div class="container white text-center my-5 py-5">
+        <div class="row my-5">
+            <div class="col-12 my-5" id="main-text">
+                <h1 class="upper mb-3">КУПИ ДВЕРЬ УЕДЬ В ТВЕРЬ!</h1>
+                <p class="big line-height">КУПИ ДВЕРЬ УЕДЬ В ТВЕРЬ!</p>
                 <br>
             </div>
         </div>
-        <div class="bg-elements">
-            <img class="d-left" src="assets/images/doors-left.png">
-            <img class="d-right d-none d-md-block" src="assets/images/doors-right.png">
-            <img class="h-middle d-none d-md-block" src="assets/images/hand.png">
-        </div>
     </div>
 </section>
 
-<section id="info" class="my-5 py-3">
+<section id="map" class="mt-5 py-3">
     <div class="container">
         <div class="col-md-12 mx-auto">
             <div class="row justify-content-around">
-                <div class="col-12 col-md-4">
-                    <div class="mt-1" style="height: 5px;background: #b88d5a;"></div>
-                    <h1 class="mb-3 mt-4">Знаю что я надоел но ту тоже нужно что то</h1>
-                    <p class="high gray">Знаю что я надоел но ту тоже нужно что то написать
-                        бе бе бе</p>
+                <h2 class="text-center smaller">Найдите магазин на карте</h2>
+            </div>
+            <div class="row my-2">
+                <div class="col-md-4">
+                    <select class="input-group input-group-alt">
+                        <option selected>Казахстан</option>
+                        <option>Россия</option>
+                    </select>
                 </div>
-                <div class="col-12 col-md-7">
-                    <p class="high gray">
-                        Таким образом реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач. Не следует, однако забывать, что
-                    </p>
-                    <br>
-                    <p class="high gray">
-                        Таким образом реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач. Не следует, однако забывать, что
-                    </p>
+                <div class="col-md-4">
+                    <select class="input-group input-group-alt">
+                        <option selected>Алматы</option>
+                        <option>Астана</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button class="input-group-btn btn btn-primary w-100">Найти</button>
                 </div>
             </div>
         </div>
     </div>
+    <iframe class="my-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.677469400906!2d76.84312341537633!3d43.23722147913783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388369c12e62874d%3A0x74a5c96297264d8a!2z0KLQtdGF0L3QvtC00L7QvCDQkNGA0LzQsNC00LA!5e0!3m2!1sru!2s!4v1507977237004" width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
 </section>
 
-<section id="team" class="m-md-3">
+<section id="places">
     <div class="container">
-        <div class="col-md-12 text-center my-4">
-            <h1 class="mb-5">Встречайте нашу команду</h1>
-            <div class="row justify-content-around">
-                <div class="col-md-4 mb-3">
-                    <div class="image-container" style="background-image: url(assets/images/team1.jpg); padding-top: 100%;"></div>
-                    <h4 class="mt-2 mb-1">Ильяс Байжуманов</h4>
-                    <p class="regular gray">Директор</p>
+        <div class="col-12 my-5">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="brown mb-4">Алматы</h3>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <div class="image-container" style="background-image: url(assets/images/team2.jpg); padding-top: 100%;"></div>
-                    <h4 class="mt-2 mb-1">Мираш Байжуманова</h4>
-                    <p class="regular gray">Коммерческий директор</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>Armada</h5>
+                    <p class="regular col-md-7 px-0 gray">Ул. Кабдолова 1/8 ТК "ARMADA" 1 блок, 106 бутик</p>
+                    <p class="regular"><a href="tel: +77076060070">+7 707 606 00 70</a></p>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <div class="image-container" style="background-image: url(assets/images/team3.jpg); padding-top: 100%;"></div>
-                    <h4 class="mt-2 mb-1">Мария Какаято</h4>
-                    <p class="regular gray">Главный бухгалтер</p>
+                <div class="col-md-4 mb-4">
+                    <h5>Armada</h5>
+                    <p class="regular col-md-7 px-0 gray">Ул. Кабдолова 1/8 ТК "ARMADA" 1 блок, 106 бутик</p>
+                    <p class="regular"><a href="tel: +77076060070">+7 707 606 00 70</a></p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Armada</h5>
+                    <p class="regular col-md-7 px-0 gray">Ул. Кабдолова 1/8 ТК "ARMADA" 1 блок, 106 бутик</p>
+                    <p class="regular"><a href="tel: +77076060070">+7 707 606 00 70</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 my-5">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="brown mb-4">Астана</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>Armada</h5>
+                    <p class="regular col-md-7 px-0 gray">Ул. Кабдолова 1/8 ТК "ARMADA" 1 блок, 106 бутик</p>
+                    <p class="regular"><a href="tel: +77076060070">+7 707 606 00 70</a></p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Armada</h5>
+                    <p class="regular col-md-7 px-0 gray">Ул. Кабдолова 1/8 ТК "ARMADA" 1 блок, 106 бутик</p>
+                    <p class="regular"><a href="tel: +77076060070">+7 707 606 00 70</a></p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Armada</h5>
+                    <p class="regular col-md-7 px-0 gray">Ул. Кабдолова 1/8 ТК "ARMADA" 1 блок, 106 бутик</p>
+                    <p class="regular"><a href="tel: +77076060070">+7 707 606 00 70</a></p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Armada</h5>
+                    <p class="regular col-md-7 px-0 gray">Ул. Кабдолова 1/8 ТК "ARMADA" 1 блок, 106 бутик</p>
+                    <p class="regular"><a href="tel: +77076060070">+7 707 606 00 70</a></p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Armada</h5>
+                    <p class="regular col-md-7 px-0 gray">Ул. Кабдолова 1/8 ТК "ARMADA" 1 блок, 106 бутик</p>
+                    <p class="regular"><a href="tel: +77076060070">+7 707 606 00 70</a></p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Armada</h5>
+                    <p class="regular col-md-7 px-0 gray">Ул. Кабдолова 1/8 ТК "ARMADA" 1 блок, 106 бутик</p>
+                    <p class="regular"><a href="tel: +77076060070">+7 707 606 00 70</a></p>
                 </div>
             </div>
         </div>

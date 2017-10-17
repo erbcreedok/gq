@@ -21,7 +21,8 @@ h1
 
 h2
     font-size 26px;
-
+h2.smaller
+    font-size 24px;
 h3
     font-size 21px;
 
@@ -219,7 +220,9 @@ header {
 .white {
     color white
 }
-
+.brown {
+    color #997142;
+}
 .flex-110 {
     -ms-flex 0 0 110px
     flex 0 0 110px
@@ -268,6 +271,11 @@ header {
     &.untouched {
         color: #aaa;
     }
+    &.input-group-alt {
+        border: none;
+        background-color #f4f3f3;
+    }
+
 }
 
 select.input-group {
@@ -275,8 +283,19 @@ select.input-group {
     background-size 10px;
     background-repeat no-repeat;
     background-position right 10px center;
+    position: relative;
     &:focus {
         background-image url(../images/up.png);
+    }
+    &.input-group-alt {
+        background-image url(../images/down-orange.jpg);
+        background-size: auto 100%;
+        background-position right 0 center;
+    }
+    &.input-group-alt:focus {
+        background-image url(../images/up-orange.jpg);
+        background-size: auto 100%;
+        background-position right 0 center;
     }
 }
 
