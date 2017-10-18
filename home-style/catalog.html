@@ -159,7 +159,7 @@
         <div class="row pb-0 pt-2 px-2">
             <div class="col-12 mx-auto bg-shadow-white text-center categories">
                 <div class="row pt-2 pl-2 pr-2">
-                    <div class="col-3 category active">
+                    <div class="col-3 category active" data-value="0">
                         <div class="category-image py-2">
                             <svg height="34px" viewBox="0 0 336 479">
                                 <path d="M0.001,0.001 L0.001,478.418 L335.998,478.999 L335.998,0.001 L0.001,0.001 ZM31.599,446.894 L31.599,31.581 L304.398,31.581 L304.398,88.433 L293.602,88.433 L293.602,42.116 L42.396,42.116 L42.396,436.858 L293.602,436.858 L293.602,390.542 L304.398,390.542 L304.398,447.366 L31.599,446.894 ZM293.602,137.555 L304.398,137.555 L304.398,341.417 L293.602,341.417 L293.602,137.555 ZM94.358,239.487 C94.358,248.642 86.930,256.065 77.768,256.065 C68.606,256.065 61.178,248.642 61.178,239.487 C61.178,230.331 68.606,222.907 77.768,222.907 C86.930,222.907 94.358,230.331 94.358,239.487 Z"/>
@@ -167,7 +167,7 @@
                         </div>
                         <p>Межкомнатные<br>двери</p>
                     </div>
-                    <div class="col-3 category">
+                    <div class="col-3 category" data-value="1">
                         <div class="category-image py-2">
                             <svg height="34px" viewBox="0 0 336 479">
                                 <path d="M53.771,0v469.931h34.134V34.134h232.192L185.262,57.91v366.811l185.67,45.779v-67.14h11.664v67.14h34.133V0H53.771z    M382.596,34.134v42.678h-11.664V34.134H382.596z M217.994,258.876c-6.768,0-12.255-7.14-12.255-15.946   c0-8.806,5.487-15.946,12.255-15.946s12.254,7.14,12.254,15.946C230.248,251.736,224.762,258.876,217.994,258.876z    M370.934,350.262V129.909h11.662v220.353H370.934z"/>
@@ -175,7 +175,7 @@
                         </div>
                         <p>Входные<br>двери</p>
                     </div>
-                    <div class="col-3 category">
+                    <div class="col-3 category" data-value="2">
                         <div class="category-image py-2">
                             <svg height="34px" viewBox="0 -8 34 38">
                                 <path d="M25.523,7.714 C25.340,8.504 22.231,25.003 22.231,25.003 C20.704,25.003 19.460,24.843 18.425,24.569 C17.858,24.432 17.331,24.268 16.872,24.056 L17.060,24.092 C11.782,21.730 13.568,15.579 6.239,15.579 C1.974,15.579 0.002,18.462 0.002,18.462 C0.002,18.462 4.809,5.928 5.403,4.153 C6.079,2.140 6.850,-0.002 11.087,-0.002 C17.783,-0.002 14.742,5.977 24.079,5.977 C24.079,5.977 25.994,5.671 25.523,7.714 ZM5.060,24.890 C2.047,24.890 0.541,22.709 0.541,20.457 C0.541,18.719 2.140,15.912 6.306,15.912 C12.611,15.912 12.052,21.830 16.872,24.056 L9.467,22.643 C9.104,23.937 7.744,24.890 5.060,24.890 Z"/>
@@ -183,7 +183,7 @@
                         </div>
                         <p>Обои</p>
                     </div>
-                    <div class="col-3 category">
+                    <div class="col-3 category" data-value="3">
                         <div class="category-image py-2">
                             <svg height="34px" viewBox="0 0 31 29">
                                 <path d="M24.000,29.000 L24.000,15.000 L31.000,15.000 L31.000,29.000 L24.000,29.000 ZM24.000,-0.000 L31.000,-0.000 L31.000,14.000 L24.000,14.000 L24.000,-0.000 ZM16.000,22.000 L23.000,22.000 L23.000,29.000 L16.000,29.000 L16.000,22.000 ZM16.000,-0.000 L23.000,-0.000 L23.000,21.000 L16.000,21.000 L16.000,-0.000 ZM8.000,8.000 L15.000,8.000 L15.000,29.000 L8.000,29.000 L8.000,8.000 ZM8.000,-0.000 L15.000,-0.000 L15.000,7.000 L8.000,7.000 L8.000,-0.000 ZM0.000,15.000 L7.000,15.000 L7.000,29.000 L0.000,29.000 L0.000,15.000 ZM0.000,-0.000 L7.000,-0.000 L7.000,14.000 L0.000,14.000 L0.000,-0.000 Z"/>
@@ -204,44 +204,49 @@
                 Сортировка по:
             </h5>
             <form class="row">
+                <input type="hidden" name="category" id="category-value" value="0">
                 <div class="col-md-4">
                     <h5 class="small">Цене</h5>
                     <p class="grey row mx-0 justify-content-between smallest">
-                        <input type="hidden" id="amount-min-value">
-                        <input type="hidden" id="amount-max-value">
-                        <span id="amount-min">20 000 KZT</span>
-                        <span id="amount-max">90 000 KZT</span>
+                        <span>
+                            <input type="num" name="amount-min" id="amount-min-value" class="d-inline-block border-0 text-left grey response-width" style="width: 30px" > KZT
+                        </span>
+                        <span>
+                            <input type="num" name="amount-max" id="amount-max-value" class="d-inline-block border-0 text-right grey response-width" style="width: 30px" > KZT
+                        </span>
                     </p>
                     <div id="slider-range"></div>
                 </div>
                 <div class="col-md-4">
                     <h5 class="small">Цвету</h5>
-                    <div class="input-group input-group-alt select">
-                        <input type="hidden" value="Эш Вайт">
-                        <span class="color-select" style="background-color: #b88d5a"> </span> Эш Вайт
+                    <div class="input-group input-group-alt select" id="color-picker-select">
+                        <input type="hidden" value="0" id="color-value" name="color">
+                        <div class="select-vision">
+                            <span class="color-select" style="background-color: #b88d5a"> </span> Эш Вайт
+                        </div>
                         <div class="input-group-options">
-                            <div class="input-group-option">
+                            <div class="input-group-option" data-value="0">
                                 <span class="color-select" style="background-color: #48fd5a"> </span> Эрл Грей
                             </div>
-                            <div class="input-group-option">
+                            <div class="input-group-option" data-value="1">
                                 <span class="color-select" style="background-color: #543724"> </span> Браун
                             </div>
-                            <div class="input-group-option">
+                            <div class="input-group-option" data-value="2">
                                 <span class="color-select" style="background-color: #48fd5a"> </span> Эрл Грей
                             </div>
-                            <div class="input-group-option">
+                            <div class="input-group-option" data-value="3">
                                 <span class="color-select" style="background-color: #543724"> </span> Браун
                             </div>
-                            <div class="input-group-option">
+                            <div class="input-group-option" data-value="4">
                                 <span class="color-select" style="background-color: #48fd5a"> </span> Эрл Грей
                             </div>
-                            <div class="input-group-option">
+                            <div class="input-group-option" data-value="5">
                                 <span class="color-select" style="background-color: #543724"> </span> Браун
                             </div>
-                            <div class="input-group-option">
+                            <div class="input-group-option" data-value="6">
                                 <span class="color-select" style="background-color: #48fd5a"> </span> Эрл Грей
                             </div>
-                            <div class="input-group-option">
+                            <div class="input-group-option" data-value="7">
                                 <span class="color-select" style="background-color: #543724"> </span> Браун
                             </div>
                         </div>
@@ -249,9 +254,9 @@
                 </div>
                 <div class="col-md-4">
                     <h5 class="small">Критерии</h5>
-                    <select class="input-group input-group-alt">
-                        <option selected>Самовывоз</option>
-                        <option>Не самовывоз</option>
+                    <select class="input-group input-group-alt" name="criteria" id="criteria-value">
+                        <option selected value="0">Самовывоз</option>
+                        <option value="1">Не самовывоз</option>
                     </select>
                 </div>
             </form>
@@ -438,36 +443,9 @@
 <!-- Optional JavaScript -->
 <script src="assets/js/jquery-1.12.4.min.js"></script>
 <script src="assets/js/jquery-ui.min.js"></script>
-<script>
-    $( function() {
-        var elem = $('#slider-range');
-        var min = $('#amount-min');
-        var max = $('#amount-max');
-        var minV = $('#amount-min-value');
-        var maxV = $('#amount-max-value');
-        $(elem).slider({
-            range: true,
-            min: 0,
-            max: 150000,
-            values: [ 20000, 90000 ],
-            slide: function( event, ui ) {
-                $(min).html(getMoneyStr(ui.values[0]));
-                $(max).html(getMoneyStr(ui.values[1]));
-                $(minV).val(ui.values[0]);
-                $(maxV).val(ui.values[1]);
-            }
-        });
-        $(min).html(getMoneyStr($(elem).slider( "values", 0 )));
-        $(max).html(getMoneyStr($(elem).slider( "values", 1 )));
-        $(minV).val($(elem).slider( "values", 0 ));
-        $(maxV).val($(elem).slider( "values", 1 ));
-    } );
-    function getMoneyStr(num) {
-        return (num + '').slice(0,-3) + ' ' + (num + '').slice(-3) + ' KZT';
-    }
-</script>
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/main.animation.js"></script>
+<script src="assets/js/catalog.functions.js"></script>
 </body>
 </html>
