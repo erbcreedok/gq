@@ -1,0 +1,33 @@
+header {
+  z-index: 20;
+}
+#main {
+  background-image: url("../images/bgblur.jpg");
+  background-position: center;
+  background-size: cover;
+  z-index: 10;
+}
+#main .bg-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+#reviews .review {
+  position: relative;
+}
+#reviews .round {
+  height: 13px;
+  width: 13px;
+  margin-top: 6px;
+  background-color: #b7b4b4;
+  border-radius: 50%;
+}
+#reviews .date {
+  font-size: 14px;
+}
+.input-group,
+.btn {
+  font-size: 16px;
+}
