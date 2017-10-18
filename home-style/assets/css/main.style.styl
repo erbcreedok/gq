@@ -276,8 +276,12 @@ header {
     -webkit-appearance: none
     -moz-appearance: none
     appearance: none
+    background-color: transparent
     &:focus {
         border-color #b88d5a;
+    }
+    &:placeholder {
+        color #aaa;
     }
     &.untouched {
         color: #aaa;
@@ -399,6 +403,7 @@ footer
         padding 0px 5px;
         color white
         outline: none
+        border: none
         &:placeholder {
             color #fefefe;
         }

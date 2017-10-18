@@ -297,9 +297,13 @@ header {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background-color: transparent;
 }
 .input-group:focus {
   border-color: #b88d5a;
+}
+.input-group:placeholder {
+  color: #aaa;
 }
 .input-group.untouched {
   color: #aaa;
@@ -432,6 +436,7 @@ footer input {
   padding: 0px 5px;
   color: #fff;
   outline: none;
+  border: none;
 }
 footer input:placeholder {
   color: #fefefe;
