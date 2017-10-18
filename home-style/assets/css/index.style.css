@@ -1,6 +1,7 @@
 #main {
   background-image: url("../images/lowbg.jpg");
   background-size: cover;
+  overflow: hidden;
   height: 110vh;
   -webkit-animation: background-left 1200ms 1000ms ease-in;
   -moz-animation: background-left 1200ms 1000ms ease-in;
@@ -237,65 +238,6 @@
   color: #ddd;
   text-decoration: none;
 }
-#news .item {
-  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.11);
-  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.11);
-  box-shadow: 0 0 5px rgba(0,0,0,0.11);
-  -webkit-transition: all 150ms;
-  -moz-transition: all 150ms;
-  -ms-transition: all 150ms;
-  -o-transition: all 150ms;
-  transition: all 150ms;
-  padding: 7px 7px 41px 7px;
-  position: relative;
-  cursor: default;
-  width: 250px;
-  height: 310px;
-}
-#news .item:hover {
-  margin-top: -5px;
-  -webkit-box-shadow: 0 5px 9px rgba(0,0,0,0.09);
-  -moz-box-shadow: 0 5px 9px rgba(0,0,0,0.09);
-  box-shadow: 0 5px 9px rgba(0,0,0,0.09);
-}
-#news .item .image-container {
-  position: relative;
-}
-#news .item .arrow {
-  position: absolute;
-  bottom: 18px;
-  right: 18px;
-  height: 12px;
-}
-#news .item .arrow img {
-  height: 12px;
-  opacity: 0.4;
-}
-#news .item .arrow:hover img {
-  opacity: 0.6;
-}
-#news .item .calendar {
-  position: absolute;
-  background-color: #fff;
-  top: 10px;
-  right: 10px;
-  width: 44px;
-  height: 54px;
-  padding: 5px;
-}
-#news .item .calendar span {
-  display: block;
-  font-weight: bold;
-  text-align: center;
-}
-#news .item .calendar span.month {
-  color: #000;
-  font-size: 12px;
-}
-#news .item .calendar span.day {
-  color: #b88d5a;
-  font-size: 19px;
-}
 @media (min-width: 576px) {
   #history .image-history-1 {
     width: 170px;
@@ -335,10 +277,6 @@
     height: 282px;
     background-size: cover;
     background-position: center;
-  }
-  #news .item {
-    width: 220px;
-    height: 340px;
   }
 }
 @media (min-width: 992px) {
@@ -393,9 +331,5 @@
   #history .image-history-2 {
     width: 330px;
     margin-bottom: 0px;
-  }
-  #news .item {
-    width: 250px;
-    height: 310px;
   }
 }

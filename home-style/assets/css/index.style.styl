@@ -1,6 +1,7 @@
 #main
   background-image url(../images/lowbg.jpg);
   background-size cover;
+  overflow hidden;
   //background-position 85%;
   height: 110vh;
   -webkit-animation background-left 1200ms 1000ms ease-in;
@@ -229,67 +230,6 @@
 
 
 
-#news
-  .item {
-    -webkit-box-shadow:  0 0 5px rgba(0,0,0,.11);
-    -moz-box-shadow:  0 0 5px rgba(0,0,0,.11);
-    box-shadow:  0 0 5px rgba(0,0,0,.11);
-    -webkit-transition: all 150ms;
-    -moz-transition: all 150ms;
-    -ms-transition: all 150ms;
-    -o-transition: all 150ms;
-    transition: all 150ms;
-    padding 7px 7px 41px 7px;
-    position: relative;
-    cursor: default;
-    width: 250px;
-    height 310px;
-    &:hover {
-      margin-top -5px;
-      -webkit-box-shadow:  0 5px 9px rgba(0,0,0,.09);
-      -moz-box-shadow:  0 5px 9px rgba(0,0,0,.09);
-      box-shadow:  0 5px 9px rgba(0,0,0,.09);
-    }
-    .image-container {
-      position: relative;
-    }
-    .arrow {
-      position: absolute;
-      bottom 18px;
-      right 18px;
-      height 12px;
-      img {
-        height 12px;
-        opacity .4;
-      }
-      &:hover img{
-        opacity .6;
-      }
-    }
-    .calendar {
-      position absolute;
-      background-color white;
-      top 10px;
-      right 10px;
-      width 44px;
-      height 54px;
-      padding: 5px;
-      span {
-        display block;
-        font-weight bold;
-        text-align center;
-        &.month {
-          color black
-          font-size 12px
-        }
-        &.day {
-          color #b88d5a;
-          font-size 19px;
-        }
-      }
-    }
-
-  }
 
 
 
@@ -341,10 +281,6 @@
       background-size: cover;
       background-position: center;
     }
-  }
-  #news .item {
-    width: 220px;
-    height 340px;
   }
 }
 
@@ -414,9 +350,4 @@
       margin-bottom 0px;
     }
   }
-  #news .item {
-    width: 250px;
-    height 310px;
-  }
-
 }

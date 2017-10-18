@@ -27,6 +27,10 @@ h1 {
 h2 {
   font-size: 26px;
 }
+h2.small {
+  font-size: 25px;
+  font-weight: bold !important;
+}
 h2.smaller {
   font-size: 24px;
 }
@@ -159,6 +163,12 @@ p.smallest {
   width: 300px;
   height: 33px;
   line-height: 33px;
+}
+.btn a {
+  color: inherit !important;
+}
+.btn a:hover {
+  text-decoration: none;
 }
 .btn-primary {
   background-color: #b88d5a;
@@ -448,6 +458,66 @@ footer button.btn.btn-primary {
   line-height: 28px;
   margin: -1px 0px 0px -3px;
 }
+#news .item {
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.11);
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.11);
+  box-shadow: 0 0 5px rgba(0,0,0,0.11);
+  -webkit-transition: all 150ms;
+  -moz-transition: all 150ms;
+  -ms-transition: all 150ms;
+  -o-transition: all 150ms;
+  transition: all 150ms;
+  padding: 7px 7px 41px 7px;
+  position: relative;
+  cursor: default;
+  width: 250px;
+  height: 310px;
+}
+#news .item:hover {
+  margin-top: -5px;
+  margin-bottom: 5px;
+  -webkit-box-shadow: 0 5px 9px rgba(0,0,0,0.09);
+  -moz-box-shadow: 0 5px 9px rgba(0,0,0,0.09);
+  box-shadow: 0 5px 9px rgba(0,0,0,0.09);
+}
+#news .item .image-container {
+  position: relative;
+}
+#news .item .arrow {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  height: 12px;
+}
+#news .item .arrow img {
+  height: 12px;
+  opacity: 0.4;
+}
+#news .item .arrow:hover img {
+  opacity: 0.6;
+}
+#news .item .calendar {
+  position: absolute;
+  background-color: #fff;
+  top: 10px;
+  right: 10px;
+  width: 44px;
+  height: 54px;
+  padding: 5px;
+}
+#news .item .calendar span {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+}
+#news .item .calendar span.month {
+  color: #000;
+  font-size: 12px;
+}
+#news .item .calendar span.day {
+  color: #b88d5a;
+  font-size: 19px;
+}
 .door-slider-out-left {
   animation: fadeout-left 150ms ease-out;
   animation-fill-mode: both;
@@ -502,6 +572,12 @@ footer button.btn.btn-primary {
   }
   footer input {
     width: 250px;
+  }
+}
+@media (min-width: 1200px) {
+  #news .item {
+    width: 250px;
+    height: 310px;
   }
 }
 @-moz-keyframes fadeout {

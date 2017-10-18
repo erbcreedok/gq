@@ -21,11 +21,16 @@ p.line-height {
 }
 #team .hover-animation-container:hover .hover-animation {
   border-radius: 0%;
+  opacity: 1;
   -webkit-transform: scale(1, 1);
   -moz-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
   -o-transform: scale(1, 1);
   transform: scale(1, 1);
+}
+#team .hover-animation-container:hover .hover-animation .bg-black {
+  top: 60px;
+  opacity: 1;
 }
 #team .hover-animation {
   background-color: rgba(0,0,0,0.6);
@@ -39,6 +44,7 @@ p.line-height {
   bottom: 0;
   margin: auto;
   border-radius: 50%;
+  opacity: 0;
   -webkit-transform: scale(0, 0);
   -moz-transform: scale(0, 0);
   -ms-transform: scale(0, 0);
@@ -52,6 +58,16 @@ p.line-height {
 }
 #team .hover-animation .bg-black {
   background: #000;
+  position: absolute;
+  top: -50px;
+  left: 20px;
+  right: 20px;
+  opacity: 0;
+  -webkit-transition: all 150ms 150ms ease-in;
+  -moz-transition: all 150ms 150ms ease-in;
+  -ms-transition: all 150ms 150ms ease-in;
+  -o-transition: all 150ms 150ms ease-in;
+  transition: all 150ms 150ms ease-in;
 }
 #team .hover-animation .bg-black a {
   color: #fff;

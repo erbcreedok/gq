@@ -1,3 +1,4 @@
+//Doors
 var doors = [
     {
         information: '<p class="upper">КАТЕГОРИЯ <span class="door-type">X</span></p>',
@@ -33,6 +34,8 @@ function onDoorPressed(num) {
     }, 150);
 }
 
+
+//Workers
 var workers = [
     {
         information: '<h2>Наш директор</h2><p class="cursive gray">Принцип нашей работы</p><p class="gray">Так же можно получить как дополнение к самой двери на выбор или заказать отдельно к же можно получить как дополнение к самой двери на выбор или заказать отдельно олнение к самой двери на выбор или заказать отдельно</p> <img src="assets/images/handwrite.png" style="margin: -10px 0px 0px 10px" width="125px">',
@@ -87,3 +90,31 @@ $(document).on('swiperight', '.worker-slider-container', function(event) {
     animateWorker('right');
 });
 switchWorker();
+
+
+//History
+var story = [
+    'Разрешите приветствовать Вас от имени компании «HomeStyle Distribution» с пожеланиями благополучия и процветания!Мы предлагаем Вам продукцию производства одного из самых известных российских производителей дверей - компании «Profil Doors».',
+    'Межкомнатные двери данного завода – это ни только высочайшее качество европейского уровня и экологичность,но и огромное разнообразие моделей по размерам,стилям от классики до хай-тек, которое позволяет удовлетворить вкус любого самого взыскательного покупателя.',
+    'Все двери компании «Profil Doors» производятся на современном, высокотехнологичном европейском оборудовании. Важным условием является использование лучших импортных материалов, в результате чего исключены любые производственные дефекты готовой продукции.',
+    'Мы будем рады помочь Вам с выбором модели межкомнатных дверей, чтобы они радовали Вас на протяжении долгих лет своим исключительным дизайном, непревзойдённым качеством, приятными воспоминаниями о цене и сотрудничестве с нашей компанией!'
+];
+var activeStory = 0;
+var storyTimer = 0;
+function switchStory() {
+    $('.storyTextHere').html(story[activeStory]);
+    $('.activeStoryNumHere').html(activeStory+1);
+    $('.storyCountHere').html(story.length);
+}
+function animateStory(num) {
+    activeStory = (num + story.length) % story.length;
+    var elem = $('.storyTextHere').removeClass('door-slider-in-left').addClass('door-slider-out-left');
+    storyTimer = setTimeout(function() {
+        clearTimeout(storyTimer);
+        switchStory();
+        $(elem).removeClass('door-slider-out-left').addClass('door-slider-in-left');
+    }, 150);
+}
+function onStoryChangePressed() {
+    animateStory(activeStory + 1);
+}

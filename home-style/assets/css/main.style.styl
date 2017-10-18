@@ -21,6 +21,9 @@ h1
 
 h2
     font-size 26px;
+h2.small
+    font-size 25px;
+    font-weight bold !important;
 h2.smaller
     font-size 24px;
 h3
@@ -40,7 +43,6 @@ h5.small
     font-weight bold;
 h5.smaller
     font-size: 14px;
-
 h6
     font-size 10.5px;
 .not-bold {
@@ -136,6 +138,11 @@ p.smallest
         width 300px;
         height 33px;
         line-height 33px;
+    a
+        color inherit !important
+    a:hover
+        text-decoration none
+
 
 
 .btn-primary
@@ -418,6 +425,70 @@ footer
 
 
 
+#news {
+    .item {
+        -webkit-box-shadow:  0 0 5px rgba(0,0,0,.11);
+        -moz-box-shadow:  0 0 5px rgba(0,0,0,.11);
+        box-shadow:  0 0 5px rgba(0,0,0,.11);
+        -webkit-transition: all 150ms;
+        -moz-transition: all 150ms;
+        -ms-transition: all 150ms;
+        -o-transition: all 150ms;
+        transition: all 150ms;
+        padding 7px 7px 41px 7px;
+        position: relative;
+        cursor: default;
+        width: 250px;
+        height 310px;
+        &:hover {
+            margin-top -5px;
+            margin-bottom 5px;
+            -webkit-box-shadow:  0 5px 9px rgba(0,0,0,.09);
+            -moz-box-shadow:  0 5px 9px rgba(0,0,0,.09);
+            box-shadow:  0 5px 9px rgba(0,0,0,.09);
+        }
+        .image-container {
+            position: relative;
+        }
+        .arrow {
+            position: absolute;
+            bottom 18px;
+            right 18px;
+            height 12px;
+            img {
+                height 12px;
+                opacity .4;
+            }
+            &:hover img{
+                opacity .6;
+            }
+        }
+        .calendar {
+            position absolute;
+            background-color white;
+            top 10px;
+            right 10px;
+            width 44px;
+            height 54px;
+            padding: 5px;
+            span {
+                display block;
+                font-weight bold;
+                text-align center;
+                &.month {
+                    color black
+                    font-size 12px
+                }
+                &.day {
+                    color #b88d5a;
+                    font-size 19px;
+                }
+            }
+        }
+    }
+}
+
+
 @keyframes fadeout {
     0%{opacity: 1}
     100%{opacity: 0}
@@ -546,5 +617,8 @@ footer
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-
+    #news .item {
+        width: 250px;
+        height 310px;
+    }
 }

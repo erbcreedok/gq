@@ -1,0 +1,27 @@
+#door .tab {
+  border-top: 5px solid transparent;
+  cursor: pointer;
+}
+#door .tab:hover {
+  background: #ddd;
+  border-color: #855a27;
+}
+#door .tab.active {
+  background: #fff;
+  border-color: #b88d5a;
+}
+#door .color-box {
+  cursor: pointer;
+  -webkit-transition: all 300;
+  -moz-transition: all 300;
+  -ms-transition: all 300;
+  -o-transition: all 300;
+  transition: all 300;
+}
+#door .color-box:hover {
+  margin-top: -5px;
+  margin-bottom: 5px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}

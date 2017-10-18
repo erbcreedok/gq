@@ -1,0 +1,24 @@
+#door
+  .tab
+    border-top: 5px solid transparent;
+    cursor pointer
+  .tab:hover {
+    background #fff-#222;
+    border-color #b88d5a-#333;
+  }
+  .tab.active
+    background white;
+    border-color: #b88d5a;
+  .color-box
+    cursor pointer;
+    -webkit-transition: all 300
+    -moz-transition: all 300
+    -ms-transition: all 300
+    -o-transition: all 300
+    transition: all 300
+    &:hover
+      margin-top -5px;
+      margin-bottom 5px;
+      -webkit-box-shadow:  0 5px 10px rgba(0,0,0,.3);
+      -moz-box-shadow:  0 5px 10px rgba(0,0,0,.3);
+      box-shadow:  0 5px 10px rgba(0,0,0,.3);
