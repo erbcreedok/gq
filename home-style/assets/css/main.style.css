@@ -109,6 +109,9 @@ nav a.nav-link:hover:before {
 p {
   line-height: 1;
 }
+p.line-height {
+  line-height: 1.2rem;
+}
 p.regular {
   font-size: 14px;
 }
