@@ -27,6 +27,7 @@
         <title>Межкомнатные двери по Казахстану и России - HomeStyle</title>
     </head>
     <body>
+        
         <div class="container-fluid" id="top-header">
             <div class="col-12 d-none d-md-block">
                 <div class="row">
@@ -753,5 +754,23 @@
         <script src="assets/js/main.animation.js"></script>
         <script src="assets/js/index.animation.js"></script>
         <script src="assets/js/index.functions.js"></script>
+
+
+        <!--    JSON REQUESTS     -->
+       <script type="text/javascript">
+           $(document).ready(function(){
+            
+                   $.ajax({
+                        url: "localhost:3000/teams",
+                        type: 'GET',
+                        dataType: 'json', // added data type
+                        success: function(res) {
+                            console.log(res);
+                            alert(res);
+                        }
+                    });
+            });       
+        </script>
+        <!-- END OF JSON REQUESTS -->
     </body>
 </html>
