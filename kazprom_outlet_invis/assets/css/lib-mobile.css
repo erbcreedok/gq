@@ -96,6 +96,7 @@
         padding: 10 0px;
         width: 33.33%;
         float: left;
+        min-height: 91px;
     }
     header navbar nav .dropdown-container .dropdown-element {
         text-align: center;

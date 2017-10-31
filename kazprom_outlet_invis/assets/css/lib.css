@@ -388,7 +388,7 @@ header navbar nav.dropper > a:after {
 header navbar nav .dropdown-container {
   display: none;
   position: absolute;
-  white-space: nowrap;
+  width: 500px;
   background: #1C252E;
   left: 0;
 }
