@@ -113,9 +113,7 @@
         <section id="slider">
             <div id="main-slider" circles="#main-slider-circles" class="slides-wrapper" active-slide="0" style="left: 0%">
                 <div class="slide-container">
-                    <div class="slide-image">
-                        <img src="assets/img/bg.jpg">
-                    </div>
+                    <div class="slide-image" style="background-image: url(assets/img/bg.jpg)"></div>
                     <div class="slide-text">
                         <h1>
                             Защитите себя от вредных газов современными средствами защиты
@@ -129,9 +127,7 @@
                     </button>
                 </div>
                 <div class="slide-container">
-                    <div class="slide-image">
-                        <img src="assets/img/bg1.jpg">
-                    </div>
+                    <div class="slide-image" style="background-image: url(assets/img/bg1.jpg)"></div>
                     <div class="slide-text">
                         <h1>
                             Защитите себя от вредных газов современными средствами защиты
@@ -145,9 +141,7 @@
                     </button>
                 </div>
                 <div class="slide-container">
-                    <div class="slide-image">
-                        <img src="assets/img/bg2.jpg">
-                    </div>
+                    <div class="slide-image" style="background-image: url(assets/img/bg2.jpg)"></div>
                     <div class="slide-text">
                         <h1>
                             Защитите себя от вредных газов современными средствами защиты
@@ -161,9 +155,7 @@
                     </button>
                 </div>
                 <div class="slide-container">
-                    <div class="slide-image">
-                        <img src="assets/img/bg4.jpg">
-                    </div>
+                    <div class="slide-image" style="background-image: url(assets/img/bg4.jpg)"></div>
                     <div class="slide-text">
                         <h1>
                             Защитите себя от вредных газов современными средствами защиты
@@ -414,7 +406,7 @@
                     $($($(elem).attr('circles')).children().removeClass('active')[active]).addClass('active');
                     sliderTimeout = setTimeout(function(){nextSlide()},7000);
                 });
-                sliderTimeout = setTimeout(function(){nextSlide()},7000);
+//                sliderTimeout = setTimeout(function(){nextSlide()},7000);
                 function nextSlide(){
                     $("#slider .slider-controller .to-right").click();
                 }

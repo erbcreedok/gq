@@ -41,7 +41,10 @@
 #slider .slide-container .slide-image {
   position: absolute;
   height: 100%;
-  left: 50%;
+    left: 0;
+    right: 0;
+    background-position: center;
+    background-size: cover;
 }
 #slider .slide-container .slide-image img {
   position: relative;
@@ -52,7 +55,7 @@
   z-index: 0;
   position: absolute;
   width: 100%;
-  left: -50%;
+/*  left: -50%;*/
   height: 150px;
   display: block;
   content: "";
@@ -62,7 +65,7 @@
 }
 #slider .slide-container .slide-text {
   position: absolute;
-  right: 50%;
+  right: 52%;
   width: 388px;
 }
 #slider .slide-container h2 {
@@ -346,9 +349,9 @@
     height: 447px;
   }
   #slider .slides-wrapper .slide-container .slide-image {
-    left: auto;
     right: 0;
     background-size: cover;
+    background-position-x: 95%;
   }
   #slider .slides-wrapper .slide-container .slide-image img {
     left: auto;
