@@ -192,6 +192,10 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__about_page_about_page_component__ = __webpack_require__("../../../../../src/app/about-page/about-page.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__location_page_location_page_component__ = __webpack_require__("../../../../../src/app/location-page/location-page.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__catalog_page_catalog_page_component__ = __webpack_require__("../../../../../src/app/catalog-page/catalog-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__shared_data_storage_service__ = __webpack_require__("../../../../../src/app/shared/data-storage.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__shared_door_doors_service__ = __webpack_require__("../../../../../src/app/shared/door/doors.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__shared_subcategory_subcategories_service__ = __webpack_require__("../../../../../src/app/shared/subcategory/subcategories.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -199,6 +203,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
 
 
 
@@ -231,9 +239,14 @@ AppModule = __decorate([
         imports: [
             __WEBPACK_IMPORTED_MODULE_4__app_routing_module__["a" /* AppRoutingModule */],
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */]
+            __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+            __WEBPACK_IMPORTED_MODULE_12__angular_http__["a" /* HttpModule */]
         ],
-        providers: [],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_13__shared_data_storage_service__["a" /* DataStorageService */],
+            __WEBPACK_IMPORTED_MODULE_14__shared_door_doors_service__["a" /* DoorsService */],
+            __WEBPACK_IMPORTED_MODULE_15__shared_subcategory_subcategories_service__["a" /* SubcategoriesService */]
+        ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -250,7 +263,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "#main {\n    background-position: center;\n    background-size: cover;\n    z-index: 10;\n}\n.mb-5.about {\n    background-image: url(\"/assets/images/texture.jpg\");\n    overflow: hidden;\n}\n#main .bg-shadow {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n}\np.line-height {\n    line-height: 1.2;\n}\n#main .categories {\n    max-width: 540px;\n    color: #000;\n}\n#main .categories .category {\n    word-wrap: break-word;\n    cursor: pointer;\n    transition: all 150ms;\n}\n#main .categories .category:hover {\n    color: #744916;\n    background-color: rgba(255,255,255,0.5);\n}\n#main .categories .category:hover svg {\n    fill: #744916;\n}\n#main .categories .category.active {\n    color: #b88d5a;\n    background-color: #fff;\n}\n#main .categories .category.active svg {\n    fill: #b88d5a;\n}\n.box {\n    box-shadow: 0 0 5px rgba(0,0,0,0.14);\n}\n#catalog .container {\n    overflow: visible;\n}\n#catalog .color-select {\n    height: 22px;\n    width: 22px;\n    box-shadow: 0px 0px 2px rgba(0,0,0,0.1);\n    display: inline-block;\n    margin: -10px 5px -7px -2px;\n}\n#catalog .door {\n    position: relative;\n    cursor: pointer;\n}\n#catalog .door .shadow {\n    transition: all 250ms;\n    box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.4);\n}\n#catalog .door:hover .shadow {\n    box-shadow: 0px 15px 10px -5px rgba(0,0,0,0.4);\n    margin-top: -10px;\n    margin-bottom: 10px;\n}\n.subcategory-button {\n    padding: 10px;\n    margin: 10px\t5px;\n    text-align: center;\n    background: #b88d5a;\n    color: white;\n    display: inline-block;\n}", ""]);
+exports.push([module.i, "#main {\n    background-position: center;\n    background-size: cover;\n    z-index: 10;\n}\n.mb-5.about {\n    background-image: url(\"/assets/images/texture.jpg\");\n    overflow: hidden;\n}\n#main .bg-shadow {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n}\np.line-height {\n    line-height: 1.2;\n}\n#main .categories {\n    max-width: 540px;\n    color: #000;\n}\n#main .categories .category {\n    word-wrap: break-word;\n    cursor: pointer;\n    transition: all 150ms;\n}\n#main .categories .category:hover {\n    color: #744916;\n    background-color: rgba(255,255,255,0.5);\n}\n#main .categories .category:hover svg {\n    fill: #744916;\n}\n#main .categories .category.active {\n    color: #b88d5a;\n    background-color: #fff;\n}\n#main .categories .category.active svg {\n    fill: #b88d5a;\n}\n.box {\n    box-shadow: 0 0 5px rgba(0,0,0,0.14);\n}\n#catalog .container {\n    overflow: visible;\n}\n#catalog .color-select {\n    height: 22px;\n    width: 22px;\n    box-shadow: 0px 0px 2px rgba(0,0,0,0.1);\n    display: inline-block;\n    margin: -10px 5px -7px -2px;\n}\n#catalog .door {\n    position: relative;\n    cursor: pointer;\n}\n#catalog .door .shadow {\n    transition: all 250ms;\n    box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.4);\n}\n#catalog .door:hover .shadow {\n    box-shadow: 0px 15px 10px -5px rgba(0,0,0,0.4);\n    margin-top: -10px;\n    margin-bottom: 10px;\n}\n.subcategory-button {\n    padding: 10px;\n    margin: 10px\t5px;\n    text-align: center;\n    background: #b88d5a;\n    color: white;\n    display: inline-block;\n}\n.subcategory-button.active {\n    background: #906d43;\n}", ""]);
 
 // exports
 
@@ -263,7 +276,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/catalog-page/catalog-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"main\" class=\"pt-5\" style=\"background-image: url(assets/images/bgblur.jpg);\">\n  <div class=\"bg-shadow\"></div>\n  <div class=\"container white text-center pt-5 pb-0\">\n    <div class=\"row my-5\">\n      <div class=\"col-12 my-5\" id=\"main-text\">\n        <h1 class=\"upper mb-3\">Каталог продуктов</h1>\n        <p class=\"big line-height\">В нашем каталоге вы можете подобрать стильный декор <br> дверных конструкций, соответствующий бюджету и вашим предпочтениям.</p>\n        <br>\n      </div>\n    </div>\n    <div class=\"row pb-0 pt-2 px-2\">\n      <div class=\"col-12 mx-auto bg-shadow-white text-center categories\">\n        <div class=\"row pt-2 pl-2 pr-2\">\n\n          <div class=\"col-3 category active\" data-value=\"0\">\n            <div class=\"category-image py-2\">\n              <a style=\"position:absolute;width:130px;height:100px;top:0px;left:0px;\" href=\"/products?category=%D0%9C%D0%B5%D0%B6%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B2%D0%B5%D1%80%D0%B8\"></a>\n              <svg height=\"34px\" viewBox=\"0 0 336 479\">\n                <path d=\"M0.001,0.001 L0.001,478.418 L335.998,478.999 L335.998,0.001 L0.001,0.001 ZM31.599,446.894 L31.599,31.581 L304.398,31.581 L304.398,88.433 L293.602,88.433 L293.602,42.116 L42.396,42.116 L42.396,436.858 L293.602,436.858 L293.602,390.542 L304.398,390.542 L304.398,447.366 L31.599,446.894 ZM293.602,137.555 L304.398,137.555 L304.398,341.417 L293.602,341.417 L293.602,137.555 ZM94.358,239.487 C94.358,248.642 86.930,256.065 77.768,256.065 C68.606,256.065 61.178,248.642 61.178,239.487 C61.178,230.331 68.606,222.907 77.768,222.907 C86.930,222.907 94.358,230.331 94.358,239.487 Z\"></path>\n              </svg>\n            </div>\n            <p>Межкомнатные двери</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>\n<section id=\"catalog\">\n  <div class=\"container py-5\">\n    <h3 class=\"mb-4\">12 результатов</h3>\n    <div class=\"box p-3\">\n      <h5 class=\"big mb-4\">\n        Сортировка по:\n      </h5>\n      <form class=\"row\">\n        <div class=\"col-md-4\">\n          <h5 class=\"small\">Категориям</h5>\n\n          <a class=\"subcategory-button\" href=\"/products?category=%D0%9C%D0%B5%D0%B6%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B2%D0%B5%D1%80%D0%B8&amp;subcategory=U\">U</a>\n          <a class=\"subcategory-button\" href=\"/products?category=%D0%9C%D0%B5%D0%B6%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B2%D0%B5%D1%80%D0%B8&amp;subcategory=L\">L</a>\n          <a class=\"subcategory-button\" href=\"/products?category=%D0%9C%D0%B5%D0%B6%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B2%D0%B5%D1%80%D0%B8&amp;subcategory=M\">M</a>\n          <a class=\"subcategory-button\" href=\"/products?category=%D0%9C%D0%B5%D0%B6%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B2%D0%B5%D1%80%D0%B8&amp;subcategory=E\">E</a>\n          <a class=\"subcategory-button\" href=\"/products?category=%D0%9C%D0%B5%D0%B6%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B2%D0%B5%D1%80%D0%B8&amp;subcategory=Z\">Z</a>\n          <a class=\"subcategory-button\" href=\"/products?category=%D0%9C%D0%B5%D0%B6%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B2%D0%B5%D1%80%D0%B8&amp;subcategory=D\">D</a>\n          <a class=\"subcategory-button\" href=\"/products?category=%D0%9C%D0%B5%D0%B6%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B2%D0%B5%D1%80%D0%B8&amp;subcategory=VG\">VG</a>\n          <a class=\"subcategory-button\" href=\"/products?category=%D0%9C%D0%B5%D0%B6%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B2%D0%B5%D1%80%D0%B8&amp;subcategory=X+%D0%9C%D0%BE%D0%B4%D0%B5%D1%80%D0%BD\">X Модерн</a>\n          <a class=\"subcategory-button\" href=\"/products?category=%D0%9C%D0%B5%D0%B6%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B2%D0%B5%D1%80%D0%B8&amp;subcategory=X+%D0%9A%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D0%BA%D0%B0\">X Классика</a>\n\n        </div>\n      </form>\n    </div>\n    <div class=\"row mt-5\">\n      <div class=\"col-md-3 col-sm-6 mt-2 mb-5 door\">\n        <div class=\"image-container mx-auto shadow\" style=\"background-image: url(https://home-style-production.s3.amazonaws.com/public/avatars/462/original_4vg_belyy_glyanets.png.png?1506449941); height: 341px; width: 144px\"></div>\n        <br>\n        <p class=\"high text-center\">Дверь 4VG</p>\n      </div>\n\n\n\n      <div class=\"col-md-3 col-sm-6 mt-2 mb-5 door\">\n        <div class=\"image-container mx-auto shadow\" style=\"background-image: url(https://home-style-production.s3.amazonaws.com/public/avatars/461/original_3vg_belyy_glyanets.png.png?1506449940); height: 341px; width: 144px\"></div>\n        <br>\n        <p class=\"high text-center\">Дверь 3VG</p>\n      </div>\n\n\n\n      <div class=\"col-md-3 col-sm-6 mt-2 mb-5 door\">\n        <div class=\"image-container mx-auto shadow\" style=\"background-image: url(https://home-style-production.s3.amazonaws.com/public/avatars/460/original_2vg_belyy_glyanets_belyy_lak.png.png?1506449938); height: 341px; width: 144px\"></div>\n        <br>\n        <p class=\"high text-center\">Дверь 2VG</p>\n      </div>\n\n\n\n      <div class=\"col-md-3 col-sm-6 mt-2 mb-5 door\">\n        <div class=\"image-container mx-auto shadow\" style=\"background-image: url(https://home-style-production.s3.amazonaws.com/public/avatars/459/original_1vg_belyy_glyanets.png.png?1506449936); height: 341px; width: 144px\"></div>\n        <br>\n        <p class=\"high text-center\">Дверь 1VG</p>\n      </div>\n\n\n\n      <div class=\"col-md-3 col-sm-6 mt-2 mb-5 door\">\n        <div class=\"image-container mx-auto shadow\" style=\"background-image: url(https://home-style-production.s3.amazonaws.com/public/avatars/458/original_1452954033_69272905.jpg?1506449365); height: 341px; width: 144px\"></div>\n        <br>\n        <p class=\"high text-center\">Дверь 12D</p>\n      </div>\n\n\n\n      <div class=\"col-md-3 col-sm-6 mt-2 mb-5 door\">\n        <div class=\"image-container mx-auto shadow\" style=\"background-image: url(https://home-style-production.s3.amazonaws.com/public/avatars/457/original_1452953871_433047505.jpg?1506449364); height: 341px; width: 144px\"></div>\n        <br>\n        <p class=\"high text-center\">Дверь 11D</p>\n      </div>\n\n\n\n      <div class=\"col-md-3 col-sm-6 mt-2 mb-5 door\">\n        <div class=\"image-container mx-auto shadow\" style=\"background-image: url(https://home-style-production.s3.amazonaws.com/public/avatars/456/original_1452953315_1485509802.jpg?1506449363); height: 341px; width: 144px\"></div>\n        <br>\n        <p class=\"high text-center\">Дверь 10D</p>\n      </div>\n\n\n\n      <div class=\"col-md-3 col-sm-6 mt-2 mb-5 door\">\n        <div class=\"image-container mx-auto shadow\" style=\"background-image: url(https://home-style-production.s3.amazonaws.com/public/avatars/455/original_1452952531_221152568.jpg?1506449362); height: 341px; width: 144px\"></div>\n        <br>\n        <p class=\"high text-center\">Дверь 9D</p>\n      </div>\n\n\n\n      <div class=\"col-md-3 col-sm-6 mt-2 mb-5 door\">\n        <div class=\"image-container mx-auto shadow\" style=\"background-image: url(https://home-style-production.s3.amazonaws.com/public/avatars/454/original_1452951559_733053475.jpg?1506449360); height: 341px; width: 144px\"></div>\n        <br>\n        <p class=\"high text-center\">Дверь 8D</p>\n      </div>\n\n\n\n      <div class=\"col-md-3 col-sm-6 mt-2 mb-5 door\">\n        <div class=\"image-container mx-auto shadow\" style=\"background-image: url(https://home-style-production.s3.amazonaws.com/public/avatars/453/original_1452950284_32593207.jpg?1506449359); height: 341px; width: 144px\"></div>\n        <br>\n        <p class=\"high text-center\">Дверь 7D</p>\n      </div>\n\n\n\n      <div class=\"col-md-3 col-sm-6 mt-2 mb-5 door\">\n        <div class=\"image-container mx-auto shadow\" style=\"background-image: url(https://home-style-production.s3.amazonaws.com/public/avatars/452/original_1452949747_832787867.jpg?1506449358); height: 341px; width: 144px\"></div>\n        <br>\n        <p class=\"high text-center\">Дверь 6D</p>\n      </div>\n\n\n\n      <div class=\"col-md-3 col-sm-6 mt-2 mb-5 door\">\n        <div class=\"image-container mx-auto shadow\" style=\"background-image: url(https://home-style-production.s3.amazonaws.com/public/avatars/451/original_1452948452_513867615.jpg?1506449356); height: 341px; width: 144px\"></div>\n        <br>\n        <p class=\"high text-center\">Дверь 5D</p>\n      </div>\n\n\n\n\n\n    </div>\n\n    <div class=\"\" style=\"max-width: 100% !important;\">\n\n      <nav>\n        <ul class=\"pagination pagination  row mx-0 justify-content-center \">\n\n\n          <li class=\"page-item active mb-2\">\n            <a class=\"page-link\" href=\"/products?category=%D0%9C%D0%B5%D0%B6%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B2%D0%B5%D1%80%D0%B8\">1</a>\n          </li>\n\n          <li class=\"page-item mb-2\">\n            <a class=\"page-link\" rel=\"next\" href=\"/products?category=%D0%9C%D0%B5%D0%B6%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B2%D0%B5%D1%80%D0%B8&amp;page=2\">2</a>\n          </li>\n\n          <li class=\"page-item mb-2\">\n            <a class=\"page-link\" href=\"/products?category=%D0%9C%D0%B5%D0%B6%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B2%D0%B5%D1%80%D0%B8&amp;page=3\">3</a>\n          </li>\n\n          <li class=\"page-item mb-2\">\n            <a class=\"page-link\" href=\"/products?category=%D0%9C%D0%B5%D0%B6%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B2%D0%B5%D1%80%D0%B8&amp;page=4\">4</a>\n          </li>\n\n          <li class=\"page-item mb-2\">\n            <a class=\"page-link\" href=\"/products?category=%D0%9C%D0%B5%D0%B6%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B2%D0%B5%D1%80%D0%B8&amp;page=5\">5</a>\n          </li>\n\n          <li class=\"page-item disabled mb-2\"><a href=\"#\" onclick=\"return false;\" class=\"page-link\">…</a></li>\n          <li class=\"page-item mb-2\">\n            <a class=\"page-link\" rel=\"next\" href=\"/products?category=%D0%9C%D0%B5%D0%B6%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B2%D0%B5%D1%80%D0%B8&amp;page=2\">Следующий ›</a>\n          </li>\n\n          <li class=\"page-item mb-2\">\n            <a class=\"page-link\" href=\"/products?category=%D0%9C%D0%B5%D0%B6%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%8B%D0%B5+%D0%B4%D0%B2%D0%B5%D1%80%D0%B8&amp;page=22\">Последний »</a>\n          </li>\n\n        </ul>\n      </nav>\n\n    </div>\n  </div>\n\n</section>"
+module.exports = "<section id=\"main\" class=\"pt-5\" style=\"background-image: url(assets/images/bgblur.jpg);\">\n  <div class=\"bg-shadow\"></div>\n  <div class=\"container white text-center pt-5 pb-0\">\n    <div class=\"row my-5\">\n      <div class=\"col-12 my-5\" id=\"main-text\">\n        <h1 class=\"upper mb-3\">Каталог продуктов</h1>\n        <p class=\"big line-height\">В нашем каталоге вы можете подобрать стильный декор <br> дверных конструкций, соответствующий бюджету и вашим предпочтениям.</p>\n        <br>\n      </div>\n    </div>\n    <div class=\"row pb-0 pt-2 px-2\">\n      <div class=\"col-12 mx-auto bg-shadow-white text-center categories\">\n        <div class=\"row pt-2 pl-2 pr-2\">\n\n          <div class=\"col-3 category active\" data-value=\"0\">\n            <div class=\"category-image py-2\">\n              <a style=\"position:absolute;width:130px;height:100px;top:0px;left:0px;\" href=\"javascript:void(0)\"></a>\n              <svg height=\"34px\" viewBox=\"0 0 336 479\">\n                <path d=\"M0.001,0.001 L0.001,478.418 L335.998,478.999 L335.998,0.001 L0.001,0.001 ZM31.599,446.894 L31.599,31.581 L304.398,31.581 L304.398,88.433 L293.602,88.433 L293.602,42.116 L42.396,42.116 L42.396,436.858 L293.602,436.858 L293.602,390.542 L304.398,390.542 L304.398,447.366 L31.599,446.894 ZM293.602,137.555 L304.398,137.555 L304.398,341.417 L293.602,341.417 L293.602,137.555 ZM94.358,239.487 C94.358,248.642 86.930,256.065 77.768,256.065 C68.606,256.065 61.178,248.642 61.178,239.487 C61.178,230.331 68.606,222.907 77.768,222.907 C86.930,222.907 94.358,230.331 94.358,239.487 Z\"></path>\n              </svg>\n            </div>\n            <p>Межкомнатные двери</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>\n<section id=\"catalog\">\n  <div [@fading]=\"'show'\" class=\"container py-5\" *ngIf=\"!isLoading()\">\n    <h3 class=\"mb-4\">{{ doors.length }} результатов</h3>\n    <div class=\"box p-3\">\n      <h5 class=\"big mb-4\">\n        Сортировка по:\n      </h5>\n      <form class=\"row\">\n        <div class=\"col-md-4\">\n          <h5 class=\"small\">Категориям</h5>\n\n          <a *ngFor=\"let subcategory of subcategories\" href=\"javascript:void(0)\" class=\"subcategory-button\" [ngClass]=\"{ active : subcategory.id === activeSubcategory }\" (click)=\"selectSubcategory(subcategory)\">{{ subcategory.title }}</a>\n\n        </div>\n      </form>\n    </div>\n    <div class=\"row mt-5\">\n\n      <div *ngFor=\"let door of visibleDoors; let i = index\" class=\"col-md-3 col-sm-6 mt-2 mb-5 door\">\n        <div class=\"image-container mx-auto shadow\" [ngStyle]=\"{backgroundImage: 'url(https://home-style-production.s3.amazonaws.com/public/avatars/' + door.id + '/original_' + door.main_image_file_name + ')'}\" style=\"height: 341px; width: 144px;\"></div>\n        <br>\n        <p class=\"high text-center\">Дверь {{ door.title }}</p>\n      </div>\n\n    </div>\n\n    <div class=\"\" style=\"max-width: 100% !important;\">\n\n      <nav>\n        <ul class=\"pagination pagination  row mx-0 justify-content-center \">\n\n          <li class=\"page-item\" *ngIf=\"activePage > 1\">\n            <a class=\"page-link\" routerLink=\"javascript:void(0)\" (click)=\"goToPage(1)\">« Первый</a>\n          </li>\n\n          <li class=\"page-item\" *ngIf=\"activePage > 1\">\n            <a class=\"page-link\" routerLink=\"javascript:void(0)\"  (click)=\"goToPage(activePage - 1)\">‹ Предыдущий</a>\n          </li>\n\n          <li *ngFor=\"let page of pages\" [ngClass]=\"{active: page === activePage}\" class=\"page-item mb-2\">\n            <a class=\"page-link\" routerLink=\"javascript:void(0)\" (click)=\"goToPage(page)\">{{ page }}</a>\n          </li>\n\n          <li class=\"page-item mb-2\" *ngIf=\"activePage < lastPage\">\n            <a class=\"page-link\" routerLink=\"javascript:void(0)\"  (click)=\"goToPage(activePage + 1)\">Следующий ›</a>\n          </li>\n\n          <li class=\"page-item mb-2\" *ngIf=\"activePage < lastPage\">\n            <a class=\"page-link\" routerLink=\"javascript:void(0)\"  (click)=\"goToPage(lastPage)\">Последний »</a>\n          </li>\n\n        </ul>\n      </nav>\n\n    </div>\n  </div>\n  <div [@fading]=\"'show'\" class=\"container py-5\" *ngIf=\"isLoading()\">\n    <h3 class=\"mb-4\" style=\"color: #999\"> <span class=\"fa fa-spinner animation-spin\"></span>  Загрузка данных</h3>\n    <div class=\"box p-3\" style=\"background-color: #f3f3f3; height: 220px\"></div>\n    <div class=\"row mt-5\">\n      <div *ngFor=\"let i of [0, 1, 2, 3]\" class=\"col-md-3 col-sm-6 mt-2 mb-5 door\">\n        <div class=\"image-container mx-auto\" style=\"background-color: #f3f3f3; height: 341px; width: 144px;\"></div>\n        <br>\n        <div style=\"background-color: #f3f3f3; height: 18px; width: 150px; margin: 0 auto\"></div>\n      </div>\n    </div>\n  </div>\n\n</section>"
 
 /***/ }),
 
@@ -272,6 +285,12 @@ module.exports = "<section id=\"main\" class=\"pt-5\" style=\"background-image: 
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_animations__ = __webpack_require__("../../../animations/@angular/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_door_doors_service__ = __webpack_require__("../../../../../src/app/shared/door/doors.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_subcategory_subcategories_service__ = __webpack_require__("../../../../../src/app/shared/subcategory/subcategories.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_lodash__ = __webpack_require__("../../../../lodash/lodash.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_lodash__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CatalogPageComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -283,10 +302,119 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
+
+
 var CatalogPageComponent = (function () {
-    function CatalogPageComponent() {
+    function CatalogPageComponent(doorsService, subcategoriesService, router, route) {
+        this.doorsService = doorsService;
+        this.subcategoriesService = subcategoriesService;
+        this.router = router;
+        this.route = route;
+        this.doors = [];
+        this.allDoors = [];
+        this.visibleDoors = [];
+        this.activePage = 1;
+        this.pages = [];
+        this.lastPage = 1;
+        this.onDoorsLoad = function () {
+            this.doorsService.loadDoors();
+        };
+        this.onSubcategoriesLoad = function () {
+            this.subcategoriesService.loadSubcategories();
+        };
     }
     CatalogPageComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.onDoorsLoad();
+        this.onSubcategoriesLoad();
+        this.doorsSubscription = this.doorsService.doorsChanged.subscribe(function (doors) {
+            _this.allDoors = doors;
+            _this.routeChanged(_this.activePage);
+        });
+        this.subcategoriesSubscription = this.subcategoriesService.subcategoriesChanged.subscribe(function (subcategories) {
+            _this.subcategories = subcategories;
+        });
+        this.queryParamsSubscription = this.route.queryParams.subscribe(function (data) {
+            if (data['page']) {
+                _this.activePage = +data['page'];
+                if (_this.activePage <= 1) {
+                    _this.goToPage(1);
+                }
+                else if (_this.activePage > _this.lastPage) {
+                    _this.goToPage(_this.lastPage);
+                }
+            }
+            if (data['subcategory']) {
+                _this.activeSubcategory = +data['subcategory'];
+            }
+            else {
+                _this.activeSubcategory = undefined;
+            }
+            _this.routeChanged(_this.activePage);
+        });
+    };
+    CatalogPageComponent.prototype.routeChanged = function (page) {
+        var _this = this;
+        if (this.activeSubcategory) {
+            this.doors = this.allDoors.filter(function (door) { return door['subcategory_id'] === _this.activeSubcategory; });
+        }
+        else {
+            this.doors = this.allDoors;
+        }
+        this.lastPage = Math.ceil(this.doors.length / 12);
+        this.pages = this.getPages();
+        this.visibleDoors = this.doors.slice((page - 1) * 12, page * 12);
+    };
+    CatalogPageComponent.prototype.selectSubcategory = function (subcategory) {
+        if (subcategory.id === this.activeSubcategory) {
+            this.router.navigate(['/catalog']);
+        }
+        else {
+            this.router.navigate(['/catalog'], { queryParams: { subcategory: subcategory.id } });
+        }
+    };
+    CatalogPageComponent.prototype.goToPage = function (page) {
+        if (page < 1 || page > this.lastPage) {
+            return;
+        }
+        if (page === 1) {
+            this.router.navigate(['/catalog']);
+        }
+        this.router.navigate(['/catalog'], { queryParams: { page: page, subcategory: this.activeSubcategory } });
+    };
+    CatalogPageComponent.prototype.getPages = function () {
+        var pageLimits = 3;
+        var startPage, endPage;
+        if (this.lastPage <= pageLimits) {
+            startPage = 1;
+            endPage = this.lastPage;
+        }
+        else {
+            if (this.activePage <= Math.ceil(pageLimits / 2)) {
+                startPage = 1;
+                endPage = pageLimits;
+            }
+            else if (this.activePage + Math.ceil(pageLimits / 2) >= this.lastPage) {
+                startPage = this.lastPage - pageLimits + 1;
+                endPage = this.lastPage;
+            }
+            else {
+                startPage = this.activePage - Math.ceil(pageLimits / 2);
+                endPage = this.activePage + pageLimits - 1;
+            }
+        }
+        return __WEBPACK_IMPORTED_MODULE_5_lodash___default.a.range(startPage, endPage + 1);
+    };
+    CatalogPageComponent.prototype.ngOnDestroy = function () {
+        this.doorsSubscription.unsubscribe();
+        this.subcategoriesSubscription.unsubscribe();
+        this.queryParamsSubscription.unsubscribe();
+    };
+    CatalogPageComponent.prototype.isLoading = function () {
+        return this.doorsService.isLoading() || this.subcategoriesService.isLoading();
     };
     return CatalogPageComponent;
 }());
@@ -294,11 +422,25 @@ CatalogPageComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
         selector: 'app-catalog-page',
         template: __webpack_require__("../../../../../src/app/catalog-page/catalog-page.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/catalog-page/catalog-page.component.css")]
+        styles: [__webpack_require__("../../../../../src/app/catalog-page/catalog-page.component.css")],
+        animations: [
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["i" /* trigger */])('fading', [
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["j" /* state */])('show', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* style */])({ transform: 'translateX(0)', opacity: 1 })),
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["k" /* transition */])('void => *', [
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* style */])({ transform: 'translateX(-100px)', opacity: 1 }),
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["l" /* animate */])('100ms 100ms ease-out')
+                ]),
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["k" /* transition */])('* => void', [
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* style */])({ transform: 'translateX(100px)', opacity: 0 }),
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["l" /* animate */])('100ms ease-out')
+                ]),
+            ])
+        ]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__shared_door_doors_service__["a" /* DoorsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_door_doors_service__["a" /* DoorsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__shared_subcategory_subcategories_service__["a" /* SubcategoriesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_subcategory_subcategories_service__["a" /* SubcategoriesService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object])
 ], CatalogPageComponent);
 
+var _a, _b, _c, _d;
 //# sourceMappingURL=catalog-page.component.js.map
 
 /***/ }),
@@ -385,7 +527,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n  <div class=\"container-fluid\" id=\"top-header\">\n    <div class=\"col-12 d-none d-md-block\">\n      <div class=\"row\">\n        <div class=\"col-6\">\n          <div class=\"row float-left\">\n            <p>\n              Наши точки в России и Казахстане\n            </p>\n            <div class=\"vertical-line\"></div>\n            <p>\n              <a href=\"tel: +77076060070\">+7 707 606 00 70</a>\n            </p>\n            <p>\n              <a href=\"tel: +77016060070\">+7 701 606 00 70</a>\n            </p>\n          </div>\n        </div>\n        <div class=\"col-6\">\n          <div class=\"row float-right text-right\">\n            <p>\n              <a href=\"https://www.instagram.com/profildoors.ru/\">\n                <i class=\"fa fa-instagram\"></i>\n              </a>\n            </p>\n            <div class=\"vertical-line\"></div>\n            <p>\n              <a href=\"#signin\">\n                <i class=\"fa fa-sign-in\"></i>\n              </a>\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-12 d-md-none\">\n      <div class=\"row\">\n        <div class=\"col-10\">\n          <div class=\"row float-left text-right\">\n            <p>\n              <a href=\"tel: +77076060070\"><i class=\"fa fa-phone\" style=\"vertical-align: middle;\"></i> <span>+7 (707) 606-00-70</span></a>\n            </p>\n            <div class=\"vertical-line\"></div>\n            <p>\n              <a href=\"tel: +77016060070\"><i class=\"fa fa-phone\" style=\"vertical-align: middle;\"></i> <span>+7 (701) 606-00-70</span></a>\n            </p>\n            <div class=\"vertical-line\"></div>\n          </div>\n        </div>\n        <div class=\"col-2\">\n          <div class=\"row float-right\">\n            <p>\n              <a href=\"#signin\">\n                <i class=\"fa fa-sign-in\"></i>\n              </a>\n\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <nav class=\"navbar navbar-expand-lg\">\n    <div class=\"container\">\n      <a class=\"navbar-brand float-left\" href=\"#\">\n        <img *ngIf=\"!isWhiteLogo\" src=\"assets/images/logo.png\" alt=\"logo\" class=\"d-none d-lg-block\" height=\"30px\">\n        <img *ngIf=\"!isWhiteLogo\" src=\"assets/images/logo-white.png\" alt=\"logo\" class=\"d-block d-lg-none\" height=\"30px\">\n        <img *ngIf=\"isWhiteLogo\" src=\"assets/images/logo-white.png\" alt=\"logo\" class=\"d-block\" height=\"30px\">\n      </a>\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <i class=\"fa fa-bars\"></i>\n      </button>\n\n      <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\" >\n        <ul class=\"navbar-nav ml-auto\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\">\n          <li class=\"nav-item\">\n            <a routerLink=\"/main\" routerLinkActive=\"active\" class=\"nav-link\">Главная страница</a>\n          </li>\n          <li class=\"nav-item\">\n            <a routerLink=\"/about\" routerLinkActive=\"active\" class=\"nav-link\">О компании</a>\n          </li>\n          <li class=\"nav-item\">\n            <a routerLink=\"/catalog\" routerLinkActive=\"active\" class=\"nav-link \">Каталог</a>\n          </li>\n\n          <li class=\"nav-item\">\n            <a routerLink=\"/location\" routerLinkActive=\"active\" class=\"nav-link\">Где купить</a>\n          </li>\n\n        </ul>\n      </div>\n    </div>\n  </nav>\n</header>"
+module.exports = "<header>\n  <div class=\"container-fluid\" id=\"top-header\">\n    <div class=\"col-12 d-none d-md-block\">\n      <div class=\"row\">\n        <div class=\"col-6\">\n          <div class=\"row float-left\">\n            <p>\n              Наши точки в России и Казахстане\n            </p>\n            <div class=\"vertical-line\"></div>\n            <p>\n              <a href=\"tel: +77076060070\">+7 707 606 00 70</a>\n            </p>\n            <p>\n              <a href=\"tel: +77016060070\">+7 701 606 00 70</a>\n            </p>\n          </div>\n        </div>\n        <div class=\"col-6\">\n          <div class=\"row float-right text-right\">\n            <p>\n              <a href=\"https://www.instagram.com/profildoors.ru/\">\n                <i class=\"fa fa-instagram\"></i>\n              </a>\n            </p>\n            <div class=\"vertical-line\"></div>\n            <p>\n              <a href=\"#signin\">\n                <i class=\"fa fa-sign-in\"></i>\n              </a>\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-12 d-md-none\">\n      <div class=\"row\">\n        <div class=\"col-10\">\n          <div class=\"row float-left text-right\">\n            <p>\n              <a href=\"tel: +77076060070\"><i class=\"fa fa-phone\" style=\"vertical-align: middle;\"></i> <span>+7 (707) 606-00-70</span></a>\n            </p>\n            <div class=\"vertical-line\"></div>\n            <p>\n              <a href=\"tel: +77016060070\"><i class=\"fa fa-phone\" style=\"vertical-align: middle;\"></i> <span>+7 (701) 606-00-70</span></a>\n            </p>\n            <div class=\"vertical-line\"></div>\n          </div>\n        </div>\n        <div class=\"col-2\">\n          <div class=\"row float-right\">\n            <p>\n              <a href=\"#signin\">\n                <i class=\"fa fa-sign-in\"></i>\n              </a>\n\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <nav class=\"navbar navbar-expand-lg\">\n    <div class=\"container\">\n      <a class=\"navbar-brand float-left\" href=\"#\">\n        <img *ngIf=\"!isWhiteLogo\" src=\"assets/images/logo.png\" alt=\"logo\" class=\"d-none d-lg-block\" height=\"30px\">\n        <img *ngIf=\"!isWhiteLogo\" src=\"assets/images/logo-white.png\" alt=\"logo\" class=\"d-block d-lg-none\" height=\"30px\">\n        <img *ngIf=\"isWhiteLogo\" src=\"assets/images/logo-white.png\" alt=\"logo\" class=\"d-block\" height=\"30px\">\n      </a>\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <i class=\"fa fa-bars\"></i>\n      </button>\n\n      <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\" >\n        <ul class=\"navbar-nav ml-auto\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\">\n          <li class=\"nav-item\">\n            <a routerLink=\"/main\" routerLinkActive=\"active\" class=\"nav-link\">Главная страница</a>\n          </li>\n          <li class=\"nav-item\">\n            <a routerLink=\"/about\" routerLinkActive=\"active\" class=\"nav-link\">О компании</a>\n          </li>\n          <li class=\"nav-item\">\n            <a routerLink=\"/catalog\" routerLinkActive=\"active\" class=\"nav-link \">Каталог</a>\n          </li>\n          <li class=\"nav-item\">\n            <a routerLink=\"/location\" routerLinkActive=\"active\" class=\"nav-link\">Где купить</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n</header>"
 
 /***/ }),
 
@@ -408,14 +550,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var HeaderComponent = (function () {
-    function HeaderComponent(route, router) {
+    function HeaderComponent(router) {
         var _this = this;
-        this.route = route;
         this.router = router;
         this.onWhiteLogo = ['location', 'catalog'];
         this.isWhiteLogo = false;
         this.router.events.subscribe(function (event) {
-            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* NavigationEnd */]) {
+            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* NavigationEnd */]) {
                 _this.isWhiteLogo = _this.onWhiteLogo.indexOf(event.urlAfterRedirects.slice(1)) !== -1;
             }
         });
@@ -430,10 +571,10 @@ HeaderComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/header/header.component.html"),
         styles: [__webpack_require__("../../../../../src/app/header/header.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object])
 ], HeaderComponent);
 
-var _a, _b;
+var _a;
 //# sourceMappingURL=header.component.js.map
 
 /***/ }),
@@ -459,7 +600,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home-page/home-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"indexpage\">\n  <section id=\"main\">\n    <div class=\"container\">\n      <div class=\"col-md-6 col-xs-12 mt-5\" id=\"main-text\">\n        <h1 class=\"upper\">Межкомнатные <br> двери</h1>\n        <p class=\"big\">Доставка и замер в точках  по Казахстану <br>и России.</p>\n        <br>\n        <!-- <button class=\"btn btn-primary big\">ПОЗВОНИТЬ</button> -->\n      </div>\n      <div id=\"door-container\" class=\"d-none d-lg-block\">\n        <img [@sliderState]=\"doorState\" src=\"assets/images/door_shadow.png\" alt=\"shadow\" id=\"door-shadow\">\n        <img [@sliderState]=\"doorState\" [src]=\"doors[activeDoor].src\" class=\"doorActiveHere\" id=\"door-image\">\n        <div id=\"door-information\">\n          <div [innerHtml]=\"doors[activeDoor].information | bindHtml\"></div>\n          <div class=\"underline\"></div>\n          <div id=\"door-left\" class=\"square\" (click)=\"onDoorPressed(-1)\">\n            <i class=\"fa fa-angle-left\"></i>\n          </div>\n          <div id=\"door-right\" class=\"square\" (click)=\"onDoorPressed(1)\">\n            <i class=\"fa fa-angle-right\"></i>\n          </div>\n          <div id=\"door-number\">\n            <span ><b>{{ activeDoor + 1 }}</b></span> / <span> {{ doors.length }}</span>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n\n  <section id=\"history\">\n    <div class=\"container\">\n      <div class=\"col-md-10 px-4 mx-auto\">\n        <div class=\"row box px-0\">\n          <div class=\"col-md-7 clearfix\">\n            <div style=\"background-image: url('assets/images/door1.jpg')\" class=\"image-history image-history-1 float-left image-container\"></div>\n            <div style=\"background-image: url('assets/images/door2.jpg')\" class=\"image-history image-history-2 float-left image-container\"></div>\n          </div>\n          <div class=\"col-md-5 my-auto\">\n            <h2>О компании</h2>\n            <p class=\"cursive grey indent\">Мы предлагаем не только двери ...</p>\n            <div class=\"gap\"></div>\n            <p class=\"gray mb-5 storyTextHere\" style=\"\">Вся продукция «Profil Doors» изготавливается с учетом трендов в дизайне, безопасных и надежных материалов. Мы предлагаем оригинальные двери для тех, кто ценит надежность и красоту, что подчеркивает индивидуальность дизайна интерьера.Наша компания старается сделать весь процесс покупки и установки дверей максимально проще и приятнее для вас, например, оплата товаров банковской картой или в рассрочку без переплат.</p>\n          </div>\n          <a href=\"#\">\n            <img src=\"assets/images/right-arrow.png\" alt=\"перейти\" class=\"box-arrow\">\n          </a>\n        </div>\n      </div>\n      <p class=\"col-md-8 col-10 mx-auto my-4 text-center grey\">Вы задаётесь вопросом “почему мне стоит выбрать именно ваши двери?” Наш ответ прост! <br>“Вся продукция Profil Doors делается по принципу лучшего соотношения цены и качества. Это позволяет ВАМ получить продуманный дизайн, идеально вписывающийся в любое помещение. \"</p>\n    </div>\n  </section>\n\n  <section id=\"icons\">\n    <div class=\"col-md-6 mx-auto text-center\">\n      <div class=\"row\">\n        <div class=\"col-md-3 col-sm-6 mb-5 mb-md-1\">\n          <div class=\"icon-container\">\n            <img  src=\"assets/images/truck.png\" alt=\"Сервис\" height=\"23px\">\n          </div>\n          <br><div class=\"gap\"></div><div class=\"gap\"></div>\n          <h4>Сервис</h4>\n          <p class=\"gray\">Выполняем заказы в нестандартных размерах</p>\n        </div>\n        <div class=\"col-md-3 col-sm-6 mb-5 mb-md-1\">\n          <div class=\"icon-container\">\n            <img  src=\"assets/images/like.png\" alt=\"Качество\" height=\"29px\">\n          </div>\n          <br><div class=\"gap\"></div><div class=\"gap\"></div>\n          <h4>Качество</h4>\n          <p class=\"gray\">Годовая гарантия. Срок службы двери – 20 лет</p>\n        </div>\n        <div class=\"col-md-3 col-sm-6 mb-5 mb-md-1\">\n          <div class=\"icon-container\">\n            <img  src=\"assets/images/money.png\" alt=\"Кредит\" height=\"29px\">\n          </div>\n          <br><div class=\"gap\"></div><div class=\"gap\"></div>\n          <h4>Кредит</h4>\n          <p class=\"gray\">Оплата товаров банковской картой или в рассрочку без переплат</p>\n        </div>\n        <div class=\"col-md-3 col-sm-6 mb-5 mb-md-1\">\n          <div class=\"icon-container\">\n            <img  src=\"assets/images/speech-bubble.png\" alt=\"Престиж\" height=\"28px\">\n          </div>\n          <br><div class=\"gap\"></div><div class=\"gap\"></div>\n          <h4>Престиж</h4>\n          <p class=\"gray\">Статус и комфорт</p>\n        </div>\n      </div>\n    </div>\n  </section>\n\n  <section id=\"catalog\" style=\"background-image: url(assets/images/texture.jpg);\">\n    <div class=\"container\">\n      <p class=\"cursive text-center\" style=\"font-size: 14px\">Уникальность и Актуальность</p>\n      <h3 class=\"upper text-center\">Наши двери</h3>\n      <p class=\"text-center col-md-8 mx-auto\">Межкомнатные двери «Profil Doors» отличаются приятным внешним видом, надежностью и декоративной отделкой. В нашем каталоге вы можете подобрать стильный всевозможный декор дверных конструкций, соответствующий бюджету и вашим предпочтениям.</p>\n      <div></div><br>\n      <div class=\"row justify-content-around\">\n        <div class=\"door-container text-center\">\n          <div class=\"door-image\">\n            <img src=\"http://www.profildoors.ru/upload/iblock/367/1452869426_825340149.jpg\">\n          </div>\n          <div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div>\n          <h5>Серия U</h5>\n          <div class=\"gap\"></div><div class=\"gap\"></div>\n          <a href=\"#\"><button class=\"btn btn-primary small\">Подробнее</button></a>\n          <br><br>\n        </div>\n        <div class=\"door-container text-center\">\n          <div class=\"door-image\">\n            <img src=\"http://www.profildoors.ru/upload/iblock/3a7/76l_wg.png\">\n          </div>\n          <div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div>\n          <h5>Серия L</h5>\n          <div class=\"gap\"></div><div class=\"gap\"></div>\n          <a href=\"#\"><button class=\"btn btn-primary small\">Подробнее</button></a>\n          <br><br>\n        </div>\n        <div class=\"door-container text-center\">\n          <div class=\"door-image\">\n            <img src=\"http://www.profildoors.ru/upload/iblock/b96/1452880895_1323897514.jpg\">\n          </div>\n          <div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div>\n          <h5>Серия X</h5>\n          <div class=\"gap\"></div><div class=\"gap\"></div>\n          <a href=\"#\"><button class=\"btn btn-primary small\">Подробнее</button></a>\n          <br><br>\n        </div>\n        <div class=\"door-container text-center\">\n          <div class=\"door-image\">\n            <img src=\"http://www.profildoors.ru/upload/iblock/ee0/1452960604_1372854516.jpg\">\n          </div>\n          <div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div>\n          <h5>Серия Z</h5>\n          <div class=\"gap\"></div><div class=\"gap\"></div>\n          <a href=\"#\"><button class=\"btn btn-primary small\">Подробнее</button></a>\n          <br><br>\n        </div>\n      </div>\n    </div>\n  </section>\n\n  <section id=\"dop-tovary\">\n    <div class=\"container\">\n      <div class=\"col-md-10 px-4 pb-5 mx-auto\">\n        <div class=\"row box px-0\">\n          <div class=\"col-12\">\n            <div class=\"row text-center\">\n              <div class=\"col-md-8 mx-auto\">\n                <br>\n                <p class=\"cursive grey mb-1\">У нас вы найдете не только двери…</p>\n                <h2 class=\"mt-0 mb-2\">Дополнительные товары</h2>\n                <p class=\"gray\">Широкий ассортимент дверных ручек, замков и петель. Оригинальность и тонкость фурнитуры не оставит вас равнодушными.</p>\n              </div>\n            </div>\n            <div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n\n  <section id=\"workers\">\n    <div class=\"container\">\n      <!--  <div class=\"col-md-10 mx-auto\">\n           <div class=\"row px-2 worker-slider-container worker-slider\">\n               <div class=\"col-md-8 float-right order-1 order-md-2\">\n                   <div class=\"image-container float-right workerImageHere\" style=\"width: 478px; background-image: url(assets/director.jpg);\"></div>\n               </div>\n               <div class=\"col-md-4 my-auto float-left order-2 order-md-1 workerInformationHere\">\n                   <h2>Байжуманов Ильяс</h2>\n                   <p class=\"cursive gray\">Директор</p>\n                   <p class=\"gray\">Рыбаки не думают о вчерашних неудачах, они думают о сегодняшних возможностях!</p>\n\n               </div>\n           </div>\n           <div class=\"row mx-auto circles justify-content-center workerCircles\">\n\n           </div>\n       </div> -->\n      <!-- <div class=\"arrows\">\n          <i class=\"fa fa-angle-left float-left workerArrowLeft\"></i>\n          <i class=\"fa fa-angle-right float-right workerArrowRight\"></i>\n      </div> -->\n    </div>\n  </section>\n\n  <section id=\"information\" class=\"py-5 my-1\" style=\"background-image: url(assets/images/bgblur.jpg);\">\n    <div class=\"container my-5\">\n      <div class=\"col-md-10 px-0 px-sm-2 mx-auto\">\n        <div class=\"row px-4\">\n          <div class=\"col-md-5 white\">\n            <div class=\"row\">\n              <div class=\"map-container px-0 col-12\">\n                <!--<iframe frameborder=\"no\" style=\"border: 1px solid #a3a3a3; box-sizing: border-box; margin: 0;\" width=\"100%\" height=\"300\" src=\"http://widgets.2gis.com/widget?type=firmsonmap&amp;options=%7B%22pos%22%3A%7B%22lat%22%3A43.236167694554204%2C%22lon%22%3A76.84642553329469%2C%22zoom%22%3A16%7D%2C%22opt%22%3A%7B%22city%22%3A%22almaty%22%7D%2C%22org%22%3A%229429940000785575%22%7D\"></iframe>-->\n                <script src=\"//api-maps.yandex.ru/2.1/?lang=ru_RU\" type=\"text/javascript\"></script>\n                <div id=\"map\" style=\"width:100%; height: 190px; border:0; background: #444\"></div>\n                <!--                            <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.677469400906!2d76.84312341537633!3d43.23722147913783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388369c12e62874d%3A0x74a5c96297264d8a!2z0KLQtdGF0L3QvtC00L7QvCDQkNGA0LzQsNC00LA!5e0!3m2!1sru!2s!4v1507977237004\" width=\"100%\" height=\"190\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>-->\n              </div>\n              <div class=\"contacts text-center pt-3 pb-2 px-0 col-12\">\n                <h4>Контакты</h4>\n                <p class=\"cursive mb-4\">Мы всегда на связи</p>\n                <div class=\"row justify-content-center p-3\">\n                  <span onclick=\"switchMapTo('Almaty')\" class=\"btn btn-primary mx-2 my-2 d-block small float-left\">Алматы</span>\n                  <br>\n                  <span onclick=\"switchMapTo('Astana')\" class=\"btn btn-primary mx-2 my-2 d-block small float-left\">Астана</span>\n                  <span onclick=\"switchMapTo('Karaganda')\" class=\"btn btn-primary mx-2 my-2 d-block small float-left\">Караганда</span>\n                  <span onclick=\"switchMapTo('Shymkent')\" class=\"btn btn-primary mx-2 my-2 d-block small float-left\">Шымкент</span>\n                </div>\n              </div>\n              <div class=\"contacts text-center contacts-phone px-0 col-12\">\n                <p class=\"smaller py-2 m-0 bordered border-bottom-0\">\n                  <a href=\"tel: +77016060070\">+7 (701) 606 00 70</a>\n                </p>\n                <p class=\"smaller py-2 m-0 bordered\">\n                  <a href=\"tel: +77076060070\">+7 (707) 606 00 70</a>\n                </p>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-md-7 bg-white\">\n            <div class=\"mt-5\">\n              <div class=\"col-10 mx-auto text-center\">\n                <p class=\"cursive mb-1 grey\">Заинтересованы? У вас есть вопросы?</p>\n                <h2 class=\"mb-3\">Оформите заявку</h2>\n                <p class=\"gray\">Профессиональные консультанты будут рады помочь Вам в выборе нужной модели и ответят на любые интересующие Вас вопросы.</p>\n              </div>\n              <form action=\"/call_mes\" accept-charset=\"UTF-8\" method=\"post\"><input name=\"utf8\" type=\"hidden\" value=\"✓\"><input type=\"hidden\" name=\"authenticity_token\" value=\"6jaFjAzR2rgsxxt8os0cxUqbWVyczY78EGWCiNH+ACLwHIm6jC8pSK+BiHTLq45YmG9cFfK7U44lSsHuASX0GQ==\">\n\n                <div class=\"inner contact\">\n                  <div class=\"contact-form\">\n                    <input placeholder=\"Введите Фамилие Имя\" id=\"call_me_name\" class=\"input-group\" type=\"text\" name=\"call_me[name]\">\n                    <input placeholder=\"Введите Ваш телефон\" id=\"call_me_phone\" class=\"input-group\" type=\"text\" name=\"call_me[phone]\">\n                    <select class=\"input-group\" name=\"call_me[location]\">\n                      <option value=\"\">Выберите город</option>\n                      <option value=\"1\">Алматы</option>\n                      <option value=\"2\">Астана</option>\n                      <option value=\"3\">Шымкент</option>\n                      <option value=\"4\">Караганда</option>\n                      <option value=\"5\">Челябинск</option>\n                      <option value=\"6\">Актобе</option>\n                      <option value=\"7\">Тараз</option>\n                      <option value=\"8\">Павлодар</option>\n                      <option value=\"9\">Усть-Каменогорск</option>\n                      <option value=\"10\">Семей</option>\n                      <option value=\"11\">Костанай</option>\n                      <option value=\"12\">Уральск</option>\n                      <option value=\"13\">Атырау</option>\n                      <option value=\"14\">Кызылорда</option>\n                      <option value=\"15\">Петропавловск</option>\n                      <option value=\"16\">Актау</option>\n                      <option value=\"17\">Темиртау</option>\n                      <option value=\"18\">Туркестан</option>\n                      <option value=\"19\">Кокшетау</option>\n                      <option value=\"20\">Талдыкорган</option>\n                      <option value=\"21\">Экибастуз</option>\n                      <option value=\"22\">Рудный</option>\n                    </select>\n                    <!-- Bottom Submit -->\n                    <div class=\"relative fullwidth col-xs-12\">\n                      <!-- Send Button -->\n                      <input type=\"submit\" name=\"commit\" value=\"Отправить\" class=\"btn btn-primary mx-auto my-2 d-block long mw-100\" id=\"submit\" data-disable-with=\"Отправить\">\n                    </div><!-- End Bottom Submit -->\n                    <!-- Clear -->\n                    <div class=\"clear\"></div>\n                    <!-- Your Mail Message -->\n                    <div class=\"mail-message-area\">\n                      <!-- Message -->\n                      <div class=\"alert gray-bg mail-message not-visible-message\">\n                      </div>\n                    </div>\n                  </div><!-- End Contact Form Area -->\n                </div>\n              </form>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n\n  <section id=\"clients\" class=\"my-5\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-3 mx-auto text-center\">\n          <h2>Наши клиенты</h2>\n          <p class=\"cursive grey\">Счастливые люди</p>\n          <p class=\"gray\" >Мы благодарим каждого, кто переступил наш порог, за доверие, полезный опыт и сотрудничество.</p>\n        </div>\n      </div>\n      <div class=\"row logos justify-content-around text-center\">\n        <div class=\"h-148 col-md-3 pb-5\" style=\"line-height: 148px;\">\n          <img src=\"assets/images/airastana.png\" alt=\"Air Astana\" class=\"w-75\">\n        </div>\n        <div class=\"h-148 col-md-3 pb-5\" style=\"line-height: 148px;\">\n          <img src=\"assets/images/expo.png\" alt=\"Expo 2017\" class=\"w-75\">\n        </div>\n        <div class=\"h-148 col-md-3 pb-5\" style=\"line-height: 148px;\">\n          <img src=\"assets/images/astana.png\" alt=\"Банк Астаны\" class=\"w-75\">\n        </div>\n      </div>\n    </div>\n  </section>\n</div>"
+module.exports = "<div class=\"indexpage\">\n  <section id=\"main\">\n    <div class=\"container\">\n      <div class=\"col-md-6 col-xs-12 mt-5\" id=\"main-text\">\n        <h1 class=\"upper\">Межкомнатные <br> двери</h1>\n        <p class=\"big\">Доставка и замер в точках  по Казахстану <br>и России.</p>\n        <br>\n        <!-- <button class=\"btn btn-primary big\">ПОЗВОНИТЬ</button> -->\n      </div>\n      <div id=\"door-container\" class=\"d-none d-lg-block\">\n        <img [@sliderState]=\"doorState\" src=\"assets/images/door_shadow.png\" alt=\"shadow\" id=\"door-shadow\">\n        <img [@sliderState]=\"doorState\" [src]=\"doors[activeDoor].src\" class=\"doorActiveHere\" id=\"door-image\">\n        <div id=\"door-information\">\n          <div [innerHtml]=\"doors[activeDoor].information | bindHtml\"></div>\n          <div class=\"underline\"></div>\n          <div id=\"door-left\" class=\"square\" (click)=\"onDoorPressed(-1)\">\n            <i class=\"fa fa-angle-left\"></i>\n          </div>\n          <div id=\"door-right\" class=\"square\" (click)=\"onDoorPressed(1)\">\n            <i class=\"fa fa-angle-right\"></i>\n          </div>\n          <div id=\"door-number\">\n            <span ><b>{{ activeDoor + 1 }}</b></span> / <span> {{ doors.length }}</span>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n\n  <section id=\"history\">\n    <div class=\"container\">\n      <div class=\"col-md-10 px-4 mx-auto\">\n        <div class=\"row box px-0\">\n          <div class=\"col-md-7 clearfix\">\n            <div style=\"background-image: url('assets/images/door1.jpg')\" class=\"image-history image-history-1 float-left image-container\"></div>\n            <div style=\"background-image: url('assets/images/door2.jpg')\" class=\"image-history image-history-2 float-left image-container\"></div>\n          </div>\n          <div class=\"col-md-5 my-auto\">\n            <h2>О компании</h2>\n            <p class=\"cursive grey indent\">Мы предлагаем не только двери ...</p>\n            <div class=\"gap\"></div>\n            <p class=\"gray mb-5 storyTextHere\" style=\"\">Вся продукция «Profil Doors» изготавливается с учетом трендов в дизайне, безопасных и надежных материалов. Мы предлагаем оригинальные двери для тех, кто ценит надежность и красоту, что подчеркивает индивидуальность дизайна интерьера.Наша компания старается сделать весь процесс покупки и установки дверей максимально проще и приятнее для вас, например, оплата товаров банковской картой или в рассрочку без переплат.</p>\n          </div>\n          <a href=\"#\">\n            <img src=\"assets/images/right-arrow.png\" alt=\"перейти\" class=\"box-arrow\">\n          </a>\n        </div>\n      </div>\n      <p class=\"col-md-8 col-10 mx-auto my-4 text-center grey\">Вы задаётесь вопросом “почему мне стоит выбрать именно ваши двери?” Наш ответ прост! <br>“Вся продукция Profil Doors делается по принципу лучшего соотношения цены и качества. Это позволяет ВАМ получить продуманный дизайн, идеально вписывающийся в любое помещение. \"</p>\n    </div>\n  </section>\n\n  <section id=\"icons\">\n    <div class=\"col-md-6 mx-auto text-center\">\n      <div class=\"row\">\n        <div class=\"col-md-3 col-sm-6 mb-5 mb-md-1\">\n          <div class=\"icon-container\">\n            <img  src=\"assets/images/truck.png\" alt=\"Сервис\" height=\"23px\">\n          </div>\n          <br><div class=\"gap\"></div><div class=\"gap\"></div>\n          <h4>Сервис</h4>\n          <p class=\"gray\">Выполняем заказы в нестандартных размерах</p>\n        </div>\n        <div class=\"col-md-3 col-sm-6 mb-5 mb-md-1\">\n          <div class=\"icon-container\">\n            <img  src=\"assets/images/like.png\" alt=\"Качество\" height=\"29px\">\n          </div>\n          <br><div class=\"gap\"></div><div class=\"gap\"></div>\n          <h4>Качество</h4>\n          <p class=\"gray\">Годовая гарантия. Срок службы двери – 20 лет</p>\n        </div>\n        <div class=\"col-md-3 col-sm-6 mb-5 mb-md-1\">\n          <div class=\"icon-container\">\n            <img  src=\"assets/images/money.png\" alt=\"Кредит\" height=\"29px\">\n          </div>\n          <br><div class=\"gap\"></div><div class=\"gap\"></div>\n          <h4>Кредит</h4>\n          <p class=\"gray\">Оплата товаров банковской картой или в рассрочку без переплат</p>\n        </div>\n        <div class=\"col-md-3 col-sm-6 mb-5 mb-md-1\">\n          <div class=\"icon-container\">\n            <img  src=\"assets/images/speech-bubble.png\" alt=\"Престиж\" height=\"28px\">\n          </div>\n          <br><div class=\"gap\"></div><div class=\"gap\"></div>\n          <h4>Престиж</h4>\n          <p class=\"gray\">Статус и комфорт</p>\n        </div>\n      </div>\n    </div>\n  </section>\n\n  <section id=\"catalog\" style=\"background-image: url(assets/images/texture.jpg);\">\n    <div class=\"container\">\n      <p class=\"cursive text-center\" style=\"font-size: 14px\">Уникальность и Актуальность</p>\n      <h3 class=\"upper text-center\">Наши двери</h3>\n      <p class=\"text-center col-md-8 mx-auto\">Межкомнатные двери «Profil Doors» отличаются приятным внешним видом, надежностью и декоративной отделкой. В нашем каталоге вы можете подобрать стильный всевозможный декор дверных конструкций, соответствующий бюджету и вашим предпочтениям.</p>\n      <div></div><br>\n      <div class=\"row justify-content-around\">\n        <div class=\"door-container text-center\">\n          <div class=\"door-image\">\n            <img src=\"http://www.profildoors.ru/upload/iblock/367/1452869426_825340149.jpg\">\n          </div>\n          <div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div>\n          <h5>Серия U</h5>\n          <div class=\"gap\"></div><div class=\"gap\"></div>\n          <a href=\"#\"><button class=\"btn btn-primary small\">Подробнее</button></a>\n          <br><br>\n        </div>\n        <div class=\"door-container text-center\">\n          <div class=\"door-image\">\n            <img src=\"http://www.profildoors.ru/upload/iblock/3a7/76l_wg.png\">\n          </div>\n          <div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div>\n          <h5>Серия L</h5>\n          <div class=\"gap\"></div><div class=\"gap\"></div>\n          <a href=\"#\"><button class=\"btn btn-primary small\">Подробнее</button></a>\n          <br><br>\n        </div>\n        <div class=\"door-container text-center\">\n          <div class=\"door-image\">\n            <img src=\"http://www.profildoors.ru/upload/iblock/b96/1452880895_1323897514.jpg\">\n          </div>\n          <div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div>\n          <h5>Серия X</h5>\n          <div class=\"gap\"></div><div class=\"gap\"></div>\n          <a href=\"#\"><button class=\"btn btn-primary small\">Подробнее</button></a>\n          <br><br>\n        </div>\n        <div class=\"door-container text-center\">\n          <div class=\"door-image\">\n            <img src=\"http://www.profildoors.ru/upload/iblock/ee0/1452960604_1372854516.jpg\">\n          </div>\n          <div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div>\n          <h5>Серия Z</h5>\n          <div class=\"gap\"></div><div class=\"gap\"></div>\n          <a href=\"#\"><button class=\"btn btn-primary small\">Подробнее</button></a>\n          <br><br>\n        </div>\n      </div>\n    </div>\n  </section>\n\n  <section id=\"dop-tovary\">\n    <div class=\"container\">\n      <div class=\"col-md-10 px-4 pb-5 mx-auto\">\n        <div class=\"row box px-0\">\n          <div class=\"col-12\">\n            <div class=\"row text-center\">\n              <div class=\"col-md-8 mx-auto\">\n                <br>\n                <p class=\"cursive grey mb-1\">У нас вы найдете не только двери…</p>\n                <h2 class=\"mt-0 mb-2\">Дополнительные товары</h2>\n                <p class=\"gray\">Широкий ассортимент дверных ручек, замков и петель. Оригинальность и тонкость фурнитуры не оставит вас равнодушными.</p>\n              </div>\n            </div>\n            <div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n\n  <section id=\"workers\">\n    <div class=\"container\">\n      <!--  <div class=\"col-md-10 mx-auto\">\n           <div class=\"row px-2 worker-slider-container worker-slider\">\n               <div class=\"col-md-8 float-right order-1 order-md-2\">\n                   <div class=\"image-container float-right workerImageHere\" style=\"width: 478px; background-image: url(assets/director.jpg);\"></div>\n               </div>\n               <div class=\"col-md-4 my-auto float-left order-2 order-md-1 workerInformationHere\">\n                   <h2>Байжуманов Ильяс</h2>\n                   <p class=\"cursive gray\">Директор</p>\n                   <p class=\"gray\">Рыбаки не думают о вчерашних неудачах, они думают о сегодняшних возможностях!</p>\n\n               </div>\n           </div>\n           <div class=\"row mx-auto circles justify-content-center workerCircles\">\n\n           </div>\n       </div> -->\n      <!-- <div class=\"arrows\">\n          <i class=\"fa fa-angle-left float-left workerArrowLeft\"></i>\n          <i class=\"fa fa-angle-right float-right workerArrowRight\"></i>\n      </div> -->\n    </div>\n  </section>\n\n  <section id=\"information\" class=\"py-5 my-1\" style=\"background-image: url(assets/images/bgblur.jpg);\">\n    <div class=\"container my-5\">\n      <div class=\"col-md-10 px-0 px-sm-2 mx-auto\">\n        <div class=\"row px-4\">\n          <div class=\"col-md-5 white\">\n            <div class=\"row\">\n              <div class=\"map-container px-0 col-12\">\n                <!--<iframe frameborder=\"no\" style=\"border: 1px solid #a3a3a3; box-sizing: border-box; margin: 0;\" width=\"100%\" height=\"300\" src=\"http://widgets.2gis.com/widget?type=firmsonmap&amp;options=%7B%22pos%22%3A%7B%22lat%22%3A43.236167694554204%2C%22lon%22%3A76.84642553329469%2C%22zoom%22%3A16%7D%2C%22opt%22%3A%7B%22city%22%3A%22almaty%22%7D%2C%22org%22%3A%229429940000785575%22%7D\"></iframe>-->\n\n                <div id=\"map\" style=\"\n                width:100%; height: 190px; border:0; background: #444\"></div>\n                <!--                            <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.677469400906!2d76.84312341537633!3d43.23722147913783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388369c12e62874d%3A0x74a5c96297264d8a!2z0KLQtdGF0L3QvtC00L7QvCDQkNGA0LzQsNC00LA!5e0!3m2!1sru!2s!4v1507977237004\" width=\"100%\" height=\"190\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>-->\n              </div>\n              <div class=\"contacts text-center pt-3 pb-2 px-0 col-12\">\n                <h4>Контакты</h4>\n                <p class=\"cursive mb-4\">Мы всегда на связи</p>\n                <div class=\"row justify-content-center p-3\">\n                  <span onclick=\"switchMapTo('Almaty')\" class=\"btn btn-primary mx-2 my-2 d-block small float-left\">Алматы</span>\n                  <br>\n                  <span onclick=\"switchMapTo('Astana')\" class=\"btn btn-primary mx-2 my-2 d-block small float-left\">Астана</span>\n                  <span onclick=\"switchMapTo('Karaganda')\" class=\"btn btn-primary mx-2 my-2 d-block small float-left\">Караганда</span>\n                  <span onclick=\"switchMapTo('Shymkent')\" class=\"btn btn-primary mx-2 my-2 d-block small float-left\">Шымкент</span>\n                </div>\n              </div>\n              <div class=\"contacts text-center contacts-phone px-0 col-12\">\n                <p class=\"smaller py-2 m-0 bordered border-bottom-0\">\n                  <a href=\"tel: +77016060070\">+7 (701) 606 00 70</a>\n                </p>\n                <p class=\"smaller py-2 m-0 bordered\">\n                  <a href=\"tel: +77076060070\">+7 (707) 606 00 70</a>\n                </p>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-md-7 bg-white\">\n            <div class=\"mt-5\">\n              <div class=\"col-10 mx-auto text-center\">\n                <p class=\"cursive mb-1 grey\">Заинтересованы? У вас есть вопросы?</p>\n                <h2 class=\"mb-3\">Оформите заявку</h2>\n                <p class=\"gray\">Профессиональные консультанты будут рады помочь Вам в выборе нужной модели и ответят на любые интересующие Вас вопросы.</p>\n              </div>\n              <form action=\"/call_mes\" accept-charset=\"UTF-8\" method=\"post\"><input name=\"utf8\" type=\"hidden\" value=\"✓\"><input type=\"hidden\" name=\"authenticity_token\" value=\"6jaFjAzR2rgsxxt8os0cxUqbWVyczY78EGWCiNH+ACLwHIm6jC8pSK+BiHTLq45YmG9cFfK7U44lSsHuASX0GQ==\">\n\n                <div class=\"inner contact\">\n                  <div class=\"contact-form\">\n                    <input placeholder=\"Введите Фамилие Имя\" id=\"call_me_name\" class=\"input-group\" type=\"text\" name=\"call_me[name]\">\n                    <input placeholder=\"Введите Ваш телефон\" id=\"call_me_phone\" class=\"input-group\" type=\"text\" name=\"call_me[phone]\">\n                    <select class=\"input-group\" name=\"call_me[location]\">\n                      <option value=\"\">Выберите город</option>\n                      <option value=\"1\">Алматы</option>\n                      <option value=\"2\">Астана</option>\n                      <option value=\"3\">Шымкент</option>\n                      <option value=\"4\">Караганда</option>\n                      <option value=\"5\">Челябинск</option>\n                      <option value=\"6\">Актобе</option>\n                      <option value=\"7\">Тараз</option>\n                      <option value=\"8\">Павлодар</option>\n                      <option value=\"9\">Усть-Каменогорск</option>\n                      <option value=\"10\">Семей</option>\n                      <option value=\"11\">Костанай</option>\n                      <option value=\"12\">Уральск</option>\n                      <option value=\"13\">Атырау</option>\n                      <option value=\"14\">Кызылорда</option>\n                      <option value=\"15\">Петропавловск</option>\n                      <option value=\"16\">Актау</option>\n                      <option value=\"17\">Темиртау</option>\n                      <option value=\"18\">Туркестан</option>\n                      <option value=\"19\">Кокшетау</option>\n                      <option value=\"20\">Талдыкорган</option>\n                      <option value=\"21\">Экибастуз</option>\n                      <option value=\"22\">Рудный</option>\n                    </select>\n                    <!-- Bottom Submit -->\n                    <div class=\"relative fullwidth col-xs-12\">\n                      <!-- Send Button -->\n                      <input type=\"submit\" name=\"commit\" value=\"Отправить\" class=\"btn btn-primary mx-auto my-2 d-block long mw-100\" id=\"submit\" data-disable-with=\"Отправить\">\n                    </div><!-- End Bottom Submit -->\n                    <!-- Clear -->\n                    <div class=\"clear\"></div>\n                    <!-- Your Mail Message -->\n                    <div class=\"mail-message-area\">\n                      <!-- Message -->\n                      <div class=\"alert gray-bg mail-message not-visible-message\">\n                      </div>\n                    </div>\n                  </div><!-- End Contact Form Area -->\n                </div>\n              </form>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n\n  <section id=\"clients\" class=\"my-5\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-3 mx-auto text-center\">\n          <h2>Наши клиенты</h2>\n          <p class=\"cursive grey\">Счастливые люди</p>\n          <p class=\"gray\" >Мы благодарим каждого, кто переступил наш порог, за доверие, полезный опыт и сотрудничество.</p>\n        </div>\n      </div>\n      <div class=\"row logos justify-content-around text-center\">\n        <div class=\"h-148 col-md-3 pb-5\" style=\"line-height: 148px;\">\n          <img src=\"assets/images/airastana.png\" alt=\"Air Astana\" class=\"w-75\">\n        </div>\n        <div class=\"h-148 col-md-3 pb-5\" style=\"line-height: 148px;\">\n          <img src=\"assets/images/expo.png\" alt=\"Expo 2017\" class=\"w-75\">\n        </div>\n        <div class=\"h-148 col-md-3 pb-5\" style=\"line-height: 148px;\">\n          <img src=\"assets/images/astana.png\" alt=\"Банк Астаны\" class=\"w-75\">\n        </div>\n      </div>\n    </div>\n  </section>\n</div>"
 
 /***/ }),
 
@@ -524,7 +665,7 @@ HomePageComponent = __decorate([
         selector: 'app-home-page',
         template: __webpack_require__("../../../../../src/app/home-page/home-page.component.html"),
         styles: [__webpack_require__("../../../../../src/app/home-page/home-page.component.css")],
-        encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* ViewEncapsulation */].None,
+        encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ViewEncapsulation */].None,
         animations: [
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["i" /* trigger */])('sliderState', [
                 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["j" /* state */])('in', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* style */])({ opacity: '1' })),
@@ -614,6 +755,163 @@ LocationPageComponent = __decorate([
 ], LocationPageComponent);
 
 //# sourceMappingURL=location-page.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/data-storage.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataStorageService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var DataStorageService = (function () {
+    function DataStorageService(http) {
+        this.http = http;
+    }
+    DataStorageService.prototype.loadDoors = function () {
+        return this.http.get('https://homestyle-e3b26.firebaseio.com/products.json').map(function (response) {
+            return response.json();
+        });
+    };
+    DataStorageService.prototype.loadSubcategories = function () {
+        return this.http.get('https://homestyle-e3b26.firebaseio.com/subcategories.json').map(function (response) {
+            return response.json();
+        });
+    };
+    return DataStorageService;
+}());
+DataStorageService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+], DataStorageService);
+
+var _a;
+//# sourceMappingURL=data-storage.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/door/doors.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__("../../../../rxjs/Subject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__data_storage_service__ = __webpack_require__("../../../../../src/app/shared/data-storage.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DoorsService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var DoorsService = (function () {
+    function DoorsService(dataStorageService) {
+        this.dataStorageService = dataStorageService;
+        this.doorsChanged = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
+        this.doors = [];
+    }
+    DoorsService.prototype.isLoading = function () {
+        return (this.subscription && !this.subscription.closed);
+    };
+    DoorsService.prototype.loadDoors = function () {
+        var _this = this;
+        this.subscription = this.dataStorageService.loadDoors().subscribe(function (doors) {
+            _this.doors = doors;
+            _this.doorsChanged.next(_this.doors.slice());
+        });
+    };
+    DoorsService.prototype.getDoor = function (index) {
+        return this.doors[index];
+    };
+    DoorsService.prototype.getDoors = function () {
+        return this.doors.slice();
+    };
+    return DoorsService;
+}());
+DoorsService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__data_storage_service__["a" /* DataStorageService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__data_storage_service__["a" /* DataStorageService */]) === "function" && _a || Object])
+], DoorsService);
+
+var _a;
+//# sourceMappingURL=doors.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/subcategory/subcategories.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__("../../../../rxjs/Subject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_app_shared_data_storage_service__ = __webpack_require__("../../../../../src/app/shared/data-storage.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SubcategoriesService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var SubcategoriesService = (function () {
+    function SubcategoriesService(dataStorageService) {
+        this.dataStorageService = dataStorageService;
+        this.subcategoriesChanged = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
+        this.subcategories = [];
+    }
+    SubcategoriesService.prototype.isLoading = function () {
+        return (this.subscription && !this.subscription.closed);
+    };
+    SubcategoriesService.prototype.loadSubcategories = function (subcategories) {
+        var _this = this;
+        this.subscription = this.dataStorageService.loadSubcategories().subscribe(function (subcategories) {
+            _this.subcategories = subcategories;
+            _this.subcategoriesChanged.next(_this.subcategories.slice());
+        });
+    };
+    SubcategoriesService.prototype.getSubcategory = function (index) {
+        return this.subcategories[index];
+    };
+    SubcategoriesService.prototype.getSubcategories = function () {
+        return this.subcategories.slice();
+    };
+    return SubcategoriesService;
+}());
+SubcategoriesService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_app_shared_data_storage_service__["a" /* DataStorageService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_app_shared_data_storage_service__["a" /* DataStorageService */]) === "function" && _a || Object])
+], SubcategoriesService);
+
+var _a;
+//# sourceMappingURL=subcategories.service.js.map
 
 /***/ }),
 
