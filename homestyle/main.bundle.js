@@ -196,6 +196,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__shared_data_storage_service__ = __webpack_require__("../../../../../src/app/shared/data-storage.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__shared_door_doors_service__ = __webpack_require__("../../../../../src/app/shared/door/doors.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__shared_subcategory_subcategories_service__ = __webpack_require__("../../../../../src/app/shared/subcategory/subcategories.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__nicky_lenaers_ngx_scroll_to__ = __webpack_require__("../../../../@nicky-lenaers/ngx-scroll-to/@nicky-lenaers/ngx-scroll-to.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -203,6 +204,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -240,7 +242,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__app_routing_module__["a" /* AppRoutingModule */],
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_12__angular_http__["a" /* HttpModule */]
+            __WEBPACK_IMPORTED_MODULE_12__angular_http__["a" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_16__nicky_lenaers_ngx_scroll_to__["a" /* ScrollToModule */].forRoot()
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_13__shared_data_storage_service__["a" /* DataStorageService */],
@@ -276,7 +279,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/catalog-page/catalog-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"main\" class=\"pt-5\" style=\"background-image: url(assets/images/bgblur.jpg);\">\n  <div class=\"bg-shadow\"></div>\n  <div class=\"container white text-center pt-5 pb-0\">\n    <div class=\"row my-5\">\n      <div class=\"col-12 my-5\" id=\"main-text\">\n        <h1 class=\"upper mb-3\">Каталог продуктов</h1>\n        <p class=\"big line-height\">В нашем каталоге вы можете подобрать стильный декор <br> дверных конструкций, соответствующий бюджету и вашим предпочтениям.</p>\n        <br>\n      </div>\n    </div>\n    <div class=\"row pb-0 pt-2 px-2\">\n      <div class=\"col-12 mx-auto bg-shadow-white text-center categories\">\n        <div class=\"row pt-2 pl-2 pr-2\">\n\n          <div class=\"col-3 category active\" data-value=\"0\">\n            <div class=\"category-image py-2\">\n              <a style=\"position:absolute;width:130px;height:100px;top:0px;left:0px;\" href=\"javascript:void(0)\"></a>\n              <svg height=\"34px\" viewBox=\"0 0 336 479\">\n                <path d=\"M0.001,0.001 L0.001,478.418 L335.998,478.999 L335.998,0.001 L0.001,0.001 ZM31.599,446.894 L31.599,31.581 L304.398,31.581 L304.398,88.433 L293.602,88.433 L293.602,42.116 L42.396,42.116 L42.396,436.858 L293.602,436.858 L293.602,390.542 L304.398,390.542 L304.398,447.366 L31.599,446.894 ZM293.602,137.555 L304.398,137.555 L304.398,341.417 L293.602,341.417 L293.602,137.555 ZM94.358,239.487 C94.358,248.642 86.930,256.065 77.768,256.065 C68.606,256.065 61.178,248.642 61.178,239.487 C61.178,230.331 68.606,222.907 77.768,222.907 C86.930,222.907 94.358,230.331 94.358,239.487 Z\"></path>\n              </svg>\n            </div>\n            <p>Межкомнатные двери</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>\n<section id=\"catalog\">\n  <div [@fading]=\"'show'\" class=\"container py-5\" *ngIf=\"!isLoading()\">\n    <h3 class=\"mb-4\">{{ doors.length }} результатов</h3>\n    <div class=\"box p-3\">\n      <h5 class=\"big mb-4\">\n        Сортировка по:\n      </h5>\n      <form class=\"row\">\n        <div class=\"col-md-4\">\n          <h5 class=\"small\">Категориям</h5>\n\n          <a *ngFor=\"let subcategory of subcategories\" href=\"javascript:void(0)\" class=\"subcategory-button\" [ngClass]=\"{ active : subcategory.id === activeSubcategory }\" (click)=\"selectSubcategory(subcategory)\">{{ subcategory.title }}</a>\n\n        </div>\n      </form>\n    </div>\n    <div class=\"row mt-5\">\n\n      <div *ngFor=\"let door of visibleDoors; let i = index\" class=\"col-md-3 col-sm-6 mt-2 mb-5 door\">\n        <div class=\"image-container mx-auto shadow\" [ngStyle]=\"{backgroundImage: 'url(https://home-style-production.s3.amazonaws.com/public/avatars/' + door.id + '/original_' + door.main_image_file_name + ')'}\" style=\"height: 341px; width: 144px;\"></div>\n        <br>\n        <p class=\"high text-center\">Дверь {{ door.title }}</p>\n      </div>\n\n    </div>\n\n    <div class=\"\" style=\"max-width: 100% !important;\">\n\n      <nav>\n        <ul class=\"pagination pagination  row mx-0 justify-content-center \">\n\n          <li class=\"page-item\" *ngIf=\"activePage > 1\">\n            <a class=\"page-link\" routerLink=\"javascript:void(0)\" (click)=\"goToPage(1)\">« Первый</a>\n          </li>\n\n          <li class=\"page-item\" *ngIf=\"activePage > 1\">\n            <a class=\"page-link\" routerLink=\"javascript:void(0)\"  (click)=\"goToPage(activePage - 1)\">‹ Предыдущий</a>\n          </li>\n\n          <li *ngFor=\"let page of pages\" [ngClass]=\"{active: page === activePage}\" class=\"page-item mb-2\">\n            <a class=\"page-link\" routerLink=\"javascript:void(0)\" (click)=\"goToPage(page)\">{{ page }}</a>\n          </li>\n\n          <li class=\"page-item mb-2\" *ngIf=\"activePage < lastPage\">\n            <a class=\"page-link\" routerLink=\"javascript:void(0)\"  (click)=\"goToPage(activePage + 1)\">Следующий ›</a>\n          </li>\n\n          <li class=\"page-item mb-2\" *ngIf=\"activePage < lastPage\">\n            <a class=\"page-link\" routerLink=\"javascript:void(0)\"  (click)=\"goToPage(lastPage)\">Последний »</a>\n          </li>\n\n        </ul>\n      </nav>\n\n    </div>\n  </div>\n  <div [@fading]=\"'show'\" class=\"container py-5\" *ngIf=\"isLoading()\">\n    <h3 class=\"mb-4\" style=\"color: #999\"> <span class=\"fa fa-spinner animation-spin\"></span>  Загрузка данных</h3>\n    <div class=\"box p-3\" style=\"background-color: #f3f3f3; height: 220px\"></div>\n    <div class=\"row mt-5\">\n      <div *ngFor=\"let i of [0, 1, 2, 3]\" class=\"col-md-3 col-sm-6 mt-2 mb-5 door\">\n        <div class=\"image-container mx-auto\" style=\"background-color: #f3f3f3; height: 341px; width: 144px;\"></div>\n        <br>\n        <div style=\"background-color: #f3f3f3; height: 18px; width: 150px; margin: 0 auto\"></div>\n      </div>\n    </div>\n  </div>\n\n</section>"
+module.exports = "<section id=\"main\" class=\"pt-5\" style=\"background-image: url(assets/images/bgblur.jpg);\">\n  <div class=\"bg-shadow\"></div>\n  <div class=\"container white text-center pt-5 pb-0\">\n    <div class=\"row my-5\">\n      <div class=\"col-12 my-5\" id=\"main-text\">\n        <h1 class=\"upper mb-3\">Каталог продуктов</h1>\n        <p class=\"big line-height\">В нашем каталоге вы можете подобрать стильный декор <br> дверных конструкций, соответствующий бюджету и вашим предпочтениям.</p>\n        <br>\n      </div>\n    </div>\n    <div class=\"row pb-0 pt-2 px-2\">\n      <div class=\"col-12 mx-auto bg-shadow-white text-center categories\">\n        <div class=\"row pt-2 pl-2 pr-2\">\n\n          <div class=\"col-3 category active\" data-value=\"0\">\n            <div class=\"category-image py-2\">\n              <a style=\"position:absolute;width:130px;height:100px;top:0px;left:0px;\" href=\"javascript:void(0)\"></a>\n              <svg height=\"34px\" viewBox=\"0 0 336 479\">\n                <path d=\"M0.001,0.001 L0.001,478.418 L335.998,478.999 L335.998,0.001 L0.001,0.001 ZM31.599,446.894 L31.599,31.581 L304.398,31.581 L304.398,88.433 L293.602,88.433 L293.602,42.116 L42.396,42.116 L42.396,436.858 L293.602,436.858 L293.602,390.542 L304.398,390.542 L304.398,447.366 L31.599,446.894 ZM293.602,137.555 L304.398,137.555 L304.398,341.417 L293.602,341.417 L293.602,137.555 ZM94.358,239.487 C94.358,248.642 86.930,256.065 77.768,256.065 C68.606,256.065 61.178,248.642 61.178,239.487 C61.178,230.331 68.606,222.907 77.768,222.907 C86.930,222.907 94.358,230.331 94.358,239.487 Z\"></path>\n              </svg>\n            </div>\n            <p>Межкомнатные двери</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>\n<section id=\"catalog\">\n  <div *ngIf=\"isLoading()\" [@fading]=\"'show'\" class=\"container py-5\" style=\"position: absolute; right: 0; left: 0;\">\n    <h3 class=\"mb-4\" style=\"color: #999\"> <span class=\"fa fa-spinner animation-spin\"></span>  Загружаем вам двери</h3>\n    <div class=\"box p-3\" style=\"height: 142px\">\n      <h5 class=\"big mb-4\">\n        <div style=\"background-color: #eee; height: 21px; width: 150px; border-radius: 11px;\"></div>\n      </h5>\n      <div class=\"col-md-4 px-0\">\n        <div style=\"background-color: #eee; height: 19px; border-radius: 8px; margin-bottom: 0.5rem\"></div>\n        <div style=\"background-color: #eee; height: 38px;\"></div>\n      </div>\n    </div>\n    <div class=\"row mt-5\">\n      <div *ngFor=\"let i of [0, 1, 2, 3]\" class=\"col-md-3 col-sm-6 mt-2 mb-5 door\">\n        <div class=\"image-container mx-auto\" style=\"background: #f3f3f3 url('assets/images/door-template.svg'); height: 341px; width: 144px;\"></div>\n        <br>\n        <div style=\"background-color: #ddd; height: 18px; width: 150px; margin: 0 auto; border-radius: 9px;\"></div>\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"isLoading()\" class=\"container py-5\" style=\"height: 768px;\"></div>\n  <div [@fading]=\"'show'\" class=\"container py-5\" id=\"catalog-body\" *ngIf=\"!isLoading()\">\n    <h3 class=\"mb-4\">{{ doors.length }} результатов</h3>\n    <div class=\"box p-3\">\n      <h5 class=\"big mb-4\">\n        Сортировка по:\n      </h5>\n      <form class=\"row\">\n        <div class=\"col-md-4\">\n          <h5 class=\"small\">Категориям</h5>\n          <select class=\"input-group input-group-alt\" name=\"criteria\" id=\"criteria-value\" (change)=\"onSelectSubcategory($event.target.value)\">\n            <option [selected]=\"!activeSubcategory\" value=\"all\">Все</option>\n            <option *ngFor=\"let subcategory of subcategories\" [value]=\"subcategory.id\" [selected]=\"subcategory.id === activeSubcategory\">{{ subcategory.title }}</option>\n          </select>\n        </div>\n      </form>\n    </div>\n    <div class=\"row mt-5\" id=\"catalog-list\">\n\n      <div *ngFor=\"let door of visibleDoors; let i = index\" class=\"col-md-3 col-sm-6 mt-2 mb-5 door\">\n        <div class=\"image-container mx-auto shadow\" [ngStyle]=\"{backgroundImage: 'url(https://home-style-production.s3.amazonaws.com/public/avatars/' + door.id + '/original_' + door.main_image_file_name + ')'}\" style=\"height: 341px; width: 144px;\"></div>\n        <br>\n        <p class=\"high text-center\">Дверь {{ door.title }}</p>\n      </div>\n\n    </div>\n\n    <div class=\"\" style=\"max-width: 100% !important;\">\n\n      <nav>\n        <ul class=\"pagination pagination  row mx-0 justify-content-center \">\n\n          <li class=\"page-item\" *ngIf=\"activePage > 1\">\n            <a class=\"page-link\" routerLink=\"javascript:void(0)\" (click)=\"goToPage(1)\">« Первый</a>\n          </li>\n\n          <li class=\"page-item\" *ngIf=\"activePage > 1\">\n            <a class=\"page-link\" routerLink=\"javascript:void(0)\"  (click)=\"goToPage(activePage - 1)\">‹ Предыдущий</a>\n          </li>\n\n          <li *ngFor=\"let page of pages\" [ngClass]=\"{active: page === activePage}\" class=\"page-item mb-2\">\n            <a class=\"page-link\" routerLink=\"javascript:void(0)\" (click)=\"goToPage(page)\">{{ page }}</a>\n          </li>\n\n          <li class=\"page-item mb-2\" *ngIf=\"activePage < lastPage\">\n            <a class=\"page-link\" routerLink=\"javascript:void(0)\"  (click)=\"goToPage(activePage + 1)\">Следующий ›</a>\n          </li>\n\n          <li class=\"page-item mb-2\" *ngIf=\"activePage < lastPage\">\n            <a class=\"page-link\" routerLink=\"javascript:void(0)\"  (click)=\"goToPage(lastPage)\">Последний »</a>\n          </li>\n\n        </ul>\n      </nav>\n\n    </div>\n  </div>\n</section>"
 
 /***/ }),
 
@@ -289,8 +292,9 @@ module.exports = "<section id=\"main\" class=\"pt-5\" style=\"background-image: 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_door_doors_service__ = __webpack_require__("../../../../../src/app/shared/door/doors.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_subcategory_subcategories_service__ = __webpack_require__("../../../../../src/app/shared/subcategory/subcategories.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_lodash__ = __webpack_require__("../../../../lodash/lodash.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_lodash__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__nicky_lenaers_ngx_scroll_to__ = __webpack_require__("../../../../@nicky-lenaers/ngx-scroll-to/@nicky-lenaers/ngx-scroll-to.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_lodash__ = __webpack_require__("../../../../lodash/lodash.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_lodash__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CatalogPageComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -307,12 +311,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CatalogPageComponent = (function () {
-    function CatalogPageComponent(doorsService, subcategoriesService, router, route) {
+    function CatalogPageComponent(doorsService, subcategoriesService, router, route, scrollToService) {
         this.doorsService = doorsService;
         this.subcategoriesService = subcategoriesService;
         this.router = router;
         this.route = route;
+        this.scrollToService = scrollToService;
         this.doors = [];
         this.allDoors = [];
         this.visibleDoors = [];
@@ -347,6 +353,9 @@ var CatalogPageComponent = (function () {
                     _this.goToPage(_this.lastPage);
                 }
             }
+            else {
+                _this.activePage = 1;
+            }
             if (data['subcategory']) {
                 _this.activeSubcategory = +data['subcategory'];
             }
@@ -367,13 +376,14 @@ var CatalogPageComponent = (function () {
         this.lastPage = Math.ceil(this.doors.length / 12);
         this.pages = this.getPages();
         this.visibleDoors = this.doors.slice((page - 1) * 12, page * 12);
+        this.triggerScrollTo('#catalog-body');
     };
-    CatalogPageComponent.prototype.selectSubcategory = function (subcategory) {
-        if (subcategory.id === this.activeSubcategory) {
+    CatalogPageComponent.prototype.onSelectSubcategory = function (subcategoryId) {
+        if (subcategoryId === 'all') {
             this.router.navigate(['/catalog']);
         }
         else {
-            this.router.navigate(['/catalog'], { queryParams: { subcategory: subcategory.id } });
+            this.router.navigate(['/catalog'], { queryParams: { subcategory: subcategoryId } });
         }
     };
     CatalogPageComponent.prototype.goToPage = function (page) {
@@ -406,7 +416,7 @@ var CatalogPageComponent = (function () {
                 endPage = this.activePage + pageLimits - 1;
             }
         }
-        return __WEBPACK_IMPORTED_MODULE_5_lodash___default.a.range(startPage, endPage + 1);
+        return __WEBPACK_IMPORTED_MODULE_6_lodash___default.a.range(startPage, endPage + 1);
     };
     CatalogPageComponent.prototype.ngOnDestroy = function () {
         this.doorsSubscription.unsubscribe();
@@ -415,6 +425,13 @@ var CatalogPageComponent = (function () {
     };
     CatalogPageComponent.prototype.isLoading = function () {
         return this.doorsService.isLoading() || this.subcategoriesService.isLoading();
+    };
+    CatalogPageComponent.prototype.triggerScrollTo = function (target) {
+        var config = {
+            target: target,
+            offset: 700
+        };
+        this.scrollToService.scrollTo(config);
     };
     return CatalogPageComponent;
 }());
@@ -425,22 +442,22 @@ CatalogPageComponent = __decorate([
         styles: [__webpack_require__("../../../../../src/app/catalog-page/catalog-page.component.css")],
         animations: [
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["i" /* trigger */])('fading', [
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["j" /* state */])('show', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* style */])({ transform: 'translateX(0)', opacity: 1 })),
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["j" /* state */])('show', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* style */])({ opacity: 1 })),
                 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["k" /* transition */])('void => *', [
-                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* style */])({ transform: 'translateX(-100px)', opacity: 1 }),
-                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["l" /* animate */])('100ms 100ms ease-out')
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* style */])({ opacity: 1 }),
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["l" /* animate */])('100ms 150ms ease-out')
                 ]),
                 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["k" /* transition */])('* => void', [
-                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* style */])({ transform: 'translateX(100px)', opacity: 0 }),
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* style */])({ opacity: 0 }),
                     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["l" /* animate */])('100ms ease-out')
                 ]),
             ])
         ]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__shared_door_doors_service__["a" /* DoorsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_door_doors_service__["a" /* DoorsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__shared_subcategory_subcategories_service__["a" /* SubcategoriesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_subcategory_subcategories_service__["a" /* SubcategoriesService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__shared_door_doors_service__["a" /* DoorsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_door_doors_service__["a" /* DoorsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__shared_subcategory_subcategories_service__["a" /* SubcategoriesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_subcategory_subcategories_service__["a" /* SubcategoriesService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__nicky_lenaers_ngx_scroll_to__["b" /* ScrollToService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__nicky_lenaers_ngx_scroll_to__["b" /* ScrollToService */]) === "function" && _e || Object])
 ], CatalogPageComponent);
 
-var _a, _b, _c, _d;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=catalog-page.component.js.map
 
 /***/ }),
@@ -557,7 +574,7 @@ var HeaderComponent = (function () {
         this.isWhiteLogo = false;
         this.router.events.subscribe(function (event) {
             if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* NavigationEnd */]) {
-                _this.isWhiteLogo = _this.onWhiteLogo.indexOf(event.urlAfterRedirects.slice(1)) !== -1;
+                _this.isWhiteLogo = _this.onWhiteLogo.indexOf(event.urlAfterRedirects.slice(1).split('?')[0]) !== -1;
             }
         });
     }
