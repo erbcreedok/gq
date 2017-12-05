@@ -499,7 +499,7 @@ ScrollToDirective.decorators = [
 ScrollToDirective.ctorParameters = function () { return [
     { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */], },
     { type: ScrollToService, },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_0" /* Renderer2 */], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */], },
 ]; };
 ScrollToDirective.propDecorators = {
     'ngxScrollTo': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */], args: ['ngx-scroll-to',] },],
@@ -547,6 +547,838 @@ ScrollToModule.ctorParameters = function () { return []; };
 
 //# sourceMappingURL=ngx-scroll-to.es5.js.map
 
+
+/***/ }),
+
+/***/ "../../../../angular2-yandex-maps/index.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+
+__export(__webpack_require__("../../../../angular2-yandex-maps/lib/core.module.js"));
+
+/***/ }),
+
+/***/ "../../../../angular2-yandex-maps/lib/core.module.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_ymap__ = __webpack_require__("../../../../angular2-yandex-maps/lib/directives/ymap.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_marker__ = __webpack_require__("../../../../angular2-yandex-maps/lib/directives/marker.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_claster__ = __webpack_require__("../../../../angular2-yandex-maps/lib/directives/claster.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_objectManager__ = __webpack_require__("../../../../angular2-yandex-maps/lib/directives/objectManager.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_ya_maps_loader__ = __webpack_require__("../../../../angular2-yandex-maps/lib/services/ya-maps-loader.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_browser_globals__ = __webpack_require__("../../../../angular2-yandex-maps/lib/utils/browser-globals.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ya_maps_types__ = __webpack_require__("../../../../angular2-yandex-maps/lib/ya-maps-types.js");
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "yandex", function() { return __WEBPACK_IMPORTED_MODULE_7__ya_maps_types__["a"]; });
+/* harmony export (immutable) */ __webpack_exports__["coreDirectives"] = coreDirectives;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "YaCoreModule", function() { return YaCoreModule; });
+/* harmony export (immutable) */ __webpack_exports__["YaCoreModuleForRoot"] = YaCoreModuleForRoot;
+
+
+
+
+
+
+
+
+/**
+ * @internal
+ */
+function coreDirectives() {
+    return [
+        __WEBPACK_IMPORTED_MODULE_1__directives_ymap__["a" /* YaMap */],
+        __WEBPACK_IMPORTED_MODULE_2__directives_marker__["a" /* YaMarker */],
+        __WEBPACK_IMPORTED_MODULE_3__directives_claster__["a" /* YaClaster */],
+        __WEBPACK_IMPORTED_MODULE_4__directives_objectManager__["a" /* YaObjectManager */]
+    ];
+}
+/**
+ * The angular-ya-maps core module. Contains all Directives/Services/Pipes
+ * of the core module. Please use `YaCoreModule.forRoot()` in your app module.
+ */
+var YaCoreModule = /** @class */ (function () {
+    function YaCoreModule() {
+    }
+    /**
+     * Please use this method when you register the module at the root level.
+     */
+    YaCoreModule.forRoot = function () {
+        return {
+            ngModule: YaCoreModule,
+            providers: __WEBPACK_IMPORTED_MODULE_6__utils_browser_globals__["a" /* BROWSER_GLOBALS_PROVIDERS */].concat([
+                { provide: __WEBPACK_IMPORTED_MODULE_5__services_ya_maps_loader__["a" /* YaMapsAPILoader */], useClass: __WEBPACK_IMPORTED_MODULE_5__services_ya_maps_loader__["a" /* YaMapsAPILoader */] }
+            ]),
+        };
+    };
+    YaCoreModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */], args: [{ declarations: coreDirectives(), exports: coreDirectives() },] },
+    ];
+    /** @nocollapse */
+    YaCoreModule.ctorParameters = function () { return []; };
+    return YaCoreModule;
+}());
+
+function YaCoreModuleForRoot() {
+    return [
+        YaCoreModule.forRoot()
+    ];
+}
+//# sourceMappingURL=core.module.js.map
+
+/***/ }),
+
+/***/ "../../../../angular2-yandex-maps/lib/directives/claster.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ya_maps_api_wrapper__ = __webpack_require__("../../../../angular2-yandex-maps/lib/ya-maps-api-wrapper.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_managers_claster_manager__ = __webpack_require__("../../../../angular2-yandex-maps/lib/services/managers/claster-manager.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return YaClaster; });
+// tslint:disable-next-line:max-line-length
+
+
+
+var clasterId = 0;
+// tslint:disable-next-line:directive-class-suffix
+var YaClaster = /** @class */ (function () {
+    function YaClaster(_clasterManager) {
+        this._clasterManager = _clasterManager;
+        this._markerAddedToManger = false;
+        this._id = (clasterId++).toString();
+    }
+    YaClaster.prototype.ngOnChanges = function (changes) {
+        if (!this._markerAddedToManger) {
+            this._clasterManager.addClaster(this);
+        }
+    };
+    // tslint:disable-next-line:no-empty
+    YaClaster.prototype.ngOnDestroy = function () { };
+    // tslint:disable-next-line:no-empty
+    YaClaster.prototype._addEventListeners = function () { };
+    YaClaster.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* Directive */], args: [{
+                    selector: 'ya-claster',
+                    providers: [
+                        __WEBPACK_IMPORTED_MODULE_1__ya_maps_api_wrapper__["a" /* YaMapsAPIWrapper */]
+                    ]
+                },] },
+    ];
+    /** @nocollapse */
+    YaClaster.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_2__services_managers_claster_manager__["a" /* ClasterManager */], },
+    ]; };
+    YaClaster.propDecorators = {
+        'markers': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+    };
+    return YaClaster;
+}());
+
+//# sourceMappingURL=claster.js.map
+
+/***/ }),
+
+/***/ "../../../../angular2-yandex-maps/lib/directives/marker.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ya_maps_api_wrapper__ = __webpack_require__("../../../../angular2-yandex-maps/lib/ya-maps-api-wrapper.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_managers_marker_manager__ = __webpack_require__("../../../../angular2-yandex-maps/lib/services/managers/marker-manager.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return YaMarker; });
+// tslint:disable-next-line:max-line-length
+
+
+
+var markerId = 0;
+// tslint:disable-next-line:directive-class-suffix
+var YaMarker = /** @class */ (function () {
+    function YaMarker(_markerManager) {
+        this._markerManager = _markerManager;
+        this.draggable = false;
+        this.preset = 'islands#blueIcon';
+        this.markerClick = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* EventEmitter */]();
+        // tslint:disable-next-line:max-line-length
+        this.dragEnd = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* EventEmitter */]();
+        this._markerAddedToManger = false;
+        this._observableSubscriptions = [];
+        this._id = (markerId++).toString();
+    }
+    YaMarker.prototype.ngOnChanges = function (changes) {
+        if (!this._markerAddedToManger) {
+            this._markerManager.addMarker(this);
+            this._markerAddedToManger = true;
+            this._addEventListeners();
+            return;
+        }
+        if (changes['showInfo']) {
+            this._markerManager.showBalloon(this);
+        }
+    };
+    YaMarker.prototype.ngOnDestroy = function () {
+        this._markerManager.deleteMarker(this);
+        this._observableSubscriptions.forEach(function (s) { return s.unsubscribe(); });
+    };
+    YaMarker.prototype._addEventListeners = function () {
+        var _this = this;
+        // click event
+        var cs = this._markerManager.createEventObservable('click', this).subscribe(function () {
+            _this._markerManager.showBalloon(_this);
+            _this.markerClick.emit(null);
+        });
+        this._observableSubscriptions.push(cs);
+        // dragend event
+        // tslint:disable-next-line:max-line-length
+        var ds = this._markerManager.createEventObservable('dragend', this).subscribe(function (e) {
+            var thisPlacemark = e.get('target');
+            var coords = thisPlacemark.geometry.getCoordinates();
+            _this._markerManager.getNativeMarker(_this).then(function (m) {
+                // tslint:disable-next-line:max-line-length
+                _this.dragEnd.emit({ lat: coords[0], lng: coords[1], nativeMarker: m });
+            });
+        });
+        this._observableSubscriptions.push(ds);
+    };
+    YaMarker.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* Directive */], args: [{
+                    selector: 'ya-marker',
+                    providers: [
+                        __WEBPACK_IMPORTED_MODULE_1__ya_maps_api_wrapper__["a" /* YaMapsAPIWrapper */]
+                    ]
+                },] },
+    ];
+    /** @nocollapse */
+    YaMarker.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_2__services_managers_marker_manager__["a" /* MarkerManager */], },
+    ]; };
+    YaMarker.propDecorators = {
+        'latitude': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'longitude': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'balloonLayout': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'balloonContentHeader': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'balloonContentBody': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'balloonContentFooter': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'draggable': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'preset': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'iconContent': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'showInfo': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'iconLayout': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'iconImageHref': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'iconImageSize': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'iconImageOffset': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'markerClick': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_0" /* Output */] },],
+        'dragEnd': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_0" /* Output */] },],
+    };
+    return YaMarker;
+}());
+
+//# sourceMappingURL=marker.js.map
+
+/***/ }),
+
+/***/ "../../../../angular2-yandex-maps/lib/directives/objectManager.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ya_maps_api_wrapper__ = __webpack_require__("../../../../angular2-yandex-maps/lib/ya-maps-api-wrapper.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_managers_objectManager_manager__ = __webpack_require__("../../../../angular2-yandex-maps/lib/services/managers/objectManager-manager.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return YaObjectManager; });
+
+
+
+var markerId = 0;
+// tslint:disable-next-line:directive-class-suffix
+var YaObjectManager = /** @class */ (function () {
+    function YaObjectManager(_manager) {
+        this._manager = _manager;
+        this.clusterize = false;
+        this.clasterPreset = 'islands#blueIcon';
+        this.objectPreset = 'islands#blueClusterIcons';
+        this.gridSize = 0;
+        this._observableSubscriptions = [];
+        this._addedToManger = false;
+        this._id = (markerId++).toString();
+    }
+    YaObjectManager.prototype.ngOnChanges = function (changes) {
+        if (!this._addedToManger) {
+            this._manager.add(this);
+            this._addedToManger = true;
+            return;
+        }
+        if (changes['selectedObjectId']) {
+            this._manager.navigateToGeoObject(this, this.selectedObjectId);
+        }
+        if (changes['filter']) {
+            console.log('filter ' + this.filter);
+            this._manager.setFilter(this, this.filter);
+        }
+    };
+    YaObjectManager.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* Directive */], args: [{
+                    selector: 'ya-object-manager',
+                    providers: [
+                        __WEBPACK_IMPORTED_MODULE_1__ya_maps_api_wrapper__["a" /* YaMapsAPIWrapper */]
+                    ]
+                },] },
+    ];
+    /** @nocollapse */
+    YaObjectManager.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_2__services_managers_objectManager_manager__["a" /* ObjectManagerManager */], },
+    ]; };
+    YaObjectManager.propDecorators = {
+        'clusterize': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'datasource': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'clasterPreset': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'objectPreset': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'gridSize': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'selectedObjectId': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'filter': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+    };
+    return YaObjectManager;
+}());
+
+//# sourceMappingURL=objectManager.js.map
+
+/***/ }),
+
+/***/ "../../../../angular2-yandex-maps/lib/directives/ymap.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ya_maps_api_wrapper__ = __webpack_require__("../../../../angular2-yandex-maps/lib/ya-maps-api-wrapper.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_managers_marker_manager__ = __webpack_require__("../../../../angular2-yandex-maps/lib/services/managers/marker-manager.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_managers_claster_manager__ = __webpack_require__("../../../../angular2-yandex-maps/lib/services/managers/claster-manager.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_managers_objectManager_manager__ = __webpack_require__("../../../../angular2-yandex-maps/lib/services/managers/objectManager-manager.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return YaMap; });
+// tslint:disable-next-line:max-line-length
+
+
+
+
+
+// tslint:disable-next-line:component-class-suffix
+var YaMap = /** @class */ (function () {
+    function YaMap(_elem, _mapsWrapper) {
+        this._elem = _elem;
+        this._mapsWrapper = _mapsWrapper;
+        this.longitude = 0;
+        this.latitude = 0;
+        this.zoom = 8;
+        this.mapType = 'yandex#map';
+        this.controls = null;
+        // tslint:disable-next-line:max-line-length
+        this.mapClick = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* EventEmitter */]();
+        this.actionTick = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* EventEmitter */]();
+        this.mapInit = false;
+        this._observableSubscriptions = [];
+    }
+    YaMap.prototype.ngOnInit = function () {
+        var container = this._elem.nativeElement.querySelector('.map-container-inner');
+        this._initMapInstance(container);
+        this.mapInit = true;
+    };
+    YaMap.prototype.ngOnChanges = function (changes) {
+        if (this.mapInit) {
+            this.updatePosition(changes);
+            this.panTo(changes);
+        }
+    };
+    YaMap.prototype._initMapInstance = function (el) {
+        if (this.controls != null) {
+            this._mapsWrapper.createMap(el, {
+                center: [this.latitude, this.longitude], zoom: this.zoom, type: this.mapType,
+                controls: this.controls
+            });
+        }
+        else {
+            this._mapsWrapper.createMap(el, {
+                center: [this.latitude, this.longitude], zoom: this.zoom, type: this.mapType
+            });
+        }
+        this._handleMapMouseEvents();
+    };
+    YaMap.prototype.updatePosition = function (changes) {
+        if (changes['latitude'] == null && changes['longitude'] == null) {
+            return;
+        }
+        this._mapsWrapper.setCenter(this.latitude, this.longitude);
+    };
+    YaMap.prototype.panTo = function (changes) {
+        if (changes['panToObjects'] == null) {
+            return;
+        }
+        this._mapsWrapper.panTo(this.panToObjects.points, this.panToObjects.params);
+    };
+    YaMap.prototype._handleMapMouseEvents = function () {
+        var _this = this;
+        var clickEvents = [
+            { name: 'click', emitter: this.mapClick }
+        ];
+        var events = [
+            { name: 'actiontick', emitter: this.actionTick }
+        ];
+        clickEvents.forEach(function (e) {
+            var s = _this._mapsWrapper.subscribeToMapEvent(e.name).subscribe(function (event) {
+                var coords = event.get('coords');
+                var value = { lat: coords[0], lng: coords[1] };
+                e.emitter.emit(value);
+            });
+            _this._observableSubscriptions.push(s);
+        });
+        events.forEach(function (e) {
+            var s = _this._mapsWrapper.subscribeToMapEvent(e.name).subscribe(function (event) {
+                _this._mapsWrapper.getCenter().then(function (coords) {
+                    _this.latitude = coords[0];
+                    _this.longitude = coords[1];
+                    var value = { lat: coords[0], lng: coords[1] };
+                    e.emitter.emit(value);
+                });
+            });
+            _this._observableSubscriptions.push(s);
+        });
+    };
+    YaMap.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_1" /* Component */], args: [{
+                    selector: 'ya-map',
+                    providers: [
+                        __WEBPACK_IMPORTED_MODULE_1__ya_maps_api_wrapper__["a" /* YaMapsAPIWrapper */],
+                        __WEBPACK_IMPORTED_MODULE_2__services_managers_marker_manager__["a" /* MarkerManager */],
+                        __WEBPACK_IMPORTED_MODULE_3__services_managers_claster_manager__["a" /* ClasterManager */],
+                        __WEBPACK_IMPORTED_MODULE_4__services_managers_objectManager_manager__["a" /* ObjectManagerManager */]
+                    ],
+                    template: "\n    <div class=\"map-container-inner\" id=\"map\" >\n      <ng-content></ng-content>\n    </div>\n  "
+                },] },
+    ];
+    /** @nocollapse */
+    YaMap.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */], },
+        { type: __WEBPACK_IMPORTED_MODULE_1__ya_maps_api_wrapper__["a" /* YaMapsAPIWrapper */], },
+    ]; };
+    YaMap.propDecorators = {
+        'longitude': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'latitude': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'zoom': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'minZoom': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'maxZoom': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'mapType': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'controls': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'panToObjects': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */] },],
+        'mapClick': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_0" /* Output */] },],
+        'actionTick': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_0" /* Output */] },],
+    };
+    return YaMap;
+}());
+
+//# sourceMappingURL=ymap.js.map
+
+/***/ }),
+
+/***/ "../../../../angular2-yandex-maps/lib/services/managers/claster-manager.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ya_maps_api_wrapper__ = __webpack_require__("../../../../angular2-yandex-maps/lib/ya-maps-api-wrapper.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClasterManager; });
+
+
+var ClasterManager = /** @class */ (function () {
+    function ClasterManager(_mapsWrapper, _zone) {
+        this._mapsWrapper = _mapsWrapper;
+        this._zone = _zone;
+        this._clasters = new Map();
+    }
+    ClasterManager.prototype.addClaster = function (claster) {
+        var clasterPromise = this._mapsWrapper.createClaster(claster);
+        this._clasters.set(claster, clasterPromise);
+    };
+    /* getNativeMarker(marker: YaMarker): Promise<Marker> {
+       return this._markers.get(marker);
+     }
+  
+     createEventObservable<T>(eventName: string, marker: YaMarker): Observable<T> {
+       return Observable.create((observer: Observer<T>) => {
+         this._markers.get(marker).then((m: Marker) => {
+           m.events.add(eventName, (e: T) => this._zone.run(() => observer.next(e)));
+         });
+       });
+     }
+     */
+    ClasterManager.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */] },
+    ];
+    /** @nocollapse */
+    ClasterManager.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_1__ya_maps_api_wrapper__["a" /* YaMapsAPIWrapper */], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* NgZone */], },
+    ]; };
+    return ClasterManager;
+}());
+
+//# sourceMappingURL=claster-manager.js.map
+
+/***/ }),
+
+/***/ "../../../../angular2-yandex-maps/lib/services/managers/marker-manager.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__("../../../../rxjs/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ya_maps_api_wrapper__ = __webpack_require__("../../../../angular2-yandex-maps/lib/ya-maps-api-wrapper.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarkerManager; });
+
+
+
+var MarkerManager = /** @class */ (function () {
+    function MarkerManager(_mapsWrapper, _zone) {
+        this._mapsWrapper = _mapsWrapper;
+        this._zone = _zone;
+        this._markers = new Map();
+    }
+    MarkerManager.prototype.deleteMarker = function (marker) {
+        var _this = this;
+        var m = this._markers.get(marker);
+        if (m == null) {
+            return Promise.resolve();
+        }
+        // tslint:disable-next-line:no-shadowed-variable
+        return m.then(function (m) {
+            return _this._zone.run(function () {
+                // tslint:disable-next-line:no-shadowed-variable
+                _this.getNativeMarker(marker).then(function (m) {
+                    _this._mapsWrapper.removeGeo(m);
+                    _this._markers.delete(marker);
+                });
+            });
+        });
+    };
+    MarkerManager.prototype.addMarker = function (marker) {
+        var markerPromise = this._mapsWrapper.createMarker(marker);
+        this._markers.set(marker, markerPromise);
+    };
+    MarkerManager.prototype.showBalloon = function (marker) {
+        this.getNativeMarker(marker).then(function (m) {
+            m.balloon.open();
+        });
+    };
+    MarkerManager.prototype.getNativeMarker = function (marker) {
+        return this._markers.get(marker);
+    };
+    MarkerManager.prototype.createEventObservable = function (eventName, marker) {
+        var _this = this;
+        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"].create(function (observer) {
+            _this._markers.get(marker).then(function (m) {
+                m.events.add(eventName, function (e) { return _this._zone.run(function () { return observer.next(e); }); });
+            });
+        });
+    };
+    MarkerManager.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */] },
+    ];
+    /** @nocollapse */
+    MarkerManager.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_2__ya_maps_api_wrapper__["a" /* YaMapsAPIWrapper */], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* NgZone */], },
+    ]; };
+    return MarkerManager;
+}());
+
+//# sourceMappingURL=marker-manager.js.map
+
+/***/ }),
+
+/***/ "../../../../angular2-yandex-maps/lib/services/managers/objectManager-manager.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ya_maps_api_wrapper__ = __webpack_require__("../../../../angular2-yandex-maps/lib/ya-maps-api-wrapper.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ObjectManagerManager; });
+
+
+var ObjectManagerManager = /** @class */ (function () {
+    function ObjectManagerManager(_mapsWrapper, _zone) {
+        this._mapsWrapper = _mapsWrapper;
+        this._zone = _zone;
+        this._managers = new Map();
+    }
+    ObjectManagerManager.prototype.add = function (manager) {
+        var managerPromise = this._mapsWrapper.createObjectManager(manager);
+        this._managers.set(manager, managerPromise);
+    };
+    ObjectManagerManager.prototype.navigateToGeoObject = function (manager, id) {
+        var _this = this;
+        this.getNativeManager(manager).then(function (p) {
+            _this._mapsWrapper.navigateToGeoObject(p, id);
+        });
+    };
+    ObjectManagerManager.prototype.getNativeManager = function (manager) {
+        return this._managers.get(manager);
+    };
+    ObjectManagerManager.prototype.setFilter = function (manager, filter) {
+        var _this = this;
+        this.getNativeManager(manager).then(function (p) {
+            _this._mapsWrapper.objectManagerSetFilter(p, filter);
+        });
+    };
+    ObjectManagerManager.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */] },
+    ];
+    /** @nocollapse */
+    ObjectManagerManager.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_1__ya_maps_api_wrapper__["a" /* YaMapsAPIWrapper */], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* NgZone */], },
+    ]; };
+    return ObjectManagerManager;
+}());
+
+//# sourceMappingURL=objectManager-manager.js.map
+
+/***/ }),
+
+/***/ "../../../../angular2-yandex-maps/lib/services/ya-maps-loader.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_browser_globals__ = __webpack_require__("../../../../angular2-yandex-maps/lib/utils/browser-globals.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return YaMapsAPILoader; });
+
+
+var YaMapsAPILoader = /** @class */ (function () {
+    function YaMapsAPILoader(w, d) {
+        this._windowRef = w;
+        this._documentRef = d;
+    }
+    YaMapsAPILoader.prototype.load = function () {
+        var script = this._documentRef.getNativeDocument().createElement('script');
+        script.type = 'text/javascript';
+        script.async = false;
+        script.defer = true;
+        script.id = 'YaScript';
+        var callbackName = "angular2YAMapsAPILoader";
+        script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&callback=angular2YAMapsAPILoader';
+        // tslint:disable-next-line:ban-types
+        this._scriptLoadingPromise = new Promise(function (resolve, reject) {
+            script.onload = function () { resolve(); };
+            script.onerror = function (error) { reject(); };
+        });
+        this._documentRef.getNativeDocument().body.appendChild(script);
+        return this._scriptLoadingPromise;
+    };
+    YaMapsAPILoader.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */] },
+    ];
+    /** @nocollapse */
+    YaMapsAPILoader.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_1__utils_browser_globals__["b" /* WindowRef */], },
+        { type: __WEBPACK_IMPORTED_MODULE_1__utils_browser_globals__["c" /* DocumentRef */], },
+    ]; };
+    return YaMapsAPILoader;
+}());
+
+//# sourceMappingURL=ya-maps-loader.js.map
+
+/***/ }),
+
+/***/ "../../../../angular2-yandex-maps/lib/utils/browser-globals.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return WindowRef; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return DocumentRef; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BROWSER_GLOBALS_PROVIDERS; });
+var WindowRef = /** @class */ (function () {
+    function WindowRef() {
+    }
+    WindowRef.prototype.getNativeWindow = function () { return window; };
+    return WindowRef;
+}());
+
+// tslint:disable-next-line:max-classes-per-file
+var DocumentRef = /** @class */ (function () {
+    function DocumentRef() {
+    }
+    DocumentRef.prototype.getNativeDocument = function () {
+        return document;
+    };
+    return DocumentRef;
+}());
+
+var BROWSER_GLOBALS_PROVIDERS = [WindowRef, DocumentRef];
+//# sourceMappingURL=browser-globals.js.map
+
+/***/ }),
+
+/***/ "../../../../angular2-yandex-maps/lib/ya-maps-api-wrapper.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__("../../../../rxjs/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_ya_maps_loader__ = __webpack_require__("../../../../angular2-yandex-maps/lib/services/ya-maps-loader.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_browser_globals__ = __webpack_require__("../../../../angular2-yandex-maps/lib/utils/browser-globals.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return YaMapsAPIWrapper; });
+
+
+
+
+var YaMapsAPIWrapper = /** @class */ (function () {
+    function YaMapsAPIWrapper(_loader, _zone, d) {
+        var _this = this;
+        this._loader = _loader;
+        this._zone = _zone;
+        this._documentRef = d;
+        this._map = new Promise(function (resolve) {
+            _this._mapResolver = resolve;
+        });
+    }
+    YaMapsAPIWrapper.prototype.createMap = function (el, mapOptions) {
+        var _this = this;
+        var res = this._loader.load().then(function () {
+            var create = function () { return setTimeout(function () {
+                if (ymaps.Map) {
+                    var map = new ymaps.Map(el, mapOptions);
+                    _this._mapResolver(map);
+                }
+                else {
+                    create();
+                }
+            }, 100); };
+            create();
+        }).catch(function (e) { return console.log(e); });
+        return res;
+    };
+    YaMapsAPIWrapper.prototype.setCenter = function (latitude, longitude) {
+        this._map.then(function (map) {
+            map.setCenter([latitude, longitude]);
+        });
+    };
+    YaMapsAPIWrapper.prototype.getCenter = function () {
+        return this._map.then(function (map) {
+            return map.getCenter();
+        });
+    };
+    YaMapsAPIWrapper.prototype.panTo = function (points, options) {
+        this._map.then(function (map) {
+            map.panTo(points, options);
+        });
+    };
+    YaMapsAPIWrapper.prototype.subscribeToMapEvent = function (eventName) {
+        var _this = this;
+        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"].create(function (observer) {
+            _this._map.then(function (m) {
+                m.events.add(eventName, function (arg) { _this._zone.run(function () { return observer.next(arg); }); });
+            });
+        });
+    };
+    YaMapsAPIWrapper.prototype.createMarker = function (marker) {
+        return this._map.then(function (map) {
+            var m = new ymaps.Placemark([marker.latitude, marker.longitude], {
+                balloonContentHeader: marker.balloonContentHeader,
+                balloonContentBody: marker.balloonContentBody,
+                balloonContentFooter: marker.balloonContentFooter,
+                iconContent: marker.iconContent
+            }, {
+                draggable: marker.draggable,
+                preset: marker.preset,
+                iconLayout: marker.iconLayout,
+                iconImageHref: marker.iconImageHref,
+                iconImageSize: marker.iconImageSize,
+                iconImageOffset: marker.iconImageOffset
+            });
+            map.geoObjects.add(m);
+            return m;
+        });
+    };
+    YaMapsAPIWrapper.prototype.removeGeo = function (overlay) {
+        this._map.then(function (map) {
+            map.geoObjects.remove(overlay);
+        });
+    };
+    YaMapsAPIWrapper.prototype.createClaster = function (claster) {
+        return this._map.then(function (map) {
+            if (claster.markers.length === 0) {
+                return;
+            }
+            var myGeoObjects;
+            myGeoObjects = new Array();
+            claster.markers.forEach(function (x) {
+                var point = new ymaps.GeoObject({
+                    geometry: { type: x.type, coordinates: [x.lat, x.lng] }
+                });
+                myGeoObjects.push(point);
+            });
+            var clusterer = new ymaps.Clusterer({});
+            clusterer.add(myGeoObjects);
+            map.geoObjects.add(clusterer);
+            return clusterer;
+        });
+    };
+    YaMapsAPIWrapper.prototype.createObjectManager = function (objectManager) {
+        return this._map.then(function (map) {
+            if (objectManager.datasource.length === 0) {
+                return;
+            }
+            var nativeObjectManager = new ymaps.ObjectManager({
+                clusterize: objectManager.clusterize,
+                gridSize: objectManager.gridSize
+            });
+            nativeObjectManager.add(objectManager.datasource);
+            nativeObjectManager.objects.options.set('preset', objectManager.objectPreset);
+            nativeObjectManager.clusters.options.set('preset', objectManager.clasterPreset);
+            map.geoObjects.add(nativeObjectManager);
+            return nativeObjectManager;
+        });
+    };
+    YaMapsAPIWrapper.prototype.navigateToGeoObject = function (objectManager, id) {
+        var obj = objectManager.objects.getById(id);
+        if (obj) {
+            this.setCenter(obj.geometry.coordinates[0], obj.geometry.coordinates[1]);
+            objectManager.objects.balloon.open(id);
+        }
+    };
+    YaMapsAPIWrapper.prototype.checkYaSciptLoaded = function () {
+        return this._documentRef.getNativeDocument().getElementById('YaScript');
+    };
+    YaMapsAPIWrapper.prototype.objectManagerSetFilter = function (objectManager, filter) {
+        objectManager.setFilter(filter);
+    };
+    YaMapsAPIWrapper.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */] },
+    ];
+    /** @nocollapse */
+    YaMapsAPIWrapper.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_2__services_ya_maps_loader__["a" /* YaMapsAPILoader */], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* NgZone */], },
+        { type: __WEBPACK_IMPORTED_MODULE_3__utils_browser_globals__["c" /* DocumentRef */], },
+    ]; };
+    return YaMapsAPIWrapper;
+}());
+
+//# sourceMappingURL=ya-maps-api-wrapper.js.map
+
+/***/ }),
+
+/***/ "../../../../angular2-yandex-maps/lib/ya-maps-types.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return yandex; });
+var yandex;
+//# sourceMappingURL=ya-maps-types.js.map
 
 /***/ }),
 
@@ -64826,7 +65658,7 @@ var Identifiers = (function () {
 Identifiers.ANALYZE_FOR_ENTRY_COMPONENTS = {
     name: 'ANALYZE_FOR_ENTRY_COMPONENTS',
     moduleName: CORE,
-    runtime: __WEBPACK_IMPORTED_MODULE_1__angular_core__["_9" /* ANALYZE_FOR_ENTRY_COMPONENTS */]
+    runtime: __WEBPACK_IMPORTED_MODULE_1__angular_core__["_10" /* ANALYZE_FOR_ENTRY_COMPONENTS */]
 };
 Identifiers.ElementRef = { name: 'ElementRef', moduleName: CORE, runtime: __WEBPACK_IMPORTED_MODULE_1__angular_core__["M" /* ElementRef */] };
 Identifiers.NgModuleRef = { name: 'NgModuleRef', moduleName: CORE, runtime: __WEBPACK_IMPORTED_MODULE_1__angular_core__["P" /* NgModuleRef */] };
@@ -64850,7 +65682,7 @@ Identifiers.ComponentFactoryResolver = {
 };
 Identifiers.ComponentFactory = { name: 'ComponentFactory', moduleName: CORE, runtime: __WEBPACK_IMPORTED_MODULE_1__angular_core__["_17" /* ComponentFactory */] };
 Identifiers.ComponentRef = { name: 'ComponentRef', moduleName: CORE, runtime: __WEBPACK_IMPORTED_MODULE_1__angular_core__["_18" /* ComponentRef */] };
-Identifiers.NgModuleFactory = { name: 'NgModuleFactory', moduleName: CORE, runtime: __WEBPACK_IMPORTED_MODULE_1__angular_core__["_1" /* NgModuleFactory */] };
+Identifiers.NgModuleFactory = { name: 'NgModuleFactory', moduleName: CORE, runtime: __WEBPACK_IMPORTED_MODULE_1__angular_core__["_3" /* NgModuleFactory */] };
 Identifiers.createModuleFactory = {
     name: 'ɵcmf',
     moduleName: CORE,
@@ -68302,7 +69134,7 @@ var DirectiveResolver = (function () {
                     inputs.push(propName);
                 }
             }
-            var /** @type {?} */ output = findLast(propertyMetadata[propName], function (a) { return a instanceof __WEBPACK_IMPORTED_MODULE_1__angular_core__["_5" /* Output */]; });
+            var /** @type {?} */ output = findLast(propertyMetadata[propName], function (a) { return a instanceof __WEBPACK_IMPORTED_MODULE_1__angular_core__["_0" /* Output */]; });
             if (output) {
                 if (output.bindingPropertyName) {
                     outputs.push(propName + ": " + output.bindingPropertyName);
@@ -68311,7 +69143,7 @@ var DirectiveResolver = (function () {
                     outputs.push(propName);
                 }
             }
-            var /** @type {?} */ hostBindings = propertyMetadata[propName].filter(function (a) { return a && a instanceof __WEBPACK_IMPORTED_MODULE_1__angular_core__["_3" /* HostBinding */]; });
+            var /** @type {?} */ hostBindings = propertyMetadata[propName].filter(function (a) { return a && a instanceof __WEBPACK_IMPORTED_MODULE_1__angular_core__["_5" /* HostBinding */]; });
             hostBindings.forEach(function (hostBinding) {
                 if (hostBinding.hostPropertyName) {
                     var /** @type {?} */ startWith = hostBinding.hostPropertyName[0];
@@ -68327,7 +69159,7 @@ var DirectiveResolver = (function () {
                     host["[" + propName + "]"] = propName;
                 }
             });
-            var /** @type {?} */ hostListeners = propertyMetadata[propName].filter(function (a) { return a && a instanceof __WEBPACK_IMPORTED_MODULE_1__angular_core__["_2" /* HostListener */]; });
+            var /** @type {?} */ hostListeners = propertyMetadata[propName].filter(function (a) { return a && a instanceof __WEBPACK_IMPORTED_MODULE_1__angular_core__["_4" /* HostListener */]; });
             hostListeners.forEach(function (hostListener) {
                 var /** @type {?} */ args = hostListener.args || [];
                 host["(" + hostListener.eventName + ")"] = propName + "(" + args.join(',') + ")";
@@ -68376,8 +69208,8 @@ var DirectiveResolver = (function () {
         var /** @type {?} */ mergedOutputs = this._dedupeBindings(directive.outputs ? directive.outputs.concat(outputs) : outputs);
         var /** @type {?} */ mergedHost = directive.host ? Object.assign({}, directive.host, host) : host;
         var /** @type {?} */ mergedQueries = directive.queries ? Object.assign({}, directive.queries, queries) : queries;
-        if (directive instanceof __WEBPACK_IMPORTED_MODULE_1__angular_core__["_11" /* Component */]) {
-            return new __WEBPACK_IMPORTED_MODULE_1__angular_core__["_11" /* Component */]({
+        if (directive instanceof __WEBPACK_IMPORTED_MODULE_1__angular_core__["_1" /* Component */]) {
+            return new __WEBPACK_IMPORTED_MODULE_1__angular_core__["_1" /* Component */]({
                 selector: directive.selector,
                 inputs: mergedInputs,
                 outputs: mergedOutputs,
@@ -69107,7 +69939,7 @@ var CompileMetadataResolver = (function () {
             return null;
         }
         var /** @type {?} */ nonNormalizedTemplateMetadata = ((undefined));
-        if (dirMeta instanceof __WEBPACK_IMPORTED_MODULE_1__angular_core__["_11" /* Component */]) {
+        if (dirMeta instanceof __WEBPACK_IMPORTED_MODULE_1__angular_core__["_1" /* Component */]) {
             // component
             assertArrayOfStrings('styles', dirMeta.styles);
             assertArrayOfStrings('styleUrls', dirMeta.styleUrls);
@@ -69131,7 +69963,7 @@ var CompileMetadataResolver = (function () {
         var /** @type {?} */ viewProviders = [];
         var /** @type {?} */ entryComponentMetadata = [];
         var /** @type {?} */ selector = dirMeta.selector;
-        if (dirMeta instanceof __WEBPACK_IMPORTED_MODULE_1__angular_core__["_11" /* Component */]) {
+        if (dirMeta instanceof __WEBPACK_IMPORTED_MODULE_1__angular_core__["_1" /* Component */]) {
             // Component
             changeDetectionStrategy = ((dirMeta.changeDetection));
             if (dirMeta.viewProviders) {
@@ -78229,12 +79061,12 @@ var StaticReflector = (function () {
         this.initializeConversionMap();
         knownMetadataClasses.forEach(function (kc) { return _this._registerDecoratorOrConstructor(_this.getStaticSymbol(kc.filePath, kc.name), kc.ctor); });
         knownMetadataFunctions.forEach(function (kf) { return _this._registerFunction(_this.getStaticSymbol(kf.filePath, kf.name), kf.fn); });
-        this.annotationForParentClassWithSummaryKind.set(CompileSummaryKind.Directive, [__WEBPACK_IMPORTED_MODULE_1__angular_core__["J" /* Directive */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["_11" /* Component */]]);
+        this.annotationForParentClassWithSummaryKind.set(CompileSummaryKind.Directive, [__WEBPACK_IMPORTED_MODULE_1__angular_core__["J" /* Directive */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["_1" /* Component */]]);
         this.annotationForParentClassWithSummaryKind.set(CompileSummaryKind.Pipe, [__WEBPACK_IMPORTED_MODULE_1__angular_core__["Y" /* Pipe */]]);
         this.annotationForParentClassWithSummaryKind.set(CompileSummaryKind.NgModule, [__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */]]);
-        this.annotationForParentClassWithSummaryKind.set(CompileSummaryKind.Injectable, [__WEBPACK_IMPORTED_MODULE_1__angular_core__["c" /* Injectable */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["Y" /* Pipe */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["J" /* Directive */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["_11" /* Component */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */]]);
+        this.annotationForParentClassWithSummaryKind.set(CompileSummaryKind.Injectable, [__WEBPACK_IMPORTED_MODULE_1__angular_core__["c" /* Injectable */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["Y" /* Pipe */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["J" /* Directive */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["_1" /* Component */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */]]);
         this.annotationNames.set(__WEBPACK_IMPORTED_MODULE_1__angular_core__["J" /* Directive */], 'Directive');
-        this.annotationNames.set(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_11" /* Component */], 'Component');
+        this.annotationNames.set(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_1" /* Component */], 'Component');
         this.annotationNames.set(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Y" /* Pipe */], 'Pipe');
         this.annotationNames.set(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */], 'NgModule');
         this.annotationNames.set(__WEBPACK_IMPORTED_MODULE_1__angular_core__["c" /* Injectable */], 'Injectable');
@@ -78497,16 +79329,16 @@ var StaticReflector = (function () {
         this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Optional'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* Optional */]);
         this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Attribute'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["U" /* Attribute */]);
         this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'ContentChild'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_54" /* ContentChild */]);
-        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'ContentChildren'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_4" /* ContentChildren */]);
+        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'ContentChildren'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_6" /* ContentChildren */]);
         this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'ViewChild'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_55" /* ViewChild */]);
         this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'ViewChildren'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_56" /* ViewChildren */]);
         this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Input'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["O" /* Input */]);
-        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Output'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_5" /* Output */]);
+        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Output'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_0" /* Output */]);
         this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Pipe'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["Y" /* Pipe */]);
-        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'HostBinding'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_3" /* HostBinding */]);
-        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'HostListener'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_2" /* HostListener */]);
+        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'HostBinding'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_5" /* HostBinding */]);
+        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'HostListener'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_4" /* HostListener */]);
         this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Directive'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["J" /* Directive */]);
-        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Component'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_11" /* Component */]);
+        this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Component'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["_1" /* Component */]);
         this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'NgModule'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */]);
         // Note: Some metadata classes can be used directly with Provider.deps.
         this._registerDecoratorOrConstructor(this.findDeclaration(ANGULAR_CORE, 'Host'), __WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* Host */]);
@@ -80778,7 +81610,7 @@ var JitCompiler = (function () {
         if (!ngModuleFactory) {
             var /** @type {?} */ moduleMeta_1 = ((this._metadataResolver.getNgModuleMetadata(moduleType)));
             // Always provide a bound Compiler
-            var /** @type {?} */ extraProviders = [this._metadataResolver.getProviderMetadata(new ProviderMeta(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_7" /* Compiler */], { useFactory: function () { return new ModuleBoundCompiler(_this, moduleMeta_1.type.reference); } }))];
+            var /** @type {?} */ extraProviders = [this._metadataResolver.getProviderMetadata(new ProviderMeta(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_8" /* Compiler */], { useFactory: function () { return new ModuleBoundCompiler(_this, moduleMeta_1.type.reference); } }))];
             var /** @type {?} */ outputCtx = createOutputContext();
             var /** @type {?} */ compileResult = this._ngModuleCompiler.compile(outputCtx, moduleMeta_1, extraProviders);
             if (!this._compilerConfig.useJit) {
@@ -81451,7 +82283,7 @@ var COMPILER_PROVIDERS = [
     NgModuleCompiler,
     { provide: CompilerConfig, useValue: new CompilerConfig() },
     JitCompiler,
-    { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["_7" /* Compiler */], useExisting: JitCompiler },
+    { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["_8" /* Compiler */], useExisting: JitCompiler },
     DomElementSchemaRegistry,
     { provide: ElementSchemaRegistry, useExisting: DomElementSchemaRegistry },
     UrlResolver,
@@ -81500,7 +82332,7 @@ var JitCompilerFactory = (function () {
                 deps: []
             }, /** @type {?} */ ((opts.providers))
         ]);
-        return injector.get(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_7" /* Compiler */]);
+        return injector.get(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_8" /* Compiler */]);
     };
     return JitCompilerFactory;
 }());
@@ -81628,7 +82460,7 @@ function _mergeArrays(parts) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_45", function() { return PACKAGE_ROOT_URL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return PLATFORM_INITIALIZER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return PLATFORM_ID; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_10", function() { return APP_BOOTSTRAP_LISTENER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_11", function() { return APP_BOOTSTRAP_LISTENER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return APP_INITIALIZER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return ApplicationInitStatus; });
 /* unused harmony export DebugElement */
@@ -81652,19 +82484,19 @@ function _mergeArrays(parts) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return ErrorHandler; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return Sanitizer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return SecurityContext; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_9", function() { return ANALYZE_FOR_ENTRY_COMPONENTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_10", function() { return ANALYZE_FOR_ENTRY_COMPONENTS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "U", function() { return Attribute; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_54", function() { return ContentChild; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_4", function() { return ContentChildren; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_6", function() { return ContentChildren; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_47", function() { return Query; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_55", function() { return ViewChild; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_56", function() { return ViewChildren; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_11", function() { return Component; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_1", function() { return Component; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "J", function() { return Directive; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_3", function() { return HostBinding; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_2", function() { return HostListener; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_5", function() { return HostBinding; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_4", function() { return HostListener; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "O", function() { return Input; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_5", function() { return Output; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_0", function() { return Output; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Y", function() { return Pipe; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_52", function() { return CUSTOM_ELEMENTS_SCHEMA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_51", function() { return NO_ERRORS_SCHEMA; });
@@ -81689,24 +82521,24 @@ function _mergeArrays(parts) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return NgZone; });
 /* unused harmony export RenderComponentType */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "N", function() { return Renderer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_0", function() { return Renderer2; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_2", function() { return Renderer2; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return RendererFactory2; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return RendererStyleFlags2; });
 /* unused harmony export RootRenderer */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_12", function() { return COMPILER_OPTIONS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_7", function() { return Compiler; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_8", function() { return Compiler; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_70", function() { return CompilerFactory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_65", function() { return ModuleWithComponentFactories; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_17", function() { return ComponentFactory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_18", function() { return ComponentRef; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Q", function() { return ComponentFactoryResolver; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "M", function() { return ElementRef; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_1", function() { return NgModuleFactory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_3", function() { return NgModuleFactory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "P", function() { return NgModuleRef; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_6", function() { return NgModuleFactoryLoader; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_7", function() { return NgModuleFactoryLoader; });
 /* unused harmony export getModuleFactory */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_15", function() { return QueryList; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_8", function() { return SystemJsNgModuleLoader; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_9", function() { return SystemJsNgModuleLoader; });
 /* unused harmony export SystemJsNgModuleLoaderConfig */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "S", function() { return TemplateRef; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "R", function() { return ViewContainerRef; });
@@ -107934,7 +108766,7 @@ var RouterConfigLoader = (function () {
         }
         else {
             return __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__["mergeMap"].call(wrapIntoObservable(loadChildren()), function (t) {
-                if (t instanceof __WEBPACK_IMPORTED_MODULE_2__angular_core__["_1" /* NgModuleFactory */]) {
+                if (t instanceof __WEBPACK_IMPORTED_MODULE_2__angular_core__["_3" /* NgModuleFactory */]) {
                     return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(t);
                 }
                 else {
@@ -109392,7 +110224,7 @@ RouterLink.ctorParameters = function () { return [
     { type: Router, },
     { type: ActivatedRoute, },
     { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["U" /* Attribute */], args: ['tabindex',] },] },
-    { type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_0" /* Renderer2 */], },
+    { type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_2" /* Renderer2 */], },
     { type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["M" /* ElementRef */], },
 ]; };
 RouterLink.propDecorators = {
@@ -109404,7 +110236,7 @@ RouterLink.propDecorators = {
     'replaceUrl': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["O" /* Input */] },],
     'routerLink': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["O" /* Input */] },],
     'preserveQueryParams': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["O" /* Input */] },],
-    'onClick': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_2" /* HostListener */], args: ['click',] },],
+    'onClick': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_4" /* HostListener */], args: ['click',] },],
 };
 /**
  * \@whatItDoes Lets you link to specific parts of your app.
@@ -109530,17 +110362,17 @@ RouterLinkWithHref.ctorParameters = function () { return [
     { type: __WEBPACK_IMPORTED_MODULE_1__angular_common__["g" /* LocationStrategy */], },
 ]; };
 RouterLinkWithHref.propDecorators = {
-    'target': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_3" /* HostBinding */], args: ['attr.target',] }, { type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["O" /* Input */] },],
+    'target': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_5" /* HostBinding */], args: ['attr.target',] }, { type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["O" /* Input */] },],
     'queryParams': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["O" /* Input */] },],
     'fragment': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["O" /* Input */] },],
     'queryParamsHandling': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["O" /* Input */] },],
     'preserveFragment': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["O" /* Input */] },],
     'skipLocationChange': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["O" /* Input */] },],
     'replaceUrl': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["O" /* Input */] },],
-    'href': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_3" /* HostBinding */] },],
+    'href': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_5" /* HostBinding */] },],
     'routerLink': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["O" /* Input */] },],
     'preserveQueryParams': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["O" /* Input */] },],
-    'onClick': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_2" /* HostListener */], args: ['click', ['$event.button', '$event.ctrlKey', '$event.metaKey', '$event.shiftKey'],] },],
+    'onClick': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_4" /* HostListener */], args: ['click', ['$event.button', '$event.ctrlKey', '$event.metaKey', '$event.shiftKey'],] },],
 };
 /**
  * @param {?} s
@@ -109729,12 +110561,12 @@ RouterLinkActive.decorators = [
 RouterLinkActive.ctorParameters = function () { return [
     { type: Router, },
     { type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["M" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_0" /* Renderer2 */], },
+    { type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_2" /* Renderer2 */], },
     { type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["Z" /* ChangeDetectorRef */], },
 ]; };
 RouterLinkActive.propDecorators = {
-    'links': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_4" /* ContentChildren */], args: [RouterLink, { descendants: true },] },],
-    'linksWithHrefs': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_4" /* ContentChildren */], args: [RouterLinkWithHref, { descendants: true },] },],
+    'links': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_6" /* ContentChildren */], args: [RouterLink, { descendants: true },] },],
+    'linksWithHrefs': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_6" /* ContentChildren */], args: [RouterLinkWithHref, { descendants: true },] },],
     'routerLinkActiveOptions': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["O" /* Input */] },],
     'routerLinkActive': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["O" /* Input */] },],
 };
@@ -110039,8 +110871,8 @@ RouterOutlet.ctorParameters = function () { return [
     { type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["Z" /* ChangeDetectorRef */], },
 ]; };
 RouterOutlet.propDecorators = {
-    'activateEvents': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_5" /* Output */], args: ['activate',] },],
-    'deactivateEvents': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_5" /* Output */], args: ['deactivate',] },],
+    'activateEvents': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_0" /* Output */], args: ['activate',] },],
+    'deactivateEvents': [{ type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_0" /* Output */], args: ['deactivate',] },],
 };
 var OutletInjector = (function () {
     /**
@@ -110235,8 +111067,8 @@ RouterPreloader.decorators = [
  */
 RouterPreloader.ctorParameters = function () { return [
     { type: Router, },
-    { type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_6" /* NgModuleFactoryLoader */], },
-    { type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_7" /* Compiler */], },
+    { type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_7" /* NgModuleFactoryLoader */], },
+    { type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_8" /* Compiler */], },
     { type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["j" /* Injector */], },
     { type: PreloadingStrategy, },
 ]; };
@@ -110269,13 +111101,13 @@ var ROUTER_PROVIDERS = [
         useFactory: setupRouter,
         deps: [
             __WEBPACK_IMPORTED_MODULE_2__angular_core__["l" /* ApplicationRef */], UrlSerializer, ChildrenOutletContexts, __WEBPACK_IMPORTED_MODULE_1__angular_common__["h" /* Location */], __WEBPACK_IMPORTED_MODULE_2__angular_core__["j" /* Injector */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_core__["_6" /* NgModuleFactoryLoader */], __WEBPACK_IMPORTED_MODULE_2__angular_core__["_7" /* Compiler */], ROUTES, ROUTER_CONFIGURATION,
+            __WEBPACK_IMPORTED_MODULE_2__angular_core__["_7" /* NgModuleFactoryLoader */], __WEBPACK_IMPORTED_MODULE_2__angular_core__["_8" /* Compiler */], ROUTES, ROUTER_CONFIGURATION,
             [UrlHandlingStrategy, new __WEBPACK_IMPORTED_MODULE_2__angular_core__["o" /* Optional */]()], [RouteReuseStrategy, new __WEBPACK_IMPORTED_MODULE_2__angular_core__["o" /* Optional */]()]
         ]
     },
     ChildrenOutletContexts,
     { provide: ActivatedRoute, useFactory: rootRoute, deps: [Router] },
-    { provide: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_6" /* NgModuleFactoryLoader */], useClass: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_8" /* SystemJsNgModuleLoader */] },
+    { provide: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_7" /* NgModuleFactoryLoader */], useClass: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_9" /* SystemJsNgModuleLoader */] },
     RouterPreloader,
     NoPreloading,
     PreloadAllModules,
@@ -110448,7 +111280,7 @@ function provideForRootGuard(router) {
  */
 function provideRoutes(routes) {
     return [
-        { provide: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_9" /* ANALYZE_FOR_ENTRY_COMPONENTS */], multi: true, useValue: routes },
+        { provide: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_10" /* ANALYZE_FOR_ENTRY_COMPONENTS */], multi: true, useValue: routes },
         { provide: ROUTES, multi: true, useValue: routes },
     ];
 }
@@ -110637,7 +111469,7 @@ function provideRouterInitializer() {
             deps: [RouterInitializer]
         },
         { provide: ROUTER_INITIALIZER, useFactory: getBootstrapListener, deps: [RouterInitializer] },
-        { provide: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_10" /* APP_BOOTSTRAP_LISTENER */], multi: true, useExisting: ROUTER_INITIALIZER },
+        { provide: __WEBPACK_IMPORTED_MODULE_2__angular_core__["_11" /* APP_BOOTSTRAP_LISTENER */], multi: true, useExisting: ROUTER_INITIALIZER },
     ];
 }
 /**
