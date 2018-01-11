@@ -26,9 +26,8 @@
     countersAnimate();
 })();
 
-function formSubmitted(event) {
-    console.log(event);
-    return false;
+function toggleClass(element, className) {
+    $(element).toggleClass(className);
 }
 
 $(document).on('submit','form',function(event) {
