@@ -15,7 +15,7 @@ header {
 }
 .scroll-view {
     background-color: white;
-    box-shadow: 0 0 5px rgba(0,0,0,.15);
+    box-shadow: 0 3px 10px rgba(0,0,0,.15);
     overflow: auto;
 }
 .image-container {
