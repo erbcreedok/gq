@@ -33,10 +33,21 @@ header {
     min-height: 400px;
     padding-top: 66px;
 }
-#home h4{
+#home .home-utp {
+    background-color: white;
+    border-left: 5px solid orangered;
+    overflow: auto;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
+#home .home-utp h3{
+    font-size: 2rem;
+}
+#home .home-title{
     background-color: rgba(255,255,255,0.9);
-    box-shadow: 0 3px 10px rgba(0,0,0,.1);
     border-radius: 5px;
+    font-size: 1rem;
 }
 #services .service-item a {
     color: #333;
@@ -216,7 +227,7 @@ header {
 
 .footer-distributed h3{
     color:  #ffffff;
-    font: normal 36px 'Cookie', cursive;
+    font-size: 36px;
     margin: 0;
 }
 
