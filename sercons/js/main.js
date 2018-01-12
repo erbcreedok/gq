@@ -30,6 +30,12 @@ function toggleClass(element, className) {
     $(element).toggleClass(className);
 }
 
+$(document).ready(function(){
+    if (window.location.hash) {
+        $(window.location.hash).removeClass('scrolled');
+    }
+});
+
 $(document).on('submit','form',function(event) {
     var name = event.target[1].value;
     var phone = event.target[2].value;
