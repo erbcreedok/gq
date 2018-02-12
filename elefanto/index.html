@@ -45,13 +45,13 @@
                                   </a>
                               </div>
                           </li>
-                          <li>
-                              <div class="nav-left-padding">
-                                  <a href="#services-nav">
-                                      <span>Услуги <span class="icomoon icon-triangle-up" style="font-size: 0.7em; margin-left: 5px"></span> </span>
+                          <li class="navigation-panel-services">
+                              <div class="nav-left-padding toggle-class-on-click" data-target=".navigation-panel-services" data-class-name="nav-opened">
+                                  <a href="#">
+                                      <span>Услуги <span class="icomoon icon-triangle-down" style="font-size: 0.7em; margin-left: 5px"></span> </span>
                                   </a>
                               </div>
-                              <ul class="unstyled navigation-panel-child" id="services-nav">
+                              <ul class="unstyled navigation-panel-child">
                                   <li>
                                       <div class="nav-left-padding">
                                           <a href="#" class="d-flex align-items-center">
@@ -156,13 +156,13 @@
               <div class="section-container">
                   <div class="heading-container">
                       <p class="main-heading">
-                          <span class="heavy">Результат</span> <em>нашей работы - ваша</em> <span class="heavy">прибыль.</span>
+                          <span class="heavy typewriter-effect" data-typewriter="main-heading" data-typewriter-delay="0">Результат</span> <em><span class="typewriter-effect" data-typewriter="main-heading-2" data-typewriter-start-after="main-heading">нашей </span><span class="typewriter-effect" data-typewriter="main-heading-3" data-typewriter-start-after="main-heading-2">работы - ваша </span></em><span class="heavy typewriter-effect"  data-typewriter="main-heading-4" data-typewriter-start-after="main-heading-3">прибыль.</span>
                       </p>
-                      <p>Эксперты с 10-летним опытом в web-индустрии, продвижении, продажах и маркетинге предложат Вам инструменты &nbsp;роста прибыли вашей компании, &nbsp;гарантируя &nbsp;их эффективность.</p>
+                      <p class="typewriter-effect" data-typewriter="main-paragraph" data-typewriter-start-after="main-heading-4" data-typewriter-speed="5" data-typewriter-cursor-blink>Эксперты с 10-летним опытом в web-индустрии, продвижении, продажах и маркетинге предложат Вам инструменты  роста прибыли вашей компании,  гарантируя  их эффективность.</p>
                   </div>
               </div>
           </section>
-          <section class="rounded-box section-padding second-section">
+          <section class="rounded-box section-padding second-section check-on-scroll">
               <div class="section-container">
                   <h3 class="title-type-red section-heading">На тех или иных стадиях своего развития, компании сталкиваются с различными сложностями:</h3>
                   <ol class="flex-wrap d-flex flex-column justify-content-around">
@@ -215,7 +215,7 @@
               </div>
               </div>
           </section>
-          <section class="rounded-box section-padding third-section">
+          <section class="rounded-box section-padding third-section check-on-scroll">
               <div class="section-container">
                   <h3 class="title-type-red section-heading">Мы решаем эти сложности, используя следующие инструменты:</h3>
                   <ul class="d-flex tabs-container">
@@ -272,7 +272,7 @@
                   </button>
               </div>
           </section>
-          <section class="rounded-box section-padding fourth-section">
+          <section class="rounded-box section-padding fourth-section check-on-scroll">
               <div class="section-container">
                   <div class="title-type-red">
                       <h3 class="section-heading">
@@ -338,7 +338,7 @@
                   </div>
               </div>
           </section>
-          <section class="rounded-box section-padding fifth-section">
+          <section class="rounded-box section-padding fifth-section check-on-scroll">
               <div class="section-container">
 
                   <div class="d-flex flex-wrap flex-lg-nowrap justify-content-between fifth-section-top align-items-end">
@@ -380,13 +380,13 @@
                   </p>
               </div>
           </section>
-          <section class="rounded-box section-padding sixth-section text-white">
+          <section class="rounded-box section-padding sixth-section text-white check-on-scroll">
               <div class="section-container">
                   <div class="title-type-red">
                       <h3 class="section-heading">Что вы получите работая с Elefanto?</h3>
                   </div>
                   <div class="media-icons-wrapper">
-                      <div class="d-flex flex-wrap justify-content-lg-between justify-content-md-center  justify-content-center justify-content-sm-between">
+                      <div class="d-flex flex-wrap justify-content-center justify-content-sm-between justify-content-md-center justify-content-xl-between justify-content-lg-center">
                           <div class="media-icon">
                               <div class="icon-square">
                                 <span class="icomoon icon-call red-color"></span>
@@ -411,8 +411,6 @@
                                   Продвижение вашего бренда
                               </p>
                           </div>
-                      </div>
-                      <div class="d-flex flex-wrap justify-content-lg-between justify-content-md-center  justify-content-center justify-content-sm-between">
                           <div class="media-icon">
                               <div class="icon-square">
                                   <span class="icomoon icon-mood red-color"></span>
@@ -446,7 +444,7 @@
                   </div>
               </div>
           </section>
-          <section class="section-padding-low seventh-section">
+          <section class="section-padding-low seventh-section check-on-scroll">
               <div class="section-container">
                   <div class="title-type-red">
                       <h3 class="section-heading">С нами работают такие компании как:</h3>
@@ -467,60 +465,149 @@
               </div>
               </div>
           </section>
-          <section class="rounded-box section-padding eighth-section">
+          <section class="rounded-box section-padding eighth-section check-on-scroll">
               <div class="section-container">
                   <h3 class="title-type-red section-heading">
                       Что нам следует знать о вас и о вашем проекте ?
                   </h3>
                   <div class="form-wrapper">
-                  <p class="form-heading">
-                      # Выберите тип проекта
-                  </p>
-                  <div class="form-body d-flex justify-content-between">
-                      <div class="form-radio-images d-flex flex-wrap justify-content-center justify-content-sm-start">
-                          <div class="form-radio-image">
-                              <div class="form-radio-image-icon">
-                                  <span class="icomoon icon-computer red-color"></span>
-                              </div>
-                              <p>
-                                  Веб-разработка
+                  <div class="form-body d-md-flex justify-content-between">
+                      <div class="form-groups">
+                          <div data-form-group-page="first"  class="form-group-first  form-group-page form-group-now form-main-data">
+                              <p class="form-heading">
+                                  <span class="form-heading-title"># Выберите тип проекта</span>
                               </p>
+                              <div class=" form-radio-images d-flex flex-wrap justify-content-center justify-content-sm-start">
+                                  <input type="hidden" name="type" value="">
+                                  <div class="form-radio-image" data-form-target="form-group-second" data-form-progress="25">
+                                      <div class="form-radio-image-icon">
+                                          <span class="icomoon icon-computer red-color"></span>
+                                      </div>
+                                      <p>
+                                          Веб-разработка
+                                      </p>
+                                  </div>
+                                  <div class="form-radio-image" data-form-target="form-group-second" data-form-progress="25">
+                                      <div class="form-radio-image-icon">
+                                          <span class="icomoon icon-vector-pen red-color"></span>
+                                      </div>
+                                      <p>
+                                          Индивидуальный дизайн
+                                      </p>
+                                  </div>
+                                  <div class="form-radio-image" data-form-target="form-group-fourth" data-form-progress="50">
+                                      <div class="form-radio-image-icon">
+                                          <span class="icomoon icon-lupe red-color"></span>
+                                      </div>
+                                      <p>
+                                          Мне нужно<br>что-то другое
+                                      </p>
+                                  </div>
+                                  <div class="form-radio-image" data-form-target="form-group-fourth" data-form-progress="50">
+                                      <div class="form-radio-image-icon">
+                                          <span class="icomoon icon-globe red-color"></span>
+                                      </div>
+                                      <p>
+                                          Продвижение
+                                      </p>
+                                  </div>
+                                  <div class="form-radio-image" data-form-target="form-group-fourth" data-form-progress="50">
+                                      <div class="form-radio-image-icon">
+                                          <span class="icomoon icon-circles red-color"></span>
+                                      </div>
+                                      <p>
+                                          Маркетинг и продажи
+                                      </p>
+                                  </div>
+                              </div>
                           </div>
-                          <div class="form-radio-image">
-                              <div class="form-radio-image-icon">
-                                  <span class="icomoon icon-vector-pen red-color"></span>
-                              </div>
-                              <p>
-                                  Индивидуальный дизайн
+                          <div data-form-group-page="second" class="form-group-second form-group-page form-main-data">
+                              <p class="form-heading">
+                                  <span class="red-color icomoon icon-triangle-left form-return-back-button" data-form-target="form-group-first" data-form-progress="0"></span>
+                                  <span class="form-heading-title"># Выберите платформу для разработки</span>
                               </p>
+                              <div class="form-radio-images d-flex flex-wrap justify-content-center justify-content-sm-start">
+                                  <div class="form-radio-image" data-form-target="form-group-third" data-form-progress="50">
+                                      <div class="form-radio-image-icon">
+                                          <span class="icomoon icon-monitor red-color"></span>
+                                      </div>
+                                      <p>
+                                          Адаптивный сайт
+                                      </p>
+                                  </div>
+                                  <div class="form-radio-image" data-form-target="form-group-third" data-form-progress="50">
+                                      <div class="form-radio-image-icon">
+                                          <span class="icomoon icon-smartphone2 red-color"></span>
+                                      </div>
+                                      <p>
+                                          Мобильное приложение
+                                      </p>
+                                  </div>
+                              </div>
                           </div>
-                          <div class="form-radio-image">
-                              <div class="form-radio-image-icon">
-                                  <span class="icomoon icon-lupe red-color"></span>
-                              </div>
-                              <p>
-                                  Мне нужно<br>что-то другое
+                          <div data-form-group-page="third"  class="form-group-third  form-group-page form-main-data">
+                              <p class="form-heading">
+                                  <span class="red-color icomoon icon-triangle-left form-return-back-button" data-form-target="form-group-second" data-form-progress="25"></span>
+                                  <span class="form-heading-title"># Выберите тип проекта</span>
                               </p>
+                              <div class="form-radio-images d-flex flex-wrap justify-content-center justify-content-sm-start">
+                                  <div class="form-radio-image" data-form-target="form-group-fourth" data-form-progress="75">
+                                      <div class="form-radio-image-icon">
+                                          <span class="icomoon icon-clock3 red-color"></span>
+                                      </div>
+                                      <p>
+                                          Уже сейчас
+                                      </p>
+                                  </div>
+                                  <div class="form-radio-image" data-form-target="form-group-fourth" data-form-progress="75">
+                                      <div class="form-radio-image-icon">
+                                          <span class="icomoon icon-calendar red-color"></span>
+                                      </div>
+                                      <p>
+                                          В течении недели
+                                      </p>
+                                  </div>
+                                  <div class="form-radio-image" data-form-target="form-group-fourth" data-form-progress="75">
+                                      <div class="form-radio-image-icon">
+                                          <span class="icomoon icon-calendar-month red-color"></span>
+                                      </div>
+                                      <p>
+                                          В течении месяца
+                                      </p>
+                                  </div>
+                              </div>
                           </div>
-                          <div class="form-radio-image">
-                              <div class="form-radio-image-icon">
-                                  <span class="icomoon icon-globe red-color"></span>
-                              </div>
-                              <p>
-                                  Продвижение
+                          <div data-form-group-page="fourth" class="form-group-fourth form-group-page form-main-data">
+                              <p class="form-heading">
+                                  <span class="red-color icomoon icon-triangle-left form-return-back-button" data-form-target="form-group-third" data-form-progress="0"></span>
+                                  <span class="form-heading-title"># Выберите тип проекта</span>
                               </p>
-                          </div>
-                          <div class="form-radio-image">
-                              <div class="form-radio-image-icon">
-                                  <span class="icomoon icon-circles red-color"></span>
+                              <div class="form-group row">
+                                  <div class="input-group col-lg-6">
+                                      <label for="name">Имя</label>
+                                      <input type="text" name="name" id="name" placeholder="Александра"/>
+                                  </div>
+                                  <div class="input-group col-lg-6">
+                                      <label for="surname">Фамилия</label>
+                                      <input type="text" name="surname" id="surname" placeholder="Винокурова"/>
+                                  </div>
+                                  <div class="input-group col-lg-6">
+                                      <label for="email">Адрес почты</label>
+                                      <input type="email" name="email" id="email" placeholder="пример@gmail.com"/>
+                                  </div>
+                                  <div class="input-group col-lg-6">
+                                      <label for="phone">Номер телефона</label>
+                                      <input type="tel" name="phone" id="phone" placeholder="+7 (702) 502 62 85"/>
+                                  </div>
+                                  <div class="input-group col-12">
+                                      <label for="message">Сообщение</label>
+                                      <input name="message" id="message" placeholder="Ваши пожелания, требования сроки и другое"/>
+                                  </div>
                               </div>
-                              <p>
-                                  Маркетинг и продажи
-                              </p>
                           </div>
                       </div>
-                      <div class="form-result-wrapper d-none  d-md-flex align-items-center flex-column">
-                          <div class="progress-circle-svg d-flex align-items-center justify-content-center mb-auto">
+                      <div class="form-result-wrapper d-flex align-items-center flex-column">
+                          <div class="progress-circle-svg d-none d-md-flex align-items-center justify-content-center mb-auto progress-circle-0">
                               <svg viewBox="0 0 120 120">
                                   <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                       <g transform="translate(2.000000, 2.000000)" stroke-width="4">
@@ -530,17 +617,17 @@
                                   </g>
                               </svg>
                               <div class="progress-circle-data text-center">
-                                  <p class="progress-circle-percent">0<span>%</span></p>
+                                  <p class="progress-circle-percent"><span class="progress-circle-percent-big">0</span><span class="progress-circle-percent-small">%</span></p>
                                   <p>Завершено</p>
                               </div>
                           </div>
-                          <button class="btn btn-primary mt-auto" disabled><span>Далеe</span></button>
+                          <button class="btn btn-primary mt-auto form-submit-button" disabled><span>Далеe</span></button>
                       </div>
                   </div>
               </div>
               </div>
           </section>
-          <section class="rounded-box section-padding d-none eighth-section">
+          <section class="rounded-box section-padding d-none eighth-section check-on-scroll">
               <div class="section-container">
                   <h3 class="title-type-red section-heading">
                       Что нам следует знать о вас и о вашем проекте ?
@@ -550,28 +637,7 @@
                       # Введите контакнтную информацию
                   </p>
                   <div class="form-body d-flex justify-content-between">
-                      <div class="form-group row">
-                          <div class="input-group col-lg-6">
-                              <label for="name">Имя</label>
-                              <input type="text" name="name" id="name" placeholder="Александра"/>
-                          </div>
-                          <div class="input-group col-lg-6">
-                              <label for="surname">Фамилия</label>
-                              <input type="text" name="surname" id="surname" placeholder="Винокурова"/>
-                          </div>
-                          <div class="input-group col-lg-6">
-                              <label for="email">Адрес почты</label>
-                              <input type="email" name="email" id="email" placeholder="пример@gmail.com"/>
-                          </div>
-                          <div class="input-group col-lg-6">
-                              <label for="phone">Номер телефона</label>
-                              <input type="tel" name="phone" id="phone" placeholder="+7 (702) 502 62 85"/>
-                          </div>
-                          <div class="input-group col-12">
-                              <label for="message">Сообщение</label>
-                              <input name="message" id="message" placeholder="Ваши пожелания, требования сроки и другое"/>
-                          </div>
-                      </div>
+
                       <div class="form-result-wrapper d-none d-md-flex align-items-center flex-column">
                           <div class="progress-circle-svg d-flex align-items-center justify-content-center mb-auto">
                               <svg viewBox="0 0 120 120">
