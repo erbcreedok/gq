@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="favicon.ico">
 
     <!-- build:css -->
-    <link rel="stylesheet" href="assets/css/main.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
     <!-- endbuild -->
   </head>
 
@@ -47,7 +47,7 @@
                           </li>
                           <li class="navigation-panel-services">
                               <div class="nav-left-padding toggle-class-on-click" data-target=".navigation-panel-services" data-class-name="nav-opened">
-                                  <a href="#">
+                                  <a>
                                       <span>Услуги <span class="icomoon icon-triangle-down" style="font-size: 0.7em; margin-left: 5px"></span> </span>
                                   </a>
                               </div>
@@ -155,10 +155,16 @@
           <section class="rounded-box section-padding first-section" style="color: white">
               <div class="section-container">
                   <div class="heading-container">
-                      <p class="main-heading">
-                          <span class="heavy typewriter-effect" data-typewriter="main-heading" data-typewriter-delay="0">Результат</span> <em><span class="typewriter-effect" data-typewriter="main-heading-2" data-typewriter-start-after="main-heading">нашей </span><span class="typewriter-effect" data-typewriter="main-heading-3" data-typewriter-start-after="main-heading-2">работы - ваша </span></em><span class="heavy typewriter-effect"  data-typewriter="main-heading-4" data-typewriter-start-after="main-heading-3">прибыль.</span>
+                      <p class="main-heading" style="min-height: 102px;">
+                          <span class="heavy typewriter-effect typewriter-remove-effect" data-typewriter="main-heading" data-typewriter-remove="main-heading-6" data-typewriter-remove-start-after=".typewriter-effect[data-typewriter-remove=main-heading-5], onTypewriterRemoveFinish" data-typewriter-delay="0">Результат</span>
+                          <em><span class="typewriter-effect typewriter-remove-effect" data-typewriter="main-heading-2" data-typewriter-remove="main-heading-5" data-typewriter-remove-start-after=".typewriter-effect[data-typewriter-remove=main-heading-4], onTypewriterRemoveFinish" data-typewriter-start-after=".typewriter-effect[data-typewriter=main-heading], onTypewriterFinish">нашей работы - ваша </span></em>
+                          <span class="heavy typewriter-effect typewriter-remove-effect" data-typewriter="main-heading-3" data-typewriter-remove="main-heading-4" data-typewriter-remove-delay="3000" data-typewriter-remove-start-after=".typewriter-effect[data-typewriter=main-heading-3], onTypewriterFinish" data-typewriter-start-after=".typewriter-effect[data-typewriter=main-heading-2], onTypewriterFinish" data-typewriter-cursor-blink>прибыль.</span>
+                          <em><span class="typewriter-effect" data-typewriter="main-heading-7" data-typewriter-start-after=".typewriter-effect[data-typewriter-remove=main-heading-6], onTypewriterRemoveFinish">Мы</span></em>
+                          <span class="heavy typewriter-effect" data-typewriter="main-heading-8" data-typewriter-start-after=".typewriter-effect[data-typewriter=main-heading-7], onTypewriterFinish">доводим</span>
+                          <em><span class="typewriter-effect" data-typewriter="main-heading-9" data-typewriter-start-after=".typewriter-effect[data-typewriter=main-heading-8], onTypewriterFinish">начатое до победного</span></em>
+                          <span class="heavy typewriter-effect" data-typewriter="main-heading-10" data-typewriter-start-after=".typewriter-effect[data-typewriter=main-heading-9], onTypewriterFinish" data-typewriter-cursor-blink>конца.</span>
                       </p>
-                      <p class="typewriter-effect" data-typewriter="main-paragraph" data-typewriter-start-after="main-heading-4" data-typewriter-speed="5" data-typewriter-cursor-blink>Эксперты с 10-летним опытом в web-индустрии, продвижении, продажах и маркетинге предложат Вам инструменты  роста прибыли вашей компании,  гарантируя  их эффективность.</p>
+                      <p id="main-subheader" class="">Эксперты с 10-летним опытом в web-индустрии, продвижении, продажах и маркетинге предложат Вам инструменты  роста прибыли вашей компании,  гарантируя  их эффективность.</p>
                   </div>
               </div>
           </section>
@@ -471,8 +477,8 @@
                       Что нам следует знать о вас и о вашем проекте ?
                   </h3>
                   <div class="form-wrapper">
-                  <div class="form-body d-md-flex justify-content-between">
-                      <div class="form-groups">
+                      <div class="form-body d-md-flex justify-content-between">
+                          <div class="form-groups">
                           <div data-form-group-page="first"  class="form-group-first  form-group-page form-group-now form-main-data">
                               <p class="form-heading">
                                   <span class="form-heading-title"># Выберите тип проекта</span>
@@ -606,25 +612,25 @@
                               </div>
                           </div>
                       </div>
-                      <div class="form-result-wrapper d-flex align-items-center flex-column">
-                          <div class="progress-circle-svg d-none d-md-flex align-items-center justify-content-center mb-auto progress-circle-0">
-                              <svg viewBox="0 0 120 120">
-                                  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                      <g transform="translate(2.000000, 2.000000)" stroke-width="4">
-                                          <circle class="progress-circle-rail" cx="58" cy="58" r="58"></circle>
-                                          <circle class="progress-circle-bar" cx="58" cy="58" r="58"></circle>
+                          <div class="form-result-wrapper d-flex align-items-center flex-column">
+                              <div class="progress-circle-svg d-none d-md-flex align-items-center justify-content-center mb-auto progress-circle-0">
+                                  <svg viewBox="0 0 120 128">
+                                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                          <g transform="translate(2.000000, 2.000000)" stroke-width="4">
+                                              <circle class="progress-circle-rail" cx="58" cy="58" r="58"></circle>
+                                              <circle class="progress-circle-bar" cx="58" cy="58" r="58"></circle>
+                                          </g>
                                       </g>
-                                  </g>
-                              </svg>
-                              <div class="progress-circle-data text-center">
-                                  <p class="progress-circle-percent"><span class="progress-circle-percent-big">0</span><span class="progress-circle-percent-small">%</span></p>
-                                  <p>Завершено</p>
+                                  </svg>
+                                  <div class="progress-circle-data text-center">
+                                      <p class="progress-circle-percent"><span class="progress-circle-percent-big" data-progress-percent="0">0</span><span class="progress-circle-percent-small">%</span></p>
+                                      <p>Завершено</p>
+                                  </div>
                               </div>
+                              <button class="btn btn-primary mt-auto form-submit-button" disabled><span>Далеe</span></button>
                           </div>
-                          <button class="btn btn-primary mt-auto form-submit-button" disabled><span>Далеe</span></button>
                       </div>
                   </div>
-              </div>
               </div>
           </section>
           <section class="rounded-box section-padding d-none eighth-section check-on-scroll">
@@ -637,7 +643,6 @@
                       # Введите контакнтную информацию
                   </p>
                   <div class="form-body d-flex justify-content-between">
-
                       <div class="form-result-wrapper d-none d-md-flex align-items-center flex-column">
                           <div class="progress-circle-svg d-flex align-items-center justify-content-center mb-auto">
                               <svg viewBox="0 0 120 120">
@@ -714,7 +719,7 @@
   </div>
 
     <!-- build:js -->
-  <script src="assets/js/main.min.js"></script>
+  <script src="assets/js/main.js"></script>
      <!-- endbuild -->
   </body>
 
