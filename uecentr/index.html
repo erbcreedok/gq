@@ -1,12 +1,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <!--<link rel="stylesheet/less" type="text/less" href="css/style.less">-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <script type="text/javascript" src="js/less.min.js"></script>
-    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
     <input type="hidden" id="sitepage" value="index">
@@ -22,24 +18,25 @@
                     <ul class="list_main">
                         <li class="list_main_li active" target="0">
                             <a class="a_nonebasic title">Главная</a>
-                            <ul class="list_child">
-                                <li class="list_child_li active"><a class="a_nonebasic subtitle">О Компании</a></li>
-                                <li class="list_child_li"><a class="a_nonebasic subtitle">Форма заявки</a></li>
-                                <li class="list_child_li"><a class="a_nonebasic subtitle">Учредительные документы</a></li>
-                            </ul>
                         </li>
                         <li class="list_main_li"  target="1">
                             <a class="a_nonebasic title">Услуги</a>
                         </li>
                         <li class="list_main_li" target="2">
+                            <a class="a_nonebasic title">Разрешительные документы</a>
+                        </li>
+                        <li class="list_main_li" target="3">
+                            <a class="a_nonebasic title">Нормативная база</a>
+                        </li>
+                        <li class="list_main_li" target="4">
                             <a class="a_nonebasic title">Документация</a>
                             <ul class="list_child">
                                 <li class="list_child_li"><a class="a_nonebasic subtitle">Форма заявки</a></li>
-                                <li class="list_child_li"><a class="a_nonebasic subtitle">Наши услуги</a></li>
-                                <li class="list_child_li"><a class="a_nonebasic subtitle" onclick="openform()">Отправить заявку</a></li>
+                                <li class="list_child_li"><a class="a_nonebasic subtitle" onclick="openform('commer')">Наши услуги</a></li>
+                                <li class="list_child_li"><a class="a_nonebasic subtitle" onclick="openform('callback')">Отправить заявку</a></li>
                             </ul>
                         </li>
-                        <li class="list_main_li" target="3">
+                        <li class="list_main_li" target="5">
                             <a class="a_nonebasic title">Контакты</a>
                         </li>
                     </ul>
@@ -49,104 +46,240 @@
             <div class="main_right">
                 <div class="section section_main" target="0">
                     <div class="subsection" target="0">
-                        <h4>О компании</h4>
+                        <h2 style="margin: 10px">О компании</h2>
                         <p class="p_simple">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                            ТОО «Учебно-экспертный центр» основано в 2011 году. Компания предлагает услуги в области обеспечения промышленной безопасности, экспертизу промышленной безопасности проектной документации и технических устройств, технологий и материалов, проводит подготовку, переподготовку и аттестацию работников и руководителей предприятий по вопросам промышленной, пожарной безопасности, безопасности и охране труда, а также обучение по ряду рабочих специальностей. Мы оказываем помощь при оформлении, сопровождаем до получения разрешительных документов на поставку технических устройств.
                             <br>
-                            <img src="content/image_temp.png">
-                            In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-                            <br><br>
-                            Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+                            <img src="content/1x300.jpg">
                         </p>
                         <div class="notice_box" style="background-image: url(content/arrow.png)">
-                            <h3>Цели учебного центра:</h3>
-                            <p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</p>
+                            <h3>Аттестация учебного центра:</h3>
+                            <p>Наша компания ведет свою деятельность в соответствии с Аттестатом на право проведения работ в области промышленной безопасности № KZ82VEK00006531 от 17 января 2017 г. выданный Республиканским государственным учреждением «Комитет индустриального развития и промышленной безопасности»</p>
                         </div>
-                    </div>
-                    <div class="subsection" target="1">
-                        <h4>Форма заявки</h4>
-                        <p class="p_simple">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-                            <br><br>
-                            Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-                        </p>
-                    </div>
-                    <div class="subsection" target="2">
-                        <h4>Учредительные документы</h4>
-                        <p class="p_simple">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-                            <br><br>
-                            In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-                            <br><br>
-                            Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-                        </p>
                     </div>
                 </div>
                 <div class="section section_services" target="1">
                     <h1 class="section_head">Услуги</h1>
                     <div class="subsection" target="0">
-                        <div class="waitappear appearonce box" style="background-image: url(content/pb.jpg)">
+                        <div class="waitappear appearonce box" style="background-image: url(content/pb.jpg); width: 100%">
                             <div class="box_back"></div>
                             <div class="box_data">
-                                <h1>Обучение по ПБ, БиОТ, ПТМ</h1>
-                                <p>Учебный центр ТОО «Компания Зайтун» приглашает на курсы: «Безопасность и охрана труда на предприятиях» Семинары: «Пожарная безопасность на предприятиях», «Электробезопасность», «О внесении и дополнении в некоторые законодательные акты Республики Казахстан по экологическим вопросам», «Роль офис - менеджеров в развитии компании», «Первая доврачебная помощь». « Трудовое законодательство в организациях и на предприятиях», « Архивное дело на предприятиях и в организациях». « Аттестация производственных объектов по условиям труда» «Оценка профессионального риска» Занятия проводят представители министерств и ведомств, специалисты крупных промышленных предприятий и организаций, а также доктора и кандидаты технических наук. Члены постоянно действующей комиссии (ПДЭК) предприятий могут принять участие в проверке знаний в области безопасности и охрана труда уполномоченного органа (Комитет по госконтролю за ЧС и ПБ МЧС РК). Программа курса рассчитана на 40 часов, с последующей проверкой знаний - тестированием. Слушатели обеспечиваются раздаточным материалом на бумажных и электронных носителях. По завершению обучения вручаются сертификаты, удостоверения установленного образца и протокол проверки знаний. По всем интересующимся вопросам обращаться по телефону: 8-7172-46-67-80</p>
+                                <p class="box_heading">Аттестация (подготовка, переподготовка) специалистов, работников опасных производственных объектов в области промышленной безопасности</p>
+                                <div class="scroll_box">
+                                    <button class="btn">
+                                        Подробнее
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <div class="waitappear appearonce box" style="background-image: url(content/gpm.jpg)">
                             <div class="box_back"></div>
                             <div class="box_data">
-                                <h1>Обслуживание ГПМ</h1>
-                                <p>Quisque libero urna, efficitur vel convallis non, fermentum quis est. Nullam in quam tortor. Sed vel neque vel dolor dapibus egestas.</p>
+                                <p class="box_heading">Обучение руководителей и специалистов по курсу «Безопасность и охрана труда»</>
+                                <div class="scroll_box">
+                                    <button class="btn">
+                                        Подробнее
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <div class="waitappear appearonce box" style="background-image: url(content/sosud.jpg)">
                             <div class="box_back"></div>
                             <div class="box_data">
-                                <h1>Обслуживание сосудов</h1>
-                                <p> Aenean odio felis, molestie in velit eget, posuere faucibus justo.</p>
+                                <p class="box_heading">Обучение руководителей, специалистов и работников в области пожарной безопасности в объеме пожарно-технического минимума</p>
+                                <div class="scroll_box">
+                                    <button class="btn">
+                                        Подробнее
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <div class="waitappear appearonce box" style="background-image: url(content/pass.jpg)">
+                        <div class="waitappear appearonce box" style="background-image: url(content/dekl.jpg); width: 100%">
                             <div class="box_back"></div>
                             <div class="box_data">
-                                <h1>Изготовление дуб. паспортов</h1>
-                                <p>Aliquam eu ultricies risus. In porta id ligula maximus hendrerit.</p>
-                            </div>
-                        </div>
-                        <div class="waitappear appearonce box" style="background-image: url(content/dekl.jpg)">
-                            <div class="box_back"></div>
-                            <div class="box_data">
-                                <h1>Разработка декларации</h1>
-                                <p>Praesent ut mattis tortor. Aenean iaculis ultricies lorem ac efficitur.</p>
+                                <p class="box_heading">Техническое обследование и освидетельствование грузоподъемных механизмов (краны и подъемники (вышки) всех типов и модификаций)), в том числе с целью продления сроков эксплуатации и  разработка дубликатов паспортов на технические устройства</p>
+                                <div class="scroll_box">
+                                    <button class="btn">
+                                        Подробнее
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <div class="waitappear appearonce box" style="background-image: url(content/defectoskop.jpg)">
                             <div class="box_back"></div>
                             <div class="box_data">
-                                <h1>Дефектоскопия</h1>
-                                <p>Sed luctus suscipit sapien, at auctor dui luctus quis</p>
+                                <p class="box_heading">Техническое обследование и освидетельствование оборудования (сосудов, резервуаров, котлов), работающих под давлением и разработка дубликатов паспортов на оборудования</p>
+                                <div class="scroll_box">
+                                    <button class="btn">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="waitappear appearonce box" style="background-image: url(content/pass.jpg)">
+                            <div class="box_back"></div>
+                            <div class="box_data">
+                                <p class="box_heading">Обучение по оказанию первой доврачебной медицинской помощи</p>
+                                <div class="scroll_box">
+                                    <button class="btn">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="waitappear appearonce box" style="background-image: url(content/medic.jpg); width: 100%">
+                            <div class="box_back"></div>
+                            <div class="box_data">
+                                <p class="box_heading">Проведение экспертизы в области промышленной безопасности технологий, технических устройств, материалов, с целью получения разрешения на применение на опасном производственном объекте</p>
+                                <div class="scroll_box">
+                                    <button class="btn">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="waitappear appearonce box" style="background-image: url(content/obuchenie2.jpg)">
+                            <div class="box_back"></div>
+                            <div class="box_data">
+                                <p class="box_heading">Дефектоскопия методом неразрушающего контроля (Визуальный и ультразвуковой контроль)</p>
+                                <div class="scroll_box">
+                                    <button class="btn">
+                                        Подробнее
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <div class="waitappear appearonce box" style="background-image: url(content/obuch.jpg)">
                             <div class="box_back"></div>
                             <div class="box_data">
-                                <h1>Эксперементальное заключение на работу по ПБ</h1>
-                                <p>Praesent ornare tortor ante, eget blandit diam pellentesque sit amet.</p>
-                            </div>
-                        </div>
-                        <div class="waitappear appearonce box" style="background-image: url(content/medic.jpg)">
-                            <div class="box_back"></div>
-                            <div class="box_data">
-                                <h1>Обучение парамедиков</h1>
-                                <p>Ut tincidunt enim sit amet congue lobortis. In consequat mauris ut ipsum ornare volutpat non ut sapien</p>
+                                <p class="box_heading">Разработка декларации в области промышленной безопасности</p>
+                                <div class="scroll_box">
+                                    <button class="btn">
+                                        Подробнее
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="section section_docs" target="2" style="background-image: url(content/stripe.png)">
-                    <h1 class="section_head">Документация</h1>
+                    <h1 class="section_head">Разрешительные документы</h1>
+                    <div class="certificates">
+                        <div class="certificate">
+                            <a href="content/аттестат%20ТОО%20УЭЦ%202017%20г%20на%20каз.яз..pdf" target="_blank">
+                                <img src="content/att-TOO-kz.jpg" style="display: block" alt="">
+                                Аттестат ТОО УЭЦ 2017.г на казахском языке
+                            </a>
+                        </div>
+                        <div class="certificate">
+                            <a href="content/аттестат%20ТОО%20УЭЦ%202017%20г%20на%20рус.яз..pdf" target="_blank">
+                                <img src="content/att-TOO-kz.jpg" style="display: block" alt="">
+                                Аттестат ТОО УЭЦ 2017.г на русском языке
+                            </a>
+                        </div>
+                        <div class="certificate">
+                            <a href="content/свид%20на%20каз.jpeg" target="_blank">
+                                <img src="content/svid-kz-thumb.jpg" style="display: block" alt="">
+                                Заңды тұлғаны мемлекеттік тіркеу туралы куәлік
+                            </a>
+                        </div>
+                        <div class="certificate">
+                            <a href="content/свид%20на%20рус.tif" target="_blank">
+                                <img src="content/svid-kz-thumb.jpg" style="display: block" alt="">
+                                Свидетельство о государственной регистрации гос. лица
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="section section_docs" target="3" style="background-image: url(content/stripe.png)">
+                    <h1 class="section_head">Нормативная база</h1>
+                    <ul class="documents">
+                        <li>
+                            <a target="_blank" href="content/Нормативная%20база/4.03-01-2011 Газораспределительные системы.doc">
+                                <i class="fa fa-file-text"></i> 4.03-01-2011 Газораспределительные системы.doc
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="content/Нормативная%20база/Закон Республики Казахстан от 11 апреля 2014 года № 188-V.doc">
+                                <i class="fa fa-file-text"></i> Закон Республики Казахстан от 11 апреля 2014 года № 188-V.doc
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="content/Нормативная%20база/Об утверждении стандартов государственных услуг в области промышленной безопасности.docx">
+                                <i class="fa fa-file-text"></i> Об утверждении стандартов государственных услуг в области промышленной безопасности.docx
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="content/Нормативная%20база/Правила и сроки проведения обучения, инструктирования и проверок знаний по вопросам безопасности и охранытруда работников.docx">
+                                <i class="fa fa-file-text"></i> Правила и сроки проведения обучения, инструктирования и проверок знаний по вопросам безопасности и охранытруда работников.docx
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="content/Нормативная%20база/Правила обеспечения промышленной безопасности при эксплуатации грузоподъемных механизмов.docx">
+                                <i class="fa fa-file-text"></i> Правила обеспечения промышленной безопасности при эксплуатации грузоподъемных механизмов.docx
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="content/Нормативная%20база/Правила обеспечения промышленной безопасности при эксплуатации оборудования, работающего под давлением.docx">
+                                <i class="fa fa-file-text"></i> Правила обеспечения промышленной безопасности при эксплуатации оборудования, работающего под давлением.docx
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="content/Нормативная%20база/Правила обучения работников организаций и населения мерам пожарной безопасности.docx">
+                                <i class="fa fa-file-text"></i> Правила обучения работников организаций и населения мерам пожарной безопасности.docx
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="content/Нормативная%20база/Правила определяющие критерии отнесения ОПО к деклариуемым.docx">
+                                <i class="fa fa-file-text"></i> Правила определяющие критерии отнесения ОПО к деклариуемым.docx
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="content/Нормативная%20база/Правила проведения обязательных медицинских осмотров.docx">
+                                <i class="fa fa-file-text"></i> Правила проведения обязательных медицинских осмотров.docx
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="content/Нормативная%20база/Правила разработки, утверждения и пересмотра инструкции по БиОТ работодателем.docx">
+                                <i class="fa fa-file-text"></i> Правила разработки, утверждения и пересмотра инструкции по БиОТ работодателем.docx
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="content/Нормативная%20база/Приказ Министра здравоохранения РК от 19 ноября 2009 года № 753.docx">
+                                <i class="fa fa-file-text"></i> Приказ Министра здравоохранения РК от 19 ноября 2009 года № 753.docx
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="content/Нормативная%20база/СН РК 1.03-14-2011 Охрана труда и техника безопасности в строительстве.doc">
+                                <i class="fa fa-file-text"></i> СН РК 1.03-14-2011 Охрана труда и техника безопасности в строительстве.doc
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="content/Нормативная%20база/Технический регламент «Общие требования к пожарной безопасности» от 19 января 2009 г. № 14.docx">
+                                <i class="fa fa-file-text"></i> Технический регламент «Общие требования к пожарной безопасности» от 19 января 2009 г. № 14.docx
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="content/Нормативная%20база/Технический регламент Требования к безопасности пожарной техники для защиты объектов от 16 января 2009 года № 16.docx">
+                                <i class="fa fa-file-text"></i> Технический регламент Требования к безопасности пожарной техники для защиты объектов от 16 января 2009 года № 16.docx
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="content/Нормативная%20база/Требования, предъявляемые к юридическим лицам, аттестуемым на проведение работ в области промышленной безопасности.docx">
+                                <i class="fa fa-file-text"></i> Требования, предъявляемые к юридическим лицам, аттестуемым на проведение работ в области промышленной безопасности.docx
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="content/Нормативная%20база/Трудовой кодекс Республики Казахстан.doc">
+                                <i class="fa fa-file-text"></i> Трудовой кодекс Республики Казахстан.doc
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="section section_docs" target="4" style="background-image: url(content/stripe.png)">
+                    <h1 class="section_head">Обратная связь</h1>
                     <div class="doc_box_container">
-                        <a href="#" target="_blank">
+                        <a onclick="openform('offers')">
                             <div class="doc_box">
                                 <div class="doc_box_border">
                                     <div class="doc_box_image" style="background-image: url(content/doc.jpg)">
@@ -182,8 +315,71 @@
                         </a>
                         <div class="clear"></div>
                     </div>
+                    <div class="form_container scrolled" id="offers">
+                        <div class="form_border top">
+                            <p class="form_title">Формы заявки на обучение</p>
+                            <i class="fa fa-times closeform" onclick="closeform('offers')"></i>
+                        </div>
+                        <ul class="documents" style="text-align: left">
+                            <li>
+                                <a target="_blank" href="content/Заявки/Заявка на дефектоскопию.docx">
+                                    <i class="fa fa-file-text"></i> Заявка на дефектоскопию
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="content/Заявки/Заявка на изготовление паспорта.docx">
+                                    <i class="fa fa-file-text"></i> Заявка на изготовление паспорта
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="content/Заявки/заявка на обучение общий.docx">
+                                    <i class="fa fa-file-text"></i> Заявка на обучение общий
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="content/Заявки/заявка на обучение по БиОТ.docx">
+                                    <i class="fa fa-file-text"></i> Заявка на обучение по БиОТ
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="content/Заявки/заявка на обучение по ПБ для раб перс.docx">
+                                    <i class="fa fa-file-text"></i> Заявка на обучение по ПБ для раб перс.docx
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="content/Заявки/заявка на обучение по ПБ для руководителей и специалистов.docx">
+                                    <i class="fa fa-file-text"></i> Заявка на обучение по ПБ для руководителей и специалистов
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="content/Заявки/заявка на обучение по ПТМ.docx">
+                                    <i class="fa fa-file-text"></i> Заявка на обучение по ПТМ
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="content/Заявки/Заявка на тех обсл. сосуда.docx">
+                                    <i class="fa fa-file-text"></i> Заявка на тех обсл. сосуда
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="content/Заявки/заявка на экспертное заключение.docx">
+                                    <i class="fa fa-file-text"></i> Заявка на экспертное заключение
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="content/Заявки/заявка от физ лица.docx">
+                                    <i class="fa fa-file-text"></i> Заявка от физ. лица
+                                </a>
+                            </li>
+                            <li style="width: 100%">
+                                <a target="_blank" href="content/Заявки/Заявка на техническое обследование грузоподъемных механизмов.docx">
+                                    <i class="fa fa-file-text"></i> Заявка на техническое обследование грузоподъемных механизмов
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="form_container scrolled" id="commer">
-                        <form action="temp.php" method="post">
+                        <form action="temp.html" method="post">
                             <div class="form_border top">
                                 <p class="form_title">Получить коммерческое предложение</p>
                                 <i class="fa fa-times closeform" onclick="closeform('commer')"></i>
@@ -195,8 +391,6 @@
                                 <input type="text" name="company_name" class="text required" placeholder="Наименование компаний" required>
                                 <input type="number" name="count" class="text" placeholder="Количество людей" required>
                                 <textarea name="desc" class="text" placeholder="Опишите курс, на котором вы хотите побывать"></textarea>
-
-
                             </div>
                             <div class="form_border bottom">
                                 <input type="submit" name="submit" class="submit" value="Отправить заявку">
@@ -207,7 +401,7 @@
                         </form>
                     </div>
                     <div class="form_container scrolled" id="callback">
-                        <form action="temp.php" method="post">
+                        <form action="temp.html" method="post">
                             <div class="form_border top">
                                 <p class="form_title">Обратная связь</p>
                                 <i class="fa fa-times closeform" onclick="closeform('callback')"></i>
@@ -228,7 +422,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="section section_contacts" target="3">
+                <div class="section section_contacts" target="5">
                     <h1 class="section_head">Контакты</h1>
                     <div class="subsection">
                         <p class="contactp"><i class="fa fa-industry"></i>ТОО "Учебно-Эксертный Центр"</p>
@@ -267,5 +461,7 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
     

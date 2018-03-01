@@ -52,14 +52,14 @@ function closeform(id){
 }
 (function(){
     $(document).ready(function(){
-        $glob_var.cssmedia_chk = ($(".cssmedia_chk").css("display")=="none");
+        $glob_var.cssmedia_chk = ($(".cssmedia_chk").css("display")==="none");
         $glob_var.sitepage = $("#sitepage").val();
     });
     $(window).resize(function(){
-        $glob_var.cssmedia_chk = ($(".cssmedia_chk").css("display")=="none");
+        $glob_var.cssmedia_chk = ($(".cssmedia_chk").css("display")==="none");
     });
     $(window).scroll(function(){
-        if($glob_var.sitepage=="index"){
+        if($glob_var.sitepage==="index"){
             (function navleft(){
                 if($(this).scrollTop()>$(".navbar").height()){
                     $(".nav_left").addClass("fix_top");
