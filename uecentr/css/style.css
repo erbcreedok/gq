@@ -39,7 +39,7 @@ input.submit {
   -o-appearance: none;
   -ms-appearance: none;
 }
-ul {
+.list_main, .list-child {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -50,16 +50,32 @@ ul {
   min-width: 80px;
   font-size: 1rem;
   font-weight:normal;
-  border: 1px solid white;
-  color: white;
+  border: 1px solid black;
+  color: black;
   border-radius: 4px;
   background: none;
   cursor: pointer;
   transition: 300ms;
 }
 .btn:hover {
+  background: black;
+  color: white;
+}
+.btn.btn-white {
+  border-color: white;
+  color: white;
+}
+.btn.btn-white:hover {
   background: white;
   color: black;
+}
+.btn.btn-blue {
+  border-color: #004def;
+  color: #004def;
+}
+.btn.btn-blue:hover{
+  background: #004def;
+  color: white;
 }
 .wrapper {
   max-width: 970px;
@@ -280,7 +296,7 @@ ul {
   font-weight: bold;
   padding: 0;
   max-height: 0;
-  overflow: auto;
+  overflow: hidden;
   -webkit-transition: max-height 900ms ease-out;
   -moz-transition: max-height 900ms ease-out;
   -ms-transition: max-height 900ms ease-out;
@@ -327,6 +343,11 @@ ul {
   content: '';
   display: block;
   clear: both;
+}
+.documents {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 .documents li {
   float: left;
@@ -688,6 +709,78 @@ ul {
 .footer .footer_right {
   width: 50%;
   float: left;
+}
+body.modal-open {
+  overflow: hidden;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  z-index: 1000;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: none;
+}
+.modal-background {
+  position: fixed;
+  top: 0;bottom: 0;left: 0;right: 0;
+  z-index:1001;
+  background: rgba(0,0,0,.3);
+  cursor: zoom-out;
+}
+.modal-content {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 50px auto;
+  max-width: 100%;
+  width: 800px;
+  background: white;
+  border-radius: 4px;
+  z-index: 1002;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+.modal-header {
+  border-bottom: 1px solid #f0f0f0;
+  background: #f5f5f5;
+  padding: 20px 30px 20px 15px;
+}
+.modal-body {
+  padding: 20px 15px;
+}
+.modal-footer {
+  padding: 10px 15px;
+  background: #f3f3f3;
+  border-top: 1px solid #d2d2d2;
+}
+.modal-header .modal-header-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.modal-footer .modal-btn {
+  float: right;
+}
+.modal-footer:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+button.modal-close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
 }
 @media (max-width: 780px) {
   .cssmedia_chk {
