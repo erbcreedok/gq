@@ -13320,3 +13320,9 @@ input[type="submit"].form-control:focus {
 ============================================ */
 
 /*# sourceMappingURL=style.css.map */
+
+.white-popup {
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+}

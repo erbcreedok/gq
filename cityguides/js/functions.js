@@ -966,6 +966,14 @@ function cfSubmitMSG( valid, msg ) {
 	var msgClasses;msgClasses=valid?"shake animated":"bounce animated",$(".cf-notifications").delay(300).addClass(msgClasses).one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",function(){$(this).removeClass("shake bounce animated")}),$(".cf-notifications").children(".cf-notifications-cont").html(msg);
 }
 
+$('.open-popup').magnificPopup({
+	items: {
+		src: '#callbackModal',
+		type: 'inline'
+	}
+});
+
+
 
 } )( jQuery );
 
