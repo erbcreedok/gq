@@ -2,11 +2,11 @@
 
 // *** Google Map *** //
 function initMap() {
-    var latlng = {lat: -33.867487, lng: 151.206990},
+    var latlng = {lat: 43.2173885, lng: 76.8040813},
         isDraggable = jQuery(document).width() > 480 ? true : false,
         isPanControl = jQuery(document).width() > 480 ? false : true;
     var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
+    zoom: 10,
     scrollwheel: false,
     navigationControl: false,
     mapTypeControl: false,
