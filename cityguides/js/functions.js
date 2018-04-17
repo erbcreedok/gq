@@ -552,7 +552,7 @@ function portfolioIsotope() {
 
 	// Filter with selector
 	$portfolioIsotope.isotope({
-		// filter: ".portfolio-item:not(.pi-ocean-tour):first"
+		filter: ".pi-extreme-tour, .pi-mountain-tour, .pi-city-tour, .pi-lake-tour"
 	});
 
 	// Load Portfolio Items
@@ -895,7 +895,7 @@ function clientsSlider() {
 // *** Contact Form *** //
 function contactFormValidation() {
 	$( "#contact-form" ).validate({
-		// rules
+        lang: 'ru',
 		rules: {
 			cfName: {
 				required: true,
@@ -905,20 +905,39 @@ function contactFormValidation() {
 				required: true,
 				email: true
 			},
-			cfMessage: {
-				required: true,
-				minlength: 8,
-				maxlength: 500
+			cfNumber: {
+				required: true
+			},
+			cfCountry: {
+				required: true
 			}
 		}
 	});
-
+    $( "#contact-form-modal" ).validate({
+		lang: 'ru',
+        rules: {
+            cfName: {
+                required: true,
+                minlength: 3
+            },
+            cfEmail: {
+                required: true,
+                email: true
+            },
+            cfNumber: {
+                required: true
+            },
+            cfCountry: {
+                required: true
+            }
+        }
+    });
 	var errorMsgData = $( ".cf-notifications" ).data( "error-msg" ),
-		errorMsgDefault = 'Please Follow Error Messages and Complete as Required',
+		errorMsgDefault = 'Пожалуйста, заполните все поля верно',
 		errorMsg = ( errorMsgData ) ? ( errorMsgData ) : errorMsgDefault;
 
 	// Submit event
-	$( "#contact-form" ).on( "submit" , function( event ) {
+	$( "#contact-form, #contact-form-modal" ).on( "submit" , function( event ) {
 	    if ( event.isDefaultPrevented() ) {
 		    var errorContent = '<i class="cf-error-icon fa fa-close"></i>' +
 		                       errorMsg;
@@ -926,41 +945,53 @@ function contactFormValidation() {
 	        cfError();
 	    } else {
 	        event.preventDefault();
-	        cfSubmitForm();
+	        cfSubmitForm(this);
 	    }
 	});
 }
 
-function cfSubmitForm(){
+function cfSubmitForm(form){
     // Initiate Variables With Form Content
-    var name = $( "#cfName" ).val();
-    var email = $( "#cfEmail" ).val();
-    var message = $( "#cfMessage" ).val();
 
-    $.ajax({
-        type: "POST",
-        url: "./php/cf-process.php",
-        data: "cfName=" + name + "&cfEmail=" + email + "&cfMessage=" + message,
-        success : function(text){
-            if ( text == "success" ){
-                cfSuccess();
-            } else {
-                cfError();
-                cfSubmitMSG( false, text );
-            }
-        }
+    var name = form.elements.cfName.value.trim();
+    var email = form.elements.cfEmail.value.trim();
+    var number = form.elements.cfNumber.value.trim();
+    var country = form.elements.cfCountry.value.trim();
+
+    var message = '💡Новая заявка от ' + name;
+    message += '\n    <i> Телефон: </i> ' + number;
+    message += '\n    <i> Почта: </i> ' + email;
+    message += '\n    <i> Страна: </i> ' + country;
+    message += '\n    <i> Язык: </i> ' + 'RU';
+    message = encodeURIComponent(message);
+
+    var botApi = '565305224:AAGIzfYikUnfYWl4CjZ7k80ttIYOnC6V-LM';
+    var chatId = '-1001328931509';
+
+    var src = 'https://api.telegram.org/bot' + botApi + '/sendMessage?chat_id=' + chatId + '&parse_mode=html&text=' + message;
+
+    $.get(src, function() {
+        onMailSend();
     });
+
+
+    function onMailSend() {
+        cfSuccess();
+        setTimeout(function() {
+        	$.magnificPopup.close();
+		}, 3000);
+    }
 }
 
 function cfSuccess() {
-	var successMsgData=$(".cf-notifications").data("success-msg"),successMsgDefault="Thank you for your submission :)",successMsg=successMsgData?successMsgData:successMsgDefault;$("#contact-form")[0].reset();var successContent='<i class="cf-success-icon fa fa-check"></i>'+successMsg;cfSubmitMSG(!0,successContent),$(".cf-notifications-cont").addClass("sent"),$(".cf-notifications").css("opacity",0),$(".cf-notifications").slideDown(300).animate({opacity:1},300).delay(5e3).slideUp(400);
+	var successMsgData=$(".cf-notifications").data("success-msg"),successMsgDefault="Спасибо за вашу заявку. Мы вам скоро перезвоним :)",successMsg=successMsgData?successMsgData:successMsgDefault;$("#contact-form")[0].reset();var successContent='<i class="cf-success-icon fa fa-check"></i>'+successMsg;cfSubmitMSG(!0,successContent),$(".cf-notifications-cont").addClass("sent"),$(".cf-notifications").css("opacity",0),$(".cf-notifications").slideDown(300).animate({opacity:1},300).delay(5e3).slideUp(400);
 }
 
-function cfError() {
-	$( ".cf-notifications" ).css( "opacity", 0 );
-    $( ".cf-notifications" ).slideDown( 300 ).animate( { "opacity" : 1 } , 300 );
-	$( ".cf-notifications-cont" ).removeClass( "sent" );
-}
+// function cfError() {
+// 	$( ".cf-notifications" ).css( "opacity", 0 );
+//     $( ".cf-notifications" ).slideDown( 300 ).animate( { "opacity" : 1 } , 300 );
+// 	$( ".cf-notifications-cont" ).removeClass( "sent" );
+// }
 
 function cfSubmitMSG( valid, msg ) {
 	var msgClasses;msgClasses=valid?"shake animated":"bounce animated",$(".cf-notifications").delay(300).addClass(msgClasses).one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",function(){$(this).removeClass("shake bounce animated")}),$(".cf-notifications").children(".cf-notifications-cont").html(msg);
@@ -970,9 +1001,19 @@ $('.open-popup').magnificPopup({
 	items: {
 		src: '#callbackModal',
 		type: 'inline'
-	}
+	},
+    removalDelay: 300,
+    mainClass: 'mfp-fade'
 });
 
+$('.open-popup-element').magnificPopup({
+	type: 'inline',
+	removalDelay: 300,
+	mainClass: 'mfp-fade'
+});
+
+
+$('input[name="cfNumber"]').inputmask("+9 (999) 999 99 99");
 
 
 } )( jQuery );

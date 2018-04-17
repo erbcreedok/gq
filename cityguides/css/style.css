@@ -13325,4 +13325,115 @@ input[type="submit"].form-control:focus {
   max-width: 600px;
   margin: auto;
   position: relative;
+  background: white;
+}
+
+.lang-menu {
+  display: inline-block;
+  padding: 0;
+  list-style-type: none;
+  margin: 0 10px 0 30px;
+}
+@media (max-width: 992px) {
+  .lang-menu {
+    position: absolute;
+    left: 160px;
+  }
+}
+.lang-menu li {
+  float: left;
+  height: 100%;
+  position: relative;
+  white-space: nowrap;
+}
+.lang-menu li a {
+  height: 90px;
+  display: block;
+  line-height: 90px;
+  font-size: 13px;
+  padding: 0 5px;
+  font-weight: 600;
+  color: #222;
+}
+.background-text {
+  padding: 80px 20px;
+  position: relative;
+  text-align: center;
+  background-color: #ffc527;
+  background-size: cover;
+  background-position: center;
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  overflow: hidden;
+}
+.background-text .background-image {
+  background-color: #ffc527;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top:-10px;
+  left:-10px;
+  right:-10px;
+  bottom:-10px;
+  filter: blur(3px);
+}
+.background-text .background-image:before {
+  content: '';
+  position: absolute;
+  background: #000;
+  opacity: .3;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+.background-text span {
+  position: relative;
+  z-index:2;
+}
+.p-5 {
+  padding: 30px;
+}
+.p-5 .background-text {
+  margin: -30px -30px 30px -30px
+}
+.box-inner-content {
+  min-height: 162px;
+}
+.lang-menu li.active a {
+  color: #ffc527;
+}
+/* overlay at start */
+.mfp-fade.mfp-bg {
+  opacity: 0;
+
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+}
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
 }
