@@ -11453,7 +11453,7 @@ input[type="submit"].form-control:focus {
   height: 2px;
   position: absolute;
   left: -4px;
-  top: 50%;
+  top: 100%;
   margin-top: -1px;
   z-index: -1;
   background: #ffc527;
@@ -12541,10 +12541,22 @@ input[type="submit"].form-control:focus {
   content: "\f167";
 }
 .social-icons li .si-instagram {
-  background: #2a5985;
+  background: #851f70;
 }
 .social-icons li .si-instagram i::after {
   content: "\f16d";
+}
+.social-icons li .si-tripadvisor {
+  background: #00a680;
+}
+.social-icons li .si-tripadvisor i::after {
+  content: "\f262";
+}
+.social-icons li .si-whatsapp {
+  background: #2ad03c;
+}
+.social-icons li .si-whatsapp i::after {
+  content: "\f232";
 }
 .social-icons li .si-google-plus {
   background: #eb7761;
@@ -13436,4 +13448,27 @@ input[type="submit"].form-control:focus {
 /* content animate out */
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
   opacity: 0;
+}
+
+.float-call {
+  display: none;
+  position: absolute;
+}
+@media (max-width: 768px) {
+  .float-call {
+    display: block;
+    position: fixed;
+    z-index: 1000000;
+    bottom: 20px;
+    right: 100px;
+    height: 65px;
+    width: 65px;
+    background: #4cd712;
+    color: #fff;
+    font-size: 4rem;
+    line-height: 63px;
+    text-align: center;
+    border-radius: 33px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  }
 }

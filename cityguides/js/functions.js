@@ -958,11 +958,22 @@ function cfSubmitForm(form){
     var number = form.elements.cfNumber.value.trim();
     var country = form.elements.cfCountry.value.trim();
 
+    var params = getUrlVars();
+
     var message = '💡Новая заявка от ' + name;
     message += '\n    <i> Телефон: </i> ' + number;
     message += '\n    <i> Почта: </i> ' + email;
     message += '\n    <i> Страна: </i> ' + country;
+    message += '\n    <i> Источник: </i> ' + 'lp.cityguides.kz';
     message += '\n    <i> Язык: </i> ' + 'RU';
+
+    if (params) {
+    	message += '\n\n   <i> Параметры: </i>';
+		for(var i in params) {
+			message += '\n    <i> ' + i + ': </i> ' + params[i];
+		}
+	}
+
     message = encodeURIComponent(message);
 
     var botApi = '565305224:AAGIzfYikUnfYWl4CjZ7k80ttIYOnC6V-LM';
@@ -1016,5 +1027,18 @@ $('.open-popup-element').magnificPopup({
 $('input[name="cfNumber"]').inputmask("+9 (999) 999 99 99");
 
 
-} )( jQuery );
+function getUrlVars() {
+	var vars = [], hash;
+	var hashes = window.location.href.split('?')[1];
+	if (!hashes) return undefined;
+	hashes = hashes.split('&');
+	for(var i = 0; i < hashes.length; i++)
+	{
+		hash = hashes[i].split('=');
+		vars[hash[0]] = hash[1];
+	}
+	return vars;
+}
 
+
+} )( jQuery );
